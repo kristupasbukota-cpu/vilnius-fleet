@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How late is Vilnius?</title>
+<style>/*__LEAFLET_CSS__*/</style>
+<style>
+  :root{
+    color-scheme: light;
+    --surface-1:#fcfcfb; --plane:#f9f9f7; --map-surface:#f2f1ee;
+    --ink:#0b0b0b; --ink-2:#52514e; --muted:#898781;
+    --grid:#e1e0d9; --rule:#c3c2b7; --ring:rgba(11,11,11,.10);
+    --early-2:#1c5cab; --early-1:#6da7ec; --ontime:#898781; --late-1:#e5736f; --late-2:#a82c2c;
+    --dot-ring:#f2f1ee; --net:#dcdbd3; --net-water:#c3d4dc;
+  }
+  html[data-theme="dark"]{
+    color-scheme: dark;
+    --surface-1:#1a1a19; --plane:#0d0d0d; --map-surface:#1b1b1a;
+    --ink:#ffffff; --ink-2:#c3c2b7; --muted:#898781;
+    --grid:#2c2c2a; --rule:#383835; --ring:rgba(255,255,255,.10);
+    --early-2:#3987e5; --early-1:#9ec5f4; --ontime:#8f8e88; --late-1:#f0938f; --late-2:#e34948;
+    --dot-ring:#1b1b1a; --net:#333330; --net-water:#26383f;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--plane);color:var(--ink);
+       font:14px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif;
+       -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1280px;margin:0 auto;padding:28px 20px 48px}
+
+  header{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap;margin-bottom:22px}
+  h1{font-size:22px;font-weight:640;margin:0 0 5px;letter-spacing:-.015em}
+  .sub{color:var(--ink-2);font-size:13px;margin:0;max-width:62ch}
+  .ghost{background:var(--surface-1);color:var(--ink-2);border:1px solid var(--ring);
+         border-radius:8px;padding:7px 12px;font:inherit;font-size:13px;cursor:pointer}
+  .ghost:hover{color:var(--ink);border-color:var(--rule)}
+
+  .panel{background:var(--surface-1);border:1px solid var(--ring);border-radius:13px;padding:15px 17px}
+  .lt{font-size:11px;letter-spacing:.055em;text-transform:uppercase;color:var(--muted)}
+
+  /* stat tiles */
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(178px,1fr));gap:11px;margin-bottom:11px}
+  .tile .k{font-size:11px;letter-spacing:.055em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+  .tile .v{font-size:30px;font-weight:620;letter-spacing:-.025em;line-height:1.05}
+  .tile .v small{font-size:15px;font-weight:500;color:var(--muted);letter-spacing:0;margin-left:3px}
+  .tile .n{font-size:12px;color:var(--ink-2);margin-top:5px;line-height:1.35}
+
+  /* day chart */
+  .arch{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;flex-wrap:wrap;margin-bottom:12px}
+  .asub{font-size:12.5px;color:var(--ink-2);margin-top:4px}
+  .lgd{display:flex;gap:15px;font-size:12px;color:var(--ink-2);flex-wrap:wrap}
+  .lgd span{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+  .lgd i{width:14px;height:3px;border-radius:2px;display:inline-block;flex:0 0 auto}
+  .lgd i.area{height:9px;border-radius:2px;opacity:.32}
+  #arcbox{position:relative}
+  #arc{width:100%;display:block;cursor:crosshair;overflow:visible;touch-action:none}
+  #arc .grid{stroke:var(--grid);stroke-width:1;vector-effect:non-scaling-stroke}
+  #arc .axis{stroke:var(--rule);stroke-width:1;vector-effect:non-scaling-stroke}
+  #arc .ln{fill:none;stroke-width:2;vector-effect:non-scaling-stroke;stroke-linejoin:round;stroke-linecap:round}
+  #arc .cursor{stroke:var(--ink);stroke-width:1;vector-effect:non-scaling-stroke;opacity:.5}
+  #arc .hair{stroke:var(--ink);stroke-width:1;vector-effect:non-scaling-stroke;opacity:.3;display:none}
+  #arc text{fill:var(--muted);font:11px system-ui,-apple-system,sans-serif;font-variant-numeric:tabular-nums}
+  #arc text.note{fill:var(--ink-2);font-size:11.5px}
+  #arc text.ylab{fill:var(--muted);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase}
+  #arc .band{fill:var(--late-2);opacity:.10}
+
+  /* filters */
+  .filters{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin:11px 0}
+  .filters label{font-size:12px;color:var(--muted)}
+  select{background:var(--plane);color:var(--ink);border:1px solid var(--ring);
+         border-radius:7px;padding:6px 9px;font:inherit;font-size:13px;max-width:190px}
+  .seg{display:inline-flex;border:1px solid var(--ring);border-radius:7px;overflow:hidden}
+  .seg button{background:var(--plane);color:var(--ink-2);border:0;border-right:1px solid var(--ring);
+              padding:6px 11px;font:inherit;font-size:13px;cursor:pointer}
+  .seg button:last-child{border-right:0}
+  .seg button[aria-pressed=true]{background:var(--ink);color:var(--surface-1);font-weight:560}
+
+  /* map */
+  #map{height:min(58vh,560px);min-height:360px;border-radius:13px;border:1px solid var(--ring);background:var(--map-surface)}
+  .leaflet-container{background:var(--map-surface);font:inherit}
+
+  /* player */
+  .player{display:flex;gap:13px;align-items:center;margin-top:11px}
+  .clock{font-variant-numeric:tabular-nums;font-size:20px;font-weight:620;min-width:92px}
+  .clock small{display:block;font-size:11px;font-weight:400;color:var(--muted);letter-spacing:.03em}
+  input[type=range]{flex:1;min-width:110px;accent-color:var(--ink);height:22px}
+  .play{width:38px;height:38px;border-radius:50%;flex:0 0 auto;
+        background:var(--ink);color:var(--surface-1);border:0;font-size:14px;cursor:pointer}
+  .fpos{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+
+  /* legend */
+  .legend{display:flex;gap:3px;flex-wrap:wrap;margin-top:11px}
+  .legend .lt{width:100%;margin-bottom:9px}
+  .lg{flex:1;min-width:104px;padding-right:8px}
+  .lg .bar{height:5px;border-radius:3px;margin-bottom:6px}
+  .lg .n{font-size:12px;color:var(--ink);font-weight:540}
+  .lg .c{font-size:11px;color:var(--muted)}
+
+  /* tooltips */
+  .tip{position:absolute;z-index:1000;pointer-events:none;opacity:0;transition:opacity .09s;
+       background:var(--surface-1);border:1px solid var(--rule);border-radius:9px;
+       padding:9px 11px;font-size:12.5px;box-shadow:0 8px 26px rgba(0,0,0,.3);max-width:280px}
+  .tip .r{font-weight:640;font-size:14px;margin-bottom:2px}
+  .tip .d{color:var(--ink-2);margin-bottom:7px;line-height:1.3}
+  .tip .m{display:flex;justify-content:space-between;gap:16px;color:var(--ink-2);font-variant-numeric:tabular-nums;line-height:1.6}
+  .tip .m b{color:var(--ink);font-weight:600}
+  .tip hr{border:0;border-top:1px solid var(--grid);margin:6px 0}
+
+  /* table */
+  .tblhead{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+  .tblwrap{overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
+  th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--grid);white-space:nowrap}
+  th{font-size:11px;letter-spacing:.045em;text-transform:uppercase;color:var(--muted);
+     font-weight:500;cursor:pointer;user-select:none;position:sticky;top:0;background:var(--surface-1)}
+  th:hover{color:var(--ink)}
+  th[aria-sort]{color:var(--ink)}
+  th .ar{opacity:.55;font-size:10px;margin-left:3px}
+  td.num{text-align:right;font-variant-numeric:tabular-nums}
+  td.dir{white-space:normal;min-width:180px;color:var(--ink-2)}
+  .swatch{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px;vertical-align:-1px}
+  .swatch.hollow{background:none !important;border:1.5px solid var(--rule);width:8px;height:8px}
+
+  /* bunching bars */
+  .bb{display:grid;grid-template-columns:58px 1fr 92px;gap:10px;align-items:center;margin-bottom:7px}
+  .bb .rt{font-weight:620;font-size:13px;font-variant-numeric:tabular-nums}
+  .bb .tr{background:var(--plane);border-radius:4px;height:15px;overflow:hidden;border:1px solid var(--ring)}
+  .bb .fl{height:100%;background:var(--ink-2);border-radius:3px}
+  .bb .vl{font-size:12px;color:var(--ink-2);font-variant-numeric:tabular-nums;text-align:right}
+  .bb .vl b{color:var(--ink);font-weight:620}
+
+  footer{color:var(--muted);font-size:12px;margin-top:20px;line-height:1.65}
+  [hidden]{display:none !important}
+  @media (max-width:640px){
+    .wrap{padding:20px 14px 36px}
+    .tile .v{font-size:25px}
+    .clock{min-width:78px;font-size:17px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>How late is Vilnius?</h1>
+      <p class="sub">Every bus, trolleybus and ferry the city tracks, coloured by how far it has drifted
+        from its timetable. Built from the operator's own live feed.</p>
+    </div>
+    <button class="ghost" id="theme">Light mode</button>
+  </header>
+
+  <div class="tiles">
+    <div class="panel tile">
+      <div class="k">On the move</div>
+      <div class="v" id="s-moving">&ndash;</div>
+      <div class="n" id="s-moving-n">of &ndash; reporting a position</div>
+    </div>
+    <div class="panel tile">
+      <div class="k">Matched to a trip</div>
+      <div class="v" id="s-sched">&ndash;</div>
+      <div class="n" id="s-sched-n">&ndash; with no timetabled trip</div>
+    </div>
+    <div class="panel tile">
+      <div class="k">Unluckiest 10%</div>
+      <div class="v" id="s-p90">&ndash;</div>
+      <div class="n" id="s-med-n">median is &ndash;</div>
+    </div>
+    <div class="panel tile">
+      <div class="k">Bunched</div>
+      <div class="v" id="s-bunch">&ndash;</div>
+      <div class="n" id="s-bunch-n">gap under half the usual</div>
+    </div>
+    <div class="panel tile">
+      <div class="k">More than 5 min late</div>
+      <div class="v" id="s-late">&ndash;</div>
+      <div class="n" id="s-late-n">of those on a schedule</div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="arch">
+      <div>
+        <div class="lt">The day, in four lines</div>
+        <div class="asub">Hover for the exact figures at any moment. Click to jump the map there.</div>
+        <div class="asub" style="color:var(--muted)"><span id="arc-scope">&ndash;</span><span id="arc-gaps"></span><span id="arc-clip"></span></div>
+      </div>
+      <div class="lgd">
+        <span><i class="area" style="background:var(--muted)"></i>Reporting</span>
+        <span><i style="background:var(--ink)"></i>Actually moving</span>
+        <span><i style="background:var(--ontime)"></i>Median</span>
+        <span><i style="background:var(--late-2)"></i>90th percentile</span>
+        <span><i class="area" style="background:var(--muted);opacity:.5"></i>Not collected</span>
+      </div>
+    </div>
+    <div id="arcbox">
+      <svg id="arc" role="img" aria-label="Fleet activity and schedule deviation across the day"></svg>
+      <div class="tip" id="atip"></div>
+    </div>
+  </div>
+
+  <div class="panel filters">
+    <label>Mode</label>
+    <div class="seg" id="f-mode">
+      <button data-m="all" aria-pressed="true">All</button>
+      <button data-m="0" aria-pressed="false">Bus</button>
+      <button data-m="1" aria-pressed="false">Trolleybus</button>
+      <button data-m="2" aria-pressed="false">Ferry</button>
+    </div>
+    <label for="f-route">Route</label>
+    <select id="f-route"><option value="">All routes</option></select>
+    <label for="f-only">Show</label>
+    <select id="f-only">
+      <option value="all">Everything</option>
+      <option value="late">Only late (&gt; 2 min)</option>
+      <option value="early">Only early (&gt; 2 min)</option>
+      <option value="moving">Only moving</option>
+      <option value="depot">Only off-timetable</option>
+    </select>
+    <button class="ghost" id="t-heat">Delay map</button>
+    <button class="ghost" id="t-table">Table view</button>
+  </div>
+
+  <div id="map"></div>
+  <div class="tip" id="tip"></div>
+
+  <div class="panel player">
+    <button class="play" id="play" aria-label="Play">&#9654;</button>
+    <div class="clock"><span id="clock">--:--:--</span><small id="date">&ndash;</small></div>
+    <input type="range" id="scrub" min="0" value="0" step="1" aria-label="Time">
+    <span class="fpos" id="fpos">&ndash;</span>
+  </div>
+
+  <div class="panel legend">
+    <div class="lt">Deviation from timetable</div>
+    <div class="lg"><div class="bar" style="background:var(--early-2)"></div><div class="n">Well early</div><div class="c">5 min or more</div></div>
+    <div class="lg"><div class="bar" style="background:var(--early-1)"></div><div class="n">Slightly early</div><div class="c">1 to 5 min</div></div>
+    <div class="lg"><div class="bar" style="background:var(--ontime)"></div><div class="n">On time</div><div class="c">within 1 min</div></div>
+    <div class="lg"><div class="bar" style="background:var(--late-1)"></div><div class="n">Slightly late</div><div class="c">1 to 5 min</div></div>
+    <div class="lg"><div class="bar" style="background:var(--late-2)"></div><div class="n">Well late</div><div class="c">5 min or more</div></div>
+    <div class="lg"><div class="bar" style="background:none;border:1.5px solid var(--rule)"></div><div class="n">No timetable</div><div class="c">hollow · mostly depot runs</div></div>
+  </div>
+
+  <div class="panel legend" id="heat-legend" hidden style="margin-top:11px">
+    <div class="lt">Where the schedule is lost and won &middot; seconds gained per vehicle-minute</div>
+    <div class="lg"><div class="bar" style="background:var(--early-2)"></div><div class="n">Recovers fast</div><div class="c">25 s/min or better</div></div>
+    <div class="lg"><div class="bar" style="background:var(--early-1)"></div><div class="n">Recovers</div><div class="c">8 to 25 s/min</div></div>
+    <div class="lg"><div class="bar" style="background:var(--ontime)"></div><div class="n">Holds</div><div class="c">within 8 s/min</div></div>
+    <div class="lg"><div class="bar" style="background:var(--late-1)"></div><div class="n">Loses time</div><div class="c">8 to 25 s/min</div></div>
+    <div class="lg"><div class="bar" style="background:var(--late-2)"></div><div class="n">Loses fast</div><div class="c">25 s/min or worse</div></div>
+    <div style="width:100%;font-size:12px;color:var(--muted);margin-top:9px;line-height:1.5">
+      Built by following every vehicle minute to minute and asking where its deviation changed. Cells with
+      under 40 transits are dropped. Read it as where the timetable is won and lost, not purely as congestion:
+      a terminus with recovery time built in will show blue because the schedule allows it, not because the road is fast.
+    </div>
+  </div>
+
+  <div class="panel" id="bunch-panel" style="margin-top:11px">
+    <div class="tblhead">
+      <div>
+        <div class="lt">Which routes bunch</div>
+        <div class="asub">Share of observations where the gap to the vehicle ahead had collapsed
+          to under half that route's usual gap for the hour. Across the whole dataset, not this frame.</div>
+        <div class="asub" style="color:var(--muted)">Frequent service only: route-hours whose usual gap is 15 minutes
+          or less. On a route running every 40 minutes with four vehicles, half the median gap is the timetable's own
+          irregularity rather than bunching, and it scores higher than anything real.</div>
+      </div>
+      <div class="fpos" id="bunch-note">&ndash;</div>
+    </div>
+    <div id="bunch-bars" style="margin-top:12px"></div>
+  </div>
+
+  <div class="panel" id="table-panel" hidden style="margin-top:11px">
+    <div class="tblhead">
+      <div>
+        <div class="lt">Vehicles in this frame</div>
+        <div class="asub" id="tbl-note">Click a column to sort.</div>
+      </div>
+      <div class="fpos" id="tbl-count">&ndash;</div>
+    </div>
+    <div class="tblwrap">
+      <table><thead><tr>
+        <th data-s="route">Route<span class="ar"></span></th>
+        <th data-s="dir">Heading for<span class="ar"></span></th>
+        <th data-s="type">Type<span class="ar"></span></th>
+        <th data-s="dev" class="num">Deviation<span class="ar"></span></th>
+        <th data-s="abs" class="num">|Deviation|<span class="ar"></span></th>
+        <th data-s="speed" class="num">Speed<span class="ar"></span></th>
+        <th data-s="veh" class="num">Vehicle<span class="ar"></span></th>
+      </tr></thead><tbody id="tbody"></tbody></table>
+    </div>
+  </div>
+
+  <footer>
+    Source: the City of Vilnius live vehicle feed (<code>stops.lt/vilnius/gps_full.txt</code>) joined to the static GTFS timetable,
+    published by S&#302; "Susisiekimo paslaugos" (JUDU).
+    Deviation is the operator's own <code>NuokrypisSekundemis</code> field, where positive means behind schedule.
+    A vehicle reports no deviation when the operator has no timetabled trip matched to it; those are drawn as hollow rings.
+    Measured over this dataset, 74% of them are heading to or from a depot and 26% are on an ordinary passenger destination,
+    so "no deviation" means unmatched rather than specifically depot-bound.
+    Before about 04:40 fewer than 120 vehicles are on a timetable, so the 90th percentile swings on single vehicles there and should be read loosely.
+    The grey web underneath is not a street map: it is the route network itself, drawn from the city's own <code>shapes.txt</code>,
+    so every line is a road a bus actually runs on. The blue line is the Neris, traced by ferry route L1.
+    <span id="gen"></span>
+  </footer>
+</div>
+
+<script>/*__LEAFLET_JS__*/</script>
+<script>
+const DATA = /*__DATA__*/null;
+const NETWORK = /*__NETWORK__*/[];
+const BASELINE = /*__BASELINE__*/null;
+/* [lat, lon, mean seconds of deviation gained per vehicle-minute, transits] on a
+   ~250 m grid, from tracking every vehicle between consecutive minutes across the
+   whole collection. Positive = buses lose time here. Negative = they claw it back. */
+const DELAYGRID = /*__DELAYGRID__*/[];
+const TYPES = ["Bus","Trolleybus","Ferry"];
+/* Vehicle ids and destination names are interned in the build and stored as
+   indices. Over three days the same ~500 ids and ~400 destinations repeat in
+   every frame, so holding them once cuts the file by more than half. */
+const VEH  = (DATA && DATA.veh)  || [];
+const DIRS = (DATA && DATA.dirs) || [];
+const vveh = v => (typeof v[6] === 'number' ? VEH[v[6]]  : v[6]) || '';
+const vdir = v => (typeof v[7] === 'number' ? DIRS[v[7]] : v[7]) || '';
+/* Coordinates arrive as integer offsets from DATA.org. Unpacked in place, once,
+   so every line below this point sees ordinary degrees. About 60 ms for a quarter
+   of a million positions, against roughly 1.4 MB saved in the file. */
+if(DATA && DATA.org){
+  const [LAT0, LON0] = DATA.org;
+  for(const f of DATA.frames)
+    for(const v of f.v){ v[0] = LAT0 + v[0]/1e5; v[1] = LON0 + v[1]/1e5; }
+}
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const $ = id => document.getElementById(id);
+
+/* arc columns: 0 minutes, 1 tracked, 2 median, 3 p90, 4 scheduled, 5 moving */
+const A_T=0, A_TRACK=1, A_MED=2, A_P90=3, A_SCHED=4, A_MOVE=5, A_BAD=6;
+
+/* Deviations beyond an hour are stale trip assignments, not lateness. The feed
+   carries a few: 0.19% of readings, up to +665 min. They never moved the
+   whole-fleet p90 (the tail is far bigger than 0.19%), but on a single route the
+   tail IS a handful of vehicles, so one bad reading would define it. Excluded
+   from every percentile and counted separately rather than silently dropped. */
+const DEV_MAX = 3600;
+const plausible = d => d !== null && Math.abs(d) <= DEV_MAX;
+
+/* Bunching. v[8] is IntervalasPries: seconds to the vehicle ahead on the same
+   route. A vehicle is bunched when that gap has collapsed to under half what
+   that route normally runs at that hour. The baseline is the median headway per
+   route-hour computed over every snapshot collected, so it reflects what the
+   route actually does rather than what the timetable claims.
+   Ferries are excluded: with three boats on a river the idea is meaningless. */
+const BUNCH_RATIO = 0.5;
+/* Bunching is only a meaningful idea on service frequent enough that people turn up
+   without checking a timetable. Route 51 runs 4 vehicles on a 25-48 minute headway;
+   over an hour that is a handful of readings whose spread runs from 1.5 to 57
+   minutes, so "under half the median gap" catches the timetable's own irregularity
+   and reported 27%, higher than any real finding here. Restricting to headways of
+   15 minutes or less drops 51 and its kind out entirely and leaves 17 routes where
+   the measure means what it says. */
+const BUNCH_MAX_HEADWAY = 900;   // seconds
+/* Keyed by day type as well as route and hour. A route running every 8 minutes on
+   Monday and every 25 on Sunday, pooled, would get a baseline that calls neither
+   normal. `*` is the pooled fallback, used where one day type has too few samples. */
+const WEEKEND = {Sat:1, Sun:1};
+function baselineFor(v, frame){
+  if(!BASELINE || !BASELINE.base) return null;
+  const hour = Math.floor(frameMin(frame)/60) % 24;
+  const r = DATA.routes[v[3]][0];
+  const dt = WEEKEND[(frame.d||'').slice(0,3)] ? 'we' : 'wd';
+  const b = BASELINE.base[r+'|'+dt+'|'+hour] || BASELINE.base[r+'|*|'+hour] || null;
+  return (b && b <= BUNCH_MAX_HEADWAY) ? b : null;
+}
+function isBunched(v, frame){
+  if(v[5] === 2) return false;              // ferry
+  const gap = v[8];
+  if(gap === null || gap === undefined || gap <= 0) return false;
+  const b = baselineFor(v, frame);
+  return b ? gap < b * BUNCH_RATIO : false;
+}
+
+/* Diverging scale: two single-hue arms meeting at a neutral.
+   Positive = behind schedule. null = not running to a timetable. */
+function colourFor(d){
+  if(d === null) return css('--rule');
+  if(d <= -300) return css('--early-2');
+  if(d <=  -60) return css('--early-1');
+  if(d <   60)  return css('--ontime');
+  if(d <   300) return css('--late-1');
+  return css('--late-2');
+}
+const mins = d => (d >= 0 ? '+' : '') + (d/60).toFixed(1) + ' min';
+/* Three days in one axis means a bare "17:37" is ambiguous. Prefix the day when
+   the set spans more than one, and nothing when it does not. */
+function dayOf(m){
+  const d = Math.floor(m/1440);
+  if(!d && !(DATA.dayLabels && Object.keys(DATA.dayLabels).length)) return '';
+  const lab = d===0 ? (DATA.frames[0] && DATA.frames[0].d) : (DATA.dayLabels||{})[d];
+  return lab ? lab.slice(0,3) + ' ' : '';
+}
+const hhmm = m => String(Math.floor(m/60)%24).padStart(2,'0')+':'+String(Math.floor(m%60)).padStart(2,'0');
+
+/* ---------- map ---------- */
+const map = L.map('map',{zoomControl:true,preferCanvas:true,attributionControl:false})
+  .setView([54.687,25.279],12);
+
+/* Basemap is the transport network itself, from the city's own GTFS route
+   geometry. No tile server, so the page makes zero network requests. */
+// Explicit panes fix the stacking order. LayerGroup has no bringToBack, so
+// relying on insertion order silently put the heat grid on top of the vehicles.
+map.createPane('heatPane').style.zIndex = 350;
+map.createPane('netPane').style.zIndex  = 360;
+const netCanvas = L.canvas({padding:.3, pane:'netPane'});
+const netLayer = L.layerGroup().addTo(map);
+function drawNetwork(){
+  netLayer.clearLayers();
+  const water = css('--net-water'), road = css('--net');
+  for(const l of NETWORK){
+    L.polyline(l.p,{renderer:netCanvas,pane:'netPane',interactive:false,
+      color:l.t?water:road, weight:l.t?2:1, opacity:l.t?.85:.75}).addTo(netLayer);
+  }
+}
+drawNetwork();
+const canvas = L.canvas({padding:.3});
+const layer = L.layerGroup().addTo(map);
+
+/* ---------- state ---------- */
+let i = 0, playing = false, timer = null;
+let fMode='all', fRoute='', fOnly='all';
+let shown = [];
+let sortKey='abs', sortDir=-1;
+
+const routeSel = $('f-route');
+DATA.routes.map(r=>r[0]).sort((a,b)=>a.localeCompare(b,undefined,{numeric:true}))
+  .forEach(r=>{const o=document.createElement('option');o.value=r;o.textContent=r;routeSel.appendChild(o);});
+$('scrub').max = DATA.frames.length - 1;
+$('gen').textContent = ' Built ' + DATA.generated + ' Vilnius time.';
+
+const frameMin = f => f.m !== undefined ? f.m
+  : (()=>{const[h,m,s]=f.t.split(':').map(Number);return h*60+m+s/60;})();
+
+function passes(v){
+  if(fMode!=='all' && v[5]!==+fMode) return false;
+  if(fRoute && DATA.routes[v[3]][0]!==fRoute) return false;
+  const d=v[2];
+  if(fOnly==='late'   && !(d!==null && d>120)) return false;
+  if(fOnly==='early'  && !(d!==null && d<-120)) return false;
+  if(fOnly==='moving' && !(v[4]>0)) return false;
+  if(fOnly==='depot'  && d!==null) return false;
+  return true;
+}
+
+function render(){
+  const f = DATA.frames[i];
+  layer.clearLayers();
+  shown = f.v.filter(passes);
+
+  for(const v of shown){
+    // No timetable (running to/from a depot) gets a hollow ring, so "no schedule"
+    // rides a shape channel instead of competing with the grey of "on time".
+    const off = v[2] === null;
+    L.circleMarker([v[0],v[1]], off ? {
+      renderer:canvas, radius:4, weight:1.25, color:css('--rule'), opacity:.9, fill:false
+    } : {
+      renderer:canvas, radius:5, weight:1.5, color:css('--dot-ring'),
+      fillColor:colourFor(v[2]), fillOpacity:.95
+    }).addTo(layer);
+    // A bunched vehicle gets an outer ring. Shape, not colour, so it stacks
+    // cleanly on top of the deviation scale instead of fighting it.
+    if(isBunched(v,f)){
+      L.circleMarker([v[0],v[1]],{renderer:canvas,radius:9,weight:1.5,
+        color:css('--ink'),opacity:.85,fill:false,interactive:false}).addTo(layer);
+    }
+  }
+
+  const rawDev = shown.map(v=>v[2]).filter(d=>d!==null);
+  const sched = rawDev.filter(plausible).sort((a,b)=>a-b);
+  const bad = rawDev.length - sched.length;
+  const moving = shown.filter(v=>v[4]>0).length;
+  const withGap = shown.filter(v=>v[8]>0 && baselineFor(v,f));
+  const bunched = withGap.filter(v=>isBunched(v,f));
+  const depot = shown.length - rawDev.length;
+
+  // Lead with what is actually moving. The reporting count includes vehicles
+  // already parked at a depot that have not yet dropped out of the feed, so it
+  // overstates activity by a wide margin in the evening.
+  $('s-moving').textContent = moving;
+  $('s-moving-n').textContent = 'of ' + shown.length + ' reporting a position';
+  $('s-sched').textContent = rawDev.length;
+  $('s-sched-n').textContent = depot + ' with no timetabled trip'
+    + (bad ? ' · ' + bad + ' reading' + (bad>1?'s':'') + ' discarded' : '');
+
+  const p90 = sched.length ? sched[Math.min(sched.length-1, Math.floor(sched.length*0.9))] : null;
+  $('s-p90').textContent = p90===null ? '–' : mins(p90);
+  $('s-med-n').textContent = sched.length ? 'median is ' + mins(sched[sched.length>>1]) : 'median is –';
+
+  $('s-bunch').textContent = withGap.length ? Math.round(bunched.length/withGap.length*100)+'%' : '–';
+  $('s-bunch-n').textContent = withGap.length
+    ? bunched.length + ' of ' + withGap.length + ' on frequent service'
+    : 'no headway data here';
+
+  const late = sched.filter(d=>d>300).length;
+  $('s-late').textContent = sched.length ? Math.round(late/sched.length*100)+'%' : '–';
+  $('s-late-n').textContent = late + ' of ' + sched.length + ' vehicles';
+
+  $('clock').textContent = f.t;
+  $('date').textContent  = f.d;
+  $('fpos').textContent  = (i+1) + ' / ' + DATA.frames.length;
+  $('scrub').value = i;
+
+  if(!$('table-panel').hidden) fillTable();
+  syncCursor();
+}
+
+/* ---------- sortable table ---------- */
+const SORTERS = {
+  route: v => DATA.routes[v[3]][0],
+  dir:   v => vdir(v),
+  type:  v => TYPES[v[5]],
+  dev:   v => v[2] === null ?  Infinity : v[2],
+  abs:   v => v[2] === null ? -Infinity : Math.abs(v[2]),
+  speed: v => v[4],
+  veh:   v => vveh(v),
+};
+function fillTable(){
+  const g = SORTERS[sortKey];
+  const rows = shown.slice().sort((a,b)=>{
+    const x=g(a), y=g(b);
+    if(typeof x === 'string') return sortDir * x.localeCompare(y,undefined,{numeric:true});
+    return sortDir * (x - y);
+  }).slice(0,60);
+
+  $('tbl-count').textContent = rows.length + ' of ' + shown.length + ' shown';
+  $('tbody').innerHTML = rows.map(v=>{
+    const off = v[2]===null;
+    const sw = off ? '<span class="swatch hollow"></span>'
+                   : `<span class="swatch" style="background:${colourFor(v[2])}"></span>`;
+    return `<tr>
+      <td>${sw}<b>${DATA.routes[v[3]][0]}</b></td>
+      <td class="dir">${vdir(v)||'–'}</td>
+      <td>${TYPES[v[5]]}</td>
+      <td class="num">${off?'no schedule':mins(v[2])}</td>
+      <td class="num">${off?'–':(Math.abs(v[2])/60).toFixed(1)+' min'}</td>
+      <td class="num">${v[4]} km/h</td>
+      <td class="num">${vveh(v)}</td>
+    </tr>`;
+  }).join('') || '<tr><td colspan="7" style="color:var(--muted)">Nothing matches these filters.</td></tr>';
+
+  document.querySelectorAll('th[data-s]').forEach(th=>{
+    const on = th.dataset.s===sortKey;
+    th.toggleAttribute('aria-sort', on);
+    th.querySelector('.ar').textContent = on ? (sortDir<0?'▼':'▲') : '';
+  });
+}
+document.querySelectorAll('th[data-s]').forEach(th=>{
+  th.onclick = () => {
+    const k = th.dataset.s;
+    if(k===sortKey) sortDir = -sortDir; else { sortKey = k; sortDir = -1; }
+    fillTable();
+  };
+});
+
+/* ---------- map hover: nearest point, generous hit target ---------- */
+const tip = $('tip');
+map.on('mousemove', e=>{
+  const p = e.containerPoint; let best=null, bd=24*24;
+  for(const v of shown){
+    const q = map.latLngToContainerPoint([v[0],v[1]]);
+    const dx=q.x-p.x, dy=q.y-p.y, d2=dx*dx+dy*dy;
+    if(d2<bd){ bd=d2; best=v; }
+  }
+  if(!best){ tip.style.opacity=0; return; }
+  const r = DATA.routes[best[3]];
+  const off = best[2]===null;
+  tip.innerHTML =
+    `<div class="r">${off?'<span class="swatch hollow"></span>':`<span class="swatch" style="background:${colourFor(best[2])}"></span>`}${r[0]} · ${TYPES[best[5]]}</div>`+
+    `<div class="d">${vdir(best)||r[1]||''}</div>`+
+    `<div class="m"><span>Deviation</span><b>${off?'no schedule':mins(best[2])}</b></div>`+
+    `<div class="m"><span>Speed</span><b>${best[4]} km/h</b></div>`+
+    `<div class="m"><span>Vehicle</span><b>${vveh(best)}</b></div>`+
+    (best[8]>0 ? `<div class="m"><span>Gap to bus ahead</span><b>${(best[8]/60).toFixed(1)} min${isBunched(best,DATA.frames[i])?' · bunched':''}</b></div>` : '');
+  const mr = $('map').getBoundingClientRect();
+  tip.style.left = (mr.left+window.scrollX+p.x+16)+'px';
+  tip.style.top  = (mr.top +window.scrollY+p.y+16)+'px';
+  tip.style.opacity = 1;
+});
+map.on('mouseout', ()=> tip.style.opacity=0);
+
+/* ---------- the day arc ----------
+   Two stacked plots on one shared time axis. Never a dual axis: vehicles and
+   minutes are different units, so each gets its own plot. Within each plot the
+   series share a scale honestly. */
+/* When no filter is active we use the precomputed arc, which is built over every
+   snapshot collected (thousands of points). Once a filter is applied that is no
+   longer the right series, so we derive one from the map frames instead. Those are
+   a sparser sample, so the chart says so rather than pretending otherwise. */
+let ARC = DATA.arc || [];
+const FULL_ARC = DATA.arc || [];
+const arcCache = new Map();
+
+function filterActive(){ return fMode!=='all' || fRoute || fOnly!=='all'; }
+
+function derivedArc(){
+  const key = fMode+'|'+fRoute+'|'+fOnly;
+  if(arcCache.has(key)) return arcCache.get(key);
+  const out = DATA.frames.map(f=>{
+    const v = f.v.filter(passes);
+    const raw = v.map(x=>x[2]).filter(x=>x!==null);
+    const d = raw.filter(plausible).sort((a,b)=>a-b);
+    const q = t => d.length ? d[Math.min(d.length-1, Math.floor(d.length*t))]/60 : 0;
+    return [frameMin(f), v.length, +q(.5).toFixed(2), +q(.9).toFixed(2),
+            d.length, v.filter(x=>x[4]>0).length, raw.length-d.length];
+  });
+  arcCache.set(key, out);
+  return out;
+}
+
+function refreshArc(){
+  ARC = filterActive() ? derivedArc() : FULL_ARC;
+  const bits=[];
+  if(fMode!=='all') bits.push(['buses','trolleybuses','ferries'][+fMode]+' only');
+  if(fRoute) bits.push('route '+fRoute);
+  if(fOnly!=='all') bits.push($('f-only').selectedOptions[0].text.toLowerCase());
+  const badTotal = ARC.reduce((a,r)=>a+(r[A_BAD]||0),0);
+  $('arc-scope').textContent = (bits.length
+      ? bits.join(', ') + ' · ' + ARC.length + ' sampled frames'
+      : 'whole fleet · ' + ARC.length + ' snapshots, full resolution')
+    + (badTotal ? ' · ' + badTotal.toLocaleString() + ' readings beyond \u00b160 min excluded' : '');
+  drawArc();
+}
+
+const svg = $('arc'), atip = $('atip');
+const NS = 'http://www.w3.org/2000/svg';
+const PAD = {l:52, r:16, t:16, b:26};
+const H_A = 122, GAP = 46, H_B = 100;
+const el = (n,a) => { const e=document.createElementNS(NS,n); for(const k in a) e.setAttribute(k,a[k]); return e; };
+let arcX=null, arcW=0;
+
+function drawArc(){
+  if(!ARC.length) return;
+  const W = svg.clientWidth || svg.parentNode.clientWidth || 900;
+  const H = PAD.t + H_A + GAP + H_B + PAD.b;
+  arcW = W;
+  svg.setAttribute('width',W); svg.setAttribute('height',H);
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  svg.style.height = H+'px';
+  while(svg.firstChild) svg.removeChild(svg.firstChild);
+
+  const t0=ARC[0][A_T], t1=ARC[ARC.length-1][A_T];
+  const X = t => PAD.l + (t-t0)/(t1-t0) * (W-PAD.l-PAD.r);
+  arcX = X;
+  const maxN = Math.max(...ARC.map(r=>r[A_TRACK])) * 1.1;
+  /* Axis scaling for the lateness plot. Normally the maximum, because on the whole
+     fleet the peak IS the finding. But a single route has ~14 vehicles, so its p90
+     is roughly the second-worst bus and the odd frame spikes to 50+ minutes. When
+     the max is more than 3x the 95th percentile, that is a couple of stray frames
+     defining the whole axis, so scale to the bulk instead and mark what went over. */
+  const p90s = ARC.map(r=>r[A_P90]).sort((a,b)=>a-b);
+  const p95v = p90s.length ? p90s[Math.floor(p90s.length*0.95)] : 0;
+  const rawMax = p90s.length ? p90s[p90s.length-1] : 0;
+  const useRobust = p95v > 0 && rawMax > p95v*3;
+  const maxM = Math.max(1.5, useRobust ? p95v*1.6 : rawMax) * 1.15;
+  const clipped = ARC.filter(r=>r[A_P90] > maxM).length;
+  const yA = v => PAD.t + H_A - v/maxN * H_A;
+  const yB0 = PAD.t + H_A + GAP;
+  const yB = v => Math.max(yB0, yB0 + H_B - v/maxM * H_B);
+
+  /* Where collection stopped. On Monday the laptop slept for four and a half hours.
+     Drawing one polyline through that prints a dead-straight segment that reads as
+     "the city held perfectly steady", which is the opposite of what happened: we
+     were not looking. Every line here is broken at the gap and the gap is shaded. */
+  const GAP_MIN = 3;   // minutes of wall clock. the collector polls every 10 s
+  let lostMin = 0, lostN = 0;
+  const segs = [];
+  let seg = [ARC[0]];
+  for(let k=1;k<ARC.length;k++){
+    if(ARC[k][A_T]-ARC[k-1][A_T] > GAP_MIN){
+      segs.push(seg); seg=[];
+      const a=X(ARC[k-1][A_T]), b=X(ARC[k][A_T]);
+      svg.appendChild(el('rect',{x:a,y:PAD.t,width:Math.max(2,b-a),height:H_A+GAP+H_B,
+        fill:css('--muted'),opacity:.14}));
+      lostMin += ARC[k][A_T]-ARC[k-1][A_T];
+      lostN++;
+    }
+    seg.push(ARC[k]);
+  }
+  segs.push(seg);
+  const gapEl=$('arc-gaps');
+  if(gapEl) gapEl.textContent = lostN
+    ? ` \u00b7 ${(lostMin/60).toFixed(1)} h not collected across ${lostN} gap${lostN>1?'s':''}`
+    : '';
+
+  // the standstill: any run where nothing at all is reporting
+  let run=null;
+  for(let k=0;k<=ARC.length;k++){
+    const empty = k<ARC.length && ARC[k][A_TRACK]===0;
+    if(empty && run===null) run=k;
+    if(!empty && run!==null){
+      const a=X(ARC[run][A_T]), b=X(ARC[k-1][A_T]);
+      svg.appendChild(el('rect',{class:'band',x:a-1,y:PAD.t,width:Math.max(2,b-a+2),height:H_A+GAP+H_B}));
+      const lab=el('text',{class:'note',x:Math.min(W-PAD.r-4,(a+b)/2+8),y:PAD.t+29});
+      lab.textContent = filterActive() ? 'none of these running' : 'nothing running';
+      svg.appendChild(lab);
+      run=null;
+    }
+  }
+
+  const gl=(y,txt)=>{
+    svg.appendChild(el('line',{class:'grid',x1:PAD.l,y1:y,x2:W-PAD.r,y2:y}));
+    const t=el('text',{x:PAD.l-8,y:y+4,'text-anchor':'end'}); t.textContent=txt; svg.appendChild(t);
+  };
+  gl(yA(0),'0'); gl(yA(maxN*.5),Math.round(maxN*.5)); gl(yA(maxN*.9),Math.round(maxN*.9));
+  gl(yB(0),'0'); gl(yB(maxM*.5),(maxM*.5).toFixed(1)); gl(yB(maxM*.9),(maxM*.9).toFixed(1));
+
+  // y-axis titles, rotated
+  const yt=(y,txt)=>{
+    const t=el('text',{class:'ylab',x:0,y:0,transform:`translate(13,${y}) rotate(-90)`,'text-anchor':'middle'});
+    t.textContent=txt; svg.appendChild(t);
+  };
+  yt(PAD.t+H_A/2,'vehicles');
+  yt(yB0+H_B/2,'minutes late');
+  const clipEl=$('arc-clip');
+  if(clipEl) clipEl.textContent = clipped
+    ? ` · y-axis scaled to the bulk, ${clipped} frame${clipped>1?'s':''} run above it`
+    : '';
+
+  /* Tick spacing chosen from the span, not fixed at one an hour. Over a single day
+     hourly is right; over three it prints 66 labels into 1100 px and they overlap
+     into a grey smear. Step up until the labels are at least 52 px apart. */
+  const plotW = W - PAD.l - PAD.r;
+  const hours = (t1-t0)/60;
+  const step = [1,2,3,4,6,12,24].find(k => plotW/(hours/k) >= 52) || 24;
+  for(let h=Math.ceil(t0/60/step)*step; h*60<=t1; h+=step){
+    const x=X(h*60);
+    svg.appendChild(el('line',{class:'grid',x1:x,y1:PAD.t+H_A,x2:x,y2:PAD.t+H_A+4}));
+    const t=el('text',{x:x,y:H-PAD.b+14,'text-anchor':'middle'});
+    t.textContent=String(h%24).padStart(2,'0')+':00'; svg.appendChild(t);
+  }
+  // Midnight boundaries. Without these the axis shows "04:00" twice across a
+  // multi-day span with nothing to distinguish them.
+  for(let d=Math.ceil(t0/1440); d*1440<=t1; d++){
+    const x=X(d*1440);
+    svg.appendChild(el('line',{class:'axis',x1:x,y1:PAD.t,x2:x,y2:yB0+H_B,opacity:.55}));
+    const lb=el('text',{class:'note',x:x+6,y:PAD.t+13});
+    lb.textContent = DATA.dayLabels && DATA.dayLabels[d] ? DATA.dayLabels[d] : 'next day';
+    svg.appendChild(lb);
+  }
+  svg.appendChild(el('line',{class:'axis',x1:PAD.l,y1:PAD.t+H_A,x2:W-PAD.r,y2:PAD.t+H_A}));
+  svg.appendChild(el('line',{class:'axis',x1:PAD.l,y1:yB0+H_B,x2:W-PAD.r,y2:yB0+H_B}));
+
+  const path = pts => pts.map((p,k)=>(k?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)).join('');
+
+  // "reporting" as a filled area, "moving" as a line on top. Area vs line is a
+  // shape channel, so the two never rely on being told apart by colour, and the
+  // gap between them reads directly as "parked but still transmitting".
+  for(const sg of segs){
+    if(sg.length < 2) continue;
+    const a=X(sg[0][A_T]).toFixed(1), b=X(sg[sg.length-1][A_T]).toFixed(1);
+    svg.appendChild(el('path',{
+      d: path(sg.map(r=>[X(r[A_T]),yA(r[A_TRACK])]))+`L${b} ${yA(0).toFixed(1)}L${a} ${yA(0).toFixed(1)}Z`,
+      fill: css('--muted'), opacity:.28, stroke:'none'}));
+    svg.appendChild(el('path',{class:'ln',d:path(sg.map(r=>[X(r[A_T]),yA(r[A_MOVE])])),stroke:css('--ink')}));
+    svg.appendChild(el('path',{class:'ln',d:path(sg.map(r=>[X(r[A_T]),yB(r[A_MED])])),stroke:css('--ontime')}));
+    svg.appendChild(el('path',{class:'ln',d:path(sg.map(r=>[X(r[A_T]),yB(r[A_P90])])),stroke:css('--late-2')}));
+  }
+
+  // Direct-label the peak, but only over frames with a real sample behind them.
+  // Before dawn only ~40 vehicles are on a timetable, so a single unlucky bus
+  // swings p90 by minutes. Those spikes are noise, not the city being late.
+  const peakSched = Math.max(...ARC.map(r=>r[A_SCHED]));
+  const minSample = Math.max(5, peakSched*0.25);
+  const solid = ARC.filter(r=>r[A_SCHED]>=minSample);
+  const peak = (solid.length?solid:ARC).reduce((a,b)=>b[A_P90]>a[A_P90]?b:a);
+  const px=X(peak[A_T]), py=yB(peak[A_P90]);
+  svg.appendChild(el('circle',{cx:px,cy:py,r:3.5,fill:css('--late-2'),stroke:css('--surface-1'),'stroke-width':2}));
+  const pl=el('text',{class:'note',x:px+9,y:py-7});
+  pl.textContent=`worst ${peak[A_P90].toFixed(1)} min at ${dayOf(peak[A_T])}${hhmm(peak[A_T])}`
+    + (peak[A_P90] > maxM ? ' (above axis)' : '');
+  svg.appendChild(pl);
+  // Flip the label to the left of the point rather than guessing its width and
+  // clamping. Measured after insertion, so it is correct for any label text.
+  const plw = pl.getComputedTextLength ? pl.getComputedTextLength() : 0;
+  if(px + 9 + plw > W - PAD.r){
+    pl.setAttribute('x', px - 9);
+    pl.setAttribute('text-anchor','end');
+  }
+  if(py - 7 < PAD.t + H_A + GAP + 10) pl.setAttribute('y', py + 15);
+
+  svg.appendChild(el('line',{class:'hair',id:'hair',x1:0,y1:PAD.t,x2:0,y2:yB0+H_B}));
+  svg.appendChild(el('line',{class:'cursor',id:'cur',x1:PAD.l,y1:PAD.t,x2:PAD.l,y2:yB0+H_B}));
+  syncCursor();
+}
+
+function syncCursor(){
+  const c=$('cur'); if(!c||!arcX||!DATA.frames[i]) return;
+  const x=arcX(frameMin(DATA.frames[i]));
+  c.setAttribute('x1',x); c.setAttribute('x2',x);
+}
+
+function arcRowAt(clientX){
+  const r=svg.getBoundingClientRect(), t0=ARC[0][A_T], t1=ARC[ARC.length-1][A_T];
+  const frac=(clientX-r.left-PAD.l)/(r.width-PAD.l-PAD.r);
+  const want=t0+Math.max(0,Math.min(1,frac))*(t1-t0);
+  let best=ARC[0], bd=1e9;
+  for(const row of ARC){ const d=Math.abs(row[A_T]-want); if(d<bd){bd=d;best=row;} }
+  return {row:best, want};
+}
+
+svg.addEventListener('mousemove', e=>{
+  if(!arcX||!ARC.length) return;
+  const {row} = arcRowAt(e.clientX);
+  const x = arcX(row[A_T]);
+  const hair=$('hair');
+  if(hair){ hair.style.display='block'; hair.setAttribute('x1',x); hair.setAttribute('x2',x); }
+  atip.innerHTML =
+    `<div class="r">${hhmm(row[A_T])}</div>`+
+    `<div class="m"><span>Reporting</span><b>${row[A_TRACK]}</b></div>`+
+    `<div class="m"><span>Actually moving</span><b>${row[A_MOVE]}</b></div>`+
+    `<div class="m"><span>On a timetable</span><b>${row[A_SCHED]}</b></div>`+
+    (row[A_BAD] ? `<div class="m"><span>Discarded</span><b>${row[A_BAD]}</b></div>` : '')+
+    `<hr>`+
+    `<div class="m"><span>Median</span><b>${row[A_MED]>=0?'+':''}${row[A_MED].toFixed(1)} min</b></div>`+
+    `<div class="m"><span>90th percentile</span><b>${row[A_P90]>=0?'+':''}${row[A_P90].toFixed(1)} min</b></div>`;
+  const bw=$('arcbox').getBoundingClientRect();
+  const tw=atip.offsetWidth||200;
+  atip.style.left=Math.max(0,Math.min(bw.width-tw-4, x+14))+'px';
+  atip.style.top=(PAD.t+8)+'px';
+  atip.style.opacity=1;
+});
+svg.addEventListener('mouseleave', ()=>{
+  atip.style.opacity=0;
+  const hair=$('hair'); if(hair) hair.style.display='none';
+});
+svg.addEventListener('click', e=>{
+  if(!arcX||!ARC.length) return;
+  const {want} = arcRowAt(e.clientX);
+  let best=0,bd=1e9;
+  DATA.frames.forEach((f,k)=>{ const d=Math.abs(frameMin(f)-want); if(d<bd){bd=d;best=k;} });
+  i=best; render();
+});
+// Debounced: redraw the chart at the new width and tell Leaflet its container
+// moved, otherwise markers keep the old projection after a rotate or resize.
+let rzT=null;
+addEventListener('resize', ()=>{
+  clearTimeout(rzT);
+  rzT=setTimeout(()=>{ drawArc(); map.invalidateSize({animate:false}); }, 120);
+});
+
+/* ---------- where delay is created ----------
+   A diverging scale again, same meaning as the vehicle dots: red is time lost,
+   blue is time recovered, and the neutral middle is where the schedule holds. */
+const heatCanvas = L.canvas({padding:.2, pane:'heatPane'});
+let heatLayer = null;
+function heatColour(v){
+  if(v >= 25) return css('--late-2');
+  if(v >= 8)  return css('--late-1');
+  if(v > -8)  return css('--ontime');
+  if(v > -25) return css('--early-1');
+  return css('--early-2');
+}
+function drawHeat(){
+  if(heatLayer){ map.removeLayer(heatLayer); heatLayer=null; }
+  if(!heatOn || !DELAYGRID.length) return;
+  heatLayer = L.layerGroup().addTo(map);
+  const H=0.00125, W=0.00125/Math.cos(54.7*Math.PI/180);
+  for(const [la,lo,v,n] of DELAYGRID){
+    L.rectangle([[la-H,lo-W],[la+H,lo+W]],{
+      renderer:heatCanvas, pane:'heatPane', interactive:false, stroke:false, fill:true,
+      fillColor:heatColour(v), fillOpacity:Math.min(.7, 0.18 + Math.abs(v)/70)
+    }).addTo(heatLayer);
+  }
+}
+let heatOn = false;
+$('t-heat').onclick = () => {
+  heatOn = !heatOn;
+  $('t-heat').textContent = heatOn ? 'Hide delay map' : 'Delay map';
+  $('heat-legend').hidden = !heatOn;
+  drawHeat();
+};
+
+/* ---------- which routes bunch ----------
+   Computed over every frame in the file, so it is a property of the route across
+   the whole collection rather than of whichever moment the scrubber is on. */
+function buildBunchBars(){
+  if(!BASELINE || !BASELINE.base){ $('bunch-panel').hidden = true; return; }
+  const tally = new Map();
+  for(const f of DATA.frames){
+    for(const v of f.v){
+      if(v[5]===2) continue;
+      if(!(v[8]>0)) continue;
+      if(!baselineFor(v,f)) continue;
+      const r = DATA.routes[v[3]][0];
+      const t = tally.get(r) || [0,0];
+      t[1]++; if(isBunched(v,f)) t[0]++;
+      tally.set(r,t);
+    }
+  }
+  const MIN_OBS = 150;
+  const rows = [...tally.entries()]
+    .filter(([,t])=>t[1]>=MIN_OBS)
+    .map(([r,t])=>({r, pct:t[0]/t[1]*100, n:t[1]}))
+    .sort((a,b)=>b.pct-a.pct).slice(0,12);
+  const dropped = tally.size - [...tally.values()].filter(t=>t[1]>=MIN_OBS).length;
+  $('bunch-note').textContent = rows.length
+    ? 'top ' + rows.length + ' of ' + (tally.size-dropped) + ' frequent routes \u00b7 ' + dropped + ' below ' + MIN_OBS + ' obs excluded'
+    : 'not enough data yet';
+  const max = rows.length ? rows[0].pct : 1;
+  $('bunch-bars').innerHTML = rows.map(x=>`
+    <div class="bb">
+      <div class="rt">${x.r}</div>
+      <div class="tr"><div class="fl" style="width:${(x.pct/max*100).toFixed(1)}%"></div></div>
+      <div class="vl"><b>${x.pct.toFixed(1)}%</b> <span style="opacity:.7">n=${x.n}</span></div>
+    </div>`).join('');
+}
+
+/* ---------- controls ---------- */
+$('scrub').oninput = e => { i=+e.target.value; render(); };
+$('play').onclick = () => {
+  playing = !playing;
+  $('play').innerHTML = playing ? '&#10074;&#10074;' : '&#9654;';
+  clearInterval(timer);
+  if(playing) timer = setInterval(()=>{ i=(i+1)%DATA.frames.length; render(); }, 260);
+};
+$('f-mode').onclick = e => {
+  const b = e.target.closest('button'); if(!b) return;
+  [...e.currentTarget.children].forEach(x=>x.setAttribute('aria-pressed', x===b));
+  fMode = b.dataset.m; refreshArc(); render();
+};
+routeSel.onchange = e => { fRoute=e.target.value; refreshArc(); render(); };
+$('f-only').onchange = e => { fOnly=e.target.value; refreshArc(); render(); };
+$('t-table').onclick = () => {
+  const p=$('table-panel'); p.hidden=!p.hidden;
+  $('t-table').textContent = p.hidden ? 'Table view' : 'Hide table';
+  if(!p.hidden) fillTable();
+};
+$('theme').onclick = () => {
+  const d = document.documentElement.dataset.theme === 'dark';
+  document.documentElement.dataset.theme = d ? 'light' : 'dark';
+  $('theme').textContent = d ? 'Dark mode' : 'Light mode';
+  drawNetwork(); refreshArc(); render();
+};
+
+refreshArc();
+buildBunchBars();
+render();
+</script>
+</body>
+</html>
