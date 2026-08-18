@@ -11,6 +11,9 @@ SRC="$PWD"
 PUB="$SRC/pub"
 REMOTE="git@github.com:kristupasbukota-cpu/vilnius-fleet.git"
 
+renice -n 19 -p $$ >/dev/null 2>&1
+ionice -c 3 -p $$ >/dev/null 2>&1
+
 mkdir -p "$PUB/summaries" "$PUB/code" "$PUB/gtfs"
 
 # A health file, so the state of the collector is visible without an SSH session.
@@ -35,7 +38,6 @@ json.dump({
     "snapshots": len(snaps),
     "first": snaps[0] if snaps else None,
     "newest": snaps[-1] if snaps else None,
-    "bytes_on_disk": int(sh("du -sb %s/snapshots | cut -f1" % src) or 0),
     "disk": sh("df -h %s | tail -1" % src),
     "memory_mb": sh("awk '/MemTotal/{t=$2}/MemAvailable/{a=$2}END{printf \"%d total, %d available\", t/1024, a/1024}' /proc/meminfo"),
     "collector_failures": fails,
@@ -60,6 +62,15 @@ if [ ! -d .git ]; then
   git remote add origin "$REMOTE"
 fi
 printf '%s\n' 'snapshots/' 'state.json.gz' '*.part' > .gitignore
+
+git config gc.auto 0
+git config gc.autoDetach false
+git config maintenance.auto false
+git config pack.threads 1
+git config pack.windowMemory 16m
+git config pack.deltaCacheSize 16m
+git config core.compression 1
+git config core.bigFileThreshold 512k
 
 git add -A
 if git diff --cached --quiet; then
