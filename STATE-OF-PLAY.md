@@ -1,6 +1,6 @@
 # How late is Vilnius? State of play
 
-Written 18 August 2026, first at 01:15 Vilnius time and revised at 14:45, four days in.
+Written 18 August 2026, first at 01:15 Vilnius time and revised at 16:15, four days in.
 
 ---
 
@@ -180,7 +180,7 @@ Not optional, and none of it needs you.
 This is where the real gain is. All of it works on data already on disk, retroactively,
 back to Saturday.
 
-- **Join `ReisoIdGTFS` to `stop_times.txt`.** 94% match rate, 437,389 stop times waiting.
+- ~~**Join `ReisoIdGTFS` to `stop_times.txt`.**~~ **Done. See section 9.** 437,389 stop times waiting.
   This converts "this bus is 6 minutes late" into "this bus is 6 minutes late *between
   these two specific stops*", which is the difference between a heatmap and a diagnosis.
   It also separates real congestion from scheduled recovery time, fixing problem 6.
@@ -294,3 +294,95 @@ the seam now holds exactly six.
 
 The Mac collector did not miss a single snapshot throughout. That is the second time
 running two independent collectors has paid for itself.
+
+
+---
+
+## 9. Where the time actually goes
+
+Done on 18 August. This is the section the whole project was building towards.
+
+### The method, in one paragraph
+
+Every live row carries `MatavimoLaikas`, when the GPS actually fixed, and
+`NuokrypisSekundemis`, how many seconds late the vehicle was at that moment. Their
+difference is the vehicle's position **on its own timetable**: a bus six minutes late
+at 17:20 is standing where it was scheduled to be at 17:14. Look that up in the trip's
+stop times and you know which pair of stops it is between, **without touching a single
+coordinate**. Between two fixes, the gap between how much real time passed and how much
+schedule time passed is the lateness gained, and it is shared across whichever
+scheduled segments the vehicle crossed while gaining it, weighted by how much of each
+one it covered.
+
+Both GTFS clock fields and `MatavimoLaikas` are seconds past local midnight, so there
+is no timezone arithmetic anywhere in `segments.py`.
+
+### Does the arithmetic put buses where they really are
+
+Checked against the geometry it never uses, on 76,407 sampled readings:
+
+| check | result |
+|---|---|
+| nearest stop is the claimed segment's own start or end | **98.9%** |
+| split between the two ends | 46.5% / 52.4% |
+| median distance off the straight line joining them | **6 m** |
+| p95 | 214 m, which is road curvature, not misplacement |
+
+### Does a segment behave the same way twice
+
+Pearson r on mean seconds lost per traversal, over segments seen on both days:
+
+| pair | r | shared segments |
+|---|---|---|
+| **Mon 17 vs Tue 18** | **+0.854** | 1,934 |
+| Sat 15 vs Sun 16 | +0.520 | 1,620 |
+| Sun 16 vs Mon 17 | +0.514 | 1,644 |
+| Sat 15 vs Tue 18 | +0.292 | 1,617 |
+
+Two independent working days, collected by two independent machines, agree at 0.854.
+Weekday against weekend is half that. **This is a property of the road, and of the
+working week, not noise.**
+
+### What it says
+
+Monday 17 August created **204 vehicle-hours** of lateness and gave back 132, for a net
+of **+72.7**. Tuesday had already reached +95.3 by mid-afternoon.
+
+The worst pieces of road, collapsed across every route that uses them:
+
+| stretch | routes | scheduled | Monday | Sunday |
+|---|---|---|---|---|
+| Kražių st. → Operos ir baleto teatras | 4, 10, 17, 43 | 139 s | **+131 s** | +5 s |
+| Jono Kazlausko st. → Pramogų arena | 8 routes | 164 s | +61 s | +10 s |
+| Lvivo st. → Rinktinės st. | 9, 12, 19 | 150 s | **+189 s** | +53 s |
+| Čiurlionio st. → Tumo-Vaižganto st. | 6 routes | 183 s | +64 s | +24 s |
+| Tumo-Vaižganto st. → Žaliasis tiltas | 3G | 292 s | **+167 s** | +29 s |
+| Lvivo st. → Tuskulėnų rimties parkas | 4G | 254 s | **+177 s** | +54 s |
+
+**Four of the six are within about 900 m of Žaliasis tiltas.** The evening collapse is
+not a property of the network. It is the Neris crossings and the Šnipiškės approach.
+
+The Sunday column is the argument. These are not slow roads. They are roads that fail
+under commuter load: Kražių into the Opera costs a bus 2 min 11 s on a Monday and 5
+seconds on a Sunday, on the same 409 m, against the same timetable.
+
+It is a corridor plus a long tail: the ten worst segments carry 13.7% of all time lost,
+the worst 100 carry 46.6%, and you need about 400 to reach three quarters.
+
+### One expectation that did not survive
+
+Problem 6 in section 6 assumed the delay map conflates congestion with **scheduled
+recovery time at termini**. It does not, because there is barely any recovery time at
+termini to conflate. Segments that give time back sit at median position **0.48**
+through their trip at a median scheduled speed of **18.8 km/h**; segments that lose it
+sit at 0.47 and 18.1 km/h. The padding in this timetable is spread evenly along the
+route rather than parked at the end. That is a finding in its own right, and it means
+the "time regained" cells on the old grid are mostly real recovery from real delay, not
+an artefact of the schedule.
+
+### Files
+
+`segments.py` does the join, `validate_seg.py` does the geometric check, `runseg.sh`
+runs one pass per day. Output is `segments-YYYY-MM-DD.json`, one record per
+route-direction-stop-pair with scheduled duration, mean seconds lost, and an hourly
+breakdown. The report is `segments-report.html`.
