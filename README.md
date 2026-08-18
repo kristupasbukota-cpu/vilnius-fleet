@@ -64,7 +64,7 @@ that means "on time".
 
 ## What the first ten hours showed
 
-Collected Sat 15 Aug 2026 (Zoline, a public holiday), 03:03 to 13:19, 1231 snapshots, 99.9% coverage.
+Collected Sat 15 Aug 2026 (Žolinė, a public holiday), 03:03 to 13:19, 1231 snapshots, 99.9% coverage.
 
 **Vilnius stops completely for 18.5 minutes.** From 03:57:25 to 04:15:25 the feed returns a
 valid CSV header and zero rows, across 37 consecutive snapshots. Not a dropout. The last
