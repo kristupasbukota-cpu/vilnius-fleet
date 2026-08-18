@@ -1,6 +1,6 @@
 # How late is Vilnius? State of play
 
-Written 18 August 2026, first at 01:15 Vilnius time and revised at 16:15, four days in.
+Written 18 August 2026, first at 01:15 Vilnius time and revised at 22:00, four days in.
 
 ---
 
@@ -172,8 +172,7 @@ Not optional, and none of it needs you.
   yours switched on.
 - **Re-download the GTFS feed weekly** and keep the old ones. The timetable is the thing
   we are measuring against; a stale copy quietly corrupts every comparison.
-- **Watchdog.** If the feed goes quiet for 10 minutes, or the disk passes 80%, say so.
-  Right now a silent failure stays silent until somebody looks.
+- ~~**Watchdog.**~~ **Done. See section 10.**
 
 ### Tier 2: open the fields we already have
 
@@ -386,3 +385,103 @@ an artefact of the schedule.
 runs one pass per day. Output is `segments-YYYY-MM-DD.json`, one record per
 route-direction-stop-pair with scheduled duration, mean seconds lost, and an hourly
 breakdown. The report is `segments-report.html`.
+
+
+---
+
+## 10. The watchdog
+
+Done on 18 August. The design problem is not the checking, it is who does the telling.
+
+### Why the alarm is not on the box
+
+On 18 August this machine stopped executing userspace for 48 minutes. Anything
+installed on it to report that would have frozen alongside everything else. A
+watchdog that lives on the thing it watches cannot report the thing being dead.
+
+So the box never sends alarms. It sends a **heartbeat**, every 15 minutes, to a
+separate `status` branch on GitHub, using the deploy key that already exists.
+A scheduled GitHub Action watches for that heartbeat to stop and opens an issue,
+which GitHub emails to the repository owner. Silence is the signal, and silence is
+the one thing a dead machine still produces reliably.
+
+```
+  the box                     GitHub                      inbox
+  ───────                     ──────                      ─────
+  watchdog.py                 status branch
+  every 15 min   ──push──▶    one commit,      ──────▶     issue opened when the
+  8 checks                    force-updated                heartbeat stops or the
+  1 permitted action                                       box reports trouble
+                              Actions, hourly at :17
+```
+
+No token, address or password is configured anywhere. The Action uses its own
+built-in credentials and GitHub's existing notification settings.
+
+### The thresholds are measured
+
+A watchdog that cries at three in the morning gets muted, and a muted watchdog is
+worse than none. So the quiet threshold came from the archive rather than from
+taste. Across 23,043 snapshots:
+
+| | gap between consecutive snapshots |
+|---|---|
+| median | **10.0 s** |
+| p99 | 30.0 s |
+| worst in any hour 00:00-05:00 | 42 s |
+| gaps over 300 s | 42, all belonging to known outages |
+
+There is no overnight quiet period: the feed keeps changing even when the fleet is
+nearly parked. So **300 s of silence means something is wrong**, with a wide margin
+and no seasonal false alarms.
+
+### What it checks
+
+Snapshot age. Whether the collector process is still logging, which is what
+separates "the city's feed is refusing us", where the collector correctly backs off
+and must be left alone, from "our process has hung", which we can fix. Row count,
+because a feed returning an error page has a shape nothing else would notice.
+Whether the nightly actually produced output. Whether the publish repository is
+ahead of GitHub. Memory headroom, disk, and the age of the GTFS timetable.
+
+### What it may do
+
+One thing: if the collector has hung, restart it, at most once an hour. It will
+never reboot the box, restart the summariser, delete anything or install anything.
+Those are the actions that have hurt this machine, not helped it.
+
+It runs under the tightest leash on the box: `CPUQuota=10%`, `MemoryMax=96M`,
+`MemorySwapMax=0`, idle IO, `Nice=19`. A watchdog capable of taking the machine
+down would be worse than none, and here that is not hypothetical.
+
+### It was tested by breaking something
+
+Not by inspection. The collector was stopped at 18:45:26 UTC and left down.
+
+```
+18:53:47  alarm  snaps=23079 age=498s  [collector_hung] [collector_down] [restarted]
+18:53:57  collector writing again
+18:54:56  ok     snaps=23086 age=6s
+```
+
+The alarm state reached GitHub with full detail and was read back from a third
+machine with no connection to either the box or the laptop. The restart stamp was
+written, so a second restart inside the hour would have been suppressed rather than
+looped on. With the timer at 15 minutes, worst-case recovery from a hung collector
+is about 20 minutes, unattended.
+
+The Action's own logic was tested separately against mocked API responses, across
+all seven paths: healthy, healthy-with-an-issue-open (it closes it), stale
+heartbeat, box-reports-trouble, still-failing-inside-the-quiet-window, still-failing
+-past-it, and no-heartbeat-branch-at-all.
+
+The 8.5 minute hole the test left in the box's archive was backfilled from the
+laptop, and `dedupe2.py` then removed exactly the 10 overlapping copies at the seam
+on its own.
+
+### Maintenance note
+
+The watchdog will restart a collector that has been deliberately stopped, five
+minutes later. Before doing maintenance on the collector, stop the timer first:
+
+    sudo systemctl stop vilnius-watchdog.timer
