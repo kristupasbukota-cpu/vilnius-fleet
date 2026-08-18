@@ -59,6 +59,12 @@ done
 # The per-day segment files, gzipped. Uncompressed they are about 3.5 MB a night,
 # which git would carry forever; compressed they are 800 KB and still readable with
 # one command.
+# The report and the data behind it. Gzipped because git keeps every version of
+# every blob forever and the uncompressed pair is about 280 KB a night.
+mkdir -p "$PUB/report"
+[ -f "$SRC/segments-report.html" ] && cp -f "$SRC/segments-report.html" "$PUB/report/segments-report.html"
+[ -f "$SRC/segdata.json" ] && gzip -9 -c "$SRC/segdata.json" > "$PUB/report/segdata.json.gz"
+
 mkdir -p "$PUB/segments"
 for f in "$SRC"/segments-*.json; do
   [ -f "$f" ] && gzip -9 -c "$f" > "$PUB/segments/$(basename "$f").gz"
