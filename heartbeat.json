@@ -1,0 +1,27 @@
+{
+ "utc": "2026-10-03T23:49:04+00:00",
+ "state": "warn",
+ "checks": [
+  {
+   "level": "warn",
+   "code": "gtfs_unchecked",
+   "detail": "the timetable has not been checked for 7.0 days; no error recorded"
+  }
+ ],
+ "snapshots": 416561,
+ "newest": "20261003T234503Z.csv.gz",
+ "newest_age_s": 7,
+ "rows_last": 78,
+ "empty_minutes": 0,
+ "feed_static": false,
+ "collector": "active",
+ "mem_available_mb": 314,
+ "disk_used_pct": 18,
+ "summary_age_h": 23.4,
+ "gtfs_checked_days_ago": 7.0,
+ "gtfs_match_pct": 99.4,
+ "gtfs_versions": 42,
+ "unpushed": false,
+ "uptime": "up 6 weeks, 4 days, 12 hours, 23 minutes",
+ "action": null
+}

@@ -1,0 +1,902 @@
+[
+ {
+  "utc": "2026-10-02T21:16:03+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 5.9 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-02T21:31:09+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 5.9 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-02T21:46:49+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 5.9 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-02T22:01:41+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 5.9 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-02T22:17:19+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 5.9 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-02T22:32:20+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 5.9 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-02T22:47:37+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.0 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-02T23:03:07+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.0 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-02T23:18:31+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.0 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-02T23:34:17+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.0 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-02T23:49:21+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.0 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T00:04:45+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.0 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T00:19:36+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.0 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T00:34:58+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.0 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T00:50:11+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.0 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T01:05:39+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.1 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T01:20:56+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.1 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T01:36:04+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.1 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T01:51:12+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.1 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T02:06:30+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.1 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T02:21:53+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.1 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T02:37:17+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.1 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T02:52:34+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.1 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T03:07:46+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.1 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T03:23:18+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.2 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T03:38:44+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.2 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T03:54:14+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.2 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T04:09:38+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.2 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T04:24:51+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.2 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T04:40:16+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.2 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T04:55:36+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.2 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T05:10:39+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.2 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T05:25:57+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.2 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T05:41:12+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.2 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T05:56:32+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.3 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T06:11:48+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.3 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T06:27:21+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.3 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T06:42:48+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.3 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T06:57:47+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.3 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T07:13:08+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.3 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T07:28:17+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.3 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T07:43:40+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.3 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T07:58:47+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.3 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T08:14:19+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.4 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T08:29:38+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.4 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T08:45:07+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.4 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T09:00:30+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.4 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T09:15:33+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.4 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T09:30:56+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.4 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T09:46:23+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.4 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T10:01:35+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.4 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T10:16:45+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.4 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T10:32:05+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.4 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T10:47:23+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.5 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T11:02:52+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.5 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T11:48:52+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.5 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T12:04:25+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.5 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T12:19:56+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.5 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T12:34:51+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.5 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T12:50:27+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.5 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T13:06:02+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.6 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T13:21:32+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.6 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T13:36:56+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.6 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T13:51:56+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.6 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T14:07:37+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.6 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T14:22:42+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.6 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T14:37:48+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.6 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T14:53:08+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.6 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T15:08:36+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.6 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T15:23:52+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.7 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T15:39:19+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.7 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T15:54:51+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.7 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T16:10:17+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.7 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T16:25:33+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.7 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T16:40:41+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.7 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T16:55:55+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.7 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T17:11:25+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.7 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T17:26:51+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.7 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T17:42:30+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.7 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T18:12:58+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.8 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T18:28:26+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.8 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T18:58:47+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.8 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T19:13:49+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.8 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T19:44:01+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.8 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T19:59:15+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.8 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T20:14:39+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.9 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T20:29:59+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.9 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T20:45:32+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.9 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T21:01:02+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.9 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T21:16:16+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.9 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T21:31:25+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.9 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T21:46:27+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.9 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T22:01:43+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.9 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T22:16:59+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.9 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T22:32:32+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 6.9 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T22:47:27+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 7.0 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T23:02:41+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 7.0 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T23:17:55+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 7.0 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T23:33:28+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 7.0 days; no error recorded",
+  "action": null
+ },
+ {
+  "utc": "2026-10-03T23:49:04+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_unchecked"
+  ],
+  "detail": "the timetable has not been checked for 7.0 days; no error recorded",
+  "action": null
+ }
+]
