@@ -1,0 +1,28 @@
+{
+ "utc": "2026-11-07T15:18:36+00:00",
+ "state": "ok",
+ "checks": [
+  {
+   "level": "ok",
+   "code": "all_clear",
+   "detail": "every check passed"
+  }
+ ],
+ "snapshots": 710815,
+ "newest": "20261107T151829Z.csv.gz",
+ "newest_age_s": 0,
+ "rows_last": 378,
+ "empty_minutes": 0,
+ "feed_static": false,
+ "collector": "active",
+ "mem_available_mb": 427,
+ "disk_used_pct": 25,
+ "summary_age_h": 14.9,
+ "gtfs_checked_days_ago": 0.6,
+ "gtfs_match_pct": 97.4,
+ "gtfs_versions": 72,
+ "unpushed": false,
+ "github_ahead": false,
+ "uptime": "up 6 days, 1 hour, 21 minutes",
+ "action": null
+}
