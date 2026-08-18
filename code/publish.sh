@@ -72,6 +72,26 @@ git config pack.deltaCacheSize 16m
 git config core.compression 1
 git config core.bigFileThreshold 512k
 
+# If somebody has edited the repository on GitHub, adopt their version of the prose
+# before overwriting it. Generated files stay ours; README.md and STATE-OF-PLAY.md
+# are theirs the moment they touch them.
+git fetch -q origin main 2>/dev/null
+if [ -n "$(git log --oneline HEAD..origin/main 2>/dev/null)" ]; then
+  echo "remote has moved, adopting its prose"
+  for f in README.md STATE-OF-PLAY.md; do
+    if git cat-file -e "origin/main:$f" 2>/dev/null; then
+      git show "origin/main:$f" > "$SRC/$f" && cp -f "$SRC/$f" "$PUB/$f"
+    fi
+  done
+  git reset -q --hard origin/main
+  # the reset threw away this run's generated files; put them back
+  for f in arc.json baseline.json delaygrid.json framelist.txt; do
+    [ -f "$SRC/$f" ] && cp -f "$SRC/$f" "$PUB/summaries/$f"
+  done
+  cp -f "$SRC/README.md" "$PUB/README.md" 2>/dev/null
+  cp -f "$SRC/STATE-OF-PLAY.md" "$PUB/STATE-OF-PLAY.md" 2>/dev/null
+fi
+
 git add -A
 if git diff --cached --quiet; then
   echo "nothing changed, not pushing"
@@ -79,5 +99,9 @@ if git diff --cached --quiet; then
 fi
 N=$(python3 -c "import json;print(json.load(open('status.json'))['snapshots'])" 2>/dev/null || echo "?")
 git commit -q -m "summaries $(date -u +%Y-%m-%d\ %H:%M) UTC, $N snapshots collected"
-git push -q origin main 2>&1 | tail -3
-echo "pushed: $(git rev-parse --short HEAD)  $(git log -1 --format=%s)"
+if git push -q origin main 2>&1 | tail -3; then
+  echo "pushed: $(git rev-parse --short HEAD)  $(git log -1 --format=%s)"
+else
+  echo "PUSH FAILED, commit $(git rev-parse --short HEAD) is local only" >&2
+  exit 1
+fi
