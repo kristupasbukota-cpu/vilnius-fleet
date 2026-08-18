@@ -1,0 +1,12 @@
+[
+ {
+  "utc": "2026-08-19T01:04:03+00:00",
+  "state": "alarm",
+  "codes": [
+   "snapshots_stale",
+   "feed_shape"
+  ],
+  "detail": "no snapshot for 404s; 0 rows",
+  "action": null
+ }
+]

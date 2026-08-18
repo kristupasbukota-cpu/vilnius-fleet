@@ -1,0 +1,27 @@
+{
+ "utc": "2026-08-22T17:27:45+00:00",
+ "state": "ok",
+ "checks": [
+  {
+   "level": "ok",
+   "code": "all_clear",
+   "detail": "every check passed"
+  }
+ ],
+ "snapshots": 56695,
+ "newest": "20260822T172735Z.csv.gz",
+ "newest_age_s": 5,
+ "rows_last": 344,
+ "empty_minutes": 0,
+ "feed_static": false,
+ "collector": "active",
+ "mem_available_mb": 510,
+ "disk_used_pct": 9,
+ "summary_age_h": 17.1,
+ "gtfs_checked_days_ago": 0.7,
+ "gtfs_match_pct": 86.5,
+ "gtfs_versions": 6,
+ "unpushed": false,
+ "uptime": "up 4 days, 6 hours, 2 minutes",
+ "action": null
+}
