@@ -1,6 +1,6 @@
 # How late is Vilnius? State of play
 
-Written 18 August 2026, 01:15 Vilnius time, three days into the project.
+Written 18 August 2026, first at 01:15 Vilnius time and revised at 14:45, four days in.
 
 ---
 
@@ -119,14 +119,18 @@ dropped. The day chart was drawing straight lines through 13 hours of missing da
 ## 5. Where it runs now
 
 ```
-Oracle Cloud, Milan            GitHub or similar          this session
-VM.Standard.E2.1.Micro    →    (not built yet)      →     rebuilds the
-1/8 OCPU, 1 GB, 83 GB disk                                 visualization
+Oracle Cloud, Milan            github.com/                anywhere
+VM.Standard.E2.1.Micro    →    kristupasbukota-cpu/  →    rebuilds the
+1/8 OCPU, 1 GB, 83 GB disk     vilnius-fleet              visualization
 always free
 
 collect.py under systemd, restarts on crash and on reboot (both proved)
-summarize.py on a nightly timer at 00:20 UTC
+summarize.py then publish.sh on a nightly timer at 00:20 UTC
 ```
+
+The push is over an SSH deploy key generated on the box itself, so no token was ever
+typed anywhere. Verified end to end by cloning the repository from a third machine
+with neither the box nor the laptop involved.
 
 The Mac still collects in parallel. That is deliberate and temporary: two independent
 machines watching one feed is the cheapest correctness check available, and once they
@@ -138,11 +142,10 @@ agree over the overlap the Mac stops.
 
 Ordered by how soon it bites.
 
-1. **The summariser will run out of memory in about eight days.** Measured, not guessed:
-   it holds every headway reading in a list, 2.7 million a day at 42.7 bytes each, about
-   110 MB a day on a machine with 1 GB.
-2. **Rebuilding the visualization still needs the Mac awake.** The collecting no longer
-   does, but the publishing path does not exist yet.
+1. ~~The summariser will run out of memory in about eight days.~~ **Fixed.** Rewritten
+   as a running tally with a checkpoint. 386 snapshots in 20 seconds, 68 MB peak, and
+   the cost does not grow with the size of the archive.
+2. ~~Rebuilding the visualization still needs the Mac awake.~~ **Fixed.** See section 8.
 3. **One weekday.** Every claim about working days rests on a single Monday, with a
    4.5 hour hole in the middle of it.
 4. **13 hours of the weekend is missing**, across 45 gaps, from wifi dropouts on the
@@ -161,10 +164,10 @@ Ordered by how soon it bites.
 
 Not optional, and none of it needs you.
 
-- **Rewrite the summariser as a running tally.** Histogram buckets instead of lists, a
+- ~~**Rewrite the summariser as a running tally.**~~ Done. Histogram buckets instead of lists, a
   checkpoint instead of a full rescan. Turns a job that dies in eight days into one that
   takes 30 seconds a night forever.
-- **Publish from the box.** A small repository the machine pushes summaries and sampled
+- ~~**Publish from the box.**~~ Done. A small repository the machine pushes summaries and sampled
   frames to each night, so the visualization can be rebuilt from anywhere with nothing of
   yours switched on.
 - **Re-download the GTFS feed weekly** and keep the old ones. The timetable is the thing
@@ -214,3 +217,80 @@ back to Saturday.
 Tier 1 first, because in eight days it stops being optional. Then **the GTFS join**,
 which is the single change that would most improve what this project can say. Everything
 else is worth doing and nothing else changes the questions we can ask.
+
+---
+
+## 8. The 18 August outage, and what actually caused it
+
+Between **10:36 and 11:24 UTC the box stopped executing userspace entirely** for 48
+minutes. Not slow: stopped. SSH accepted the TCP connection and never sent its
+banner, the collector wrote nothing, and journald logged one line in the middle of
+the whole thing.
+
+I assumed it was my fault, because I had just wired the nightly publish job in and
+started it by hand. It was not. The journal from that boot says:
+
+```
+kernel: oom-kill: constraint=CONSTRAINT_NONE, global_oom,
+        task_memcg=/system.slice/dnf-makecache.service, task=dnf, pid=7429
+kernel: Out of memory: Killed process 7429 (dnf) anon-rss:722748kB
+```
+
+`dnf-makecache` is a stock Oracle Linux timer that refreshes package metadata. It
+fired on its own schedule, with no memory limit of any kind, and grew to **722 MB on
+a 946 MB machine**. Everything else went into reclaim and stayed there until the
+global OOM killer finally got enough CPU to fire, at 11:24, which is the exact minute
+the machine came back.
+
+The nightly job I was blamed on had finished cleanly nine minutes earlier: 386
+snapshots summarised, pushed to GitHub, **5.7 seconds of CPU and 68 MB peak**.
+
+This also re-explains the two earlier freezes. Both were `dnf`, run by me. Once I
+started wrapping my own `dnf` calls in `systemd-run` with a memory cap they were
+cleanly OOM-killed inside their own cgroup and the machine stayed up. This third one
+was not capped, because I never started it.
+
+### What changed
+
+| Change | Why |
+|---|---|
+| `dnf-makecache.timer` and `.service` masked | The proven cause. It has no business running unattended on a 946 MB box. |
+| `/usr/local/bin/dnf` wrapper | Any `dnf` run by hand now execs inside `systemd-run --scope -p MemoryMax=200M -p MemorySwapMax=0`. It dies instead of the machine. |
+| PCP disabled (`pmcd`, `pmlogger`, `pmie`, 6 timers) | 50 MB resident and four timers a day of performance metrics nobody reads. |
+| `mlocate-updatedb.timer` disabled | It indexed 22,000 snapshot files every night to build a database nothing queries. |
+| `ksplice-agent` capped at 200 MB | The only remaining unattended job that could grow. |
+| Nightly job: `CPUQuota=25%`, `MemoryHigh=180M`, `MemoryMax=260M`, `MemorySwapMax=0`, idle IO, 15 min timeout | The previous values, 350 MB and 45%, were both *looser than the hardware*. A 45% quota on an eighth of a core never binds on anything. Measured, the job needs 5.7 s of CPU and 68 MB. |
+| Collector drop-in: `Nice=-5`, `CPUWeight=1000`, `IOWeight=1000`, `MemoryLow=120M` | The one process on this box that must not miss a beat now outranks everything else, and the kernel reclaims from anything else first. |
+| `publish.sh`: `du` walk removed, git told never to gc or repack, one thread, 16 MB window | The `du` stat-walked 22,000 files nightly to report a number `df` already gives. Git's defaults assume a laptop; an automatic repack here is exactly the shape of job that has taken this box down. |
+
+Four timers remain: `logrotate`, `systemd-tmpfiles-clean`, `ksplice-agent` (capped)
+and our own summariser.
+
+### The publishing path is done
+
+The box now pushes to `github.com/kristupasbukota-cpu/vilnius-fleet` at the end of
+every nightly summarise. Verified by cloning the repository from a third machine
+with no connection to either the box or the laptop:
+
+```
+1a89493 summaries 2026-08-18 11:40 UTC, 22170 snapshots collected
+  README.md  STATE-OF-PLAY.md  status.json
+  code/  gtfs/gtfs.zip
+  summaries/{arc,baseline,delaygrid}.json  summaries/framelist.txt
+```
+
+`status.json` is regenerated on every push, so the health of the collector is
+readable without an SSH session.
+
+### The seam in the data
+
+The box's own archive has snapshots for 10:37:05 to 11:26:11 only because they were
+copied across from the Mac afterwards. Backfilling that hole took two goes: the first
+rsync pattern was wider than the hole and left twelve snapshots a minute where the
+collector writes six, which would have double-weighted those minutes in both the arc
+and the headway tally. Corrected using `ctime`, which `rsync -a` does not preserve
+and therefore distinguishes a copied file from a collected one. Every minute across
+the seam now holds exactly six.
+
+The Mac collector did not miss a single snapshot throughout. That is the second time
+running two independent collectors has paid for itself.

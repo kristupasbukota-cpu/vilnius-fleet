@@ -49,7 +49,7 @@ for f in arc.json baseline.json delaygrid.json framelist.txt; do
   [ -f "$SRC/$f" ] && cp -f "$SRC/$f" "$PUB/summaries/$f"
 done
 for f in collect.py summarize.py blocks.py build_map.py build_network.py template.html \
-         cloud_setup.sh status.sh publish.sh findrpm.py; do
+         cloud_setup.sh status.sh publish.sh findrpm.py harden.sh dedupe.py; do
   [ -f "$SRC/$f" ] && cp -f "$SRC/$f" "$PUB/code/$f"
 done
 [ -f "$SRC/README.md" ] && cp -f "$SRC/README.md" "$PUB/README.md"
