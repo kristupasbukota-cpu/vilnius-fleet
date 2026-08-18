@@ -25,7 +25,10 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/github-script@v7
+      # v8 is the first major that declares node24. v7 declares node20, which
+      # GitHub deprecated in September 2025 and now force-runs on node24 anyway,
+      # with a warning on every single run. Same API surface, one character.
+      - uses: actions/github-script@v8
         with:
           script: |
             const STALE_MIN = 90;      // three missed heartbeats, plus slack
