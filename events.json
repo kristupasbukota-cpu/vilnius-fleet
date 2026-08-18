@@ -1,0 +1,309 @@
+[
+ {
+  "utc": "2026-08-19T01:04:03+00:00",
+  "state": "alarm",
+  "codes": [
+   "snapshots_stale",
+   "feed_shape"
+  ],
+  "detail": "no snapshot for 404s; 0 rows",
+  "action": null
+ },
+ {
+  "utc": "2026-08-24T23:46:16+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_match"
+  ],
+  "detail": "80.0% of running vehicles resolve to a known trip, below the 89% floor seen across a normal day; the timetable may be drifting",
+  "action": null
+ },
+ {
+  "utc": "2026-08-25T00:01:46+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_match"
+  ],
+  "detail": "80.0% of running vehicles resolve to a known trip, below the 89% floor seen across a normal day; the timetable may be drifting",
+  "action": null
+ },
+ {
+  "utc": "2026-08-25T00:17:16+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_match"
+  ],
+  "detail": "80.0% of running vehicles resolve to a known trip, below the 89% floor seen across a normal day; the timetable may be drifting",
+  "action": null
+ },
+ {
+  "utc": "2026-08-25T00:32:47+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_match"
+  ],
+  "detail": "80.0% of running vehicles resolve to a known trip, below the 89% floor seen across a normal day; the timetable may be drifting",
+  "action": null
+ },
+ {
+  "utc": "2026-08-25T00:48:16+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_match"
+  ],
+  "detail": "80.0% of running vehicles resolve to a known trip, below the 89% floor seen across a normal day; the timetable may be drifting",
+  "action": null
+ },
+ {
+  "utc": "2026-08-25T01:03:46+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_match"
+  ],
+  "detail": "80.0% of running vehicles resolve to a known trip, below the 89% floor seen across a normal day; the timetable may be drifting",
+  "action": null
+ },
+ {
+  "utc": "2026-08-25T01:19:06+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_match"
+  ],
+  "detail": "80.0% of running vehicles resolve to a known trip, below the 89% floor seen across a normal day; the timetable may be drifting",
+  "action": null
+ },
+ {
+  "utc": "2026-08-25T01:34:16+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_match"
+  ],
+  "detail": "80.0% of running vehicles resolve to a known trip, below the 89% floor seen across a normal day; the timetable may be drifting",
+  "action": null
+ },
+ {
+  "utc": "2026-08-25T01:49:46+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_match"
+  ],
+  "detail": "80.0% of running vehicles resolve to a known trip, below the 89% floor seen across a normal day; the timetable may be drifting",
+  "action": null
+ },
+ {
+  "utc": "2026-08-25T02:05:16+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_match"
+  ],
+  "detail": "80.0% of running vehicles resolve to a known trip, below the 89% floor seen across a normal day; the timetable may be drifting",
+  "action": null
+ },
+ {
+  "utc": "2026-08-25T02:20:46+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_match"
+  ],
+  "detail": "80.0% of running vehicles resolve to a known trip, below the 89% floor seen across a normal day; the timetable may be drifting",
+  "action": null
+ },
+ {
+  "utc": "2026-08-25T02:35:55+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_match"
+  ],
+  "detail": "80.0% of running vehicles resolve to a known trip, below the 89% floor seen across a normal day; the timetable may be drifting",
+  "action": null
+ },
+ {
+  "utc": "2026-08-25T02:51:16+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_match"
+  ],
+  "detail": "80.0% of running vehicles resolve to a known trip, below the 89% floor seen across a normal day; the timetable may be drifting",
+  "action": null
+ },
+ {
+  "utc": "2026-08-25T03:06:43+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_match"
+  ],
+  "detail": "80.0% of running vehicles resolve to a known trip, below the 89% floor seen across a normal day; the timetable may be drifting",
+  "action": null
+ },
+ {
+  "utc": "2026-08-25T03:22:06+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_match"
+  ],
+  "detail": "80.0% of running vehicles resolve to a known trip, below the 89% floor seen across a normal day; the timetable may be drifting",
+  "action": null
+ },
+ {
+  "utc": "2026-08-25T03:37:16+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_match"
+  ],
+  "detail": "80.0% of running vehicles resolve to a known trip, below the 89% floor seen across a normal day; the timetable may be drifting",
+  "action": null
+ },
+ {
+  "utc": "2026-08-25T03:52:46+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_match"
+  ],
+  "detail": "80.0% of running vehicles resolve to a known trip, below the 89% floor seen across a normal day; the timetable may be drifting",
+  "action": null
+ },
+ {
+  "utc": "2026-08-25T04:08:16+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_match"
+  ],
+  "detail": "80.0% of running vehicles resolve to a known trip, below the 89% floor seen across a normal day; the timetable may be drifting",
+  "action": null
+ },
+ {
+  "utc": "2026-08-25T04:23:46+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_match"
+  ],
+  "detail": "80.0% of running vehicles resolve to a known trip, below the 89% floor seen across a normal day; the timetable may be drifting",
+  "action": null
+ },
+ {
+  "utc": "2026-08-25T04:39:16+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_match"
+  ],
+  "detail": "80.0% of running vehicles resolve to a known trip, below the 89% floor seen across a normal day; the timetable may be drifting",
+  "action": null
+ },
+ {
+  "utc": "2026-08-25T04:54:36+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_match"
+  ],
+  "detail": "80.0% of running vehicles resolve to a known trip, below the 89% floor seen across a normal day; the timetable may be drifting",
+  "action": null
+ },
+ {
+  "utc": "2026-08-25T05:09:56+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_match"
+  ],
+  "detail": "80.0% of running vehicles resolve to a known trip, below the 89% floor seen across a normal day; the timetable may be drifting",
+  "action": null
+ },
+ {
+  "utc": "2026-08-25T05:25:06+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_match"
+  ],
+  "detail": "80.0% of running vehicles resolve to a known trip, below the 89% floor seen across a normal day; the timetable may be drifting",
+  "action": null
+ },
+ {
+  "utc": "2026-08-25T05:40:16+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_match"
+  ],
+  "detail": "80.0% of running vehicles resolve to a known trip, below the 89% floor seen across a normal day; the timetable may be drifting",
+  "action": null
+ },
+ {
+  "utc": "2026-08-25T05:55:46+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_match"
+  ],
+  "detail": "80.0% of running vehicles resolve to a known trip, below the 89% floor seen across a normal day; the timetable may be drifting",
+  "action": null
+ },
+ {
+  "utc": "2026-08-25T06:11:16+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_match"
+  ],
+  "detail": "80.0% of running vehicles resolve to a known trip, below the 89% floor seen across a normal day; the timetable may be drifting",
+  "action": null
+ },
+ {
+  "utc": "2026-08-25T06:26:46+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_match"
+  ],
+  "detail": "80.0% of running vehicles resolve to a known trip, below the 89% floor seen across a normal day; the timetable may be drifting",
+  "action": null
+ },
+ {
+  "utc": "2026-08-25T06:41:46+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_match"
+  ],
+  "detail": "80.0% of running vehicles resolve to a known trip, below the 89% floor seen across a normal day; the timetable may be drifting",
+  "action": null
+ },
+ {
+  "utc": "2026-08-25T06:57:16+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_match"
+  ],
+  "detail": "80.0% of running vehicles resolve to a known trip, below the 89% floor seen across a normal day; the timetable may be drifting",
+  "action": null
+ },
+ {
+  "utc": "2026-08-25T07:12:46+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_match"
+  ],
+  "detail": "80.0% of running vehicles resolve to a known trip, below the 89% floor seen across a normal day; the timetable may be drifting",
+  "action": null
+ },
+ {
+  "utc": "2026-08-25T07:27:57+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_match"
+  ],
+  "detail": "80.0% of running vehicles resolve to a known trip, below the 89% floor seen across a normal day; the timetable may be drifting",
+  "action": null
+ },
+ {
+  "utc": "2026-08-25T07:43:06+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_match"
+  ],
+  "detail": "80.0% of running vehicles resolve to a known trip, below the 89% floor seen across a normal day; the timetable may be drifting",
+  "action": null
+ },
+ {
+  "utc": "2026-08-25T07:58:16+00:00",
+  "state": "warn",
+  "codes": [
+   "gtfs_match"
+  ],
+  "detail": "80.0% of running vehicles resolve to a known trip, below the 89% floor seen across a normal day; the timetable may be drifting",
+  "action": null
+ }
+]
