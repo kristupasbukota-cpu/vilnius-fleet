@@ -56,6 +56,14 @@ done
 [ -f "$SRC/STATE-OF-PLAY.md" ] && cp -f "$SRC/STATE-OF-PLAY.md" "$PUB/STATE-OF-PLAY.md"
 [ -f "$SRC/gtfs.zip" ] && cp -f "$SRC/gtfs.zip" "$PUB/gtfs/gtfs.zip"
 
+# The per-day segment files, gzipped. Uncompressed they are about 3.5 MB a night,
+# which git would carry forever; compressed they are 800 KB and still readable with
+# one command.
+mkdir -p "$PUB/segments"
+for f in "$SRC"/segments-*.json; do
+  [ -f "$f" ] && gzip -9 -c "$f" > "$PUB/segments/$(basename "$f").gz"
+done
+
 cd "$PUB" || exit 1
 if [ ! -d .git ]; then
   git init -q -b main
