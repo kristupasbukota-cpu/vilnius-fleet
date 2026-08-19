@@ -54,7 +54,14 @@ for f in collect.py summarize.py blocks.py build_map.py build_network.py templat
 done
 [ -f "$SRC/README.md" ] && cp -f "$SRC/README.md" "$PUB/README.md"
 [ -f "$SRC/STATE-OF-PLAY.md" ] && cp -f "$SRC/STATE-OF-PLAY.md" "$PUB/STATE-OF-PLAY.md"
-[ -f "$SRC/gtfs.zip" ] && cp -f "$SRC/gtfs.zip" "$PUB/gtfs/gtfs.zip"
+# Every timetable version we have ever held. The city publishes only the present,
+# so once a version is gone it cannot be obtained again, and every retrospective
+# claim about a past month depends on that month's schedule. About 3 MB each, a
+# handful a year, which is cheap for data that is otherwise unrecoverable.
+for f in "$SRC"/gtfs*.zip; do
+  [ -f "$f" ] && cp -f "$f" "$PUB/gtfs/$(basename "$f")"
+done
+[ -f "$SRC/gtfs_state.json" ] && cp -f "$SRC/gtfs_state.json" "$PUB/gtfs/versions.json"
 
 # The per-day segment files, gzipped. Uncompressed they are about 3.5 MB a night,
 # which git would carry forever; compressed they are 800 KB and still readable with

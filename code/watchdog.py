@@ -60,7 +60,9 @@ EMPTY_OK_MIN = 45       # the city really does run no buses for a while before d
 NIGHTLY_MAX_H = 26      # the summariser runs at 00:20 UTC
 MEM_MIN_MB = 120        # below this the box is in the state it died in
 DISK_MAX_PCT = 80
-GTFS_MAX_DAYS = 7
+GTFS_CHECK_MAX_DAYS = 3   # how long without even LOOKING at the timetable is wrong
+GTFS_MATCH_WARN = 90.0    # % of running vehicles we can still resolve to a trip
+GTFS_MATCH_ALARM = 75.0
 RESTART_COOLDOWN = 3600  # never restart the collector more than once an hour
 
 DRY = "--dry" in sys.argv
@@ -200,14 +202,40 @@ disk_pct = round(100 * (1 - st.f_bavail / st.f_blocks))
 if disk_pct > DISK_MAX_PCT:
     add("warn", "disk", f"the filesystem is {disk_pct}% full")
 
-gtfs_days = None
-g = age_of(os.path.join(HERE, "gtfs.zip"))
-if g is not None:
-    gtfs_days = round(g / 86400, 1)
-    if gtfs_days > GTFS_MAX_DAYS:
-        add("warn", "gtfs_stale",
-            f"the timetable is {gtfs_days} days old and is what every "
-            f"lateness number is measured against")
+# The timetable. Its age is the wrong thing to watch: the refresher only stores a
+# copy when the content actually changes, so a city that publishes nothing for three
+# weeks would look like a fault. What matters is that we are still looking, and that
+# the vehicles actually running still resolve to trips we know about.
+gtfs = {}
+try:
+    gtfs = json.load(open(os.path.join(HERE, "gtfs_state.json")))
+except Exception:
+    pass
+check_days = match_pct = None
+if gtfs.get("last_check"):
+    try:
+        t = datetime.fromisoformat(gtfs["last_check"]).timestamp()
+        check_days = round((NOW - t) / 86400, 1)
+        if check_days > GTFS_CHECK_MAX_DAYS:
+            add("warn", "gtfs_unchecked",
+                f"the timetable has not been checked for {check_days} days; "
+                f"{gtfs.get('last_error', 'no error recorded')}")
+    except Exception:
+        pass
+elif os.path.exists(os.path.join(HERE, "refresh_gtfs.py")):
+    add("warn", "gtfs_unchecked", "the timetable has never been checked")
+
+m = gtfs.get("match")
+if m and m.get("rate") is not None:
+    match_pct = m["rate"]
+    if match_pct < GTFS_MATCH_ALARM:
+        add("alarm", "gtfs_match",
+            f"only {match_pct}% of running vehicles resolve to a known trip "
+            f"({m['matched']}/{m['vehicles_with_trip']}); the timetable join is failing")
+    elif match_pct < GTFS_MATCH_WARN:
+        add("warn", "gtfs_match",
+            f"{match_pct}% of running vehicles resolve to a known trip, down from "
+            f"the usual 98%; the timetable is drifting away from what is running")
 
 # ---------------------------------------------------------------- the one action
 
@@ -247,7 +275,10 @@ hb = {
     "mem_available_mb": mem_avail,
     "disk_used_pct": disk_pct,
     "summary_age_h": round(arc_age / 3600, 1) if arc_age else None,
-    "gtfs_age_days": gtfs_days,
+    "gtfs_checked_days_ago": check_days,
+    "gtfs_match_pct": match_pct,
+    # every timetable on disk, not just the ones this refresher installed
+    "gtfs_versions": len(glob.glob(os.path.join(HERE, "gtfs*.zip"))) or None,
     "unpushed": unpushed,
     "uptime": sh("uptime -p"),
     "action": restarted,
