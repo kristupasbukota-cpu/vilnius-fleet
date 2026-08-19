@@ -1,6 +1,6 @@
 # How late is Vilnius? State of play
 
-Written 18 August 2026, first at 01:15 Vilnius time and revised at 22:00, four days in.
+Written 18 August 2026, revised through 19 August, five days in.
 
 ---
 
@@ -150,8 +150,8 @@ Ordered by how soon it bites.
    4.5 hour hole in the middle of it.
 4. **13 hours of the weekend is missing**, across 45 gaps, from wifi dropouts on the
    laptop. Now shaded on the chart rather than hidden, but still absent.
-5. **The GTFS snapshot is going stale.** 6% of live vehicles already fail to match a
-   trip id. It is never re-downloaded.
+5. ~~The GTFS snapshot is going stale.~~ **Fixed, section 11.** It had in fact already
+   gone stale by the time this was written.
 6. **The delay map conflates two different things.** A terminus with built-in recovery
    time looks identical to a junction where traffic is kind. Both show as "time regained".
 7. **Eight fields and the entire timetable are collected and unread.**
@@ -170,8 +170,7 @@ Not optional, and none of it needs you.
 - ~~**Publish from the box.**~~ Done. A small repository the machine pushes summaries and sampled
   frames to each night, so the visualization can be rebuilt from anywhere with nothing of
   yours switched on.
-- **Re-download the GTFS feed weekly** and keep the old ones. The timetable is the thing
-  we are measuring against; a stale copy quietly corrupts every comparison.
+- ~~**Re-download the GTFS feed weekly** and keep the old ones.~~ **Done, section 11.**
 - ~~**Watchdog.**~~ **Done. See section 10.**
 
 ### Tier 2: open the fields we already have
@@ -485,3 +484,77 @@ The watchdog will restart a collector that has been deliberately stopped, five
 minutes later. Before doing maintenance on the collector, stop the timer first:
 
     sudo systemctl stop vilnius-watchdog.timer
+
+
+---
+
+## 11. The timetable refresh
+
+Done on 19 August, and it justified itself on the first run.
+
+### It was already stale
+
+The very first check found that the city had **republished since 17 August**: 19,531
+trips against the 19,292 we held, 384,425 stop times against 382,948, and one extra
+stop. We had been drifting for two days with no way to notice.
+
+### Watching the wrong thing
+
+The obvious design checks the file's age. That is wrong twice over. If the city does
+not republish for three weeks, an age check raises a false alarm every day of the
+third week, which is how a watchdog gets muted. And a fresh file is no guarantee the
+join works.
+
+The number that actually matters is the **match rate**: what fraction of the vehicles
+currently running resolve to a trip we know about. It is measured against a live
+snapshot on every check and it is now in the heartbeat. Today it is **98.2%**, 390 of
+397 vehicles, against 22,743 known trips across three versions. The watchdog warns
+below 90% and alarms below 75%. It also warns if three days pass without a *check*,
+which is the honest version of the staleness question.
+
+### It has to earn the right to be installed
+
+A truncated download or an error page replacing a good timetable would corrupt every
+number downstream, so a candidate must pass before it is allowed anywhere near
+`gtfs.zip`: at least 1 MB, opens as a zip, `testzip()` clean, contains all four files
+we read, more than 5,000 trips, 100,000 stop times and 500 stops. Each of those
+rejection paths was tested with a deliberately broken archive. Fail any and the
+download is discarded and the current timetable is untouched.
+
+### Stored only when it actually changed
+
+Zip files embed build timestamps, so comparing bytes is useless. The fingerprint is a
+hash of the archive directory, every member's name, size and CRC, sorted. Verified by
+repacking the same content with completely different timestamps and confirming the
+fingerprint did not move. Checking daily therefore costs 3 MB of traffic and no disk
+until the city actually publishes something.
+
+### Every version is kept, and now backed up
+
+The city publishes only the present. Once a version is gone it cannot be obtained
+again, and every retrospective claim about August depends on August's schedule. All
+three versions are now in the repository alongside a manifest, about 3 MB each.
+
+Rotation preserves the property the loaders depend on: a dash sorts before a dot, so
+`gtfs-20260814.zip` and `gtfs-20260817.zip` load first and `gtfs.zip` is always read
+last and wins.
+
+```
+gtfs-20260814.zip   21,825 trips   the copy this project started with
+gtfs-20260817.zip   19,292 trips   what the box was holding
+gtfs.zip            19,531 trips   current, installed 19 August
+```
+
+Re-running Tuesday's segment join with all three produced results **identical to the
+run before**, r = 1.0000 across all 3,215 segments. That is the right answer and worth
+stating: a newer timetable must not retroactively change a past day. The new trips are
+for service that had not run yet.
+
+### Where it runs
+
+Its own `vilnius-gtfs.timer`, daily at 23:40 UTC, forty minutes before the nightly
+analysis so a new timetable is in place before anything is measured against it.
+Deliberately not part of the nightly chain, which is otherwise entirely local work
+and should not be delayed by a slow server in Vilnius. Capped like everything else:
+`CPUQuota=10%`, `MemoryMax=96M`, `MemorySwapMax=0`, 180 second timeout. A full check
+takes one second.
