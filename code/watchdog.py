@@ -13,6 +13,15 @@ signal, which is the one thing a dead machine can still produce reliably.
 The heartbeat also carries what the box thinks of itself, so a machine that is
 alive but unhappy is just as visible as one that has gone quiet.
 
+One thing had to be learned rather than designed. Vilnius stops running buses at
+about 03:57 and starts again at about 04:15, and during that window the feed answers
+normally with a header and no vehicles. The collector stores one copy and correctly
+skips the rest as unchanged, so snapshots stop arriving for eighteen minutes and the
+row count is zero. The first version of this called that an alarm and would have done
+so every night, which is how a watchdog gets muted and stops being worth having. An
+empty feed is now read as what it is, the city saying there is nothing running, and
+only becomes an alarm if it lasts longer than any plausible service gap.
+
 Thresholds are measured, not guessed. Across 23,043 snapshots the gap between
 consecutive writes is a median of 10 s and a p99 of 30 s, with no quiet period
 overnight: the worst gap in any hour between midnight and 05:00 is 42 s. Every gap
@@ -37,7 +46,7 @@ STAMP = os.path.join(HERE, ".wd_last_restart")
 # The collector writes roughly six snapshots a minute and one log line a minute.
 SNAP_MAX_AGE = 300      # measured: no normal gap in the archive comes close
 LOG_MAX_AGE = 180       # three missed log lines means the loop itself has stopped
-ROWS_MIN = 20           # the feed carries 300 to 550 vehicles; 20 is a broken response
+EMPTY_OK_MIN = 45       # the city really does run no buses for a while before dawn
 NIGHTLY_MAX_H = 26      # the summariser runs at 00:20 UTC
 MEM_MIN_MB = 120        # below this the box is in the state it died in
 DISK_MAX_PCT = 80
@@ -82,17 +91,36 @@ clog_age = age_of(CLOG)
 tail = []
 try:
     with open(CLOG, "rb") as f:
-        f.seek(max(0, os.path.getsize(CLOG) - 4000))
-        tail = f.read().decode("utf-8", "replace").splitlines()[-20:]
+        # enough lines to see an hour and a half of a once-a-minute log, so a long
+        # empty stretch can be measured rather than merely noticed.
+        f.seek(max(0, os.path.getsize(CLOG) - 24000))
+        tail = f.read().decode("utf-8", "replace").splitlines()[-100:]
 except OSError:
     pass
 recent_fail = sum(1 for l in tail[-6:] if " FAIL " in l)
-rows_last = None
-for l in reversed(tail):
-    m = re.search(r"rows~(\d+)", l)
-    if m:
-        rows_last = int(m.group(1))
+
+ok_lines = [l for l in tail if " ok kept=" in l]
+rows_last = kept_last = dupes_last = None
+if ok_lines:
+    m = re.search(r"rows~(\d+)", ok_lines[-1])
+    rows_last = int(m.group(1)) if m else None
+    m = re.search(r"kept=(\d+)", ok_lines[-1])
+    kept_last = int(m.group(1)) if m else None
+    m = re.search(r"skipped_dupes=(\d+)", ok_lines[-1])
+    dupes_last = int(m.group(1)) if m else None
+
+# How many consecutive recent minutes reported no vehicles at all. This is the
+# difference between "the city is asleep" and "the feed is broken".
+empty_min = 0
+for l in reversed(ok_lines):
+    if re.search(r"rows~0\b", l):
+        empty_min += 1
+    else:
         break
+
+# The collector fetching happily and storing nothing because nothing changed. Not
+# staleness: the pipeline is working and the world is standing still.
+static = kept_last == 0 and (dupes_last or 0) > 0
 
 collector = sh("systemctl is-active vilnius-collector") or "unknown"
 stuck = False
@@ -108,6 +136,10 @@ elif snap_age > SNAP_MAX_AGE:
         add("warn", "feed_down",
             f"no snapshot for {snap_age:.0f}s, but the collector is still logging "
             f"and reporting {recent_fail} recent failures, so this is the feed")
+    elif static:
+        add("ok", "feed_static",
+            f"nothing stored for {snap_age:.0f}s because the feed has not changed; "
+            f"the collector is fetching and discarding duplicates as designed")
     else:
         add("warn", "snapshots_stale",
             f"no snapshot for {snap_age:.0f}s with no failures logged")
@@ -117,9 +149,15 @@ else:
 if collector != "active":
     add("alarm", "collector_down", f"systemd reports the collector {collector}")
 
-if rows_last is not None and rows_last < ROWS_MIN:
-    add("alarm", "feed_shape",
-        f"last response carried {rows_last} rows, expected several hundred")
+if rows_last == 0:
+    if empty_min > EMPTY_OK_MIN:
+        add("alarm", "feed_empty",
+            f"the feed has carried no vehicles for {empty_min} minutes, far longer "
+            f"than the pre-dawn gap in service, so this is not the city being quiet")
+    else:
+        add("ok", "service_stopped",
+            f"no vehicles in the feed for {empty_min} minute(s); before dawn this is "
+            f"the city having stopped rather than anything being wrong")
 
 arc_age = age_of(os.path.join(HERE, "arc.json"))
 if arc_age is None:
@@ -193,6 +231,8 @@ hb = {
     "newest": os.path.basename(newest) if newest else None,
     "newest_age_s": round(snap_age) if snap_age is not None else None,
     "rows_last": rows_last,
+    "empty_minutes": empty_min,
+    "feed_static": static,
     "collector": collector,
     "mem_available_mb": mem_avail,
     "disk_used_pct": disk_pct,
@@ -204,7 +244,8 @@ hb = {
 }
 
 line = (f"{hb['utc']} {state} snaps={len(snaps)} age={hb['newest_age_s']}s "
-        f"rows={rows_last} mem={mem_avail}MB disk={disk_pct}% "
+        f"rows={rows_last}{'/empty' + str(empty_min) if empty_min else ''} "
+        f"mem={mem_avail}MB disk={disk_pct}% "
         + " ".join(f"[{c['code']}]" for c in checks if c["level"] != "ok"))
 
 if DRY:
