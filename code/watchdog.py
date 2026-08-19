@@ -13,6 +13,15 @@ signal, which is the one thing a dead machine can still produce reliably.
 The heartbeat also carries what the box thinks of itself, so a machine that is
 alive but unhappy is just as visible as one that has gone quiet.
 
+That was not enough on its own. The first version reported only the state at the
+instant the watcher happened to look, and the watcher looks once an hour. On the
+night of 18 August the feed went wrong at 01:04 and was well again by 01:15, so by
+the time anything looked, everything was fine and the fault left no trace anywhere.
+A single force-updated commit has no history to inspect either. So alongside the
+heartbeat this now keeps a short log of every unhappy observation, and the watcher
+reports faults that already healed as well as ones still running. An outage nobody
+can see afterwards is the same as no monitoring at all.
+
 One thing had to be learned rather than designed. Vilnius stops running buses at
 about 03:57 and starts again at about 04:15, and during that window the feed answers
 normally with a header and no vehicles. The collector stores one copy and correctly
@@ -40,6 +49,7 @@ SNAPS = os.path.join(HERE, "snapshots")
 CLOG = os.path.join(HERE, "collector.log")
 WLOG = os.path.join(HERE, "watchdog.log")
 HB = os.path.join(HERE, "hb")
+EVENTS_KEEP = 100       # a fault log the hourly watcher can look back through
 PUB = os.path.join(HERE, "pub")
 STAMP = os.path.join(HERE, ".wd_last_restart")
 
@@ -243,6 +253,7 @@ hb = {
     "action": restarted,
 }
 
+
 line = (f"{hb['utc']} {state} snaps={len(snaps)} age={hb['newest_age_s']}s "
         f"rows={rows_last}{'/empty' + str(empty_min) if empty_min else ''} "
         f"mem={mem_avail}MB disk={disk_pct}% "
@@ -261,6 +272,26 @@ with open(WLOG, "a") as f:
 os.makedirs(HB, exist_ok=True)
 with open(os.path.join(HB, "heartbeat.json"), "w") as f:
     json.dump(hb, f, indent=1)
+
+# The fault log. Only unhappy observations go in, so a healthy month costs nothing,
+# and a fault that fixes itself between two hourly checks is still on the record.
+evpath = os.path.join(HB, "events.json")
+events = []
+try:
+    events = json.load(open(evpath))
+except Exception:
+    pass
+if state != "ok":
+    events.append({
+        "utc": hb["utc"], "state": state,
+        "codes": [c["code"] for c in checks if c["level"] != "ok"],
+        "detail": next((c["detail"] for c in checks if c["level"] == "alarm"),
+                       next((c["detail"] for c in checks if c["level"] == "warn"), "")),
+        "action": restarted,
+    })
+    events = events[-EVENTS_KEEP:]
+with open(evpath, "w") as f:
+    json.dump(events, f, indent=1)
 
 if os.path.isdir(os.path.join(HB, ".git")):
     sh(f"git -C {HB} add -A")

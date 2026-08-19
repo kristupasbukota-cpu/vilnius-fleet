@@ -33,10 +33,18 @@ jobs:
           script: |
             const STALE_MIN = 90;      // three missed heartbeats, plus slack
             const QUIET_H = 6;         // do not comment on an open issue more often
+            const LOOKBACK_H = 24;     // how far back a healed fault still counts
             const LABEL = 'heartbeat';
+            const MARK = 'last-event';
             const { owner, repo } = context.repo;
             const problems = [];
-            let hb = null, ageMin = null;
+            let hb = null, events = [], ageMin = null;
+
+            const read = async (path) => {
+              const f = await github.rest.repos.getContent(
+                { owner, repo, path, ref: 'status' });
+              return JSON.parse(Buffer.from(f.data.content, 'base64').toString());
+            };
 
             let branch = null;
             try {
@@ -59,9 +67,7 @@ jobs:
                   `rebooting, off the network, or the push is failing.`);
               }
               try {
-                const f = await github.rest.repos.getContent(
-                  { owner, repo, path: 'heartbeat.json', ref: 'status' });
-                hb = JSON.parse(Buffer.from(f.data.content, 'base64').toString());
+                hb = await read('heartbeat.json');
                 if (hb.state !== 'ok') {
                   problems.push(
                     `**The box reports \`${hb.state}\`.**\n\n` +
@@ -70,6 +76,10 @@ jobs:
               } catch (e) {
                 problems.push('Could not read `heartbeat.json`: ' + e.message);
               }
+              // The fault log, so something that broke and fixed itself between two
+              // of these hourly checks is still reported rather than lost.
+              try { events = await read('events.json'); }
+              catch (e) { if (e.status !== 404) core.warning('events.json: ' + e.message); }
             }
 
             const facts = hb ? [
@@ -77,23 +87,68 @@ jobs:
               '```json', JSON.stringify(hb, null, 1), '```', '</details>'
             ].join('\n') : '';
 
-            const existing = (await github.rest.issues.listForRepo(
-              { owner, repo, state: 'open', labels: LABEL })).data[0];
+            const all = (await github.rest.issues.listForRepo(
+              { owner, repo, state: 'all', labels: LABEL, per_page: 20 })).data;
+            const existing = all.find(i => i.state === 'open');
+
+            // Where the last report got to, kept in the issue body itself so this
+            // job can stay stateless.
+            let seen = 0;
+            for (const i of all) {
+              const m = (i.body || '').match(new RegExp('<!-- ' + MARK + ': ([^ ]+) -->'));
+              if (m) { seen = Math.max(seen, Date.parse(m[1]) || 0); break; }
+            }
+            const cutoff = Date.now() - LOOKBACK_H * 3600 * 1000;
+            const missed = events.filter(e => {
+              const t = Date.parse(e.utc);
+              return t > seen && t > cutoff;
+            });
+            const newest = events.length ? events[events.length - 1].utc : null;
+            const stamp = newest ? `\n\n<!-- ${MARK}: ${newest} -->` : '';
 
             if (problems.length === 0) {
               if (existing) {
                 await github.rest.issues.createComment({
                   owner, repo, issue_number: existing.number,
                   body: `Recovered. Heartbeat is ${ageMin} minutes old and every ` +
-                        `check passes.${facts}` });
+                        `check passes.${facts}${stamp}` });
                 await github.rest.issues.update(
                   { owner, repo, issue_number: existing.number, state: 'closed' });
+                core.info('closed the open issue');
+                return;
+              }
+              if (missed.length) {
+                // Healthy now, but something went wrong since anyone last looked.
+                // Raised so it reaches a notification, and closed straight away so
+                // the issue list stays a list of things that still need attention.
+                const first = missed[0], last = missed[missed.length - 1];
+                const mins = Math.max(1, Math.round(
+                  (Date.parse(last.utc) - Date.parse(first.utc)) / 60000));
+                const body =
+                  `The box had ${missed.length} unhappy observation` +
+                  `${missed.length > 1 ? 's' : ''} and recovered on its own before ` +
+                  `this check ran, so it is healthy now. Raising it anyway, because a ` +
+                  `fault nobody can see afterwards is the same as no monitoring.\n\n` +
+                  missed.map(e => `- **${e.utc}** \`${e.state}\` ` +
+                    `[${e.codes.join('] [')}] — ${e.detail}` +
+                    (e.action ? ` _(${e.action})_` : '')).join('\n') +
+                  `\n\nSpanning about ${mins} minute${mins > 1 ? 's' : ''}. ` +
+                  `Closed immediately; nothing needs doing.${facts}${stamp}`;
+                const made = await github.rest.issues.create({
+                  owner, repo, labels: [LABEL],
+                  title: `Vilnius collector recovered on its own (${missed.length} event` +
+                         `${missed.length > 1 ? 's' : ''})`,
+                  body });
+                await github.rest.issues.update(
+                  { owner, repo, issue_number: made.data.number, state: 'closed' });
+                core.warning(`reported ${missed.length} healed event(s)`);
+                return;
               }
               core.info(`healthy, heartbeat ${ageMin} min old`);
               return;
             }
 
-            const body = problems.join('\n\n') + facts;
+            const body = problems.join('\n\n') + facts + stamp;
 
             if (!existing) {
               await github.rest.issues.create({
