@@ -61,8 +61,12 @@ NIGHTLY_MAX_H = 26      # the summariser runs at 00:20 UTC
 MEM_MIN_MB = 120        # below this the box is in the state it died in
 DISK_MAX_PCT = 80
 GTFS_CHECK_MAX_DAYS = 3   # how long without even LOOKING at the timetable is wrong
-GTFS_MATCH_WARN = 90.0    # % of running vehicles we can still resolve to a trip
-GTFS_MATCH_ALARM = 75.0
+# Measured on 20 August with the timetables held constant, the resolvable fraction
+# ran from 89.4% at 09:00 to 100.0% at 07:00. A threshold set from a single midday
+# reading would fire on an ordinary Wednesday morning, so these sit below the
+# observed floor with room to spare.
+GTFS_MATCH_WARN = 85.0
+GTFS_MATCH_ALARM = 70.0
 RESTART_COOLDOWN = 3600  # never restart the collector more than once an hour
 
 DRY = "--dry" in sys.argv
@@ -234,8 +238,8 @@ if m and m.get("rate") is not None:
             f"({m['matched']}/{m['vehicles_with_trip']}); the timetable join is failing")
     elif match_pct < GTFS_MATCH_WARN:
         add("warn", "gtfs_match",
-            f"{match_pct}% of running vehicles resolve to a known trip, down from "
-            f"the usual 98%; the timetable is drifting away from what is running")
+            f"{match_pct}% of running vehicles resolve to a known trip, below the "
+            f"89% floor seen across a normal day; the timetable may be drifting")
 
 # ---------------------------------------------------------------- the one action
 

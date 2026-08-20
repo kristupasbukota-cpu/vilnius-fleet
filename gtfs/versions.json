@@ -23,9 +23,23 @@
    "replaced": "gtfs-20260819.zip"
   }
  ],
- "last_check": "2026-08-19T23:41:33+00:00",
+ "last_check": "2026-08-20T16:19:56+00:00",
  "last_change": "2026-08-19T23:41:33+00:00",
  "checks": 4,
  "failures": 0,
- "match": null
+ "match": {
+  "snapshot": "20260820T161820Z.csv.gz",
+  "vehicles_with_trip": 490,
+  "matched": 445,
+  "rate": 90.8,
+  "known_trips": 22915,
+  "measured_minutes_back": 2
+ },
+ "match_history": [
+  {
+   "utc": "2026-08-20T16:19:56+00:00",
+   "rate": 90.8,
+   "vehicles": 490
+  }
+ ]
 }
