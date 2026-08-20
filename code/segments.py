@@ -60,6 +60,12 @@ ONLYDAY = sys.argv[sys.argv.index("--day") + 1] if "--day" in sys.argv else None
 # afterwards. Two runs overlapping by a second is all it takes for one day's
 # results to end up in another day's file, and nothing about the file would say so.
 OUT = sys.argv[sys.argv.index("--out") + 1] if "--out" in sys.argv else "segments.json"
+# Optional per-traversal export. The aggregated table cannot answer whether lateness
+# compounds through a vehicle's shift, because by the time a segment is a mean it has
+# lost the identity of the vehicle and the trip that produced it. This keeps one row
+# per charged traversal so shift position, road and hour can be held against each
+# other. It is large, so it is off unless asked for.
+TRAV = sys.argv[sys.argv.index("--traversals") + 1] if "--traversals" in sys.argv else None
 
 
 def hms(s):
@@ -136,6 +142,7 @@ def main():
     print(f"gtfs: {len(trips)} trips, {len(sched)} with stop times, {len(stops)} stops "
           f"({time.time()-t_load:.0f}s)", flush=True)
 
+    primary_day = ONLYDAY or "all"
     files = sorted(glob.glob(os.path.join(HERE, "snapshots", "*.csv.gz")))[::STRIDE]
     if ONLYDAY:
         files = [f for f in files if _localday(f) == ONLYDAY]
@@ -150,6 +157,12 @@ def main():
     live = {}
     rows_seen = matched = stale = 0
     events = [0, 0, 0.0]     # intervals used, segments charged, seconds attributed
+    tw = None
+    if TRAV:
+        tf = open(os.path.join(HERE, TRAV), "w", newline="", encoding="utf-8")
+        tw = csv.writer(tf)
+        tw.writerow(["day", "vehicle", "trip_id", "route", "direction", "stop_from_id",
+                     "stop_to_id", "hour_local", "sched_s", "lost_s", "trip_start_min"])
 
     for n, path in enumerate(files):
         base = os.path.basename(path).split(".")[0]
@@ -253,6 +266,10 @@ def main():
                 e = seg.get(key)
                 if e is None:
                     e = seg[key] = [0.0, 0, 0, {}]
+                if tw is not None:
+                    tw.writerow([primary_day, veh, tid, trips[tid][0], trips[tid][1],
+                                 sids[k], sids[k + 1], hour, arrs[k + 1] - arrs[k],
+                                 round(share, 2), round(arrs[0] / 60.0, 1)])
                 e[0] += share
                 e[1] += 1
                 e[2] += arrs[k + 1] - arrs[k]
@@ -266,6 +283,10 @@ def main():
         if n % 2000 == 0:
             print(f"  {n}/{len(files)}  {local:%a %H:%M}  {len(seg)} segments  "
                   f"{time.time()-t0:.0f}s", flush=True)
+
+    if tw is not None:
+        tf.close()
+        print(f"per-traversal rows written to {TRAV}")
 
     out = []
     for key, (dd, cnt, sc, hrs) in seg.items():

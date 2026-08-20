@@ -123,6 +123,11 @@ def main():
             out.append({
                 "veh": veh,
                 "day": day,
+                # The GTFS trip id, kept so this table can be joined to the
+                # per-traversal segment export. Without it, shift position and road
+                # cannot be held against each other, which is the whole point of
+                # having both tables.
+                "trip_id": trip,
                 "trip": idx,                       # trip number in this vehicle's day
                 "of": len(items),                  # how many trips it did that day
                 "block": block,
