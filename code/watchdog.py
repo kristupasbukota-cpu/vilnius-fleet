@@ -67,6 +67,9 @@ GTFS_CHECK_MAX_DAYS = 3   # how long without even LOOKING at the timetable is wr
 # observed floor with room to spare.
 GTFS_MATCH_WARN = 85.0
 GTFS_MATCH_ALARM = 70.0
+# A match rate is a fraction, and a fraction off twenty vehicles is not evidence of
+# anything. Below this many vehicles the reading is reported but not judged.
+GTFS_MATCH_MIN_SAMPLE = 150
 RESTART_COOLDOWN = 3600  # never restart the collector more than once an hour
 
 DRY = "--dry" in sys.argv
@@ -232,14 +235,21 @@ elif os.path.exists(os.path.join(HERE, "refresh_gtfs.py")):
 m = gtfs.get("match")
 if m and m.get("rate") is not None:
     match_pct = m["rate"]
-    if match_pct < GTFS_MATCH_ALARM:
+    sample = m.get("vehicles_with_trip", 0)
+    if sample < GTFS_MATCH_MIN_SAMPLE:
+        # Measured in the small hours off a handful of night buses. Keep the number
+        # in the heartbeat so the history stays continuous, but do not raise anything
+        # on it: at this sample size a single vehicle swings it by whole points.
+        pass
+    elif match_pct < GTFS_MATCH_ALARM:
         add("alarm", "gtfs_match",
             f"only {match_pct}% of running vehicles resolve to a known trip "
-            f"({m['matched']}/{m['vehicles_with_trip']}); the timetable join is failing")
+            f"({m['matched']}/{sample}); the timetable join is failing")
     elif match_pct < GTFS_MATCH_WARN:
         add("warn", "gtfs_match",
-            f"{match_pct}% of running vehicles resolve to a known trip, below the "
-            f"89% floor seen across a normal day; the timetable may be drifting")
+            f"{match_pct}% of {sample} running vehicles resolve to a known trip, "
+            f"below the 89% floor seen across a normal day; "
+            f"the timetable may be drifting")
 
 # ---------------------------------------------------------------- the one action
 
