@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Where Vilnius loses its evening</title>
+<style>
+:root{
+  color-scheme: light;
+  --plane:#f9f9f7; --surface:#fcfcfb;
+  --ink:#0b0b0b; --ink2:#52514e; --muted:#898781;
+  --grid:#e1e0d9; --axis:#c3c2b7; --ring:rgba(11,11,11,.10);
+  --s1:#2a78d6; --s2:#eb6834;
+  --neutral:#f0efec;
+  --b1:#cde2fb;--b2:#9ec5f4;--b3:#6da7ec;--b4:#3987e5;--b5:#256abf;--b6:#184f95;--b7:#0d366b;
+  --r1:#fed4d0;--r2:#f8aaa3;--r3:#ee7e77;--r4:#e24a48;--r5:#bb3032;--r6:#911e22;--r7:#681014;
+  /* Which end of a ramp means "near zero". On paper that is the palest step; on a
+     dark surface it is the darkest one, or every ordinary segment glows brighter
+     than the bad ones and the whole scale reads backwards. */
+  --ramp:light;
+}
+@media (prefers-color-scheme: dark){ :root:where(:not([data-theme="light"])){
+  color-scheme: dark;
+  --plane:#0d0d0d; --surface:#1a1a19;
+  --ink:#fff; --ink2:#c3c2b7; --muted:#898781;
+  --grid:#2c2c2a; --axis:#383835; --ring:rgba(255,255,255,.10);
+  --s1:#3987e5; --s2:#d95926; --neutral:#383835; --ramp:dark;
+}}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --plane:#0d0d0d; --surface:#1a1a19; --ink:#fff; --ink2:#c3c2b7; --muted:#898781;
+  --grid:#2c2c2a; --axis:#383835; --ring:rgba(255,255,255,.10);
+  --s1:#3987e5; --s2:#d95926; --neutral:#383835; --ramp:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--plane);color:var(--ink);
+  font:15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;}
+.wrap{max-width:1000px;margin:0 auto;padding:40px 22px 80px}
+h1{font-size:34px;line-height:1.15;margin:0 0 6px;letter-spacing:-.02em}
+h2{font-size:20px;margin:52px 0 4px;letter-spacing:-.01em}
+h2:first-of-type{margin-top:40px}
+.sub{color:var(--ink2);margin:0 0 4px}
+.dateline{color:var(--muted);font-size:13px;margin:0 0 28px}
+p{margin:10px 0;max-width:74ch;color:var(--ink2)}
+p strong,li strong{color:var(--ink)}
+.card{background:var(--surface);border:1px solid var(--ring);border-radius:12px;
+  padding:18px 18px 14px;margin:18px 0}
+.hero{display:flex;flex-wrap:wrap;gap:26px;margin:26px 0 8px}
+.stat{background:var(--surface);border:1px solid var(--ring);border-radius:12px;
+  padding:16px 20px;flex:1 1 210px;min-width:210px}
+.stat .v{font-size:36px;line-height:1.05;letter-spacing:-.02em;color:var(--ink)}
+.stat .v small{font-size:17px;color:var(--ink2);letter-spacing:0}
+.stat .k{font-size:12.5px;color:var(--muted);margin-top:6px}
+svg{display:block;width:100%;height:auto;overflow:visible}
+.lbl{fill:var(--muted);font-size:11px}
+.lbl2{fill:var(--ink2);font-size:12px}
+.ttl{fill:var(--ink);font-size:13px}
+.gl{stroke:var(--grid);stroke-width:1}
+.ax{stroke:var(--axis);stroke-width:1}
+table{border-collapse:collapse;width:100%;font-size:13px;margin-top:6px}
+th,td{padding:7px 8px;text-align:right;border-bottom:1px solid var(--grid);
+  font-variant-numeric:tabular-nums}
+th:first-child,td:first-child{text-align:left;font-variant-numeric:normal}
+th{color:var(--muted);font-weight:600;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em}
+td{color:var(--ink2)} td.n{color:var(--ink)}
+.rt{display:inline-block;font-size:11px;color:var(--ink2);background:var(--neutral);
+  border-radius:4px;padding:1px 5px;margin-right:3px}
+.legend{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin:2px 0 10px;
+  font-size:12.5px;color:var(--ink2)}
+.key{display:inline-flex;align-items:center;gap:6px}
+.sw{width:12px;height:12px;border-radius:3px;box-shadow:0 0 0 2px var(--surface)}
+#tip{position:fixed;pointer-events:none;opacity:0;transition:opacity .08s;
+  background:var(--surface);color:var(--ink);border:1px solid var(--ring);
+  border-radius:8px;padding:8px 10px;font-size:12.5px;line-height:1.45;
+  box-shadow:0 6px 22px rgba(0,0,0,.16);z-index:9;max-width:280px}
+#tip b{color:var(--ink)} #tip .m{color:var(--muted)}
+.note{font-size:12.5px;color:var(--muted);margin-top:8px;max-width:74ch}
+details{margin-top:10px} summary{cursor:pointer;color:var(--ink2);font-size:13px}
+.toggle{position:fixed;top:14px;right:14px;background:var(--surface);color:var(--ink2);
+  border:1px solid var(--ring);border-radius:8px;padding:6px 11px;font-size:12.5px;cursor:pointer}
+.hstrip{display:inline-flex;gap:1px;vertical-align:middle}
+.hstrip i{width:7px;height:15px;border-radius:1px;display:inline-block}
+</style></head><body>
+<button class="toggle" id="tg">dark</button>
+<div class="wrap">
+<h1>Where Vilnius loses its evening</h1>
+<p class="sub">Lateness attributed to individual stretches of road, between named stops, from the city's own live GPS feed joined to its own timetable.</p>
+<p class="dateline" id="dateline"></p>
+
+<div class="hero">
+  <div class="stat"><div class="v" id="s_net">–</div><div class="k" id="k_net">vehicle-hours of lateness created</div></div>
+  <div class="stat"><div class="v" id="s_worst">–</div><div class="k" id="k_worst"></div></div>
+  <div class="stat"><div class="v" id="s_r">–</div><div class="k" id="k_r"></div></div>
+</div>
+
+<h2>1. The map</h2>
+<p id="mapintro"></p>
+<div class="card">
+  <div class="legend" id="maplegend"></div>
+  <svg id="map" viewBox="0 0 960 620" role="img" aria-label="Map of Vilnius bus segments coloured by seconds lost"></svg>
+  <p class="note">Straight lines between consecutive stops, not the roads themselves. Hover any segment for its numbers.</p>
+</div>
+<p id="corridor"></p>
+
+<h2>2. When</h2>
+<p id="whenintro"></p>
+<div class="card">
+  <div class="legend">
+    <span class="key"><span class="sw" style="background:var(--s1)"></span><span id="lg1"></span></span>
+    <span class="key"><span class="sw" style="background:var(--s2)"></span><span id="lg2"></span></span>
+  </div>
+  <svg id="hours" viewBox="0 0 960 300" role="img" aria-label="Seconds lost per traversal by hour"></svg>
+  <p class="note" id="hoursnote"></p>
+</div>
+
+<h2>3. The worst roads</h2>
+<p>Collapsed across every route that uses them, so a stretch served by four routes counts once. The strip shows each hour from 06:00 to 21:00; taller and redder is worse.</p>
+<div class="card"><div style="overflow-x:auto"><table id="worst"><thead><tr>
+  <th>Stretch</th><th>Routes</th><th>Sched</th><th>Lost/pass</th><th id="th_weekend">Weekend</th><th>Total, min</th><th style="text-align:left">By hour, 06:00 to 21:00</th>
+</tr></thead><tbody></tbody></table></div></div>
+<p id="worstpara"></p>
+
+<h2>4. Is it real?</h2>
+<p id="reprointro"></p>
+<div class="card">
+  <svg id="repro" viewBox="0 0 960 420" role="img" aria-label="Monday against Tuesday, seconds lost per traversal"></svg>
+  <p class="note" id="repronote"></p>
+</div>
+
+<h2>5. How concentrated is it?</h2>
+<div class="card">
+  <svg id="conc" viewBox="0 0 960 260" role="img" aria-label="Share of all time lost by number of segments"></svg>
+  <p class="note">There is a corridor and there is a long tail. Fixing the ten worst segments would recover about a seventh of the loss; you would need roughly 400 of them for three quarters.</p>
+</div>
+
+<h2>6. What this does and does not do</h2>
+<p class="note" id="builtline"></p>
+<p>Every live row carries <strong>MatavimoLaikas</strong>, when the GPS actually fixed, and <strong>NuokrypisSekundemis</strong>, how many seconds late the vehicle was at that moment. Their difference is the vehicle's position on its own timetable: a bus six minutes late at 17:20 is standing where it was scheduled to be at 17:14. Looking that up in the trip's stop times says which pair of stops it is between, <strong>without touching a single coordinate</strong>. Between two fixes, the gap between how much real time passed and how much schedule time passed is the lateness gained, and it is charged to whichever scheduled segments the vehicle was crossing while it gained it.</p>
+<p>The arithmetic was checked against the geometry it never uses. On 76,407 sampled readings the vehicle's nearest stop was the claimed segment's own start or end <strong>98.9%</strong> of the time, split 46.5% / 52.4% between the two ends, which is what "somewhere between them" should look like. The median vehicle sat 6 m off the straight line joining them.</p>
+<details><summary>Caveats worth knowing</summary>
+<p>Monday is missing 10:00 to 13:59: the laptop collecting it lost wifi and the cloud machine did not exist yet. Tuesday stops at 15:50, so it has no evening peak, which makes the 0.854 agreement a statement about the whole day rather than about the peak. Scheduled times are published to the minute, so a segment scheduled for 60 seconds carries about half a minute of quantisation; this averages out over hundreds of traversals but makes any single short segment unreliable. A segment is only counted once the vehicle is seen to leave it, so half-observed traversals at the edges of an observation chain are discarded rather than counted short. Two published versions of the timetable straddle the observation window and both are read, 22,408 trips between them.</p>
+<p>One expectation this did not confirm. Scheduled recovery time was assumed to sit at the ends of routes, which would make a terminus look like a place where traffic is kind. It does not: segments that give time back sit at median position 0.48 through their trip at a median scheduled speed of 18.8 km/h, against 0.47 and 18.1 km/h for segments that lose it. The padding in this timetable is spread evenly along the route, not parked at the end.</p>
+</details>
+</div>
+<div id="tip"></div>
+<script>
+const D = __DATA__;
+const $ = s => document.querySelector(s);
+const NS = "http://www.w3.org/2000/svg";
+const el = (t, a) => { const n = document.createElementNS(NS, t); for (const k in a) n.setAttribute(k, a[k]); return n; };
+const cs = () => getComputedStyle(document.documentElement);
+const V = n => cs().getPropertyValue(n).trim();
+
+/* ---- diverging scale: blue (time back) - neutral - red (time lost) ---- */
+function hex2rgb(h){return [1,3,5].map(i=>parseInt(h.slice(i,i+2),16));}
+function mix(a,b,t){const A=hex2rgb(a),B=hex2rgb(b);
+  return `rgb(${A.map((v,i)=>Math.round(v+(B[i]-v)*t)).join(",")})`;}
+const CLAMP = 120;
+const DARK = () => V("--ramp") === "dark";
+function ramp(letter){
+  const a = [1,2,3,4,5,6,7].map(i=>`--${letter}${i}`);
+  // light: pale near zero, dark at the extreme. dark: the reverse, and the palest
+  // two steps are dropped because they blow out against a near-black surface.
+  return DARK() ? a.slice(1,6).reverse() : a;
+}
+function divc(v){
+  const arm = ramp(v>=0 ? "r" : "b");
+  // eased, not linear: a linear ramp against a 2 minute clamp leaves the
+  // ordinary two thirds of the network nearly the colour of the paper.
+  const t = Math.pow(Math.min(1, Math.abs(v)/CLAMP), 0.62);
+  if (t < 0.02) return V("--neutral");
+  const p = t*(arm.length-1), i = Math.min(arm.length-2, Math.floor(p));
+  return mix(V(arm[i]), V(arm[i+1]), p-i);
+}
+
+/* ---- tooltip ---- */
+const tip = $("#tip");
+function showTip(e, html){ tip.innerHTML = html; tip.style.opacity = 1;
+  const r = tip.getBoundingClientRect();
+  let x = e.clientX + 14, y = e.clientY + 14;
+  if (x + r.width > innerWidth - 8) x = e.clientX - r.width - 14;
+  if (y + r.height > innerHeight - 8) y = e.clientY - r.height - 14;
+  tip.style.left = x + "px"; tip.style.top = y + "px"; }
+function hideTip(){ tip.style.opacity = 0; }
+
+/* ---- 1. map ---- */
+function drawMap(){
+  const svg = $("#map"); svg.textContent = "";
+  const L = D.lines;
+  let x0=1e9,x1=-1e9,y0=1e9,y1=-1e9;
+  for(const l of L){ x0=Math.min(x0,l[0],l[2]); x1=Math.max(x1,l[0],l[2]);
+                     y0=Math.min(y0,l[1],l[3]); y1=Math.max(y1,l[1],l[3]); }
+  const W=960,H=620,P=14;
+  const s = Math.min((W-2*P)/(x1-x0), (H-2*P)/(y1-y0));
+  const ox = P+((W-2*P)-(x1-x0)*s)/2, oy = P+((H-2*P)-(y1-y0)*s)/2;
+  const px = x => ox+(x-x0)*s, py = y => H-oy-(y-y0)*s;
+  const order = L.map((l,i)=>i).sort((a,b)=>Math.abs(L[a][4])-Math.abs(L[b][4]));
+  for(const i of order){
+    const l = L[i];
+    const p = el("line",{x1:px(l[0]).toFixed(1),y1:py(l[1]).toFixed(1),
+                         x2:px(l[2]).toFixed(1),y2:py(l[3]).toFixed(1),
+                         stroke:divc(l[4]),"stroke-width":2,"stroke-linecap":"round"});
+    p.style.cursor="crosshair";
+    p.addEventListener("mouseenter",e=>{p.setAttribute("stroke-width",5);
+      showTip(e,`<b>${l[4]>0?"+":""}${l[4]} s</b> per crossing<br><span class="m">${l[5]} traversals observed</span>`);});
+    p.addEventListener("mousemove",e=>showTip(e,tip.innerHTML));
+    p.addEventListener("mouseleave",()=>{p.setAttribute("stroke-width",2);hideTip();});
+    svg.appendChild(p);
+  }
+  const lg = $("#maplegend"); lg.innerHTML="";
+  const vals=[-120,-60,-20,0,20,60,120];
+  const bar=document.createElement("span"); bar.className="key";
+  bar.innerHTML = `<span style="color:var(--muted)">time regained</span>` +
+    vals.map(v=>`<span class="sw" style="background:${divc(v)}" title="${v} s"></span>`).join("") +
+    `<span style="color:var(--muted)">time lost</span>`;
+  bar.style.gap="4px"; lg.appendChild(bar);
+  const scale=document.createElement("span");
+  scale.style.color="var(--muted)"; scale.textContent="each swatch 60 s apart, clamped at ±2 min";
+  lg.appendChild(scale);
+}
+
+/* ---- 2. hours ---- */
+function drawHours(){
+  const svg=$("#hours"); svg.textContent="";
+  const W=960,H=300,L=54,R=14,T=18,B=40;
+  const hrs=[]; for(let h=5;h<=22;h++) hrs.push(h);
+  const mon=D.hours[D.L.primary]||{}, sun=(D.L.weekend&&D.hours[D.L.weekend])||{};
+  let mx=0; for(const h of hrs){ for(const s of [mon,sun]) if(s[h]) mx=Math.max(mx,s[h][2]); }
+  mx=Math.ceil(mx/2)*2;
+  const py=v=>H-B-(v/mx)*(H-B-T);
+  const bw=(W-L-R)/hrs.length;
+  for(let g=0;g<=mx;g+=2){
+    svg.appendChild(el("line",{x1:L,x2:W-R,y1:py(g),y2:py(g),class:"gl"}));
+    const t=el("text",{x:L-8,y:py(g)+4,class:"lbl","text-anchor":"end"}); t.textContent=g+"s"; svg.appendChild(t);
+  }
+  hrs.forEach((h,i)=>{
+    const x=L+i*bw;
+    const t=el("text",{x:x+bw/2,y:H-B+16,class:"lbl","text-anchor":"middle"});
+    t.textContent=String(h).padStart(2,"0"); svg.appendChild(t);
+    [[mon,"--s1",0],[sun,"--s2",1]].forEach(([src,col,k])=>{
+      const d=src[h]; if(!d) return;
+      const w=(bw-6)/2-1, xx=x+3+k*((bw-6)/2+1);
+      const y=py(Math.max(0,d[2])), hh=Math.max(1,py(0)-y);
+      const r=el("rect",{x:xx,y:y,width:w,height:hh,rx:4,fill:V(col)});
+      r.addEventListener("mouseenter",e=>showTip(e,
+        `<b>${k?D.L.weekendShort:D.L.primaryShort} ${String(h).padStart(2,"0")}:00</b><br>${d[2]} s lost per traversal<br><span class="m">${d[1].toLocaleString()} traversals · ${d[0]} vehicle-minutes</span>`));
+      r.addEventListener("mousemove",e=>showTip(e,tip.innerHTML));
+      r.addEventListener("mouseleave",hideTip);
+      svg.appendChild(r);
+    });
+  });
+  svg.appendChild(el("line",{x1:L,x2:W-R,y1:py(0),y2:py(0),class:"ax"}));
+  const miss=hrs.filter(h=>!mon[h]);
+  $("#hoursnote").textContent = (miss.length
+      ? D.L.primaryShort + " has no bars for " + miss.map(h=>String(h).padStart(2,"0")+":00").join(", ") + ". "
+      : "") + "Hours with fewer than 200 traversals are not drawn, which is why the ends of the day are sparse.";
+}
+
+/* ---- 3. worst roads ---- */
+function drawWorst(){
+  const tb=$("#worst tbody"); tb.innerHTML="";
+  for(const w of D.worst){
+    const tr=document.createElement("tr");
+    const any=Object.keys(w.hr).length;
+    const strip=!any?'<span style="color:var(--muted)">too thin to split by hour</span>':Array.from({length:16},(_,i)=>6+i).map(h=>{
+      const v=w.hr[h];
+      if(v===undefined) return `<i style="background:var(--grid);height:3px" title="${h}:00 no data"></i>`;
+      const hh=Math.max(3,Math.min(15,Math.round(Math.abs(v)/16)));
+      return `<i style="background:${divc(v)};height:${hh}px" title="${h}:00  ${v>0?"+":""}${v}s"></i>`;
+    }).join("");
+    tr.innerHTML =
+      `<td>${w.a} <span style="color:var(--muted)">to</span> ${w.b}</td>`+
+      `<td style="text-align:left">${w.routes.map(r=>`<span class="rt">${r}</span>`).join("")}</td>`+
+      `<td>${w.sched}s</td>`+
+      `<td class="n">+${w.pass}s</td>`+
+      `<td>${w.sun===null?"–":(w.sun>0?"+":"")+w.sun+"s"}</td>`+
+      `<td>${w.min}</td>`+
+      `<td style="text-align:left"><span class="hstrip">${strip}</span></td>`;
+    tb.appendChild(tr);
+  }
+}
+
+/* ---- 4. reproducibility ---- */
+function drawRepro(){
+  const svg=$("#repro"); svg.textContent="";
+  const g=D.grid, W=960,H=420,L=60,R=180,T=16,B=44;
+  const pw=W-L-R, ph=H-T-B, cw=pw/g.n, ch=ph/g.n;
+  const sx=v=>L+(v-g.lo)/(g.hi-g.lo)*pw, sy=v=>T+ph-(v-g.lo)/(g.hi-g.lo)*ph;
+  const rp=ramp("b");
+  const col=c=>{ if(!c) return "none";
+    const t=Math.pow(c/g.max,0.42), p=t*(rp.length-1), i=Math.min(rp.length-2,Math.floor(p));
+    return mix(V(rp[i]),V(rp[i+1]),p-i); };
+  for(let j=0;j<g.n;j++) for(let i=0;i<g.n;i++){
+    const c=g.cells[j][i]; if(!c) continue;
+    const x=L+i*cw, y=T+ph-(j+1)*ch;
+    const r=el("rect",{x:x+1,y:y+1,width:cw-2,height:ch-2,rx:2,fill:col(c)});
+    const xv=Math.round(g.lo+(i+0.5)*(g.hi-g.lo)/g.n), yv=Math.round(g.lo+(j+0.5)*(g.hi-g.lo)/g.n);
+    r.addEventListener("mouseenter",e=>showTip(e,`<b>${c} segment${c>1?"s":""}</b><br>Monday ${xv>0?"+":""}${xv} s · Tuesday ${yv>0?"+":""}${yv} s`));
+    r.addEventListener("mousemove",e=>showTip(e,tip.innerHTML));
+    r.addEventListener("mouseleave",hideTip);
+    svg.appendChild(r);
+  }
+  for(const v of [-150,-100,-50,0,50,100,150]){
+    svg.appendChild(el("line",{x1:sx(v),x2:sx(v),y1:T,y2:T+ph,class:"gl"}));
+    svg.appendChild(el("line",{x1:L,x2:L+pw,y1:sy(v),y2:sy(v),class:"gl"}));
+    let t=el("text",{x:sx(v),y:T+ph+18,class:"lbl","text-anchor":"middle"}); t.textContent=v; svg.appendChild(t);
+    t=el("text",{x:L-8,y:sy(v)+4,class:"lbl","text-anchor":"end"}); t.textContent=v; svg.appendChild(t);
+  }
+  svg.appendChild(el("line",{x1:sx(g.lo),y1:sy(g.lo),x2:sx(g.hi),y2:sy(g.hi),
+    stroke:V("--axis"),"stroke-width":2,"stroke-dasharray":"5 5"}));
+  let t=el("text",{x:L+pw/2,y:H-8,class:"lbl2","text-anchor":"middle"});
+  t.textContent=D.L.primaryShort+", seconds lost per traversal"; svg.appendChild(t);
+  t=el("text",{x:16,y:T+ph/2,class:"lbl2","text-anchor":"middle",transform:`rotate(-90 16 ${T+ph/2})`});
+  t.textContent=D.L.compareShort+", same segment"; svg.appendChild(t);
+  // legend
+  const lx=L+pw+34;
+  t=el("text",{x:lx,y:T+12,class:"lbl"}); t.textContent="segments per cell"; svg.appendChild(t);
+  [1,5,20,80,330].forEach((c,i)=>{
+    svg.appendChild(el("rect",{x:lx,y:T+26+i*24,width:16,height:16,rx:3,fill:col(c)}));
+    const q=el("text",{x:lx+24,y:T+38+i*24,class:"lbl"}); q.textContent=c; svg.appendChild(q);
+  });
+  $("#repronote").textContent =
+    `${g.pairs.toLocaleString()} segments observed on both days, ${g.outside} of them off the edge of this frame. `+
+    `Pearson r = ${D.r_mt} between ${D.L.primaryShort} and ${D.L.compareShort}` +
+    (D.r_ms!=null && D.L.weekendShort ? `. Against ${D.L.weekendShort} it is ${D.r_ms}, which is the point: `+
+      `the same road behaves the same way on another working day, and differently at the weekend.` : `.`);
+}
+
+/* ---- 5. concentration ---- */
+function drawConc(){
+  const svg=$("#conc"); svg.textContent="";
+  const W=960,H=260,L=54,R=20,T=16,B=40;
+  const pts=D.conc, maxN=pts[pts.length-1][0];
+  const sx=n=>L+Math.log10(n)/Math.log10(maxN)*(W-L-R);
+  const sy=p=>H-B-(p/100)*(H-B-T);
+  for(const g of [0,25,50,75,100]){
+    svg.appendChild(el("line",{x1:L,x2:W-R,y1:sy(g),y2:sy(g),class:"gl"}));
+    const t=el("text",{x:L-8,y:sy(g)+4,class:"lbl","text-anchor":"end"}); t.textContent=g+"%"; svg.appendChild(t);
+  }
+  for(const n of [10,25,50,100,200,400,1000]){
+    const t=el("text",{x:sx(n),y:H-B+17,class:"lbl","text-anchor":"middle"}); t.textContent=n; svg.appendChild(t);
+  }
+  const d=pts.map((p,i)=>(i?"L":"M")+sx(p[0]).toFixed(1)+" "+sy(p[1]).toFixed(1)).join(" ");
+  svg.appendChild(el("path",{d:d,fill:"none",stroke:V("--s1"),"stroke-width":2,
+    "stroke-linejoin":"round","stroke-linecap":"round"}));
+  for(const p of pts){
+    if(![10,50,100,400].includes(p[0])) continue;
+    svg.appendChild(el("circle",{cx:sx(p[0]),cy:sy(p[1]),r:4.5,fill:V("--s1"),
+      stroke:V("--surface"),"stroke-width":2}));
+    const t=el("text",{x:sx(p[0]),y:sy(p[1])-12,class:"lbl2","text-anchor":"middle"});
+    t.textContent=p[1]+"%"; svg.appendChild(t);
+  }
+  const t=el("text",{x:L+(W-L-R)/2,y:H-6,class:"lbl2","text-anchor":"middle"});
+  t.textContent="worst N segments (log scale)"; svg.appendChild(t);
+  svg.appendChild(el("line",{x1:L,x2:W-R,y1:sy(0),y2:sy(0),class:"ax"}));
+}
+
+function drawAll(){
+  const L = D.L;
+  $("#dateline").textContent = L.dateline;
+  $("#mapintro").textContent = 'Every one of the ' + D.lines.length.toLocaleString() +
+    ' stop-to-stop segments with at least 20 observed traversals, coloured by the mean ' +
+    'seconds a vehicle gains or loses crossing it. Red is time lost, blue is time regained.';
+  $("#s_net").innerHTML = L.heroNet + ' <small>vh</small>';
+  $("#k_net").textContent = 'vehicle-hours of lateness created on ' + L.primaryShort;
+  $("#s_worst").innerHTML = L.heroWorst + ' <small>min</small>';
+  $("#k_worst").textContent = L.heroWorstWhat;
+  $("#s_r").textContent = L.heroR != null ? L.heroR : '–';
+  $("#k_r").textContent = L.compareShort
+      ? 'correlation between ' + L.primaryShort + ' and ' + L.compareShort + ', same segments'
+      : 'no second working day to compare against yet';
+  const c = $("#corridor");
+  if (L.corridor) c.innerHTML = '<strong>' + L.corridor + '</strong> The list below is ordered by total time lost, so a stretch four routes share counts once.';
+  else c.textContent = 'The list below is ordered by total time lost, so a stretch four routes share counts once.';
+  $("#whenintro").textContent = 'Mean seconds lost per traversal, across the whole reported network, by hour'
+      + (L.weekendShort ? ', with ' + L.weekendShort + ' for contrast.' : '.');
+  $("#lg1").textContent = L.primaryLabel;
+  $("#lg2").textContent = L.weekendLabel || '';
+  $("#th_weekend").textContent = L.weekendShort || 'Weekend';
+  $("#worstpara").innerHTML = (L.weekendShort
+      ? 'The ' + L.weekendShort + ' column is the whole argument. <strong>These are not slow roads. They are roads that fail under commuter load.</strong> '
+      : '') + L.worstSentence;
+  $("#reprointro").textContent = L.compareShort
+      ? 'A segment mean is only worth reading if the same segment does the same thing on a different day. '
+        + L.primaryShort + ' and ' + L.compareShort + ' are independent working days. Each cell counts segments; the diagonal is perfect agreement.'
+      : 'Not enough working days yet to check this.';
+  drawMap(); drawHours(); drawWorst(); drawRepro(); drawConc();
+}
+drawAll();
+$("#builtline").textContent = "Built automatically on the collector box at " + D.L.built +
+  ", from " + D.days.length + " days of collection. Nobody edited this page.";
+$("#tg").addEventListener("click",()=>{
+  const dark = document.documentElement.getAttribute("data-theme")==="dark";
+  document.documentElement.setAttribute("data-theme", dark?"light":"dark");
+  $("#tg").textContent = dark?"dark":"light";
+  drawAll();
+});
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change",()=>{
+  if(!document.documentElement.getAttribute("data-theme")) drawAll();
+});
+</script></body></html>

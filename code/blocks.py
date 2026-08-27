@@ -29,6 +29,25 @@ STRIDE = 1
 if "--stride" in sys.argv:
     STRIDE = int(sys.argv[sys.argv.index("--stride") + 1])
 
+# One local day at a time, and a name for the output. Reading the whole archive on
+# every run was fine at nine days and will not be fine at ninety: the cost grows
+# with the archive while the new information does not. With --day the loop opens
+# only the snapshots that can fall inside that local day.
+DAY = sys.argv[sys.argv.index("--day") + 1] if "--day" in sys.argv else None
+OUT = sys.argv[sys.argv.index("--out") + 1] if "--out" in sys.argv else "blocks.json"
+
+
+def in_day(stamp, day):
+    """Local day D runs from (D-1)T21:00:00Z to DT20:59:59Z, the archive being UTC
+    and Vilnius being UTC+3 all summer. Compared as strings, which is exact for
+    this format and avoids parsing every filename twice."""
+    if day is None:
+        return True
+    d = datetime.strptime(day, "%Y-%m-%d")
+    lo = (d - timedelta(hours=3)).strftime("%Y%m%dT%H%M%SZ")
+    hi = (d + timedelta(hours=21)).strftime("%Y%m%dT%H%M%SZ")
+    return lo <= stamp < hi
+
 
 def load_trips():
     """trip_id -> (block_id, route_id, direction_id)"""
@@ -60,6 +79,8 @@ def main():
 
     for n, p in enumerate(files):
         stamp = os.path.basename(p).split(".")[0]
+        if not in_day(stamp, DAY):
+            continue
         local = datetime.strptime(stamp, "%Y%m%dT%H%M%SZ").replace(tzinfo=timezone.utc) + TZ
         day = local.strftime("%Y-%m-%d")
         mins = local.hour * 60 + local.minute + local.second / 60.0
@@ -143,14 +164,14 @@ def main():
             })
 
     out.sort(key=lambda r: (r["day"], r["veh"], r["trip"]))
-    with open(os.path.join(HERE, "blocks.json"), "w", encoding="utf-8") as f:
+    with open(os.path.join(HERE, OUT), "w", encoding="utf-8") as f:
         json.dump(out, f, separators=(",", ":"))
 
     days = sorted(set(r["day"] for r in out))
     print(f"\n{len(out)} vehicle-trips over {len(days)} days {days}")
     print(f"vehicles {len(set(r['veh'] for r in out))}, blocks {len(set(r['block'] for r in out if r['block']))}")
     print(f"gtfs match {matched}/{matched+unmatched} = {100*matched/max(matched+unmatched,1):.1f}%")
-    print(f"{time.time()-t0:.0f}s -> blocks.json ({os.path.getsize(os.path.join(HERE,'blocks.json'))/1024:.0f} KB)")
+    print(f"{time.time()-t0:.0f}s -> {OUT} ({os.path.getsize(os.path.join(HERE, OUT))/1024:.0f} KB)")
 
 
 if __name__ == "__main__":
