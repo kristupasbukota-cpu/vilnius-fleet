@@ -58,25 +58,8 @@ done
 # so once a version is gone it cannot be obtained again, and every retrospective
 # claim about a past month depends on that month's schedule. About 3 MB each, a
 # handful a year, which is cheap for data that is otherwise unrecoverable.
-# Each version is unpacked into its own directory of text files. Git stores the
-# second and later versions as deltas against the first, which a zip forbids.
-# Extraction is skipped when the directory already exists, so a nightly run costs
-# nothing once a version has been published.
 for f in "$SRC"/gtfs*.zip; do
-  [ -f "$f" ] || continue
-  d="$PUB/gtfs/$(basename "$f" .zip)"
-  if [ ! -d "$d" ]; then
-    mkdir -p "$d"
-    if ! unzip -qo "$f" -d "$d"; then
-      echo "WARNING: could not unpack $(basename "$f"), leaving the zip in place" >&2
-      rm -rf "$d"
-      cp -f "$f" "$PUB/gtfs/$(basename "$f")"
-      continue
-    fi
-  fi
-  # The zip is redundant once its contents are published. Removing it from the
-  # working tree does not shrink the history, but it stops the tree doubling.
-  rm -f "$PUB/gtfs/$(basename "$f")"
+  [ -f "$f" ] && cp -f "$f" "$PUB/gtfs/$(basename "$f")"
 done
 [ -f "$SRC/gtfs_state.json" ] && cp -f "$SRC/gtfs_state.json" "$PUB/gtfs/versions.json"
 
