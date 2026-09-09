@@ -1,0 +1,2 @@
+﻿agency_id,agency_name,agency_url,agency_timezone,agency_phone,agency_lang
+vilnius,"SĮ ""Susisiekimo paslaugos""",https://www.judu.lt,Europe/Vilnius,370 5 2107050,lt
