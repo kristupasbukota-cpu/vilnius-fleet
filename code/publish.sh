@@ -49,11 +49,18 @@ for f in arc.json baseline.json delaygrid.json framelist.txt; do
   [ -f "$SRC/$f" ] && cp -f "$SRC/$f" "$PUB/summaries/$f"
 done
 for f in collect.py summarize.py blocks.py build_map.py build_network.py template.html \
-         cloud_setup.sh status.sh segments.py validate_seg.py runseg.sh watchdog.py gapstat.py dedupe2.py cmpjson.py wire_watchdog.sh publish.sh findrpm.py harden.sh dedupe.py refresh_gtfs.py export.py build_report.py report_template.html nightly_segments.sh wire_gtfs.sh wire_report.sh wire_export.sh; do
+         cloud_setup.sh status.sh segments.py validate_seg.py runseg.sh watchdog.py gapstat.py dedupe2.py cmpjson.py wire_watchdog.sh publish.sh findrpm.py harden.sh dedupe.py refresh_gtfs.py export.py build_report.py report_template.html nightly_segments.sh wire_gtfs.sh wire_report.sh wire_export.sh departure.py; do
   [ -f "$SRC/$f" ] && cp -f "$SRC/$f" "$PUB/code/$f"
 done
 [ -f "$SRC/README.md" ] && cp -f "$SRC/README.md" "$PUB/README.md"
 [ -f "$SRC/STATE-OF-PLAY.md" ] && cp -f "$SRC/STATE-OF-PLAY.md" "$PUB/STATE-OF-PLAY.md"
+
+# The findings themselves. Until 20 September these existed only in a conversation,
+# which is one copy of the one thing in this project that cannot be regenerated.
+mkdir -p "$PUB/docs"
+if [ -d "$SRC/docs" ]; then
+  cp -f "$SRC"/docs/*.md "$PUB/docs/" 2>/dev/null
+fi
 # Every timetable version we have ever held. The city publishes only the present,
 # so once a version is gone it cannot be obtained again, and every retrospective
 # claim about a past month depends on that month's schedule. About 3 MB each, a
@@ -111,6 +118,7 @@ if [ -n "$(git log --oneline HEAD..origin/main 2>/dev/null)" ]; then
   done
   cp -f "$SRC/README.md" "$PUB/README.md" 2>/dev/null
   cp -f "$SRC/STATE-OF-PLAY.md" "$PUB/STATE-OF-PLAY.md" 2>/dev/null
+  mkdir -p "$PUB/docs" && cp -f "$SRC"/docs/*.md "$PUB/docs/" 2>/dev/null
 fi
 
 git add -A
