@@ -155,8 +155,9 @@ cleanly rather than by judgement. *Done, 20 September.*
 
 ## Files
 
-`departure.py` on the box. *Correction, 20 September: it is not in the repository.
-`publish.sh` does not copy it, so it is single-copy.* Per-trip outputs for
+`departure.py` on the box. *Correction, 20 September: it was not in the repository.
+`publish.sh` did not copy it, so it was single-copy. Added to the publish list the
+same day; it is now in `code/`.* Per-trip outputs for
 22, 24, 25 and 26 August in `analysis/dep-*.csv.gz`, one row per vehicle-trip with
 the deviation at scheduled departure, at first sighting, and at the last reading
 before the scheduled time, so all three measures can be recomputed from the table.
