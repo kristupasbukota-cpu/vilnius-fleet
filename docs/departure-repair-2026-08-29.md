@@ -9,6 +9,12 @@
 > stop, 19255 "Vilkpėdės žiedas", which also affects routes 13 and 29. The
 > measured corrected figure is **2.09%**. See
 > `claude/vilkpedes-ziedas-defect-2026-09-20.md`. Route 61 remains unexplained.
+>
+> **Refined 24 September.** Measured at both bays of every terminal loop, with no
+> exclusions, the figure is **1.85%**, and **1.83% on working days** against the
+> 2.5% in the table below. The r = 0.92 day-to-day agreement in section 5 was
+> mostly the defect: with it removed, r = 0.54. See
+> `departure-timing-point-2026-09-24.md`.
 
 **Result: 2.5% of trips leave more than a minute early, not 13.5%.** The old
 figure was measuring the previous trip's arrival. And the two worst routes in the
@@ -128,7 +134,8 @@ directions, so those are plausibly genuine.
 Removing 56 and 73 takes the network figure from 2.5% to about **2.1%**.
 
 *Confirmed on 20 September. The cause is stop 19255, not the routes, and the
-corrected figure measured rather than estimated is 2.09%.*
+corrected figure measured rather than estimated is 2.09%. Refined on 24 September
+to 1.85% by measuring at both bays of each terminal loop.*
 
 ## 6. What this means
 

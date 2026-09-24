@@ -54,8 +54,9 @@ distance band, not one corridor.
 
 **Buses arrive early far more often than they leave early.** 10 to 13% of trips
 end more than a minute ahead, 18.5% on the last run of a shift. But only
-**2.09%** leave more than a minute early, once measured at the scheduled
-departure rather than at the first sighting of a trip id. The widely repeated
+**1.85%** leave more than a minute early, once measured at the scheduled
+departure rather than at the first sighting of a trip id, and at both bays of a
+terminal loop rather than only the first one GTFS lists. The widely repeated
 13.5% was reading the previous trip's arrival.
 
 **The city's published promises hold.** Express routes deliver a median gap of

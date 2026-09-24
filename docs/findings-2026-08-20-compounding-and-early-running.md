@@ -9,9 +9,10 @@ was checked a second way per section 7 of the handover.
 > then strengthened: adding vehicle-day fixed effects gives -0.629 s/h
 > [-0.841, -0.417]. Section 2's departure claim did not survive. The 13.5% was
 > reading the previous trip's arrival; measured at the scheduled departure it is
-> 2.5%, and 2.09% once the Vilkpėdės žiedas stop defect is excluded. See
+> 2.5%, and 1.85% once terminal loops are measured at both bays. See
 > `verification-2026-08-24-of-the-20-august-findings.md`,
-> `departure-repair-2026-08-29.md` and `vilkpedes-ziedas-defect-2026-09-20.md`.
+> `departure-repair-2026-08-29.md`, `vilkpedes-ziedas-defect-2026-09-20.md` and
+> `departure-timing-point-2026-09-24.md`.
 > The *ending* early results in section 2 stand.
 
 ---

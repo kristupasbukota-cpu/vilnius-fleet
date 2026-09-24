@@ -82,7 +82,8 @@ figure to about 2.1%.
 > "Vilkpėdės žiedas", the standing bay of a two-bay terminal loop, 49 m and 60 s
 > before the bay the operator times from. It also affects routes 13 and 29. The
 > corrected network figure, measured rather than estimated, is 2.09%. See
-> `vilkpedes-ziedas-defect-2026-09-20.md`.
+> `vilkpedes-ziedas-defect-2026-09-20.md`. Refined on 24 September to **1.85%**
+> by measuring every terminal loop at both bays: `departure-timing-point-2026-09-24.md`.
 
 The general lesson: **a systematic defect reproduces perfectly**, so high reproducibility
 is not evidence that something is real.

@@ -4,6 +4,14 @@
 repair. Four days of per-trip departures (37,870 rows), matched against the GTFS
 version archived on 24 August.
 
+> **Refined 24 September.** The 2.09% below was reached by excluding the 290 trips
+> that start at stop 19255. Measured instead at both bays of every terminal loop,
+> keeping every trip, the network figure is **1.85%** (1.83% on working days).
+> Antakalnio žiedas, listed below as a milder member of the class, turned out to
+> be the same defect. The description of the mechanism in section 1 also had the
+> direction backwards and is corrected in place. See
+> `departure-timing-point-2026-09-24.md`.
+
 **Result.** The defect is not a property of routes 56 and 73 at all. It belongs to
 a single stop id, **19255 "Vilkpėdės žiedas"**, and it affects every trip that
 begins there regardless of route. 290 departures start at that stop across the
@@ -34,8 +42,10 @@ nine minute layover, then 8311 at 06:08. Route 56: depart 19255 at 05:53, 8311 a
 `departure.py` samples the live deviation at the scheduled departure from the
 trip's **first** stop_time. For these trips that is the standing bay. The
 operator's own clock evidently runs from the second one, so at the moment we look
-the bus is a minute short of where the operator's schedule expects it, and the
-feed reports it as early.
+the bus is already standing at the bay the timetable only reaches a minute later,
+and the feed reports it as a minute early. *(Corrected 24 September. This first
+said the bus was "a minute short of where the operator's schedule expects it",
+which is the wrong direction: short would read late, not early.)*
 
 The arithmetic matches. Median deviation on those 290 trips is **-62 s**, against
 a published 60 s gap. The spread below that, down to -108 s, tracks how far the
