@@ -78,7 +78,6 @@ about the service run, not about the wait, and on a frequent route those differ.
 - The five districts promised more service, against a control
 - A passenger-experienced waiting time measure, as opposed to headway
 - Route 61 direction 1, which reads 20.5% early departure and is unexplained
-- A recurring boot volume backup. The raw archive is still effectively single-copy.
 
 ---
 
@@ -98,6 +97,13 @@ about the service run, not about the wait, and on a frequent route those differ.
 The raw snapshot archive is **not** here. It is 5 GB and growing by roughly
 2.3 GB a month, which git would not survive. The derived tables are the
 scientific product and they are what is kept.
+
+The raw archive is protected instead by a weekly boot volume backup on Oracle,
+policy `vilnius-weekly`: incremental, Sundays 10:00 UTC, kept 20 days, set on
+24 September 2026. Always Free allows five volume backups in total, so the
+retention keeps at most three from the policy plus the manual one from
+29 August, leaving one slot free. Until the first one runs on 27 September,
+everything recorded since 29 August is still single-copy.
 
 ## How findings get here
 
