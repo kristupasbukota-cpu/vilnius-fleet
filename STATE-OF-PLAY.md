@@ -5,7 +5,7 @@ from the city's own live GPS feed. No survey, no press release, no operator
 dashboard. Every number here comes from the same file the JUDU journey planner
 reads, polled every 10 seconds since 15 August 2026 and kept.
 
-*Current as of 20 September 2026. The long account of how the instrument was built
+*Current as of 26 September 2026. The long account of how the instrument was built
 and why is `docs/state-of-play-2026-08-18.md`; this page is the front door.*
 
 ---
@@ -14,12 +14,13 @@ and why is `docs/state-of-play-2026-08-18.md`; this page is the front door.*
 
 | | |
 |---|---|
-| snapshots | 303,842 |
-| span | 15 August to 20 September 2026, 37 days |
-| raw archive | 5.0 GB compressed, on the box |
-| complete days exported | 33, no gaps |
-| uptime | 4 weeks, 5 days |
-| faults since 25 August | none |
+| snapshots | 353,100 |
+| span | 15 August to 26 September 2026, 43 days |
+| raw archive | about 5.9 GB compressed, on the box |
+| complete days exported | 39, through 25 September, no gaps |
+| uptime | 5 weeks, 4 days |
+| collector faults since 25 August | none |
+| nightly chain | failed 24 to 26 September, fixed and caught up on 26 September. See `docs/nightly-outage-2026-09-26.md` |
 
 ```
 Oracle Cloud, Milan            github.com/                anywhere
