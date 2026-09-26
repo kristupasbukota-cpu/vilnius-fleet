@@ -194,6 +194,20 @@ if os.path.isdir(os.path.join(PUB, ".git")):
         unpushed = True
         add("warn", "unpushed", "the publish repository is ahead of GitHub")
 
+# The whole chain, not only its first step. arc.json is written by summarize.py,
+# the first of four steps, so it stays fresh while every later step fails.
+pub_age = None
+if os.path.isdir(os.path.join(PUB, ".git")):
+    t = sh(f"git -C {PUB} log -1 --format=%ct")
+    if t.isdigit():
+        pub_age = time.time() - int(t)
+if pub_age is not None and pub_age > NIGHTLY_MAX_H * 3600:
+    add("alarm", "publish_missed",
+        f"the last publish commit is {pub_age/3600:.1f}h old; the nightly chain is not completing")
+if sh("systemctl is-failed vilnius-summarize.service") == "failed":
+    add("alarm", "nightly_failed",
+        "vilnius-summarize.service is in the failed state; see journalctl -u vilnius-summarize")
+
 mem_avail = 0
 try:
     for l in open("/proc/meminfo"):

@@ -66,6 +66,10 @@ OUT = sys.argv[sys.argv.index("--out") + 1] if "--out" in sys.argv else "segment
 # per charged traversal so shift position, road and hour can be held against each
 # other. It is large, so it is off unless asked for.
 TRAV = sys.argv[sys.argv.index("--traversals") + 1] if "--traversals" in sys.argv else None
+# How many timetable versions to load for one day, and an escape hatch to load
+# them all as before 26 September.
+GTFS_KEEP = int(sys.argv[sys.argv.index("--gtfs-keep") + 1]) if "--gtfs-keep" in sys.argv else 4
+GTFS_ALL = "--gtfs-all" in sys.argv
 
 
 def hms(s):
@@ -96,6 +100,8 @@ def load_gtfs():
     zips = sorted(glob.glob(os.path.join(HERE, "gtfs*.zip")))
     if not zips:
         raise SystemExit("no gtfs*.zip")
+    if ONLYDAY and not GTFS_ALL:
+        zips = _select_versions(zips, ONLYDAY, GTFS_KEEP)
     for zp in zips:
         _read_gtfs(zipfile.ZipFile(zp), routes, stops, trips, raw, intern)
     sched = {}
@@ -104,6 +110,25 @@ def load_gtfs():
         sched[tid] = ([i[1] for i in items], [i[3] for i in items])
     print(f"gtfs: {len(zips)} feed(s) {[os.path.basename(z) for z in zips]}")
     return trips, sched, stops
+
+
+def _select_versions(zips, day, keep):
+    """The versions that can describe local day `day`, oldest first.
+
+    Archives are named by the UTC date they were downloaded, at 23:40 UTC, which is
+    already the next local day in Vilnius; gtfs.zip is dated by its own mtime. So a
+    version dated day+1 is the newest that can be in force on `day`. Of those, keep
+    the last `keep`, which preserves the old overlap for trips the city drops when
+    it republishes, and keeps gtfs.zip last whenever it qualifies."""
+    from datetime import datetime, timedelta, timezone
+    limit = (datetime.strptime(day, "%Y-%m-%d") + timedelta(days=1)).strftime("%Y%m%d")
+    def vdate(p):
+        b = os.path.basename(p)
+        if b == "gtfs.zip":
+            return datetime.fromtimestamp(os.stat(p).st_mtime, timezone.utc).strftime("%Y%m%d")
+        return b[5:13]
+    ok = [p for p in zips if vdate(p) <= limit]
+    return ok[-keep:] if ok else zips[:1]
 
 
 def _read_gtfs(z, routes, stops, trips, raw, intern):
