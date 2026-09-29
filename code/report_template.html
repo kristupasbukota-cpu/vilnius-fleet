@@ -131,7 +131,23 @@ details{margin-top:10px} summary{cursor:pointer;color:var(--ink2);font-size:13px
   <p class="note">There is a corridor and there is a long tail. Fixing the ten worst segments would recover about a seventh of the loss; you would need roughly 400 of them for three quarters.</p>
 </div>
 
-<h2>6. What this does and does not do</h2>
+<h2>6. Day by day</h2>
+<p id="trendintro"></p>
+<div class="card">
+  <div class="legend">
+    <span class="key"><span class="sw" style="background:var(--s1)"></span>Working day</span>
+    <span class="key"><span class="sw" style="background:var(--s2)"></span>Weekend</span>
+  </div>
+  <svg id="trend" viewBox="0 0 960 300" role="img" aria-label="Vehicle-hours of lateness created, one bar per day"></svg>
+  <p class="note" id="trendnote"></p>
+  <details><summary>The same numbers as a table</summary>
+    <div style="overflow-x:auto"><table id="trendtable"><thead><tr>
+      <th>Day</th><th>Net, vh</th><th>Lost, vh</th><th>Regained, vh</th><th>Hours of data</th>
+    </tr></thead><tbody></tbody></table></div>
+  </details>
+</div>
+
+<h2>7. What this does and does not do</h2>
 <p class="note" id="builtline"></p>
 <p>Every live row carries <strong>MatavimoLaikas</strong>, when the GPS actually fixed, and <strong>NuokrypisSekundemis</strong>, how many seconds late the vehicle was at that moment. Their difference is the vehicle's position on its own timetable: a bus six minutes late at 17:20 is standing where it was scheduled to be at 17:14. Looking that up in the trip's stop times says which pair of stops it is between, <strong>without touching a single coordinate</strong>. Between two fixes, the gap between how much real time passed and how much schedule time passed is the lateness gained, and it is charged to whichever scheduled segments the vehicle was crossing while it gained it.</p>
 <p>The arithmetic was checked against the geometry it never uses. On 76,407 sampled readings the vehicle's nearest stop was the claimed segment's own start or end <strong>98.9%</strong> of the time, split 46.5% / 52.4% between the two ends, which is what "somewhere between them" should look like. The median vehicle sat 6 m off the straight line joining them.</p>
@@ -281,6 +297,8 @@ function drawWorst(){
 /* ---- 4. reproducibility ---- */
 function drawRepro(){
   const svg=$("#repro"); svg.textContent="";
+  if(!D.grid){ svg.style.display="none"; $("#repronote").textContent=""; return; }
+  svg.style.display="";
   const g=D.grid, W=960,H=420,L=60,R=180,T=16,B=44;
   const pw=W-L-R, ph=H-T-B, cw=pw/g.n, ch=ph/g.n;
   const sx=v=>L+(v-g.lo)/(g.hi-g.lo)*pw, sy=v=>T+ph-(v-g.lo)/(g.hi-g.lo)*ph;
@@ -353,6 +371,60 @@ function drawConc(){
   svg.appendChild(el("line",{x1:L,x2:W-R,y1:sy(0),y2:sy(0),class:"ax"}));
 }
 
+/* ---- 6. day by day ---- */
+function drawTrend(){
+  const svg=$("#trend"); svg.textContent="";
+  const W=960,H=300,L=54,R=14,T=26,B=44;
+  const all=Object.keys(D.totals).sort().map(d=>[d,D.totals[d]]);
+  const days=all.filter(([d,t])=>t&&t.complete);
+  const skipped=all.length-days.length;
+  if(!days.length){ $("#trendnote").textContent="No complete day yet."; return; }
+  let mx=0, mn=0;
+  for(const [,t] of days){ mx=Math.max(mx,t.net); mn=Math.min(mn,t.net); }
+  const step = mx>200?50:(mx>80?20:10);
+  mx=Math.ceil(mx/step)*step; mn=Math.floor(mn/step)*step;
+  const py=v=>T+(mx-v)/(mx-mn||1)*(H-B-T);
+  for(let g=mn; g<=mx; g+=step){
+    svg.appendChild(el("line",{x1:L,x2:W-R,y1:py(g),y2:py(g),class:"gl"}));
+    const t=el("text",{x:L-8,y:py(g)+4,class:"lbl","text-anchor":"end"}); t.textContent=g; svg.appendChild(t);
+  }
+  const bw=(W-L-R)/days.length, gap=2, w=Math.max(1,bw-gap);
+  days.forEach(([d,t],i)=>{
+    const x=L+i*bw+gap/2;
+    const y0=py(0), y=py(Math.max(0,t.net)), yb=py(Math.min(0,t.net));
+    const r=el("rect",{x:x,y:Math.min(y,y0),width:w,height:Math.max(1,Math.abs(yb-y)),rx:Math.min(4,w/2),
+      fill:V(t.weekend?"--s2":"--s1")});
+    const hit=el("rect",{x:L+i*bw,y:T,width:bw,height:H-B-T,fill:"transparent"});
+    const html=`<b>${t.label}</b><br>${t.net} vehicle-hours net<br><span class="m">${t.lost} lost · ${Math.abs(t.back)} regained · ${t.hours} h of data</span>`;
+    for(const n of [r,hit]){
+      n.addEventListener("mouseenter",e=>showTip(e,html));
+      n.addEventListener("mousemove",e=>showTip(e,html));
+      n.addEventListener("mouseleave",hideTip);
+    }
+    svg.appendChild(r); svg.appendChild(hit);
+    const dd=new Date(d+"T12:00:00");
+    if(dd.getDate()===1 || i===0 || i===days.length-1 || (dd.getDay()===1 && days.length<=21) || (dd.getDate()%7===1 && days.length>21)){
+      const tx=el("text",{x:x+w/2,y:H-B+16,class:"lbl","text-anchor":"middle"});
+      tx.textContent=dd.getDate()===1||i===0 ? dd.toLocaleString("en-GB",{day:"numeric",month:"short"}) : dd.getDate();
+      svg.appendChild(tx);
+    }
+    if(d==="2026-09-01"){
+      svg.appendChild(el("line",{x1:x-gap/2,x2:x-gap/2,y1:T-6,y2:H-B,stroke:V("--axis"),"stroke-dasharray":"3 3"}));
+      const a=el("text",{x:x+2,y:T-10,class:"lbl2"}); a.textContent="1 Sep: about 17% more service"; svg.appendChild(a);
+    }
+  });
+  svg.appendChild(el("line",{x1:L,x2:W-R,y1:py(0),y2:py(0),class:"ax"}));
+  const yl=el("text",{x:L,y:12,class:"lbl"}); yl.textContent="vehicle-hours, net"; svg.appendChild(yl);
+  $("#trendnote").textContent = "One bar per complete day: every stop-to-stop segment's lateness gained, minus time regained, summed across the network. "
+    + (skipped ? skipped + (skipped===1?" day has":" days have") + " fewer than 20 hours of data and " + (skipped===1?"is":"are") + " left out rather than drawn short." : "Every day on disk is complete.");
+  const tb=$("#trendtable tbody"); tb.textContent="";
+  for(const [d,t] of days.slice().reverse()){
+    const tr=document.createElement("tr");
+    tr.innerHTML=`<td>${t.label}</td><td class="n">${t.net}</td><td>${t.lost}</td><td>${Math.abs(t.back)}</td><td>${t.hours}</td>`;
+    tb.appendChild(tr);
+  }
+}
+
 function drawAll(){
   const L = D.L;
   $("#dateline").textContent = L.dateline;
@@ -382,11 +454,15 @@ function drawAll(){
       ? 'A segment mean is only worth reading if the same segment does the same thing on a different day. '
         + L.primaryShort + ' and ' + L.compareShort + ' are independent working days. Each cell counts segments; the diagonal is perfect agreement.'
       : 'Not enough working days yet to check this.';
-  drawMap(); drawHours(); drawWorst(); drawRepro(); drawConc();
+  $("#trendintro").textContent = 'Every complete day since collection began, measured the same way as the headline figure above, so a single day can be read against the rest.';
+  // Each panel on its own: one that cannot draw must not blank the rest of the page.
+  for (const f of [drawMap, drawHours, drawWorst, drawRepro, drawConc, drawTrend]) {
+    try { f(); } catch (e) { console.error(f.name, e); }
+  }
 }
 drawAll();
 $("#builtline").textContent = "Built automatically on the collector box at " + D.L.built +
-  ", from " + D.days.length + " days of collection. Nobody edited this page.";
+  ", from " + Object.keys(D.totals).length + " days of collection. Nobody edited this page.";
 $("#tg").addEventListener("click",()=>{
   const dark = document.documentElement.getAttribute("data-theme")==="dark";
   document.documentElement.setAttribute("data-theme", dark?"light":"dark");

@@ -18,7 +18,7 @@ one and every conclusion drawn from it would be wrong in the same direction.
     python3 build_report.py                 # newest complete weekday
     python3 build_report.py --primary 2026-08-18
 """
-import collections, glob, json, math, os, statistics as st, sys
+import collections, glob, gzip, json, math, os, re, statistics as st, sys
 from datetime import datetime, timezone, timedelta
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -105,6 +105,46 @@ def hourly(rows):
             for k, (t, n) in sorted(h.items()) if n >= 200}
 
 
+def daily_totals(have, day_sums):
+    """Net, lost and regained vehicle-hours for every day ever exported.
+
+    Only the last few days' segments files stay on disk; export.py compresses each
+    finished day into pub/segments and removes the working copy. So the history is
+    read from there, each day once, and remembered in daily_totals.json. Days whose
+    working file is still on disk are recomputed every night, since they may still
+    be growing. The nightly cost is one day's file however long the archive gets."""
+    path = os.path.join(HERE, "daily_totals.json")
+    try:
+        cache = json.load(open(path))
+    except Exception:
+        cache = {}
+    for d in have:
+        net, lost, back, seg = day_sums[d]
+        cache[d] = {"net": round(net / 3600, 1), "lost": round(lost / 3600, 1),
+                    "back": round(back / 3600, 1), "seg": seg}
+    pub = os.path.join(HERE, "pub", "segments")
+    for p in sorted(glob.glob(os.path.join(pub, "segments-*.json.gz"))):
+        m = re.fullmatch(r"segments-(\d{4}-\d{2}-\d{2})\.json\.gz", os.path.basename(p))
+        if not m:
+            continue            # segments-all.json.gz and anything else undated
+        d = m.group(1)
+        if d in cache:
+            continue
+        try:
+            rows = json.load(gzip.open(p, "rt", encoding="utf-8"))
+        except Exception:
+            continue
+        cache[d] = {"net": round(sum(r["total"] for r in rows) / 3600, 1),
+                    "lost": round(sum(r["total"] for r in rows if r["total"] > 0) / 3600, 1),
+                    "back": round(sum(r["total"] for r in rows if r["total"] < 0) / 3600, 1),
+                    "seg": len(rows)}
+        del rows
+    tmp = path + ".tmp"
+    json.dump(cache, open(tmp, "w"), separators=(",", ":"), sort_keys=True)
+    os.replace(tmp, path)
+    return cache
+
+
 def main():
     cov = coverage()
     have = sorted(d for d in cov if load(d))
@@ -145,8 +185,19 @@ def main():
                       round(r["blon"] * LON, 5), round(r["blat"], 5),
                       round(r["lost"], 1), r["n"]])
 
-    # ---- hours, for every day we have
-    hours = {d: hourly(load(d)) for d in have}
+    # ---- one pass over every day on disk. Until 29 September this read each day's
+    # segments file four times a night (once here, three times for the totals) and
+    # the count grew with the archive. Each file is now read once and dropped, so
+    # memory stays at one day's worth however long the archive gets.
+    hours, day_sums = {}, {}
+    for d in have:
+        rows = P if d == primary else load(d)
+        hours[d] = hourly(rows)
+        day_sums[d] = (sum(r["total"] for r in rows),
+                       sum(r["total"] for r in rows if r["total"] > 0),
+                       sum(r["total"] for r in rows if r["total"] < 0),
+                       len(rows))
+        del rows
 
     # ---- worst roads, collapsed over the routes that use them
     road = collections.defaultdict(lambda: {"t": 0.0, "n": 0, "r": set(), "sched": 0.0,
@@ -216,13 +267,12 @@ def main():
         if i in (5, 10, 25, 50, 75, 100, 150, 200, 300, 400, 600, 800, 1000, len(loss)):
             conc.append([i, round(100 * run / tot, 1)])
 
-    totals = {d: {"net": round(sum(r["total"] for r in load(d)) / 3600, 1),
-                  "lost": round(sum(r["total"] for r in load(d) if r["total"] > 0) / 3600, 1),
-                  "back": round(sum(r["total"] for r in load(d) if r["total"] < 0) / 3600, 1),
-                  "seg": len(load(d)), "hours": cov[d][1], "snapshots": cov[d][0],
+    history = daily_totals(have, day_sums)
+    totals = {d: {"net": h["net"], "lost": h["lost"], "back": h["back"], "seg": h["seg"],
+                  "hours": cov.get(d, (0, 0))[1], "snapshots": cov.get(d, (0, 0))[0],
                   "label": pretty(d), "short": short(d),
                   "weekend": not weekday(d), "complete": complete(d)}
-              for d in have}
+              for d, h in sorted(history.items())}
 
     w0 = worst[0]
     hit = sum(1 for w in worst[:6] if w["a"] in CORRIDOR or w["b"] in CORRIDOR)

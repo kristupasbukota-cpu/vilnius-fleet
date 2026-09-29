@@ -62,6 +62,10 @@ CLUSTER_M = float(sys.argv[sys.argv.index("--cluster") + 1]) if "--cluster" in s
 # Only timetable versions published on or before this date. Reproducing an old run
 # means loading the versions that run could see, since later versions win.
 GTFS_UNTIL = sys.argv[sys.argv.index("--gtfs-until") + 1] if "--gtfs-until" in sys.argv else None
+# Default since 29 September: only the last few versions that can be in force
+# on the day. --gtfs-until above still reproduces an old union run exactly.
+GTFS_KEEP = int(sys.argv[sys.argv.index("--gtfs-keep") + 1]) if "--gtfs-keep" in sys.argv else 4
+GTFS_ALL = "--gtfs-all" in sys.argv
 
 
 def hms(s):
@@ -80,6 +84,21 @@ def metres(a, b):
                       math.radians(la2 - la1) * 6371000)
 
 
+def _select_versions(zips, day, keep):
+    """The versions that can describe local day `day`, oldest first. Same rule as
+    segments.py: archives are named by the UTC date they were downloaded at 23:40
+    UTC, already the next local day, and gtfs.zip is dated by its mtime, so a
+    version dated day+1 is the newest that can be in force. Keep the last `keep`."""
+    limit = (datetime.strptime(day, "%Y-%m-%d") + timedelta(days=1)).strftime("%Y%m%d")
+    def vdate(p):
+        b = os.path.basename(p)
+        if b == "gtfs.zip":
+            return datetime.fromtimestamp(os.stat(p).st_mtime, timezone.utc).strftime("%Y%m%d")
+        return b[5:13]
+    ok = [p for p in zips if vdate(p) <= limit]
+    return ok[-keep:] if ok else zips[:1]
+
+
 def load_gtfs():
     """Scheduled departure from the first stop, per trip, over every feed version
     we hold, later files winning. The city drops the past when it republishes, so a
@@ -93,6 +112,8 @@ def load_gtfs():
             b = os.path.basename(p)
             return b[5:13] if b[5:13].isdigit() else "99999999"
         zips = [p for p in zips if stamp(p) <= GTFS_UNTIL]
+    elif not GTFS_ALL:
+        zips = _select_versions(zips, DAY, GTFS_KEEP)
     if not zips:
         raise SystemExit("no gtfs*.zip")
     where = {}

@@ -5,6 +5,7 @@ overturned. Newest first.
 
 | date | document | what it says |
 |---|---|---|
+| 29 Sep 2026 | [`maintenance-2026-09-29.md`](maintenance-2026-09-29.md) | Operations. departure.py timetable loading, a day-by-day chart in the nightly report, a panel that could blank the page. |
 | 26 Sep 2026 | [`nightly-outage-2026-09-26.md`](nightly-outage-2026-09-26.md) | Operations. Three nights without a publish, why the watchdog missed it, and the fix. |
 | 24 Sep 2026 | [`departure-timing-point-2026-09-24.md`](departure-timing-point-2026-09-24.md) | Early departure measured at the right bay: 1.85%. Much of the route ranking was the defect. |
 | 20 Sep 2026 | [`vilkpedes-ziedas-defect-2026-09-20.md`](vilkpedes-ziedas-defect-2026-09-20.md) | The early-departure outlier is one stop, not two routes. Corrected network figure 2.09%, since refined to 1.85%. |
