@@ -104,8 +104,9 @@ The raw archive is protected instead by a weekly boot volume backup on Oracle,
 policy `vilnius-weekly`: incremental, Sundays 10:00 UTC, kept 20 days, set on
 24 September 2026. Always Free allows five volume backups in total, so the
 retention keeps at most three from the policy plus the manual one from
-29 August, leaving one slot free. Until the first one runs on 27 September,
-everything recorded since 29 August is still single-copy.
+29 August, leaving one slot free. The first ran on 27 September and was checked
+on 29 September: available, 7 GB incremental, expiring 17 October, 2 of 5 slots
+in use.
 
 ## How findings get here
 
