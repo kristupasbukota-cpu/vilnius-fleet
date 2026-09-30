@@ -5,6 +5,7 @@ overturned. Newest first.
 
 | date | document | what it says |
 |---|---|---|
+| 30 Sep 2026 | [`morning-settled-2026-09-30.md`](morning-settled-2026-09-30.md) | The autumn morning was a step, not a slope. Flat since the first school week at about +9 s per hop, still 4.6 times summer. |
 | 30 Sep 2026 | [`report-comparison-fix-2026-09-30.md`](report-comparison-fix-2026-09-30.md) | Correction. The nightly report compared every day against mid-August; corrected, its day-to-day agreement is 0.90, not 0.50. |
 | 29 Sep 2026 | [`maintenance-2026-09-29.md`](maintenance-2026-09-29.md) | Operations. departure.py timetable loading, a day-by-day chart in the nightly report, a panel that could blank the page. |
 | 26 Sep 2026 | [`nightly-outage-2026-09-26.md`](nightly-outage-2026-09-26.md) | Operations. Three nights without a publish, why the watchdog missed it, and the fix. |

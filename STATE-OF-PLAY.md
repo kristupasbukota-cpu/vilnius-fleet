@@ -5,7 +5,7 @@ from the city's own live GPS feed. No survey, no press release, no operator
 dashboard. Every number here comes from the same file the JUDU journey planner
 reads, polled every 10 seconds since 15 August 2026 and kept.
 
-*Current as of 26 September 2026. The long account of how the instrument was built
+*Current as of 30 September 2026. The long account of how the instrument was built
 and why is `docs/state-of-play-2026-08-18.md`; this page is the front door.*
 
 ---
@@ -51,7 +51,9 @@ service on 1 September. Delay per hop in the 07-08 window went from +1.65 s to
 **+8.99 s**, difference [+5.02, +9.67]. The evening is unchanged at -0.52
 [-3.55, +2.50], and the whole day did not move measurably. **91% of the extra
 delay the autumn network creates falls in two morning hours**, across every
-distance band, not one corridor.
+distance band, not one corridor. It was a step, not a slope: through 29 September
+the Monday-to-Thursday morning has held at about +9 s per hop, trend -0.62 s per
+week [-1.69, +0.49], still above every summer day ([30 September](docs/morning-settled-2026-09-30.md)).
 
 **Buses arrive early far more often than they leave early.** 10 to 13% of trips
 end more than a minute ahead, 18.5% on the last run of a shift. But only
@@ -74,7 +76,7 @@ about the service run, not about the wait, and on a frequent route those differ.
 
 ## What is open
 
-- Whether the morning deterioration is still growing or has settled
+- Whether the morning falls back during the pupils' autumn holiday, 2 to 8 November
 - Weather joined to the record, which would remove a confounder
 - Whether the 46.1 km of bus lanes sit where the delay actually is
 - The five districts promised more service, against a control

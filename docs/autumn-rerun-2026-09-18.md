@@ -189,3 +189,5 @@ has now measured both.
 The obvious follow-up is weather, which would remove one of the confounders above and
 might explain 11 September. The other is whether the morning deterioration is still
 growing or has settled, which needs another fortnight.
+
+*30 September 2026: the second question is answered in [`morning-settled-2026-09-30.md`](morning-settled-2026-09-30.md). It has settled, not grown.*
