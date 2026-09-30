@@ -51,9 +51,17 @@ service on 1 September. Delay per hop in the 07-08 window went from +1.65 s to
 **+8.99 s**, difference [+5.02, +9.67]. The evening is unchanged at -0.52
 [-3.55, +2.50], and the whole day did not move measurably. **91% of the extra
 delay the autumn network creates falls in two morning hours**, across every
-distance band, not one corridor. It was a step, not a slope: through 29 September
-the Monday-to-Thursday morning has held at about +9 s per hop, trend -0.62 s per
-week [-1.69, +0.49], still above every summer day ([30 September](docs/morning-settled-2026-09-30.md)).
+distance band, not one corridor. It was a step, not a slope, and it has since eased: on dry
+Monday-to-Thursday mornings delay fell from about +11 to about +8 s per hop between
+the second and third week of term and has held there, still about five times the dry
+summer morning ([morning](docs/morning-settled-2026-09-30.md), [weather](docs/weather-2026-09-30.md)).
+
+**Rain slows the network by about a third.** Within the same day, a wet hour adds
+**+1.31 s per hop**, 95% CI [+0.26, +2.17], roughly 25 to 35% of the delay in every
+window, and the road stays slow for the hour after. A placebo with each day given
+another day's weather returns -0.03. Weather does not explain the autumn jump, which
+is +6.8 s per hop with rain held fixed. Hourly LHMT observations are now part of the
+record, nightly, back to 14 August.
 
 **Buses arrive early far more often than they leave early.** 10 to 13% of trips
 end more than a minute ahead, 18.5% on the last run of a shift. But only
@@ -77,7 +85,6 @@ about the service run, not about the wait, and on a frequent route those differ.
 ## What is open
 
 - Whether the morning falls back during the pupils' autumn holiday, 2 to 8 November
-- Weather joined to the record, which would remove a confounder
 - Whether the 46.1 km of bus lanes sit where the delay actually is
 - The five districts promised more service, against a control
 - A passenger-experienced waiting time measure, as opposed to headway

@@ -1,5 +1,12 @@
 # The morning has settled, not grown
 
+> **Updated later on 30 September 2026.** With weather joined to the record, the easing
+> this document called suggestive is real once wet mornings are set aside: dry
+> Monday-to-Thursday mornings fell from about +11 to about +8 s per hop between the
+> second and third week of term, trend -1.06 s per week [-1.86, -0.53]. The
+> Wednesday and Thursday swings in section 2 are mostly rain. See
+> [`weather-2026-09-30.md`](weather-2026-09-30.md). The text below is unchanged.
+
 30 September 2026. Task #14: is the autumn morning still getting worse?
 
 **Result: no. The morning peak stopped deteriorating after the first school week and
