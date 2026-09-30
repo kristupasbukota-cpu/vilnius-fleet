@@ -75,9 +75,33 @@ def mmss(sec):
     return f"{sec//60}:{sec%60:02d}"
 
 
+def local_path(day):
+    return os.path.join(HERE, f"segments-{day}.json")
+
+
+def published_path(day):
+    return os.path.join(HERE, "pub", "segments", f"segments-{day}.json.gz")
+
+
+def published_days():
+    out = []
+    for p in glob.glob(os.path.join(HERE, "pub", "segments", "segments-*.json.gz")):
+        m = re.fullmatch(r"segments-(\d{4}-\d{2}-\d{2})\.json\.gz", os.path.basename(p))
+        if m:
+            out.append(m.group(1))
+    return out
+
+
 def load(day):
-    p = os.path.join(HERE, f"segments-{day}.json")
-    return json.load(open(p)) if os.path.exists(p) else None
+    """A day's segments: the working file if it is still on disk, which is the
+    freshest, otherwise the compressed copy export.py published."""
+    p = local_path(day)
+    if os.path.exists(p):
+        return json.load(open(p))
+    g = published_path(day)
+    if os.path.exists(g):
+        return json.load(gzip.open(g, "rt", encoding="utf-8"))
+    return None
 
 
 def key(r):
@@ -147,9 +171,16 @@ def daily_totals(have, day_sums):
 
 def main():
     cov = coverage()
-    have = sorted(d for d in cov if load(d))
-    if not have:
-        raise SystemExit("no segments-*.json on disk")
+    # Days with a working file on disk: only yesterday and today in normal running,
+    # since export.py removes each finished day. Until 30 September the comparison
+    # days were chosen from these alone, so once pruning began the "is it real" and
+    # weekend panels compared every new day against three stale files from 15 to 17
+    # August. Every published day is now a candidate. Existence is checked without
+    # parsing anything.
+    have = sorted(d for d in cov if os.path.exists(local_path(d)))
+    avail = sorted(set(have) | {d for d in published_days() if d in cov})
+    if not avail:
+        raise SystemExit("no segments on disk or published")
 
     def complete(d):
         return cov.get(d, (0, 0))[1] >= MIN_HOURS
@@ -160,14 +191,17 @@ def main():
     if "--primary" in sys.argv:
         primary = sys.argv[sys.argv.index("--primary") + 1]
     else:
-        wd = [d for d in have if weekday(d) and complete(d)]
+        wd = [d for d in avail if weekday(d) and complete(d)]
         if not wd:
             raise SystemExit(f"no complete working day yet (need {MIN_HOURS} hours). "
-                             f"coverage: { {d: cov[d][1] for d in have} }")
+                             f"coverage: { {d: cov[d][1] for d in avail} }")
         primary = wd[-1]
 
-    others = [d for d in have if d != primary]
-    compare = next((d for d in reversed(others) if weekday(d) and complete(d)), None)
+    # The nearest complete days before the primary one, never after it and never a
+    # part-day: a weekend compared against a few hours of Sunday morning would say
+    # nothing about the commute.
+    others = [d for d in avail if d < primary and complete(d)]
+    compare = next((d for d in reversed(others) if weekday(d)), None)
     weekend = next((d for d in reversed(others) if not weekday(d)), None)
 
     P = load(primary)
@@ -198,6 +232,10 @@ def main():
                        sum(r["total"] for r in rows if r["total"] < 0),
                        len(rows))
         del rows
+    # the three days the page draws, whether or not their working files survive
+    for d, rows in ((primary, P), (compare, C), (weekend, W)):
+        if d and rows is not None and d not in hours:
+            hours[d] = hourly(rows)
 
     # ---- worst roads, collapsed over the routes that use them
     road = collections.defaultdict(lambda: {"t": 0.0, "n": 0, "r": set(), "sched": 0.0,
@@ -313,7 +351,7 @@ def main():
     }
 
     out = {"L": labels, "lines": lines, "hours": hours, "worst": worst, "grid": grid,
-           "r_mt": r_pc, "r_ms": r_pw, "conc": conc, "totals": totals, "days": have}
+           "r_mt": r_pc, "r_ms": r_pw, "conc": conc, "totals": totals, "days": avail}
 
     dp = os.path.join(HERE, "segdata.json")
     json.dump(out, open(dp, "w"), ensure_ascii=False, separators=(",", ":"))
