@@ -5,7 +5,7 @@ from the city's own live GPS feed. No survey, no press release, no operator
 dashboard. Every number here comes from the same file the JUDU journey planner
 reads, polled every 10 seconds since 15 August 2026 and kept.
 
-*Current as of 30 September 2026. The long account of how the instrument was built
+*Current as of 1 October 2026. The long account of how the instrument was built
 and why is `docs/state-of-play-2026-08-18.md`; this page is the front door.*
 
 ---
@@ -61,7 +61,9 @@ summer morning ([morning](docs/morning-settled-2026-09-30.md), [weather](docs/we
 window, and the road stays slow for the hour after. A placebo with each day given
 another day's weather returns -0.03. Weather does not explain the autumn jump, which
 is +6.8 s per hop with rain held fixed. Hourly LHMT observations are now part of the
-record, nightly, back to 14 August.
+record, nightly, back to 14 August. Checked on 1 October against Vilnius airport's own
+weather reports: the timing is right and the hour-level result holds, +1.39 s with the
+airport deciding which hours were wet ([audit](docs/weather-audit-2026-10-01.md)).
 
 **Buses arrive early far more often than they leave early.** 10 to 13% of trips
 end more than a minute ahead, 18.5% on the last run of a shift. But only
@@ -84,6 +86,7 @@ about the service run, not about the wait, and on a frequent route those differ.
 
 ## What is open
 
+- Hour labels assume UTC+3; summer time ends on 25 October and they must follow it
 - Whether the morning falls back during the pupils' autumn holiday, 2 to 8 November
 - Whether the 46.1 km of bus lanes sit where the delay actually is
 - The five districts promised more service, against a control

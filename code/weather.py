@@ -6,12 +6,15 @@ network by roughly a third on its own (docs/weather-2026-09-30.md). Without the
 weather in the record, a wet week reads as a worse network.
 
 Source: Lietuvos hidrometeorologijos tarnyba (LHMT), https://api.meteo.lt, station
-vilniaus-ams (Vilniaus AMS, 54.626 N 25.107 E, about 9 km south-west of the old
-town). Data licensed CC BY-SA 4.0; the source must be credited when it is reused.
+vilniaus-ams (Vilniaus AMS, 54.626 N 25.107 E, 13.4 km west-south-west of Cathedral
+Square and 11.5 km from the airport; corrected 1 October 2026, this said "about 9 km
+south-west of the old town"). Data licensed CC BY-SA 4.0; the source must be credited when it is reused.
 
 One file per UTC day, pub/weather/weather-YYYY-MM-DD.csv, so a finished day is never
 rewritten and git stores each one once. The observation stamped T covers the hour
-ending at T, and precipitation is millimetres over that hour.
+ending at T, and precipitation is millimetres over that hour. Both were checked against
+Vilnius airport's METAR reports in docs/weather-audit-2026-10-01.md. The gauge steps in
+0.1 mm and misses some light drizzle.
 
     python3 weather.py                          # yesterday and today (UTC), the nightly run
     python3 weather.py --from 2026-08-14 --to 2026-09-30   # backfill
