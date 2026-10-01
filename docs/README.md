@@ -5,6 +5,7 @@ overturned. Newest first.
 
 | date | document | what it says |
 |---|---|---|
+| 1 Oct 2026 | [`summer-time-fix-2026-10-01.md`](summer-time-fix-2026-10-01.md) | Operations. Every script now follows Vilnius local time through summer time; from 25 Oct the nightly tables would otherwise have come out empty. Published outputs unchanged. |
 | 1 Oct 2026 | [`weather-audit-2026-10-01.md`](weather-audit-2026-10-01.md) | Audit. The weather record checks out against Vilnius airport; two statements corrected; the day-level wet-morning figure is instrument-dependent. Summer time ends 25 Oct and the hour labels need fixing first. |
 | 30 Sep 2026 | [`weather-2026-09-30.md`](weather-2026-09-30.md) | Weather joined to the record. Rain adds about a third to delay; it does not explain the autumn jump, and it was hiding a real easing of the morning. |
 | 30 Sep 2026 | [`morning-settled-2026-09-30.md`](morning-settled-2026-09-30.md) | The autumn morning was a step, not a slope. Flat since the first school week at about +9 s per hop, still 4.6 times summer. |

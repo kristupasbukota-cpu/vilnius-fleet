@@ -44,7 +44,11 @@ from collections import defaultdict
 from datetime import datetime, timezone, timedelta
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-TZ = timedelta(hours=3)
+from zoneinfo import ZoneInfo
+# Vilnius local time. It follows summer time: UTC+3 until 25 October 2026, then
+# UTC+2. Until 1 October 2026 this file used a fixed timedelta(hours=3), which
+# would have filed every hop one hour late from the end of summer time.
+VILNIUS = ZoneInfo("Europe/Vilnius")
 
 DEV_MAX = 3600        # beyond an hour is a stale trip assignment, not lateness
 NEAR = 90             # a reading must fall within this of T to speak for T
@@ -162,11 +166,19 @@ def load_gtfs():
     return first, seen, timing
 
 
-def day_files(day):
-    """Local day D is (D-1)T21:00:00Z to DT20:59:59Z, Vilnius being UTC+3."""
+def utc_bounds(day):
+    """Local day D as [start, end) in UTC, formatted like the snapshot filenames.
+    24 hours most of the year, 25 on the day summer time ends, 23 on the day it
+    starts. Compared as strings, which is exact for this format."""
     d = datetime.strptime(day, "%Y-%m-%d")
-    lo = (d - timedelta(hours=3)).strftime("%Y%m%dT%H%M%SZ")
-    hi = (d + timedelta(hours=21)).strftime("%Y%m%dT%H%M%SZ")
+    lo = d.replace(tzinfo=VILNIUS).astimezone(timezone.utc)
+    hi = (d + timedelta(days=1)).replace(tzinfo=VILNIUS).astimezone(timezone.utc)
+    return lo.strftime("%Y%m%dT%H%M%SZ"), hi.strftime("%Y%m%dT%H%M%SZ")
+
+
+def day_files(day):
+    """The snapshots inside local day D. See utc_bounds."""
+    lo, hi = utc_bounds(day)
     out = []
     for p in sorted(glob.glob(os.path.join(HERE, "snapshots", "*.csv.gz"))):
         s = os.path.basename(p)[:16]
@@ -190,7 +202,7 @@ def main():
 
     for n, p in enumerate(files):
         stamp = os.path.basename(p)[:15]
-        local = datetime.strptime(stamp, "%Y%m%dT%H%M%S").replace(tzinfo=timezone.utc) + TZ
+        local = datetime.strptime(stamp, "%Y%m%dT%H%M%S").replace(tzinfo=timezone.utc).astimezone(VILNIUS)
         snap_s = local.hour * 3600 + local.minute * 60 + local.second
         try:
             txt = gzip.open(p, "rt", encoding="utf-8", errors="replace").read().replace("\r", "\n")

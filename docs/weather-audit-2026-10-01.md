@@ -115,6 +115,10 @@ three hours when filing each hop under a local hour. From 25 October every hour
 label in the record would be one hour late, and the weather would be joined to the
 wrong hour. That needs fixing before 25 October. It is task #30.
 
+*Later on 1 October: fixed, and it was worse than this says. With the clock an hour
+out, `segments.py` discards every GPS fix as stale, so the days would have come out
+empty rather than shifted. See [`summer-time-fix-2026-10-01.md`](summer-time-fix-2026-10-01.md).*
+
 ---
 
 ## Corrections made

@@ -86,7 +86,7 @@ about the service run, not about the wait, and on a frequent route those differ.
 
 ## What is open
 
-- Hour labels assume UTC+3; summer time ends on 25 October and they must follow it
+- Check 26 October, the first full winter-time day, came through the summer-time fix cleanly
 - Whether the morning falls back during the pupils' autumn holiday, 2 to 8 November
 - Whether the 46.1 km of bus lanes sit where the delay actually is
 - The five districts promised more service, against a control

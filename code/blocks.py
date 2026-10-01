@@ -21,7 +21,11 @@ from collections import defaultdict
 from datetime import datetime, timezone, timedelta
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-TZ = timedelta(hours=3)
+from zoneinfo import ZoneInfo
+# Vilnius local time. It follows summer time: UTC+3 until 25 October 2026, then
+# UTC+2. Until 1 October 2026 this file used a fixed timedelta(hours=3), which
+# would have filed every hop one hour late from the end of summer time.
+VILNIUS = ZoneInfo("Europe/Vilnius")
 DEV_MAX = 3600          # beyond an hour is a stale trip assignment, not lateness
 MIN_OBS = 3             # a trip seen fewer times than this has no reliable endpoints
 
@@ -37,15 +41,26 @@ DAY = sys.argv[sys.argv.index("--day") + 1] if "--day" in sys.argv else None
 OUT = sys.argv[sys.argv.index("--out") + 1] if "--out" in sys.argv else "blocks.json"
 
 
+def utc_bounds(day):
+    """Local day D as [start, end) in UTC, formatted like the snapshot filenames.
+    24 hours most of the year, 25 on the day summer time ends, 23 on the day it
+    starts. Compared as strings, which is exact for this format."""
+    d = datetime.strptime(day, "%Y-%m-%d")
+    lo = d.replace(tzinfo=VILNIUS).astimezone(timezone.utc)
+    hi = (d + timedelta(days=1)).replace(tzinfo=VILNIUS).astimezone(timezone.utc)
+    return lo.strftime("%Y%m%dT%H%M%SZ"), hi.strftime("%Y%m%dT%H%M%SZ")
+
+
+_BOUNDS = {}
+
+
 def in_day(stamp, day):
-    """Local day D runs from (D-1)T21:00:00Z to DT20:59:59Z, the archive being UTC
-    and Vilnius being UTC+3 all summer. Compared as strings, which is exact for
-    this format and avoids parsing every filename twice."""
+    """Is this UTC snapshot stamp inside local day `day`? See utc_bounds."""
     if day is None:
         return True
-    d = datetime.strptime(day, "%Y-%m-%d")
-    lo = (d - timedelta(hours=3)).strftime("%Y%m%dT%H%M%SZ")
-    hi = (d + timedelta(hours=21)).strftime("%Y%m%dT%H%M%SZ")
+    if day not in _BOUNDS:
+        _BOUNDS[day] = utc_bounds(day)
+    lo, hi = _BOUNDS[day]
     return lo <= stamp < hi
 
 
@@ -81,7 +96,7 @@ def main():
         stamp = os.path.basename(p).split(".")[0]
         if not in_day(stamp, DAY):
             continue
-        local = datetime.strptime(stamp, "%Y%m%dT%H%M%SZ").replace(tzinfo=timezone.utc) + TZ
+        local = datetime.strptime(stamp, "%Y%m%dT%H%M%SZ").replace(tzinfo=timezone.utc).astimezone(VILNIUS)
         day = local.strftime("%Y-%m-%d")
         mins = local.hour * 60 + local.minute + local.second / 60.0
 

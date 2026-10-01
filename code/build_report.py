@@ -22,7 +22,11 @@ import collections, glob, gzip, json, math, os, re, statistics as st, sys
 from datetime import datetime, timezone, timedelta
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-TZ = timedelta(hours=3)
+from zoneinfo import ZoneInfo
+# Vilnius local time. It follows summer time: UTC+3 until 25 October 2026, then
+# UTC+2. Until 1 October 2026 this file used a fixed timedelta(hours=3), which
+# would have filed every hop one hour late from the end of summer time.
+VILNIUS = ZoneInfo("Europe/Vilnius")
 LON = math.cos(math.radians(54.69))
 MIN_HOURS = 20          # a "complete" day; anything thinner is not compared
 CLAMP = 120
@@ -41,7 +45,7 @@ CORRIDOR = {"Žaliasis tiltas", "Lvivo st.", "Kražių st.", "Rinktinės st.",
 
 def local_day(basename):
     d = datetime.strptime(basename.split(".")[0], "%Y%m%dT%H%M%SZ")
-    return (d.replace(tzinfo=timezone.utc) + TZ)
+    return d.replace(tzinfo=timezone.utc).astimezone(VILNIUS)
 
 
 def pretty(day):
@@ -182,8 +186,14 @@ def main():
     if not avail:
         raise SystemExit("no segments on disk or published")
 
+    # A day still in progress is never complete, however many hours it already has.
+    # Without this, a run late in the evening (outside the nightly chain, which runs
+    # just after midnight) took today as the primary day, loaded its working file from
+    # 00:20, which holds three hours, and crashed on an empty worst-roads list.
+    today = datetime.now(timezone.utc).astimezone(VILNIUS).date().isoformat()
+
     def complete(d):
-        return cov.get(d, (0, 0))[1] >= MIN_HOURS
+        return d < today and cov.get(d, (0, 0))[1] >= MIN_HOURS
 
     def weekday(d):
         return datetime.fromisoformat(d).weekday() < 5

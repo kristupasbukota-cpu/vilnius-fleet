@@ -22,7 +22,8 @@ and their difference is the vehicle's position *on its own timetable*:
 A bus 6 minutes late at 17:20 is standing where it was scheduled to be at 17:14.
 Look p up in that trip's stop_times and you know which pair of stops it is between,
 without ever touching a coordinate. GTFS times and MatavimoLaikas are both seconds
-past local midnight, so there is no timezone arithmetic anywhere in this file.
+past local midnight. The one piece of timezone arithmetic is placing each snapshot
+in Vilnius local time, which follows summer time (VILNIUS below).
 
 Between two consecutive fixes of one vehicle the schedule position advances from p0
 to p1 while real time advances t0 to t1, and
@@ -46,7 +47,11 @@ from collections import defaultdict
 from datetime import datetime, timezone, timedelta
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-TZ = timedelta(hours=3)
+from zoneinfo import ZoneInfo
+# Vilnius local time. It follows summer time: UTC+3 until 25 October 2026, then
+# UTC+2. Until 1 October 2026 this file used a fixed timedelta(hours=3), which
+# would have filed every hop one hour late from the end of summer time.
+VILNIUS = ZoneInfo("Europe/Vilnius")
 
 DEV_MAX = 3600      # beyond an hour is a stale trip assignment, not lateness
 DT_MIN, DT_MAX = 15, 240      # seconds between two usable fixes of one vehicle
@@ -192,7 +197,7 @@ def main():
     for n, path in enumerate(files):
         base = os.path.basename(path).split(".")[0]
         utc = datetime.strptime(base, "%Y%m%dT%H%M%SZ").replace(tzinfo=timezone.utc)
-        local = utc + TZ
+        local = utc.astimezone(VILNIUS)
         now = local.hour * 3600 + local.minute * 60 + local.second
 
         try:
@@ -338,6 +343,12 @@ def main():
     json.dump(out, open(path, "w"), ensure_ascii=False, separators=(",", ":"))
 
     print(f"\n{rows_seen} usable rows, {matched} placed, {stale} dropped as stale fixes")
+    # If the snapshot clock and the feed's own MatavimoLaikas disagree about local
+    # time, every fix looks an hour old and almost nothing is placed. Say so loudly
+    # rather than publishing an empty day as if it were a quiet one.
+    if matched + stale and stale > 0.5 * (matched + stale):
+        print(f"WARNING: {stale / (matched + stale):.0%} of fixes dropped as stale; "
+              "the local-time offset is probably wrong", flush=True)
     print(f"{events[0]} intervals used, {events[1]} segment traversals charged, "
           f"{events[2]/60:.0f} vehicle-minutes of lateness attributed")
     print(f"{len(seg)} segments seen, {len(out)} with >= {MIN_TRAVERSALS} traversals")
@@ -357,7 +368,7 @@ def main():
 
 def _localday(path):
     b = os.path.basename(path).split(".")[0]
-    d = datetime.strptime(b, "%Y%m%dT%H%M%SZ").replace(tzinfo=timezone.utc) + TZ
+    d = datetime.strptime(b, "%Y%m%dT%H%M%SZ").replace(tzinfo=timezone.utc).astimezone(VILNIUS)
     return d.date().isoformat()
 
 

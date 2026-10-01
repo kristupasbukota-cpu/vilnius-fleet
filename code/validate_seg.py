@@ -19,7 +19,7 @@ from datetime import datetime, timezone, timedelta
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from segments import load_gtfs, as_int, DEV_MAX, STALE_MAX, TZ
+from segments import load_gtfs, as_int, DEV_MAX, STALE_MAX, VILNIUS
 
 STRIDE = int(sys.argv[sys.argv.index("--stride") + 1]) if "--stride" in sys.argv else 25
 
@@ -42,7 +42,7 @@ def main():
 
     for path in files:
         base = os.path.basename(path).split(".")[0]
-        local = datetime.strptime(base, "%Y%m%dT%H%M%SZ").replace(tzinfo=timezone.utc) + TZ
+        local = datetime.strptime(base, "%Y%m%dT%H%M%SZ").replace(tzinfo=timezone.utc).astimezone(VILNIUS)
         now = local.hour * 3600 + local.minute * 60 + local.second
         try:
             txt = gzip.open(path, "rt", encoding="utf-8", errors="replace").read().replace("\r", "\n")

@@ -35,10 +35,15 @@ def load():
         parts.append(g)
     dh = pd.concat(parts)
     w = pd.concat(pd.read_csv(p) for p in sorted(glob.glob("weather/weather-*.csv")))
-    # The observation stamped T covers the hour ending at T. Local summer time is UTC+3.
-    start = pd.to_datetime(w.observationTimeUtc) + pd.Timedelta(hours=2)
+    # The observation stamped T covers the hour ending at T (checked against the
+    # airport in docs/weather-audit-2026-10-01.md), so it describes the local hour that
+    # starts at T - 1 h. Local time follows summer time; until 1 October 2026 this was
+    # a fixed +2 h, right only until 25 October. On the night summer time ends, two UTC
+    # hours share the local label 03, and their rain is added together.
+    start = (pd.to_datetime(w.observationTimeUtc) - pd.Timedelta(hours=1)) \
+        .dt.tz_localize("UTC").dt.tz_convert("Europe/Vilnius")
     w = pd.DataFrame({"day": start.dt.strftime("%Y-%m-%d"), "hour": start.dt.hour,
-                      "rain": w.precipitation.values})
+                      "rain": w.precipitation.values}).groupby(["day", "hour"], as_index=False).rain.sum()
     x = dh.merge(w, on=["day", "hour"], how="left")
     x["wd"] = pd.to_datetime(x.day).dt.dayofweek
     x = x[(x.wd < 5) & ~x.day.isin(SKIP) & x.hour.isin(HOURS)].copy()

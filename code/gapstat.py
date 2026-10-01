@@ -11,7 +11,11 @@ import glob, os, collections
 from datetime import datetime, timezone, timedelta
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-TZ = timedelta(hours=3)
+from zoneinfo import ZoneInfo
+# Vilnius local time. It follows summer time: UTC+3 until 25 October 2026, then
+# UTC+2. Until 1 October 2026 this file used a fixed timedelta(hours=3), which
+# would have filed every hop one hour late from the end of summer time.
+VILNIUS = ZoneInfo("Europe/Vilnius")
 
 ts = sorted(datetime.strptime(os.path.basename(p).split(".")[0], "%Y%m%dT%H%M%SZ")
             .replace(tzinfo=timezone.utc)
@@ -20,7 +24,7 @@ print(f"{len(ts)} snapshots, {ts[0]:%Y-%m-%d %H:%M} to {ts[-1]:%Y-%m-%d %H:%M} U
 
 byhour = collections.defaultdict(list)
 for a, b in zip(ts, ts[1:]):
-    byhour[(a + TZ).hour].append((b - a).total_seconds())
+    byhour[a.astimezone(VILNIUS).hour].append((b - a).total_seconds())
 
 print("local hour   n      median   p99      max      >120s   >300s")
 allg = []

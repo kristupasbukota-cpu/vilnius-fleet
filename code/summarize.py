@@ -23,7 +23,11 @@ from collections import defaultdict
 from datetime import datetime, timezone, timedelta
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-TZ = timedelta(hours=3)
+from zoneinfo import ZoneInfo
+# Vilnius local time. It follows summer time: UTC+3 until 25 October 2026, then
+# UTC+2. Until 1 October 2026 this file used a fixed timedelta(hours=3), which
+# would have filed every hop one hour late from the end of summer time.
+VILNIUS = ZoneInfo("Europe/Vilnius")
 DEV_MAX = 3600          # beyond an hour is a stale trip assignment, not lateness
 CELL = 0.0025           # ~250 m of latitude
 LONC = 0.577            # cos(54.7 deg)
@@ -102,7 +106,7 @@ def main():
     t_start = time.time()
 
     if st["day0"] is None:
-        st["day0"] = (stamp_of(files[0]) + TZ).date().isoformat()
+        st["day0"] = stamp_of(files[0]).astimezone(VILNIUS).date().isoformat()
     day0 = datetime.fromisoformat(st["day0"]).date()
 
     hist, cell, rtype, vlast = st["hist"], st["cell"], st["rtype"], st["vlast"]
@@ -112,7 +116,7 @@ def main():
     for n, p in enumerate(todo):
         t_utc = stamp_of(p)
         secs = t_utc.timestamp()
-        local = t_utc + TZ
+        local = t_utc.astimezone(VILNIUS)
         hour = local.hour
         dt_key = "we" if local.weekday() >= 5 else "wd"
         mins = local.hour * 60 + local.minute + local.second / 60 + 1440 * (local.date() - day0).days

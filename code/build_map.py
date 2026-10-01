@@ -4,7 +4,11 @@ import argparse, csv, glob, gzip, io, json, os, zipfile
 from datetime import datetime, timezone, timedelta
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-VILNIUS_TZ = timedelta(hours=3)  # EEST
+from zoneinfo import ZoneInfo
+# Vilnius local time. It follows summer time: UTC+3 until 25 October 2026, then
+# UTC+2. Until 1 October 2026 this file used a fixed timedelta(hours=3), which
+# would have filed every hop one hour late from the end of summer time.
+VILNIUS = ZoneInfo("Europe/Vilnius")
 
 LAT0, LON0 = 54.4, 24.8       # corner of the accepted region, see the lat/lon guard
 TYPE_MAP = {"Autobusai": 0, "Troleibusai": 1, "Laivai": 2}
@@ -51,7 +55,7 @@ def build_arc(files):
     arc = []
     for p in files:
         stamp = os.path.basename(p).split(".")[0]
-        local = datetime.strptime(stamp, "%Y%m%dT%H%M%SZ").replace(tzinfo=timezone.utc) + VILNIUS_TZ
+        local = datetime.strptime(stamp, "%Y%m%dT%H%M%SZ").replace(tzinfo=timezone.utc).astimezone(VILNIUS)
         rows = read_snapshot(p)
         rows = [r for r in rows if (r.get("Marsrutas") or "").strip()]
         d = sorted(x for x in (as_int(r.get("NuokrypisSekundemis")) for r in rows) if x is not None)
@@ -118,12 +122,12 @@ def build(spacing, max_frames):
             lst.append(s)
         return idx[s]
 
-    day0 = (stamp_of(files[0]) + VILNIUS_TZ).date() if files else None
+    day0 = stamp_of(files[0]).astimezone(VILNIUS).date() if files else None
 
     for p in files:
         stamp = os.path.basename(p).split(".")[0]
         t_utc = datetime.strptime(stamp, "%Y%m%dT%H%M%SZ").replace(tzinfo=timezone.utc)
-        local = t_utc + VILNIUS_TZ
+        local = t_utc.astimezone(VILNIUS)
 
         vehicles = []
         for r in read_snapshot(p):
@@ -163,14 +167,14 @@ def build(spacing, max_frames):
     day_labels = {}
     if day0 is not None:
         for f in files:
-            loc = (stamp_of(f) + VILNIUS_TZ)
+            loc = stamp_of(f).astimezone(VILNIUS)
             off = (loc.date() - day0).days
             if off > 0:
                 day_labels[off] = loc.strftime("%a %d %b")
 
     return {"frames": frames, "routes": route_list, "arc": arc, "dayLabels": day_labels,
             "veh": veh_list, "dirs": dir_list, "org": [LAT0, LON0],
-            "generated": (datetime.now(timezone.utc) + VILNIUS_TZ).strftime("%Y-%m-%d %H:%M")}
+            "generated": datetime.now(timezone.utc).astimezone(VILNIUS).strftime("%Y-%m-%d %H:%M")}
 
 
 def main():

@@ -11,7 +11,7 @@ of Vilnius airport, EYVI, fetched from the Iowa Environmental Mesonet archive), 
 then re-runs the three weather results under four definitions of a wet hour.
 Needs pandas and numpy, and network access to mesonet.agron.iastate.edu.
 """
-import glob, io, math, os, sys, urllib.request
+import glob, io, math, os, sys, time, urllib.error, urllib.request
 import numpy as np
 import pandas as pd
 
@@ -50,7 +50,15 @@ def main():
     print("2. Condition code against measured rain: %d hours with 0.1 mm or more, %d with a rain code, "
           "%d rain-code hours measured 0 mm" % ((P >= 0.1).sum(), code.sum(), (code & (P == 0)).sum()))
 
-    e = pd.read_csv(io.StringIO(urllib.request.urlopen(IEM, timeout=60).read().decode()))
+    for attempt in range(5):           # the archive rate-limits with HTTP 429
+        try:
+            raw = urllib.request.urlopen(IEM, timeout=60).read().decode()
+            break
+        except urllib.error.HTTPError as err:
+            if err.code != 429 or attempt == 4:
+                raise
+            time.sleep(30 * (attempt + 1))
+    e = pd.read_csv(io.StringIO(raw))
     e["t"] = pd.to_datetime(e.valid)
     e["rain"] = e.metar.str.contains(RAIN_RE, regex=True).astype(int)
     e["tmpc"] = pd.to_numeric(e.tmpc, errors="coerce")
@@ -88,13 +96,18 @@ def main():
     x0["aut"] = (x0.day >= "2026-09-01").astype(int)
     x0["ts"] = pd.to_datetime(x0.day) + pd.to_timedelta(x0.hour, unit="h")
 
-    def local(flag, offset):   # LHMT stamp T = end of hour -> local start = T + 2 h in summer time
-        return pd.Series(flag.values, index=flag.index + pd.Timedelta(hours=offset))
+    def local(flag, shift):
+        """UTC-indexed flags to naive Vilnius local hour starts. shift=-1 for LHMT, whose
+        stamp T ends the hour; 0 for an index that already marks the hour's start. Local
+        time follows summer time; until 1 October 2026 this was a fixed offset."""
+        idx = (flag.index + pd.Timedelta(hours=shift)).tz_localize("UTC") \
+            .tz_convert("Europe/Vilnius").tz_localize(None)
+        return pd.Series(flag.values, index=idx).groupby(level=0).max()
     defs = {
-        "A. as published: LHMT 0.1 mm or more": local(wet, 2),
-        "B. LHMT 0.1 mm or a rain condition code": local(((P >= 0.1) | code).astype(int), 2),
-        "C. Vilnius airport METAR reports rain": local(mh.rain, 3),
-        "D. LHMT read the wrong way, as start of hour": local(wet, 3),
+        "A. as published: LHMT 0.1 mm or more": local(wet, -1),
+        "B. LHMT 0.1 mm or a rain condition code": local(((P >= 0.1) | code).astype(int), -1),
+        "C. Vilnius airport METAR reports rain": local(mh.rain, 0),
+        "D. LHMT read the wrong way, as start of hour": local(wet, 0),
     }
     print("5. The three results under each definition of a wet hour:")
     for name, flag in defs.items():

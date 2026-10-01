@@ -24,7 +24,11 @@ from datetime import datetime, timezone, timedelta
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 PUB = os.path.join(HERE, "pub")
-TZ = timedelta(hours=3)
+from zoneinfo import ZoneInfo
+# Vilnius local time. It follows summer time: UTC+3 until 25 October 2026, then
+# UTC+2. Until 1 October 2026 this file used a fixed timedelta(hours=3), which
+# would have filed every hop one hour late from the end of summer time.
+VILNIUS = ZoneInfo("Europe/Vilnius")
 
 # Twenty hours of coverage is the same bar the day summary uses. Below it the day
 # is a fragment, and a fragment exported once would never be revisited because
@@ -46,7 +50,7 @@ def coverage():
     for p in glob.glob(os.path.join(HERE, "snapshots", "*.csv.gz")):
         stamp = os.path.basename(p)[:15]
         try:
-            t = datetime.strptime(stamp, "%Y%m%dT%H%M%S").replace(tzinfo=timezone.utc) + TZ
+            t = datetime.strptime(stamp, "%Y%m%dT%H%M%S").replace(tzinfo=timezone.utc).astimezone(VILNIUS)
         except ValueError:
             continue
         mins[t.strftime("%Y-%m-%d")].add(t.strftime("%H%M"))
@@ -101,7 +105,7 @@ def export(day):
 def main():
     t0 = time.time()
     cov = coverage()
-    today = (datetime.now(timezone.utc) + TZ).strftime("%Y-%m-%d")
+    today = datetime.now(timezone.utc).astimezone(VILNIUS).strftime("%Y-%m-%d")
 
     if ONE:
         days = [ONE]
