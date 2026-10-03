@@ -83,7 +83,10 @@ terminal loop rather than only the first one GTFS lists. The widely repeated
 13.5% was reading the previous trip's arrival. The one route that stood out,
 61 direction 1 at 19%, is two vehicles: on the same scheduled trips, 7020 and 7003
 left early 29 times in 72 and 7017 never, from a terminus the timetable gives a
-one-minute turnaround ([route 61](docs/route-61-early-2026-10-02.md)).
+one-minute turnaround ([route 61](docs/route-61-early-2026-10-02.md)). On the autumn
+network it persists at 24%, now with no scheduled stand at all; 7020 is still the worst
+but other vehicles do it on some days and not others, which points at who is driving
+rather than which bus.
 
 **The city's published promises hold.** Express routes deliver a median gap of
 7.9 minutes against a promised 5 to 10. Of the 25 busiest main routes, none is
@@ -112,7 +115,6 @@ Tumo-Vaižganto st. ([bus lanes](docs/bus-lanes-2026-10-02.md)).
 
 - Check 26 October, the first full winter-time day, came through the summer-time fix cleanly
 - Whether the morning falls back during the pupils' autumn holiday, 2 to 8 November
-- Whether route 61's two early-leaving vehicles still do it on the autumn network (needs `departure.py` on September days)
 - Repository growth: a proposal awaits a decision ([plan](docs/repo-growth-plan-2026-10-02.md))
 
 ---

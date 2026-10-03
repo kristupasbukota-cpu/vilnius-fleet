@@ -11,7 +11,7 @@ overturned. Newest first.
 | 2 Oct 2026 | [`excess-wait-2026-10-02.md`](excess-wait-2026-10-02.md) | Passengers wait 1.2 min longer than the timetable implies on express routes, 0.9 on trunk routes. |
 | 2 Oct 2026 | [`roads-not-vehicles-2026-10-02.md`](roads-not-vehicles-2026-10-02.md) | Lateness belongs to roads: 22.4 s per hop between links, 1.5 s between vehicles, 2.1 s between routes. |
 | 2 Oct 2026 | [`one-direction-2026-10-02.md`](one-direction-2026-10-02.md) | The autumn morning problem is inbound: +17.0 s per hop towards the centre, +2.1 s away. |
-| 2 Oct 2026 | [`route-61-early-2026-10-02.md`](route-61-early-2026-10-02.md) | Route 61's early departures are two vehicles, on the same trips a third never leaves early on. |
+| 2 Oct 2026 | [`route-61-early-2026-10-02.md`](route-61-early-2026-10-02.md) | Route 61's early departures are two vehicles, on the same trips a third never leaves early on. Updated 3 October: on the autumn network still 24%, but by vehicle-day, not two vehicles. |
 | 1 Oct 2026 | [`summer-time-fix-2026-10-01.md`](summer-time-fix-2026-10-01.md) | Operations. Every script now follows Vilnius local time through summer time; from 25 Oct the nightly tables would otherwise have come out empty. Published outputs unchanged. |
 | 1 Oct 2026 | [`weather-audit-2026-10-01.md`](weather-audit-2026-10-01.md) | Audit. The weather record checks out against Vilnius airport; two statements corrected; the day-level wet-morning figure is instrument-dependent. Summer time ends 25 Oct and the hour labels need fixing first. |
 | 30 Sep 2026 | [`weather-2026-09-30.md`](weather-2026-09-30.md) | Weather joined to the record. Rain adds about a third to delay; it does not explain the autumn jump, and it was hiding a real easing of the morning. |
