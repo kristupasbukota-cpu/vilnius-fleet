@@ -1,5 +1,12 @@
 # Keeping the repository under 1 GB
 
+> **Decided and done, 3 October 2026.** Option B was chosen and is in place from the
+> night of 3 to 4 October: new timetable versions go into `gtfs/` as verified
+> patches, about 30 KB instead of 3.5 MB, with the first version of each month whole,
+> and new hop and block tables are written as xz. Nothing already published changed.
+> Option C, the history rewrite, was not chosen and stays open as task #13. See
+> *3 October: option B in place* at the end. The proposal below is unchanged.
+
 2 October 2026. Task #26. A proposal: nothing here has been changed yet.
 
 **Result: at the current rate the repository passes 1 GB around 22 January 2027.
@@ -78,3 +85,40 @@ easy to explain and never needs history rewritten.
 `git clone --bare` of the whole repository, `git count-objects -vH`, and the on-disk
 size of every blob by path from `git cat-file --batch-check`. Timetable changes from
 the archived zips themselves; xz measured on `trav-2026-09-29`.
+
+## 3 October: option B in place
+
+**What changed on the box.**
+
+- `publish.sh` no longer copies every `gtfs*.zip` into the repository. It runs
+  `gtfs_pub.py`. That stores a new version whole when it is the first of its calendar
+  month, or when its exact bytes are already in the repository. Otherwise it stores
+  `gtfs-YYYYMMDD.patch.xz`, the lines changed since the previous version. A patch is
+  only written after the box has rebuilt the version from it and compared every file
+  inside by sha256. Any difference and the version is stored whole.
+- The current feed is published under the name it will be archived under. The old
+  `gtfs/gtfs.zip`, a second copy of the newest version, leaves the working tree; git
+  keeps it.
+- `export.py` writes `trav-*.csv.xz` and `blocks-*.json.xz` for days from 3 October.
+  Earlier days stay `.gz`.
+- `weather_effect.py` and `weather_audit.py` read both.
+
+**Tested before installing.** On the city's own versions: 30 September as a patch
+against 29 September came to 33 KB instead of 3.4 MB, and 2 October against
+1 October 28 KB instead of 3.7 MB. Both were rebuilt with `gtfs_rebuild.py`, every
+file identical by sha256, fingerprints matching. Peak memory 181 MB. The hop table
+for 2 October as xz is 1.8 MB against 2.8 MB, and it reads back identical.
+
+**One thing the proposal overstated.** It said a script would rebuild any version
+"byte for byte". The files inside are rebuilt byte for byte, and so is the
+project's fingerprint of the version. The zip wrapper is not: the city compresses
+with a deflate encoder that zlib does not reproduce, so a rebuilt zip is repacked.
+Nothing here depends on the zip's own hash.
+
+**For anyone reading the repository.** `python3 code/gtfs_rebuild.py` turns `gtfs/`
+back into one zip per version in `gtfs-full/`. Read hop tables with
+`analysis/trav-*.csv.*`. Both folders now have a README.
+
+**Expected effect.** Growth falls from about 5.7 to about 2.5 MiB a day, and 1 GB moves
+from about 22 January to about mid-June 2027. A check on 27 October will measure the
+real rate after three weeks.

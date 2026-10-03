@@ -6,7 +6,7 @@ weather/):
 
     python3 code/weather_effect.py
 
-Inputs are only published files: analysis/trav-*.csv.gz (one row per charged
+Inputs are only published files: analysis/trav-*.csv.gz or .csv.xz (one row per charged
 stop-to-stop traversal) and weather/weather-*.csv (LHMT hourly observations,
 CC BY-SA 4.0). Needs pandas and numpy. Takes a few minutes, mostly the bootstraps.
 """
@@ -24,7 +24,7 @@ rng = np.random.default_rng(1)
 
 def load():
     parts = []
-    for p in sorted(glob.glob("analysis/trav-*.csv.gz")):
+    for p in sorted(glob.glob("analysis/trav-*.csv.*")):
         day = os.path.basename(p)[5:15]
         if not (FIRST <= day <= LAST):
             continue

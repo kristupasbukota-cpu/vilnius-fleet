@@ -49,7 +49,7 @@ for f in arc.json baseline.json delaygrid.json framelist.txt; do
   [ -f "$SRC/$f" ] && cp -f "$SRC/$f" "$PUB/summaries/$f"
 done
 for f in collect.py summarize.py blocks.py build_map.py build_network.py template.html \
-         cloud_setup.sh status.sh segments.py validate_seg.py runseg.sh watchdog.py gapstat.py dedupe2.py cmpjson.py wire_watchdog.sh publish.sh findrpm.py harden.sh dedupe.py refresh_gtfs.py export.py build_report.py report_template.html nightly_segments.sh wire_gtfs.sh wire_report.sh wire_export.sh departure.py weather.py weather_effect.py weather_audit.py; do
+         cloud_setup.sh status.sh segments.py validate_seg.py runseg.sh watchdog.py gapstat.py dedupe2.py cmpjson.py wire_watchdog.sh publish.sh findrpm.py harden.sh dedupe.py refresh_gtfs.py export.py build_report.py report_template.html nightly_segments.sh wire_gtfs.sh wire_report.sh wire_export.sh departure.py weather.py weather_effect.py weather_audit.py gtfs_patch.py gtfs_pub.py gtfs_rebuild.py; do
   [ -f "$SRC/$f" ] && cp -f "$SRC/$f" "$PUB/code/$f"
 done
 [ -f "$SRC/README.md" ] && cp -f "$SRC/README.md" "$PUB/README.md"
@@ -63,11 +63,12 @@ if [ -d "$SRC/docs" ]; then
 fi
 # Every timetable version we have ever held. The city publishes only the present,
 # so once a version is gone it cannot be obtained again, and every retrospective
-# claim about a past month depends on that month's schedule. About 3 MB each, a
-# handful a year, which is cheap for data that is otherwise unrecoverable.
-for f in "$SRC"/gtfs*.zip; do
-  [ -f "$f" ] && cp -f "$f" "$PUB/gtfs/$(basename "$f")"
-done
+# claim about a past month depends on that month's schedule. The box keeps each one
+# whole. The repository, from 3 October 2026, gets the first version of each month
+# whole and the rest as verified patches against the version before, about 30 KB
+# instead of 3.5 MB: the city republishes almost daily, which a "handful a year"
+# did not foresee. code/gtfs_rebuild.py turns gtfs/ back into one zip per version.
+python3 "$SRC/gtfs_pub.py" "$PUB/gtfs" || echo "gtfs_pub FAILED, timetables not published this run" >&2
 [ -f "$SRC/gtfs_state.json" ] && cp -f "$SRC/gtfs_state.json" "$PUB/gtfs/versions.json"
 
 # The per-day segment files, gzipped. Uncompressed they are about 3.5 MB a night,

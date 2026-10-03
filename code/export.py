@@ -18,7 +18,7 @@ by addition and git never has to store a second version of anything.
     python3 export.py --day 2026-08-20
     python3 export.py --dry
 """
-import glob, gzip, os, shutil, subprocess, sys, time
+import glob, gzip, lzma, os, shutil, subprocess, sys, time
 from collections import defaultdict
 from datetime import datetime, timezone, timedelta
 
@@ -58,7 +58,8 @@ def coverage():
 
 
 def already(day):
-    return os.path.exists(os.path.join(PUB, "analysis", f"trav-{day}.csv.gz"))
+    return any(os.path.exists(os.path.join(PUB, "analysis", f"trav-{day}.csv.{ext}"))
+               for ext in ("gz", "xz"))
 
 
 def run(cmd):
@@ -75,10 +76,19 @@ def run(cmd):
 
 
 def squeeze(src, dst):
-    """gzip src into dst, then drop the uncompressed original: this box has 75 GB
-    free and a day of traversals is 12 MB, but there is no reason to keep both."""
+    """Compress src into dst, then drop the uncompressed original: this box has 75 GB
+    free and a day of traversals is 12 MB, but there is no reason to keep both.
+
+    From 4 October 2026 the hop and block tables are written as xz, not gzip: about
+    36% smaller (1.71 MB against 2.66 MB for 29 September) at about 94 MB of memory,
+    part of keeping the repository under 1 GB (docs/repo-growth-plan-2026-10-02.md).
+    Days already exported stay as they are. pandas reads either by the extension."""
     os.makedirs(os.path.dirname(dst), exist_ok=True)
-    with open(src, "rb") as f, gzip.open(dst, "wb", 9) as g:
+    if dst.endswith(".xz"):
+        opener = lambda: lzma.open(dst, "wb", preset=6)
+    else:
+        opener = lambda: gzip.open(dst, "wb", 9)
+    with open(src, "rb") as f, opener() as g:
         shutil.copyfileobj(f, g, 1 << 20)
     n = os.path.getsize(dst)
     os.unlink(src)
@@ -97,8 +107,8 @@ def export(day):
         return 0
     total = 0
     total += squeeze(os.path.join(HERE, seg), os.path.join(PUB, "segments", seg + ".gz"))
-    total += squeeze(os.path.join(HERE, trav), os.path.join(PUB, "analysis", trav + ".gz"))
-    total += squeeze(os.path.join(HERE, blk), os.path.join(PUB, "analysis", blk + ".gz"))
+    total += squeeze(os.path.join(HERE, trav), os.path.join(PUB, "analysis", trav + ".xz"))
+    total += squeeze(os.path.join(HERE, blk), os.path.join(PUB, "analysis", blk + ".xz"))
     return total
 
 

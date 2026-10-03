@@ -5,7 +5,7 @@ overturned. Newest first.
 
 | date | document | what it says |
 |---|---|---|
-| 2 Oct 2026 | [`repo-growth-plan-2026-10-02.md`](repo-growth-plan-2026-10-02.md) | Proposal. The repository passes 1 GB around January; three options to push that to mid-2027. Decisions needed. |
+| 2 Oct 2026 | [`repo-growth-plan-2026-10-02.md`](repo-growth-plan-2026-10-02.md) | Proposal. The repository passes 1 GB around January; three options to push that to mid-2027. Updated 3 October: option B chosen and in place. |
 | 2 Oct 2026 | [`districts-2026-10-02.md`](districts-2026-10-02.md) | Four of the five districts promised more frequent routes got more than the city; Baltupiai did not. Lazdynėliai's mornings got much slower. |
 | 2 Oct 2026 | [`bus-lanes-2026-10-02.md`](bus-lanes-2026-10-02.md) | The bus lanes carry a fifth of bus traffic but sit alongside only 5 of the 20 worst links. |
 | 2 Oct 2026 | [`excess-wait-2026-10-02.md`](excess-wait-2026-10-02.md) | Passengers wait 1.2 min longer than the timetable implies on express routes, 0.9 on trunk routes. |

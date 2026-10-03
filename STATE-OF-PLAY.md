@@ -115,7 +115,7 @@ Tumo-Vaižganto st. ([bus lanes](docs/bus-lanes-2026-10-02.md)).
 
 - Check 26 October, the first full winter-time day, came through the summer-time fix cleanly
 - Whether the morning falls back during the pupils' autumn holiday, 2 to 8 November
-- Repository growth: a proposal awaits a decision ([plan](docs/repo-growth-plan-2026-10-02.md))
+- Repository growth: option B in place from 3 October, 1 GB pushed to about mid-June 2027; the history rewrite (C) is not chosen ([plan](docs/repo-growth-plan-2026-10-02.md))
 
 ---
 
@@ -124,10 +124,10 @@ Tumo-Vaižganto st. ([bus lanes](docs/bus-lanes-2026-10-02.md)).
 | | |
 |---|---|
 | `docs/` | every finding, dated. Start with `docs/README.md`. |
-| `analysis/` | per-day derived tables: traversals, blocks, departures |
+| `analysis/` | per-day derived tables: traversals, blocks, departures; `.gz` to 2 October, `.xz` after |
 | `segments/` | per-day stop-to-stop segment files |
 | `summaries/` | the rolling summaries the visualization is built from |
-| `gtfs/` | every timetable version the city has published since 14 August |
+| `gtfs/` | every timetable version the city has published since 14 August; from 3 October most as patches, rebuilt with `code/gtfs_rebuild.py` |
 | `code/` | everything that runs on the box |
 | `report/` | the generated segment report and its data |
 | `status.json` | collector health, rewritten every night |

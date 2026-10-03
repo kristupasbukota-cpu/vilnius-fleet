@@ -81,7 +81,7 @@ def main():
 
     # panel of working-day hours, as in weather_effect.py
     parts = []
-    for p in sorted(glob.glob("analysis/trav-*.csv.gz")):
+    for p in sorted(glob.glob("analysis/trav-*.csv.*")):
         day = os.path.basename(p)[5:15]
         if not (FIRST <= day <= LAST):
             continue
