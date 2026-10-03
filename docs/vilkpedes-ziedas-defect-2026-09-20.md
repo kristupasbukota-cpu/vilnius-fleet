@@ -122,3 +122,5 @@ produced in part by a stop that does not move.
 
 `analysis/dep-2026-08-22|24|25|26.csv.gz` and `gtfs/gtfs-20260824.zip` in
 `kristupasbukota-cpu/vilnius-fleet`. Nothing on the box or the Mac was needed.
+
+*2 October 2026: route 61 direction 1 is explained in [`route-61-early-2026-10-02.md`](route-61-early-2026-10-02.md). It is two vehicles leaving a one-minute turnaround early, not the stop or the timetable.*

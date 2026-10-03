@@ -121,14 +121,14 @@ details{margin-top:10px} summary{cursor:pointer;color:var(--ink2);font-size:13px
 <h2>4. Is it real?</h2>
 <p id="reprointro"></p>
 <div class="card">
-  <svg id="repro" viewBox="0 0 960 420" role="img" aria-label="Monday against Tuesday, seconds lost per traversal"></svg>
+  <svg id="repro" viewBox="0 0 960 420" role="img" aria-label="One working day against another, seconds lost per traversal on the same segments"></svg>
   <p class="note" id="repronote"></p>
 </div>
 
 <h2>5. How concentrated is it?</h2>
 <div class="card">
   <svg id="conc" viewBox="0 0 960 260" role="img" aria-label="Share of all time lost by number of segments"></svg>
-  <p class="note">There is a corridor and there is a long tail. Fixing the ten worst segments would recover about a seventh of the loss; you would need roughly 400 of them for three quarters.</p>
+  <p class="note" id="concnote"></p>
 </div>
 
 <h2>6. Day by day</h2>
@@ -137,12 +137,13 @@ details{margin-top:10px} summary{cursor:pointer;color:var(--ink2);font-size:13px
   <div class="legend">
     <span class="key"><span class="sw" style="background:var(--s1)"></span>Working day</span>
     <span class="key"><span class="sw" style="background:var(--s2)"></span>Weekend</span>
+    <span class="key"><span class="sw" style="background:var(--ink2);border-radius:50%;width:8px;height:8px"></span>Rain, 1 mm or more between 06:00 and 22:00</span>
   </div>
   <svg id="trend" viewBox="0 0 960 300" role="img" aria-label="Vehicle-hours of lateness created, one bar per day"></svg>
   <p class="note" id="trendnote"></p>
   <details><summary>The same numbers as a table</summary>
     <div style="overflow-x:auto"><table id="trendtable"><thead><tr>
-      <th>Day</th><th>Net, vh</th><th>Lost, vh</th><th>Regained, vh</th><th>Hours of data</th>
+      <th>Day</th><th>Net, vh</th><th>Lost, vh</th><th>Regained, vh</th><th>Hours of data</th><th>Rain, mm</th>
     </tr></thead><tbody></tbody></table></div>
   </details>
 </div>
@@ -152,8 +153,9 @@ details{margin-top:10px} summary{cursor:pointer;color:var(--ink2);font-size:13px
 <p>Every live row carries <strong>MatavimoLaikas</strong>, when the GPS actually fixed, and <strong>NuokrypisSekundemis</strong>, how many seconds late the vehicle was at that moment. Their difference is the vehicle's position on its own timetable: a bus six minutes late at 17:20 is standing where it was scheduled to be at 17:14. Looking that up in the trip's stop times says which pair of stops it is between, <strong>without touching a single coordinate</strong>. Between two fixes, the gap between how much real time passed and how much schedule time passed is the lateness gained, and it is charged to whichever scheduled segments the vehicle was crossing while it gained it.</p>
 <p>The arithmetic was checked against the geometry it never uses. On 76,407 sampled readings the vehicle's nearest stop was the claimed segment's own start or end <strong>98.9%</strong> of the time, split 46.5% / 52.4% between the two ends, which is what "somewhere between them" should look like. The median vehicle sat 6 m off the straight line joining them.</p>
 <details><summary>Caveats worth knowing</summary>
-<p>Monday is missing 10:00 to 13:59: the laptop collecting it lost wifi and the cloud machine did not exist yet. Tuesday stops at 15:50, so it has no evening peak, which makes the 0.854 agreement a statement about the whole day rather than about the peak. Scheduled times are published to the minute, so a segment scheduled for 60 seconds carries about half a minute of quantisation; this averages out over hundreds of traversals but makes any single short segment unreliable. A segment is only counted once the vehicle is seen to leave it, so half-observed traversals at the edges of an observation chain are discarded rather than counted short. Two published versions of the timetable straddle the observation window and both are read, 22,408 trips between them.</p>
-<p>One expectation this did not confirm. Scheduled recovery time was assumed to sit at the ends of routes, which would make a terminus look like a place where traffic is kind. It does not: segments that give time back sit at median position 0.48 through their trip at a median scheduled speed of 18.8 km/h, against 0.47 and 18.1 km/h for segments that lose it. The padding in this timetable is spread evenly along the route, not parked at the end.</p>
+<p id="covcaveat"></p>
+<p>Scheduled times are published to the minute, so a segment scheduled for 60 seconds carries about half a minute of quantisation; this averages out over hundreds of traversals but makes any single short segment unreliable. A segment is only counted once the vehicle is seen to leave it, so half-observed traversals at the edges of an observation chain are discarded rather than counted short. Up to four published versions of the timetable that could be in force on a day are read, so trips the city drops when it republishes are still recognised.</p>
+<p>One expectation this did not confirm, measured on 17 and 18 August. Scheduled recovery time was assumed to sit at the ends of routes, which would make a terminus look like a place where traffic is kind. It does not: segments that give time back sit at median position 0.48 through their trip at a median scheduled speed of 18.8 km/h, against 0.47 and 18.1 km/h for segments that lose it. The padding in this timetable is spread evenly along the route, not parked at the end.</p>
 </details>
 </div>
 <div id="tip"></div>
@@ -299,6 +301,7 @@ function drawRepro(){
   const svg=$("#repro"); svg.textContent="";
   if(!D.grid){ svg.style.display="none"; $("#repronote").textContent=""; return; }
   svg.style.display="";
+  svg.setAttribute("aria-label", D.L.primaryShort+" against "+D.L.compareShort+", seconds lost per traversal on the same segments");
   const g=D.grid, W=960,H=420,L=60,R=180,T=16,B=44;
   const pw=W-L-R, ph=H-T-B, cw=pw/g.n, ch=ph/g.n;
   const sx=v=>L+(v-g.lo)/(g.hi-g.lo)*pw, sy=v=>T+ph-(v-g.lo)/(g.hi-g.lo)*ph;
@@ -311,7 +314,7 @@ function drawRepro(){
     const x=L+i*cw, y=T+ph-(j+1)*ch;
     const r=el("rect",{x:x+1,y:y+1,width:cw-2,height:ch-2,rx:2,fill:col(c)});
     const xv=Math.round(g.lo+(i+0.5)*(g.hi-g.lo)/g.n), yv=Math.round(g.lo+(j+0.5)*(g.hi-g.lo)/g.n);
-    r.addEventListener("mouseenter",e=>showTip(e,`<b>${c} segment${c>1?"s":""}</b><br>Monday ${xv>0?"+":""}${xv} s · Tuesday ${yv>0?"+":""}${yv} s`));
+    r.addEventListener("mouseenter",e=>showTip(e,`<b>${c} segment${c>1?"s":""}</b><br>${D.L.primaryShort} ${xv>0?"+":""}${xv} s · ${D.L.compareShort} ${yv>0?"+":""}${yv} s`));
     r.addEventListener("mousemove",e=>showTip(e,tip.innerHTML));
     r.addEventListener("mouseleave",hideTip);
     svg.appendChild(r);
@@ -395,7 +398,11 @@ function drawTrend(){
     const r=el("rect",{x:x,y:Math.min(y,y0),width:w,height:Math.max(1,Math.abs(yb-y)),rx:Math.min(4,w/2),
       fill:V(t.weekend?"--s2":"--s1")});
     const hit=el("rect",{x:L+i*bw,y:T,width:bw,height:H-B-T,fill:"transparent"});
-    const html=`<b>${t.label}</b><br>${t.net} vehicle-hours net<br><span class="m">${t.lost} lost · ${Math.abs(t.back)} regained · ${t.hours} h of data</span>`;
+    const rainTxt = t.rain==null ? "no weather record" : (t.rain>0 ? `${t.rain} mm of rain over ${t.wet} h` : "dry")+", 06:00 to 22:00";
+    const html=`<b>${t.label}</b><br>${t.net} vehicle-hours net<br><span class="m">${t.lost} lost · ${Math.abs(t.back)} regained · ${t.hours} h of data<br>${rainTxt}</span>`;
+    if(t.rain!=null && t.rain>=1){
+      svg.appendChild(el("circle",{cx:x+w/2,cy:Math.min(y,y0)-8,r:Math.max(2,Math.min(4,w/2.5)),fill:V("--ink2")}));
+    }
     for(const n of [r,hit]){
       n.addEventListener("mouseenter",e=>showTip(e,html));
       n.addEventListener("mousemove",e=>showTip(e,html));
@@ -420,7 +427,7 @@ function drawTrend(){
   const tb=$("#trendtable tbody"); tb.textContent="";
   for(const [d,t] of days.slice().reverse()){
     const tr=document.createElement("tr");
-    tr.innerHTML=`<td>${t.label}</td><td class="n">${t.net}</td><td>${t.lost}</td><td>${Math.abs(t.back)}</td><td>${t.hours}</td>`;
+    tr.innerHTML=`<td>${t.label}</td><td class="n">${t.net}</td><td>${t.lost}</td><td>${Math.abs(t.back)}</td><td>${t.hours}</td><td>${t.rain==null?"":t.rain}</td>`;
     tb.appendChild(tr);
   }
 }
@@ -454,7 +461,21 @@ function drawAll(){
       ? 'A segment mean is only worth reading if the same segment does the same thing on a different day. '
         + L.primaryShort + ' and ' + L.compareShort + ' are independent working days. Each cell counts segments; the diagonal is perfect agreement.'
       : 'Not enough working days yet to check this.';
-  $("#trendintro").textContent = 'Every complete day since collection began, measured the same way as the headline figure above, so a single day can be read against the rest.';
+  $("#trendintro").textContent = 'Every complete day since collection began, measured the same way as the headline figure above, so a single day can be read against the rest. A dot marks a day with real rain: a wet hour slows the network by roughly a third, so a bad day with a dot over it may be weather rather than the roads.';
+  // concentration, worded from this day's numbers rather than from the first day's
+  const cp=D.conc||[];
+  const at10=(cp.find(p=>p[0]===10)||[])[1];
+  const n75=(cp.find(p=>p[1]>=75)||[])[0];
+  const total=cp.length?cp[cp.length-1][0]:0;
+  $("#concnote").textContent = cp.length
+    ? 'On ' + L.primaryShort + ', the ten worst segments carry ' + (at10!=null?at10+'%':'n/a') + ' of all time lost'
+      + (n75 ? ', and it takes about ' + n75 + ' of the ' + total + ' segments that lose time to reach three quarters.' : '.')
+    : '';
+  const cov = (d, s) => d && D.totals[d] ? s + ' has ' + D.totals[d].hours + ' hours of data' : null;
+  const parts = [cov(L.primary, L.primaryShort), cov(L.compare, L.compareShort), cov(L.weekend, L.weekendShort)].filter(Boolean);
+  $("#covcaveat").textContent = parts.length
+    ? 'Coverage: ' + parts.join(', ') + '. A day needs 20 hours to count as complete; a gap in the collector shows up here before it shows up anywhere else.'
+    : '';
   // Each panel on its own: one that cannot draw must not blank the rest of the page.
   for (const f of [drawMap, drawHours, drawWorst, drawRepro, drawConc, drawTrend]) {
     try { f(); } catch (e) { console.error(f.name, e); }

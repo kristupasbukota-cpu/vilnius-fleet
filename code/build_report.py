@@ -18,7 +18,7 @@ one and every conclusion drawn from it would be wrong in the same direction.
     python3 build_report.py                 # newest complete weekday
     python3 build_report.py --primary 2026-08-18
 """
-import collections, glob, gzip, json, math, os, re, statistics as st, sys
+import collections, csv, glob, gzip, json, math, os, re, statistics as st, sys
 from datetime import datetime, timezone, timedelta
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -173,6 +173,29 @@ def daily_totals(have, day_sums):
     return cache
 
 
+def daily_rain():
+    """local day -> [mm, wet hours] between 06:00 and 22:00, from pub/weather.
+
+    LHMT, station Vilniaus AMS. The row stamped T covers the hour ending at T, so it
+    describes the local hour that starts at T - 1 h. Checked against Vilnius airport
+    in docs/weather-audit-2026-10-01.md. A wet hour is 0.1 mm or more."""
+    out = {}
+    for p in glob.glob(os.path.join(HERE, "pub", "weather", "weather-*.csv")):
+        with open(p, encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                try:
+                    t = datetime.strptime(row["observationTimeUtc"], "%Y-%m-%d %H:%M:%S")
+                    mm = float(row["precipitation"])
+                except (KeyError, ValueError, TypeError):
+                    continue
+                loc = (t.replace(tzinfo=timezone.utc) - timedelta(hours=1)).astimezone(VILNIUS)
+                if 6 <= loc.hour < 22:
+                    e = out.setdefault(loc.date().isoformat(), [0.0, 0])
+                    e[0] += mm
+                    e[1] += mm >= 0.1
+    return out
+
+
 def main():
     cov = coverage()
     # Days with a working file on disk: only yesterday and today in normal running,
@@ -316,10 +339,13 @@ def main():
             conc.append([i, round(100 * run / tot, 1)])
 
     history = daily_totals(have, day_sums)
+    rain = daily_rain()
     totals = {d: {"net": h["net"], "lost": h["lost"], "back": h["back"], "seg": h["seg"],
                   "hours": cov.get(d, (0, 0))[1], "snapshots": cov.get(d, (0, 0))[0],
                   "label": pretty(d), "short": short(d),
-                  "weekend": not weekday(d), "complete": complete(d)}
+                  "weekend": not weekday(d), "complete": complete(d),
+                  "rain": round(rain.get(d, [0, 0])[0], 1) if d in rain else None,
+                  "wet": rain.get(d, [0, 0])[1] if d in rain else None}
               for d, h in sorted(history.items())}
 
     w0 = worst[0]

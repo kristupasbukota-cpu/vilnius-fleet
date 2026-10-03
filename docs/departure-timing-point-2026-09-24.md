@@ -157,3 +157,5 @@ column is unchanged and five are added (`timing_seq`, `timing_stop`,
 `max(dev_at_departure, dev_at_timing)` where the two differ, else
 `dev_at_departure`. Run with `--gtfs-until 20260829`, the timetable versions the
 original run could see.
+
+*2 October 2026: route 61 direction 1 is explained in [`route-61-early-2026-10-02.md`](route-61-early-2026-10-02.md). It is two vehicles leaving a one-minute turnaround early, not the stop or the timetable.*

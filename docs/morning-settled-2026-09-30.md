@@ -1,5 +1,15 @@
 # The morning has settled, not grown
 
+> **Updated 3 October 2026.** The fortnight is complete: 30 September, 1 October
+> and Friday 2 October are added in the section *3 October: the fortnight completed*
+> below. The conclusion stands, and is sharper. On dry Monday-to-Thursday mornings the
+> morning dropped once, from about +11 to about +8 s per hop in mid-September, and
+> has been flat since, at +8.2 s per hop, slope +0.14 s per week [-0.94, +1.13]. The
+> late-autumn morning is +8.78 on eight days. Friday 2 October, +2.73, is the fifth
+> autumn Friday and the fourth below every autumn Monday-to-Thursday morning. One slip
+> in the text below: 1 October was a Thursday and 2 October a Friday, not the other
+> way round.
+
 > **Updated later on 30 September 2026.** With weather joined to the record, the easing
 > this document called suggestive is real once wet mornings are set aside: dry
 > Monday-to-Thursday mornings fell from about +11 to about +8 s per hop between the
@@ -125,6 +135,93 @@ currently the larger of the two.
   published calendar, is a natural experiment: if the morning falls back towards
   summer that week, as it did on 1 September, the school-run explanation gets much
   stronger. A task for the second week of November.
+
+---
+
+## 3 October: the fortnight completed
+
+Three working days added: Wednesday 30 September, Thursday 1 October and Friday
+2 October. Same measure, same tables. The earlier figures reproduce exactly: on the
+days to 29 September the dry-morning trend comes out at -1.06 [-1.84, -0.55] with the
+station and -1.19 [-2.02, -0.34] with the airport, as published on 30 September and
+1 October.
+
+**The three new mornings**, 07-08, s per hop:
+
+| day | morning | traversals | LHMT rain 07-09 | Vilnius airport 07-09 |
+|---|---|---|---|---|
+| Wed 30 Sep | +9.98 | 24,479 | 0.0 mm | **light rain** at 07:50 and 08:20 |
+| Thu 1 Oct | +6.94 | 23,988 | 0.0 mm | none |
+| Fri 2 Oct | +2.73 | 24,872 | 0.0 mm | none |
+
+30 September is one of the days the [weather audit](weather-audit-2026-10-01.md)
+flagged: the station 13 km west measured nothing, while the airport reported light
+rain through the morning. By the station it is dry; by the airport it is wet. It was
+the slowest morning of the week. Both readings are shown below.
+
+**Period comparison, Monday to Thursday**, now with eight late-autumn days, 18 September
+to 1 October:
+
+| window | summer | early autumn 2-17 Sep | late autumn 18 Sep - 1 Oct | late minus early, 95% CI |
+|---|---|---|---|---|
+| morning 07-08 | +1.93 | +10.72 | **+8.78** | -1.93 [-3.81, +0.05] |
+| midday 09-15 | +3.71 | +3.21 | +2.16 | -1.05 [-1.85, -0.25] |
+| evening 16-18 | +9.28 | +9.37 | +7.16 | -2.21 [-5.01, +0.65] |
+| whole day | +3.46 | +4.23 | +3.20 | -1.02 [-1.87, -0.16] |
+
+Practically the same as on 30 September. The lowest late-autumn morning is still
+21 September at +6.59, still above every summer working day. The morning is still the
+worse peak, +8.78 against +7.16.
+
+**The trend, dry mornings only.** Rain is the main source of the week-to-week swings, so
+the test that matters is on dry Monday-to-Thursday mornings:
+
+| | days | mean | slope, s per hop per week |
+|---|---|---|---|
+| all autumn mornings, dry by the station | 15 | | -0.76 [-1.44, -0.33] |
+| all autumn mornings, dry by the airport | 13 | | -1.03 [-1.86, -0.62] |
+| dry, 2 to 10 Sep (station or airport) | 5 | +11.03 | |
+| dry, 14 Sep to 1 Oct, by the station | 10 | **+8.19** | **+0.14 [-0.94, +1.13]** |
+| dry, 14 Sep to 1 Oct, by the airport | 8 | +8.00 | -0.33 [-0.94, +2.18] |
+
+The fitted slope over the whole autumn got smaller with the new days, -1.06 to -0.76,
+because the new dry mornings did not keep falling. Weekly means of the dry mornings,
+by the station: +10.8, +11.2, +8.3, +8.0, +8.3. The shape is a drop between the second
+and third week of term, **-2.84 s per hop [-3.91, -1.79]**, and nothing since. A
+straight line through a step reports a slope; this one is a step. Since 14 September
+the dry morning has had no trend in either direction.
+
+**Fridays.** Five autumn Fridays now:
+
+| | 4 Sep | 11 Sep | 18 Sep | 25 Sep | 2 Oct |
+|---|---|---|---|---|---|
+| morning | +7.21 | +2.53 | +3.28 | +3.89 | **+2.73** |
+| rain, station | 1.1 mm | dry | dry | 2.1 mm | dry |
+
+2 October is dry and sits well below every autumn Monday-to-Thursday morning, the
+lowest of which is +6.59. Four of the five autumn Fridays are below all of them. The
+exception, 4 September, was wet.
+
+**Does this change the conclusion? No, it tightens it.**
+
+- *Established, as before:* the autumn morning arrived as a step on 2 September and has
+  not grown since.
+- *Firmer than on 30 September:* the easing was a second, smaller step in mid-September,
+  from about +11 to about +8 s per hop on dry mornings, not a continuing decline.
+  Three weeks of dry mornings since then show no trend.
+- *Unchanged:* the dry autumn morning, about +8 s per hop, is still about five times
+  the dry summer Monday-to-Thursday morning, +1.58 (seven days, 19 to 31 August). The morning is still the worse peak.
+  Friday is still a different kind of day.
+
+The next test is the pupils' autumn holiday, 2 to 8 November.
+
+Reproduction: as in the method below, with `weather/weather-*.csv` mapped to local hours
+with `ZoneInfo("Europe/Vilnius")` (the row stamped T covers the hour ending at T, UTC).
+A dry morning has less than 0.5 mm over 07:00 to 08:59 by the station, as published;
+by the airport, no rain or drizzle in any EYVI METAR in those hours, from the Iowa
+Environmental Mesonet archive as in `code/weather_audit.py`. Slopes are least squares
+on weeks since 2 September with a level per weekday; intervals are a bootstrap over
+days, 20,000 resamples, seed 1.
 
 ---
 

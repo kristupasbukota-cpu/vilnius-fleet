@@ -5,7 +5,7 @@ from the city's own live GPS feed. No survey, no press release, no operator
 dashboard. Every number here comes from the same file the JUDU journey planner
 reads, polled every 10 seconds since 15 August 2026 and kept.
 
-*Current as of 1 October 2026. The long account of how the instrument was built
+*Current as of 3 October 2026. The long account of how the instrument was built
 and why is `docs/state-of-play-2026-08-18.md`; this page is the front door.*
 
 ---
@@ -44,7 +44,10 @@ typed anywhere.
 accumulate through a shift. Within one bus's own day, holding road, hour, route
 and direction fixed, a crossing late in the shift gains **0.63 s less** than one
 early in the shift, 95% CI [-0.84, -0.42], with a placebo returning +0.004.
-Recovery time mid-shift would fix a problem this network does not have.
+Recovery time mid-shift would fix a problem this network does not have. Nor does
+lateness belong to vehicles in any lasting way: the persistent difference between
+one link at a given hour and another is **22.4 s per hop**, between vehicles on the
+same link **1.5 s**, between routes **2.1 s** ([roads, not vehicles](docs/roads-not-vehicles-2026-10-02.md)).
 
 **Since September the morning is the worse peak.** The city added about 17% more
 service on 1 September. Delay per hop in the 07-08 window went from +1.65 s to
@@ -53,8 +56,15 @@ service on 1 September. Delay per hop in the 07-08 window went from +1.65 s to
 delay the autumn network creates falls in two morning hours**, across every
 distance band, not one corridor. It was a step, not a slope, and it has since eased: on dry
 Monday-to-Thursday mornings delay fell from about +11 to about +8 s per hop between
-the second and third week of term and has held there, still about five times the dry
+the second and third week of term and has held there with no trend through
+1 October, still about five times the dry
 summer morning ([morning](docs/morning-settled-2026-09-30.md), [weather](docs/weather-2026-09-30.md)).
+
+**The autumn morning runs one way.** Between 07:00 and 09:00 a hop towards the
+centre costs **+17.0 s**, a hop away from it **+2.1 s**. 74% of the extra morning
+delay is on inbound hops, in every distance band and on 93 of 101 routes. The
+evening has no matching outward rush; it is slow on the last 2 km into the core in
+both directions ([one direction](docs/one-direction-2026-10-02.md)).
 
 **Rain slows the network by about a third.** Within the same day, a wet hour adds
 **+1.31 s per hop**, 95% CI [+0.26, +2.17], roughly 25 to 35% of the delay in every
@@ -70,17 +80,31 @@ end more than a minute ahead, 18.5% on the last run of a shift. But only
 **1.85%** leave more than a minute early, once measured at the scheduled
 departure rather than at the first sighting of a trip id, and at both bays of a
 terminal loop rather than only the first one GTFS lists. The widely repeated
-13.5% was reading the previous trip's arrival.
+13.5% was reading the previous trip's arrival. The one route that stood out,
+61 direction 1 at 19%, is two vehicles: on the same scheduled trips, 7020 and 7003
+left early 29 times in 72 and 7017 never, from a terminus the timetable gives a
+one-minute turnaround ([route 61](docs/route-61-early-2026-10-02.md)).
 
 **The city's published promises hold.** Express routes deliver a median gap of
 7.9 minutes against a promised 5 to 10. Of the 25 busiest main routes, none is
 slower than the promised 10 to 25 and eleven are faster. The archive also
 reproduced the city's own "633 vehicles, 18% more" claim from the outside, at
-+17.0%, with no prior knowledge.
++17.0%, with no prior knowledge. Of the five districts promised more frequent
+routes, four got a larger rise in service than the rest of the city; Baltupiai did
+not. In Lazdynėliai the extra buses now lose about half a minute more per hop
+leaving the district each morning ([districts](docs/districts-2026-10-02.md)).
 
 **What the averages hide.** On trunk routes, one gap in five is under half the
 advertised frequency and almost one in ten is more than double it. The promise is
 about the service run, not about the wait, and on a frequent route those differ.
+Measured as excess waiting time, a passenger arriving at random waits **1.2 minutes
+longer** than the timetable implies on the express routes (+24%) and **0.9 minutes**
+on the 25 busiest trunk routes (+11%) ([excess wait](docs/excess-wait-2026-10-02.md)).
+
+**The bus lanes are aimed at volume, not at the worst places.** Roads with a lane
+carry 18% of hops on 5% of the length, but 15 of the 20 links that lose the most time
+have no lane alongside, including the worst in the evening, Čiurlionio st. to
+Tumo-Vaižganto st. ([bus lanes](docs/bus-lanes-2026-10-02.md)).
 
 ---
 
@@ -88,10 +112,8 @@ about the service run, not about the wait, and on a frequent route those differ.
 
 - Check 26 October, the first full winter-time day, came through the summer-time fix cleanly
 - Whether the morning falls back during the pupils' autumn holiday, 2 to 8 November
-- Whether the 46.1 km of bus lanes sit where the delay actually is
-- The five districts promised more service, against a control
-- A passenger-experienced waiting time measure, as opposed to headway
-- Route 61 direction 1, which reads 20.5% early departure and is unexplained
+- Whether route 61's two early-leaving vehicles still do it on the autumn network (needs `departure.py` on September days)
+- Repository growth: a proposal awaits a decision ([plan](docs/repo-growth-plan-2026-10-02.md))
 
 ---
 

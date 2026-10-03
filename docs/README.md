@@ -5,10 +5,17 @@ overturned. Newest first.
 
 | date | document | what it says |
 |---|---|---|
+| 2 Oct 2026 | [`repo-growth-plan-2026-10-02.md`](repo-growth-plan-2026-10-02.md) | Proposal. The repository passes 1 GB around January; three options to push that to mid-2027. Decisions needed. |
+| 2 Oct 2026 | [`districts-2026-10-02.md`](districts-2026-10-02.md) | Four of the five districts promised more frequent routes got more than the city; Baltupiai did not. Lazdynėliai's mornings got much slower. |
+| 2 Oct 2026 | [`bus-lanes-2026-10-02.md`](bus-lanes-2026-10-02.md) | The bus lanes carry a fifth of bus traffic but sit alongside only 5 of the 20 worst links. |
+| 2 Oct 2026 | [`excess-wait-2026-10-02.md`](excess-wait-2026-10-02.md) | Passengers wait 1.2 min longer than the timetable implies on express routes, 0.9 on trunk routes. |
+| 2 Oct 2026 | [`roads-not-vehicles-2026-10-02.md`](roads-not-vehicles-2026-10-02.md) | Lateness belongs to roads: 22.4 s per hop between links, 1.5 s between vehicles, 2.1 s between routes. |
+| 2 Oct 2026 | [`one-direction-2026-10-02.md`](one-direction-2026-10-02.md) | The autumn morning problem is inbound: +17.0 s per hop towards the centre, +2.1 s away. |
+| 2 Oct 2026 | [`route-61-early-2026-10-02.md`](route-61-early-2026-10-02.md) | Route 61's early departures are two vehicles, on the same trips a third never leaves early on. |
 | 1 Oct 2026 | [`summer-time-fix-2026-10-01.md`](summer-time-fix-2026-10-01.md) | Operations. Every script now follows Vilnius local time through summer time; from 25 Oct the nightly tables would otherwise have come out empty. Published outputs unchanged. |
 | 1 Oct 2026 | [`weather-audit-2026-10-01.md`](weather-audit-2026-10-01.md) | Audit. The weather record checks out against Vilnius airport; two statements corrected; the day-level wet-morning figure is instrument-dependent. Summer time ends 25 Oct and the hour labels need fixing first. |
 | 30 Sep 2026 | [`weather-2026-09-30.md`](weather-2026-09-30.md) | Weather joined to the record. Rain adds about a third to delay; it does not explain the autumn jump, and it was hiding a real easing of the morning. |
-| 30 Sep 2026 | [`morning-settled-2026-09-30.md`](morning-settled-2026-09-30.md) | The autumn morning was a step, not a slope. Flat since the first school week at about +9 s per hop, still 4.6 times summer. |
+| 30 Sep 2026 | [`morning-settled-2026-09-30.md`](morning-settled-2026-09-30.md) | The autumn morning was a step, not a slope. Flat since the first school week at about +9 s per hop, still 4.6 times summer. Updated 3 October: on dry mornings a second step down in mid-September to about +8, flat since. |
 | 30 Sep 2026 | [`report-comparison-fix-2026-09-30.md`](report-comparison-fix-2026-09-30.md) | Correction. The nightly report compared every day against mid-August; corrected, its day-to-day agreement is 0.90, not 0.50. |
 | 29 Sep 2026 | [`maintenance-2026-09-29.md`](maintenance-2026-09-29.md) | Operations. departure.py timetable loading, a day-by-day chart in the nightly report, a panel that could blank the page. |
 | 26 Sep 2026 | [`nightly-outage-2026-09-26.md`](nightly-outage-2026-09-26.md) | Operations. Three nights without a publish, why the watchdog missed it, and the fix. |
