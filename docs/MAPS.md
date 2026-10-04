@@ -42,9 +42,15 @@ as an ordinary web page and keeps its Leaflet tile map.
    From the cloud sandbox, overpass-api.de refuses the connection; fetch it from the
    Mac or the box instead.
 3. Build the basemap: `python3 code/basemap.py build osm.json 25.135 54.62 25.295 54.75 basemap.json`.
-   Add `--no-minor` for a city-wide map, where residential streets are only weight.
+   `--no-minor` leaves out residential streets, saving about 40% of the size. The
+   city map keeps them, because a reader zoomed in on one link needs the side streets.
 4. Inline `basemap.json` and `code/vmap.js` in the page, define the theme tokens
    (list at the top of `vmap.js`), and draw the page's own data into `map.overlay`.
 
-`analysis/basemap-2026-10-04-north-west.json` is the first one built: Pilaitė to
-Perkūnkiemis and Žvėrynas, for the [lines 118 and 32](lines-118-32-2026-10-04.md) page.
+Basemaps built so far, reuse them when they cover the area:
+
+- `analysis/basemap-2026-10-04-north-west.json`: Pilaitė to Perkūnkiemis and Žvėrynas,
+  for the [lines 118 and 32](lines-118-32-2026-10-04.md) page. About 190 KB.
+- `analysis/basemap-2026-10-04-city.json`: the whole network, 25.04 to 25.50 E,
+  54.575 to 54.83 N, residential streets included so a zoomed-in link still has its
+  side streets. About 800 KB.

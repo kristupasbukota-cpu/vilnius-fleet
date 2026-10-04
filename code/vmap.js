@@ -10,6 +10,7 @@
      const [x, y] = map.proj([lon, lat]);   // metres in the basemap's frame
      map.overlay                            // <g> to draw the page's paths and markers into
      map.fit(points)                        // frame a list of [x, y] points
+     map.fit(points, true)                  // ... and make it the view the ⤢ button returns to
      map.redraw()                           // re-place labels after the overlay changes
 
    Overlay strokes: use vector-effect="non-scaling-stroke" so widths stay in screen pixels.
@@ -70,8 +71,8 @@ const VMap = (() => {
     const redraw = () => { if (raf || !vb) return; raf = requestAnimationFrame(() => { raf = 0; place(); }); };
     const zoomAt = (fx, fy, f) => { if (!vb) return; const v = vb.slice(); const w = Math.min(opts.maxWidth || 40000, Math.max(opts.minWidth || 400, v[2] * f)); const k = w / v[2];
       const px = v[0] + fx * v[2], py = v[1] + fy * v[3]; v[0] = px - (px - v[0]) * k; v[1] = py - (py - v[1]) * k; v[2] = w; set(v); };
-    let last = [];
-    const fit = pts => { if (pts) last = pts; if (!last.length) return;
+    let last = [], homePts = null;
+    const fit = (pts, home) => { if (pts) last = pts; if (home) homePts = pts; if (!last.length) return;
       const xs = last.map(p => p[0]), ys = last.map(p => p[1]); const x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = Math.min(...ys), y1 = Math.max(...ys);
       const [w, h] = size(); const pl = 34, pr = 52, pt = 30, pb = 34; const aw = w - pl - pr, ah = h - pt - pb;
       const k = Math.max((x1 - x0) / aw, (y1 - y0) / ah, 1);
@@ -97,7 +98,7 @@ const VMap = (() => {
 
     // controls, credit, hint
     const ctl = document.createElement("div"); ctl.className = "vctl";
-    [["+", "Zoom in", () => zoomAt(.5, .5, 1 / 1.6)], ["−", "Zoom out", () => zoomAt(.5, .5, 1.6)], ["⤢", "Fit to view", () => fit()]].forEach(([t, a, f]) => {
+    [["+", "Zoom in", () => zoomAt(.5, .5, 1 / 1.6)], ["−", "Zoom out", () => zoomAt(.5, .5, 1.6)], ["⤢", "Fit to view", () => fit(homePts || last)]].forEach(([t, a, f]) => {
       const b = document.createElement("button"); b.type = "button"; b.textContent = t; b.title = a; b.setAttribute("aria-label", a); b.onclick = f; ctl.appendChild(b); });
     host.appendChild(ctl);
     const att = document.createElement("div"); att.className = "vatt"; att.textContent = BASE.credit || "© OpenStreetMap contributors"; host.appendChild(att);
@@ -119,7 +120,7 @@ const VMap = (() => {
       ev.preventDefault(); const r = host.getBoundingClientRect(); zoomAt((ev.clientX - r.left) / r.width, (ev.clientY - r.top) / r.height, Math.exp(ev.deltaY * 0.0022)); }, { passive: false });
     new ResizeObserver(() => { if (vb) set(vb.slice()); }).observe(host);
 
-    return { proj, overlay, fit, redraw, svg, upp: () => (vb ? upp() : null), el };
+    return { proj, overlay, fit, redraw, svg, host, upp: () => (vb ? upp() : null), el };
   }
   return { create };
 })();
