@@ -5,6 +5,7 @@ overturned. Newest first.
 
 | date | document | what it says |
 |---|---|---|
+| 4 Oct 2026 | [`terminal-stand-2026-10-04.md`](terminal-stand-2026-10-04.md) | H6. After a stand of a minute or less, buses that arrive early leave early 13 to 17% of the time. A 2-minute minimum would cost about 20 vehicle-hours a weekday. |
 | 4 Oct 2026 | [`even-spacing-2026-10-04.md`](even-spacing-2026-10-04.md) | H5. Buses leave evenly and drift together on the road. Even spacing is worth about 0.5 min per express passenger, 8%. Corrects the 2 Oct excess-wait figures and 18 Sep bunching shares. |
 | 4 Oct 2026 | [`hypotheses-2026-10-04.md`](hypotheses-2026-10-04.md) | Ten hypotheses for how the city could improve the network, published before testing. H5, even spacing, first. |
 | 4 Oct 2026 | [`timetable-refresher-2026-10-04.md`](timetable-refresher-2026-10-04.md) | Operations. The timetable refresher was killed every night for a week after installing; no timetable lost, the state file and match rate were. Fixed. |

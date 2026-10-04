@@ -157,3 +157,10 @@ Added as each test is done. The hypotheses above are unchanged.
   the 17% the city added. The terminus-dispatching version is refuted. The test also
   corrected the 2 October excess-wait figures. See
   [even spacing](even-spacing-2026-10-04.md).
+- **H6, 4 October: supported.** Across the network, not only route 61, buses leave
+  early about twice as often after a scheduled stand of 1 minute or less, and 13 to 17%
+  of the time when they arrive early with no time to wait. The effect stops at about
+  two minutes. A minimum stand of 2 to 3 minutes would cost about 20 vehicle-hours a
+  weekday and remove roughly a tenth of early departures. Unexpected: the first trip
+  out of the depot leaves early 6.3% of the time, a quarter of all early departures;
+  not yet checked against vehicle positions. See [terminal stand](terminal-stand-2026-10-04.md).

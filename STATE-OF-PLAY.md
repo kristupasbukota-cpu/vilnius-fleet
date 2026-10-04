@@ -87,7 +87,9 @@ left early 29 times in 72 and 7017 never, from a terminus the timetable gives a
 one-minute turnaround ([route 61](docs/route-61-early-2026-10-02.md)). On the autumn
 network it persists at 24%, now with no scheduled stand at all; 7020 is still the worst
 but other vehicles do it on some days and not others, which points at who is driving
-rather than which bus.
+rather than which bus. The pattern is network-wide: after a scheduled stand of a
+minute or less, a bus that arrives early leaves early 13 to 17% of the time, against
+1.6% with ten minutes or more ([terminal stand](docs/terminal-stand-2026-10-04.md)).
 
 **The city's published promises hold.** Express routes deliver a median gap of
 7.9 minutes against a promised 5 to 10. Of the 25 busiest main routes, none is
@@ -117,7 +119,8 @@ Tumo-Vaižganto st. ([bus lanes](docs/bus-lanes-2026-10-02.md)).
 
 ## What is open
 
-- Ten hypotheses for improving the network, written before testing ([hypotheses](docs/hypotheses-2026-10-04.md)); H5 done, partly supported; nine to go
+- Whether first trips out of the depot really leave early (6.3% read as early), or only join their route mid-way: needs vehicle positions
+- Ten hypotheses for improving the network, written before testing ([hypotheses](docs/hypotheses-2026-10-04.md)); H5 partly supported, H6 supported; eight to go
 - Check 26 October, the first full winter-time day, came through the summer-time fix cleanly
 - Whether the morning falls back during the pupils' autumn holiday, 2 to 8 November
 - Repository growth: option B in place from 3 October, 1 GB pushed to about mid-June 2027; the history rewrite (C) is not chosen ([plan](docs/repo-growth-plan-2026-10-02.md))
