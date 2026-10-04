@@ -143,3 +143,17 @@ H5 first. It is the cheapest fix with the largest effect a passenger would notic
 Everything testable here compares different roads, hours or days, not the same road
 before and after a change. Results will be associations. Only a change the city
 actually makes gives cause and effect.
+
+---
+
+## Results so far
+
+Added as each test is done. The hypotheses above are unchanged.
+
+- **H5, 4 October: partly supported.** Departures from the terminus are even; the
+  unevenness builds along the route. Perfect spacing would save an express passenger
+  about 0.5 minutes (8%), a trunk passenger 0.3 minutes (3%), about twice that in the
+  morning peak. That is worth about as much as 8% more express buses, not more than
+  the 17% the city added. The terminus-dispatching version is refuted. The test also
+  corrected the 2 October excess-wait figures. See
+  [even spacing](even-spacing-2026-10-04.md).

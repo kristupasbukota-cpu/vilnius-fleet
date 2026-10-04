@@ -5,12 +5,13 @@ overturned. Newest first.
 
 | date | document | what it says |
 |---|---|---|
+| 4 Oct 2026 | [`even-spacing-2026-10-04.md`](even-spacing-2026-10-04.md) | H5. Buses leave evenly and drift together on the road. Even spacing is worth about 0.5 min per express passenger, 8%. Corrects the 2 Oct excess-wait figures and 18 Sep bunching shares. |
 | 4 Oct 2026 | [`hypotheses-2026-10-04.md`](hypotheses-2026-10-04.md) | Ten hypotheses for how the city could improve the network, published before testing. H5, even spacing, first. |
 | 4 Oct 2026 | [`timetable-refresher-2026-10-04.md`](timetable-refresher-2026-10-04.md) | Operations. The timetable refresher was killed every night for a week after installing; no timetable lost, the state file and match rate were. Fixed. |
 | 2 Oct 2026 | [`repo-growth-plan-2026-10-02.md`](repo-growth-plan-2026-10-02.md) | Proposal. The repository passes 1 GB around January; three options to push that to mid-2027. Updated 3 October: option B chosen and in place. |
 | 2 Oct 2026 | [`districts-2026-10-02.md`](districts-2026-10-02.md) | Four of the five districts promised more frequent routes got more than the city; Baltupiai did not. Lazdynėliai's mornings got much slower. |
 | 2 Oct 2026 | [`bus-lanes-2026-10-02.md`](bus-lanes-2026-10-02.md) | The bus lanes carry a fifth of bus traffic but sit alongside only 5 of the 20 worst links. |
-| 2 Oct 2026 | [`excess-wait-2026-10-02.md`](excess-wait-2026-10-02.md) | Passengers wait 1.2 min longer than the timetable implies on express routes, 0.9 on trunk routes. |
+| 2 Oct 2026 | [`excess-wait-2026-10-02.md`](excess-wait-2026-10-02.md) | Passengers wait 1.2 min longer than the timetable implies on express routes, 0.9 on trunk routes. Corrected 4 October: about 0.5 and 0.3. |
 | 2 Oct 2026 | [`roads-not-vehicles-2026-10-02.md`](roads-not-vehicles-2026-10-02.md) | Lateness belongs to roads: 22.4 s per hop between links, 1.5 s between vehicles, 2.1 s between routes. |
 | 2 Oct 2026 | [`one-direction-2026-10-02.md`](one-direction-2026-10-02.md) | The autumn morning problem is inbound: +17.0 s per hop towards the centre, +2.1 s away. |
 | 2 Oct 2026 | [`route-61-early-2026-10-02.md`](route-61-early-2026-10-02.md) | Route 61's early departures are two vehicles, on the same trips a third never leaves early on. Updated 3 October: on the autumn network still 24%, but by vehicle-day, not two vehicles. |
@@ -23,7 +24,7 @@ overturned. Newest first.
 | 26 Sep 2026 | [`nightly-outage-2026-09-26.md`](nightly-outage-2026-09-26.md) | Operations. Three nights without a publish, why the watchdog missed it, and the fix. |
 | 24 Sep 2026 | [`departure-timing-point-2026-09-24.md`](departure-timing-point-2026-09-24.md) | Early departure measured at the right bay: 1.85%. Much of the route ranking was the defect. |
 | 20 Sep 2026 | [`vilkpedes-ziedas-defect-2026-09-20.md`](vilkpedes-ziedas-defect-2026-09-20.md) | The early-departure outlier is one stop, not two routes. Corrected network figure 2.09%, since refined to 1.85%. |
-| 18 Sep 2026 | [`frequency-promise-2026-09-18.md`](frequency-promise-2026-09-18.md) | The city's frequency promise holds. What the average hides does not. |
+| 18 Sep 2026 | [`frequency-promise-2026-09-18.md`](frequency-promise-2026-09-18.md) | The city's frequency promise holds. What the average hides does not. Section 3 corrected 4 October. |
 | 18 Sep 2026 | [`autumn-rerun-2026-09-18.md`](autumn-rerun-2026-09-18.md) | The morning peak is now worse than the evening. 91% of the new delay is in two hours. |
 | 9 Sep 2026 | [`state-of-play-2026-09-09.md`](state-of-play-2026-09-09.md) | Three and a half weeks in. The Mac is gone, the city changed the network, and a storage experiment failed. |
 | 29 Aug 2026 | [`departure-repair-2026-08-29.md`](departure-repair-2026-08-29.md) | Early departure measured properly: 2.5%, not 13.5%. |

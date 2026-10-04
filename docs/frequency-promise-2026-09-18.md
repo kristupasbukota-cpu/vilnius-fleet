@@ -1,5 +1,14 @@
 # The frequency promise is kept, and the average is doing a lot of work
 
+> **Corrected 4 October 2026, section 3 only.** The bunching shares used each trip's
+> first sighting in the feed, and the method note's claim that the shift "largely
+> cancels" between consecutive buses is wrong. Measured at mid-route on ten autumn
+> days, main patterns only, trunk lines have about **one gap in thirteen** under half
+> their usual gap (7.9%) and **one in sixteen** over double (6.4%), not one in five
+> and almost one in ten. Express: 9.9% and 5.9%. The verdict, that the frequency
+> promise is kept, does not depend on this and stands. See
+> [even spacing](even-spacing-2026-10-04.md), section 5. The text below is unchanged.
+
 18 September 2026. Task #5, the second of JUDU's public claims tested against the feed.
 
 **The claim.** From the 21 August announcement: express routes will run on average every

@@ -98,12 +98,15 @@ routes, four got a larger rise in service than the rest of the city; Baltupiai d
 not. In Lazdynėliai the extra buses now lose about half a minute more per hop
 leaving the district each morning ([districts](docs/districts-2026-10-02.md)).
 
-**What the averages hide.** On trunk routes, one gap in five is under half the
-advertised frequency and almost one in ten is more than double it. The promise is
-about the service run, not about the wait, and on a frequent route those differ.
-Measured as excess waiting time, a passenger arriving at random waits **1.2 minutes
-longer** than the timetable implies on the express routes (+24%) and **0.9 minutes**
-on the 25 busiest trunk routes (+11%) ([excess wait](docs/excess-wait-2026-10-02.md)).
+**What the averages hide, and what it costs.** Buses leave the terminus evenly
+spaced, then drift together along the route. At mid-route on the trunk lines about one
+gap in thirteen is under half the usual gap and one in sixteen more than double. A
+passenger arriving at random waits about **0.5 minutes (8%)** longer than the
+timetable implies on the express routes and **0.3 minutes (3%)** on the trunk routes,
+about twice that in the morning peak, and up to a minute on bus 3G. Perfect spacing
+would be worth about as much as 8% more express buses ([even spacing](docs/even-spacing-2026-10-04.md)).
+These replace larger figures published on 18 September and 2 October, which timed each
+trip from the moment its id first appeared in the feed rather than from its departure.
 
 **The bus lanes are aimed at volume, not at the worst places.** Roads with a lane
 carry 18% of hops on 5% of the length, but 15 of the 20 links that lose the most time
@@ -114,7 +117,7 @@ Tumo-Vaižganto st. ([bus lanes](docs/bus-lanes-2026-10-02.md)).
 
 ## What is open
 
-- Ten hypotheses for improving the network, written before testing ([hypotheses](docs/hypotheses-2026-10-04.md)); H5, even spacing, under test
+- Ten hypotheses for improving the network, written before testing ([hypotheses](docs/hypotheses-2026-10-04.md)); H5 done, partly supported; nine to go
 - Check 26 October, the first full winter-time day, came through the summer-time fix cleanly
 - Whether the morning falls back during the pupils' autumn holiday, 2 to 8 November
 - Repository growth: option B in place from 3 October, 1 GB pushed to about mid-June 2027; the history rewrite (C) is not chosen ([plan](docs/repo-growth-plan-2026-10-02.md))

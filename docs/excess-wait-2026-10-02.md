@@ -1,5 +1,16 @@
 # How much longer passengers wait than the timetable promises
 
+> **Corrected 4 October 2026.** The figures below are too high. "Trip start" here was
+> the moment each trip id first appears in the feed, which is a median 10.5 minutes
+> before the scheduled departure, while the bus is still finishing its previous trip.
+> On the same trips, the real departure gives an excess of +0.10 minutes on the express
+> routes, not +1.2. Measured at five points along each route, a passenger arriving at
+> random waits about **0.5 minutes (8%)** longer than the timetable implies on the
+> express routes and **0.3 minutes (3%)** on the trunk routes. The ordering below
+> stands; the sizes do not, and the "floor" in section 4 was an overstatement. See
+> [even spacing](even-spacing-2026-10-04.md), section 5, and the new table
+> `analysis/excess-wait-points-2026-10-04.csv`. The text below is unchanged.
+
 2 October 2026. Task #15, a passenger-experienced waiting time.
 
 **Result: on the express routes, a passenger arriving at random waits on average
