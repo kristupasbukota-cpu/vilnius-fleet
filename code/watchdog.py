@@ -238,9 +238,14 @@ if gtfs.get("last_check"):
         t = datetime.fromisoformat(gtfs["last_check"]).timestamp()
         check_days = round((NOW - t) / 86400, 1)
         if check_days > GTFS_CHECK_MAX_DAYS:
+            # A refresher killed by systemd cannot record its own error, so ask
+            # systemd. From 27 September to 3 October 2026 this said only "no error
+            # recorded" while every run was being killed at its timeout.
+            unit = sh("systemctl show vilnius-gtfs.service -p Result -p ExecMainStatus --value")
             add("warn", "gtfs_unchecked",
                 f"the timetable has not been checked for {check_days} days; "
-                f"{gtfs.get('last_error', 'no error recorded')}")
+                f"{gtfs.get('last_error', 'no error recorded')}; "
+                f"last refresher run: {' '.join(unit.split()) or 'unknown'}")
     except Exception:
         pass
 elif os.path.exists(os.path.join(HERE, "refresh_gtfs.py")):

@@ -384,19 +384,79 @@
    "stops": 1548,
    "bytes": 3573127,
    "replaced": "gtfs-20260924.zip"
+  },
+  {
+   "file": "gtfs.zip",
+   "fingerprint": "d7bcad17c990635b",
+   "downloaded": "2026-09-27T23:43:30+00:00",
+   "url": "https://www.stops.lt/vilnius/vilnius/gtfs.zip",
+   "trips": 20587,
+   "stop_times": 417187,
+   "stops": 1545,
+   "bytes": 3548686,
+   "replaced": "gtfs-20260925.zip",
+   "backfilled": "2026-10-04, from the archived file; the run that installed it was stopped before it could record it"
+  },
+  {
+   "file": "gtfs.zip",
+   "fingerprint": "f3b575c5b571cabf",
+   "downloaded": "2026-09-29T23:41:11+00:00",
+   "url": "https://www.stops.lt/vilnius/vilnius/gtfs.zip",
+   "trips": 20815,
+   "stop_times": 419697,
+   "stops": 1545,
+   "bytes": 3547017,
+   "replaced": "gtfs-20260927.zip",
+   "backfilled": "2026-10-04, from the archived file; the run that installed it was stopped before it could record it"
+  },
+  {
+   "file": "gtfs.zip",
+   "fingerprint": "e83f2ace6133550b",
+   "downloaded": "2026-09-30T23:41:11+00:00",
+   "url": "https://www.stops.lt/vilnius/vilnius/gtfs.zip",
+   "trips": 21118,
+   "stop_times": 426653,
+   "stops": 1545,
+   "bytes": 3606465,
+   "replaced": "gtfs-20260929.zip",
+   "backfilled": "2026-10-04, from the archived file; the run that installed it was stopped before it could record it"
+  },
+  {
+   "file": "gtfs.zip",
+   "fingerprint": "4ea6ebb30226afc5",
+   "downloaded": "2026-10-01T23:43:58+00:00",
+   "url": "https://www.stops.lt/vilnius/vilnius/gtfs.zip",
+   "trips": 22505,
+   "stop_times": 452682,
+   "stops": 1545,
+   "bytes": 3819629,
+   "replaced": "gtfs-20260930.zip",
+   "backfilled": "2026-10-04, from the archived file; the run that installed it was stopped before it could record it"
+  },
+  {
+   "file": "gtfs.zip",
+   "fingerprint": "873a096e78cd9f66",
+   "downloaded": "2026-10-02T23:40:11+00:00",
+   "url": "https://www.stops.lt/vilnius/vilnius/gtfs.zip",
+   "trips": 22857,
+   "stop_times": 460292,
+   "stops": 1547,
+   "bytes": 3871811,
+   "replaced": "gtfs-20261001.zip",
+   "backfilled": "2026-10-04, from the archived file; the run that installed it was stopped before it could record it"
   }
  ],
- "last_check": "2026-09-26T23:42:14+00:00",
- "last_change": "2026-09-25T23:44:14+00:00",
- "checks": 42,
+ "last_check": "2026-10-04T10:17:39+00:00",
+ "last_change": "2026-10-02T23:40:11+00:00",
+ "checks": 43,
  "failures": 0,
  "match": {
-  "snapshot": "20260926T203842Z.csv.gz",
-  "vehicles_with_trip": 157,
-  "matched": 156,
-  "rate": 99.4,
-  "known_trips": 68042,
-  "measured_minutes_back": 184
+  "snapshot": "20261004T101426Z.csv.gz",
+  "vehicles_with_trip": 375,
+  "matched": 370,
+  "rate": 98.7,
+  "known_trips": 71260,
+  "measured_minutes_back": 3
  },
  "match_history": [
   {
@@ -598,6 +658,14 @@
    "utc": "2026-09-26T23:44:51+00:00",
    "rate": 99.4,
    "vehicles": 157
+  },
+  {
+   "utc": "2026-10-04T10:18:20+00:00",
+   "rate": 98.7,
+   "vehicles": 375
   }
+ ],
+ "notes": [
+  "2026-10-04: from 27 September to 3 October every nightly run was killed at its 180 s timeout after installing the new timetable but before writing this file (match_rate listed the whole snapshot archive, over the service's memory limit). 5 versions were added afterwards from their archived files and are marked backfilled. The match-rate history has no entries for those nights."
  ]
 }

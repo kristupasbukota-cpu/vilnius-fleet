@@ -31,7 +31,7 @@ running vehicles whose trip we can resolve is the thing that actually matters.
 """
 import csv, glob, gzip, hashlib, io, json, os, shutil, sys, tempfile, time, zipfile
 import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 URLS = ["https://www.stops.lt/vilnius/vilnius/gtfs.zip",
@@ -146,7 +146,19 @@ def trip_ids():
 def match_rate():
     """What fraction of the vehicles actually running can we resolve to a trip?
     This, and not the file's age, is what tells us the join is still sound."""
-    snaps = sorted(glob.glob(os.path.join(HERE, "snapshots", "*.csv.gz")))
+    # Only the last two UTC days. Listing the whole archive was the bug that stopped
+    # this check from 27 September 2026: by then the archive held about 350,000
+    # snapshots, and listing and sorting their paths took about 85 MB (100 MB at
+    # 420,000), over the 64 MB this service is allowed (MemoryHigh). The process was throttled to a standstill and
+    # killed at the 180 s timeout every night, after the new timetable had already
+    # been installed but before this state file was written. The lookback below is at
+    # most about 12 hours, so two days of names is always enough.
+    now_utc = datetime.now(timezone.utc)
+    snaps = []
+    for back in (1, 0):
+        day = (now_utc - timedelta(days=back)).strftime("%Y%m%d")
+        snaps += glob.glob(os.path.join(HERE, "snapshots", f"{day}T*.csv.gz"))
+    snaps.sort()
     if not snaps:
         return None
     known = trip_ids()
