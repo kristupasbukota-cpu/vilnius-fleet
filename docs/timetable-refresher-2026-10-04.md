@@ -43,6 +43,13 @@ watchdog now asks systemd and adds the last run's result, for example "timeout",
 to that warning. The gap that remains is that warnings reach no person. That is a
 decision for the project, not something to change silently.
 
+**The watchdog had the same flaw.** It too listed every snapshot, and also checked
+each file's timestamp, every 15 minutes under the same 64 MB and 10% CPU caps. It
+needed about 70 s of its 240 s and was getting slower. From the morning of
+4 October it began timing out, so the heartbeat stopped updating. It now counts
+the archive without holding the list and takes the newest snapshot from the file
+names, which are UTC timestamps. Same checks, same output.
+
 **What this changes in published results.** Nothing. The timetables used by
 `segments.py`, `departure.py` and every finding were installed on time. Only the
 metadata file and the health metric were missing.
@@ -50,6 +57,7 @@ metadata file and the health metric were missing.
 ## Files
 
 - `code/refresh_gtfs.py`, `match_rate()`: the snapshot listing.
-- `code/watchdog.py`: the refresher's systemd result in the warning.
+- `code/watchdog.py`: the refresher's systemd result in the warning, and the
+  snapshot count without a full listing.
 - On the box only: the drop-in, `backfill_state.py` (one-off), backups in
   `scratch/bak-20261004/`.

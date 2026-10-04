@@ -98,8 +98,24 @@ def age_of(path):
 
 # ---------------------------------------------------------------- the checks
 
-snaps = glob.glob(os.path.join(SNAPS, "*.csv.gz"))
-newest = max(snaps, key=os.path.getmtime) if snaps else None
+# Count the archive without holding it. Until 4 October 2026 this built a list of
+# every snapshot path and stat()ed each one to find the newest: at 420,000 files that
+# is about 100 MB and 420,000 stat calls, over this service's 64 MB and, under its
+# 10% CPU quota, close to its 240 s timeout. It began timing out that morning. Names
+# are UTC timestamps, so the newest is the largest name, and a scandir count costs
+# almost no memory.
+n_snaps, newest_name = 0, None
+try:
+    with os.scandir(SNAPS) as it:
+        for e in it:
+            if e.name.endswith(".csv.gz"):
+                n_snaps += 1
+                if newest_name is None or e.name > newest_name:
+                    newest_name = e.name
+except OSError:
+    pass
+newest = os.path.join(SNAPS, newest_name) if newest_name else None
+snaps = range(n_snaps)      # only its length is used below
 snap_age = age_of(newest) if newest else None
 
 # The collector keeps logging once a minute even while the feed is refusing it,
