@@ -58,4 +58,4 @@ examples, all of them mistakes caught after publication:
   an environment that did not share the memory constraint that governs the box.
   It added 120 MB.
 
-See [`PUBLISHING.md`](PUBLISHING.md) for how documents get here.
+See [`PUBLISHING.md`](PUBLISHING.md) for how documents get here. See [`MAPS.md`](MAPS.md) for how maps are drawn.
