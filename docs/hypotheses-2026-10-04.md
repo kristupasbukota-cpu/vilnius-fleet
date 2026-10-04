@@ -164,3 +164,7 @@ Added as each test is done. The hypotheses above are unchanged.
   weekday and remove roughly a tenth of early departures. Unexpected: the first trip
   out of the depot leaves early 6.3% of the time, a quarter of all early departures;
   not yet checked against vehicle positions. See [terminal stand](terminal-stand-2026-10-04.md).
+- **H7, 4 October: a first sight on one line, not the test.** On bus 32 the timetable
+  gives Ąžuolų st. to Sodų st. 5 minutes, which buses run in 2.4 to 3.6, and gives the
+  links either side too little. Buses run late into it and early out of it. See
+  [lines 118 and 32](lines-118-32-2026-10-04.md).

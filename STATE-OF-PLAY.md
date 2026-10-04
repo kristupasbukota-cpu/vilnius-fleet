@@ -121,6 +121,7 @@ Tumo-Vaižganto st. ([bus lanes](docs/bus-lanes-2026-10-02.md)).
 
 - Whether first trips out of the depot really leave early (6.3% read as early), or only join their route mid-way: needs vehicle positions
 - Ten hypotheses for improving the network, written before testing ([hypotheses](docs/hypotheses-2026-10-04.md)); H5 partly supported, H6 supported; eight to go
+- Whether network-wide link rankings include neighbouring links whose timetable errors offset each other, as on bus 32 between Buivydiškės and Sodų st. ([lines 118 and 32](docs/lines-118-32-2026-10-04.md))
 - Check 26 October, the first full winter-time day, came through the summer-time fix cleanly
 - Whether the morning falls back during the pupils' autumn holiday, 2 to 8 November
 - Repository growth: option B in place from 3 October, 1 GB pushed to about mid-June 2027; the history rewrite (C) is not chosen ([plan](docs/repo-growth-plan-2026-10-02.md))
