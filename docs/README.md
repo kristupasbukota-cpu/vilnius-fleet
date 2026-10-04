@@ -5,6 +5,7 @@ overturned. Newest first.
 
 | date | document | what it says |
 |---|---|---|
+| 4 Oct 2026 | [`hypotheses-2026-10-04.md`](hypotheses-2026-10-04.md) | Ten hypotheses for how the city could improve the network, published before testing. H5, even spacing, first. |
 | 4 Oct 2026 | [`timetable-refresher-2026-10-04.md`](timetable-refresher-2026-10-04.md) | Operations. The timetable refresher was killed every night for a week after installing; no timetable lost, the state file and match rate were. Fixed. |
 | 2 Oct 2026 | [`repo-growth-plan-2026-10-02.md`](repo-growth-plan-2026-10-02.md) | Proposal. The repository passes 1 GB around January; three options to push that to mid-2027. Updated 3 October: option B chosen and in place. |
 | 2 Oct 2026 | [`districts-2026-10-02.md`](districts-2026-10-02.md) | Four of the five districts promised more frequent routes got more than the city; Baltupiai did not. Lazdynėliai's mornings got much slower. |
