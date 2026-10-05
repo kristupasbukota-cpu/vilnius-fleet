@@ -444,19 +444,30 @@
    "bytes": 3871811,
    "replaced": "gtfs-20261001.zip",
    "backfilled": "2026-10-04, from the archived file; the run that installed it was stopped before it could record it"
+  },
+  {
+   "file": "gtfs.zip",
+   "fingerprint": "62ad2a05258783de",
+   "downloaded": "2026-10-04T23:42:33+00:00",
+   "url": "https://www.stops.lt/vilnius/vilnius/gtfs.zip",
+   "trips": 22748,
+   "stop_times": 457472,
+   "stops": 1546,
+   "bytes": 3854093,
+   "replaced": "gtfs-20261002.zip"
   }
  ],
- "last_check": "2026-10-04T10:17:39+00:00",
- "last_change": "2026-10-02T23:40:11+00:00",
- "checks": 43,
+ "last_check": "2026-10-04T23:42:33+00:00",
+ "last_change": "2026-10-04T23:42:33+00:00",
+ "checks": 44,
  "failures": 0,
  "match": {
-  "snapshot": "20261004T101426Z.csv.gz",
-  "vehicles_with_trip": 375,
-  "matched": 370,
+  "snapshot": "20261004T203850Z.csv.gz",
+  "vehicles_with_trip": 152,
+  "matched": 150,
   "rate": 98.7,
-  "known_trips": 71260,
-  "measured_minutes_back": 3
+  "known_trips": 71287,
+  "measured_minutes_back": 184
  },
  "match_history": [
   {
@@ -663,6 +674,11 @@
    "utc": "2026-10-04T10:18:20+00:00",
    "rate": 98.7,
    "vehicles": 375
+  },
+  {
+   "utc": "2026-10-04T23:43:16+00:00",
+   "rate": 98.7,
+   "vehicles": 152
   }
  ],
  "notes": [
