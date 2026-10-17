@@ -556,15 +556,15 @@
    "replaced": "gtfs-20261014.zip"
   }
  ],
- "last_check": "2026-10-15T23:40:33+00:00",
+ "last_check": "2026-10-16T23:41:33+00:00",
  "last_change": "2026-10-15T23:40:33+00:00",
- "checks": 55,
+ "checks": 56,
  "failures": 0,
  "match": {
-  "snapshot": "20261015T205700Z.csv.gz",
-  "vehicles_with_trip": 150,
-  "matched": 144,
-  "rate": 96.0,
+  "snapshot": "20261016T205746Z.csv.gz",
+  "vehicles_with_trip": 164,
+  "matched": 160,
+  "rate": 97.6,
   "known_trips": 80776,
   "measured_minutes_back": 164
  },
@@ -833,6 +833,11 @@
    "utc": "2026-10-15T23:41:25+00:00",
    "rate": 96.0,
    "vehicles": 150
+  },
+  {
+   "utc": "2026-10-16T23:42:25+00:00",
+   "rate": 97.6,
+   "vehicles": 164
   }
  ],
  "notes": [
