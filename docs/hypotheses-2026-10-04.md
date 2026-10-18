@@ -168,3 +168,11 @@ Added as each test is done. The hypotheses above are unchanged.
   gives Ąžuolų st. to Sodų st. 5 minutes, which buses run in 2.4 to 3.6, and gives the
   links either side too little. Buses run late into it and early out of it. See
   [lines 118 and 32](lines-118-32-2026-10-04.md).
+- **H7, 6 October: refuted as stated, supported in a narrower form.** There is little
+  spare time to move: daytime trips need about 209 vehicle-hours a weekday more running
+  time than scheduled, against about 10 in cells that run consistently early, and in the
+  morning peak 83% of lines are short over the round trip. The bus 32 pattern does hold
+  more widely: on 30 lines the timetable puts time on the wrong links along the route,
+  about 44 vehicle-hours a weekday, fixable without extra buses. 4 of the 20 worst links
+  owe part of their ranking to a padded neighbour; the two worst do not. See
+  [spare time](spare-time-2026-10-06.md).
