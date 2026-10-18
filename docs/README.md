@@ -5,6 +5,7 @@ overturned. Newest first.
 
 | date | document | what it says |
 |---|---|---|
+| 18 Oct 2026 | [`bus-lanes-matched-2026-10-18.md`](bus-lanes-matched-2026-10-18.md) | H1 and H9. Matched on hour, centre distance and volume, lane links lose 7.2 s less per inbound morning hop, but the interval spans zero. In rain, lanes about halve the extra delay. |
 | 6 Oct 2026 | [`spare-time-2026-10-06.md`](spare-time-2026-10-06.md) | Spare time in the timetables: there is very little of it. |
 | 4 Oct 2026 | [`lines-118-32-2026-10-04.md`](lines-118-32-2026-10-04.md) | Bus lines 118 and 32 up close. A sharp 07:00 hour in both directions since autumn; 32's timetable puts 5 minutes on one link and too little on its neighbours, which makes its "worst link" an artefact. |
 | 4 Oct 2026 | [`terminal-stand-2026-10-04.md`](terminal-stand-2026-10-04.md) | H6. After a stand of a minute or less, buses that arrive early leave early 13 to 17% of the time. A 2-minute minimum would cost about 20 vehicle-hours a weekday. |

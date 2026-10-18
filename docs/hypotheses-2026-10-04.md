@@ -176,3 +176,14 @@ Added as each test is done. The hypotheses above are unchanged.
   about 44 vehicle-hours a weekday, fixable without extra buses. 4 of the 20 worst links
   owe part of their ranking to a padded neighbour; the two worst do not. See
   [spare time](spare-time-2026-10-06.md).
+- **H1, 18 October: inconclusive, leaning towards the lanes.** Matched on hour,
+  distance from the centre and bus volume, inbound morning hops on links with a lane
+  lose 7.2 s less than links without (95% interval −20 to +5 s, 59 lane links), so the
+  lanes are not simply on easier roads. With padded-neighbour links left out the gap
+  is −4.4 s, and measured as speed there is no clear difference. Only a new lane,
+  measured before and after, can settle it. See
+  [bus lanes, matched](bus-lanes-matched-2026-10-18.md).
+- **H9, 18 October: supported in a modest form.** A wet hour adds +1.3 s per hop on
+  links with a lane and +2.4 s on links without one in the same parts of the city: a
+  difference of −1.1 s (95% interval −1.8 to −0.4). Clearest off-peak; in the peaks
+  there are too few wet hours to settle it. Same document.
