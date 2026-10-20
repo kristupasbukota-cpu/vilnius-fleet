@@ -1,0 +1,2012 @@
+stop_from_id,stop_to_id,hops,school_km,nearest_school,pupils_300m,pupils_500m,near,centre_km
+1004,6649,18407,0.1069,Vilniaus Karoliniškių gimnazija,815.0,1646.0,near,4.6471
+1008,5570,2,2.7952,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,0.0,far,7.6049
+10089,10123,2017,7.5995,Vilniaus Abraomo Kulviečio klasikinė gimnazija,0.0,0.0,far,14.1642
+10091,10094,1874,6.8629,Vilniaus Abraomo Kulviečio klasikinė gimnazija,0.0,0.0,far,13.7651
+10092,10089,2108,6.9098,Vilniaus Abraomo Kulviečio klasikinė gimnazija,0.0,0.0,far,13.7755
+10094,10096,2015,6.3752,Vilniaus Gabijos progimnazija,0.0,0.0,far,13.1895
+10095,10092,2029,6.493,Vilniaus Gabijos progimnazija,0.0,0.0,far,13.2642
+10096,10098,1913,5.4196,Vilniaus Gabijos progimnazija,0.0,0.0,far,12.5141
+10097,10095,2009,5.5405,Vilniaus Gabijos progimnazija,0.0,0.0,far,12.6235
+10098,10100,1960,4.4315,Vilniaus Gabijos progimnazija,0.0,0.0,far,11.5847
+10099,10097,2008,4.4877,Vilniaus Gabijos progimnazija,0.0,0.0,far,11.6683
+10100,7082,2077,3.6589,Vilniaus Gabijos progimnazija,0.0,0.0,far,10.7181
+10122,10091,1933,7.6162,Vilniaus Abraomo Kulviečio klasikinė gimnazija,0.0,0.0,far,14.1613
+10123,7109,1988,7.4396,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,14.1719
+10280,6746,1314,0.7147,"Vilniaus ""Vyturio"" pradinė mokykla",0.0,0.0,middle,6.1368
+10281,16973,1348,0.7509,"Vilniaus ""Vyturio"" pradinė mokykla",0.0,0.0,middle,5.8172
+10310,18076,61,5.406,Vilniaus Balsių progimnazija,0.0,0.0,far,17.8756
+10310,8086,91,3.0231,Vilniaus Balsių progimnazija,0.0,0.0,far,15.3809
+10317,6888,3771,1.2011,"Vaikų meninė studija ""Diemedis""",0.0,0.0,far,5.5711
+10319,9606,3374,1.4849,"Vaikų meninė studija ""Diemedis""",0.0,0.0,far,5.9529
+1032,18847,3412,0.1748,"Vilniaus darželis - mokykla ""Vaivorykštė""",1300.0,3307.0,near,1.8472
+1035,6711,10770,0.0606,Vilniaus Gedimino technikos universiteto inžinerijos licėjus,1420.0,1420.0,near,4.1302
+10359,17003,423,0.7639,"Vilniaus ""Saulėtekio"" mokykla-daugiafunkcis centras",0.0,0.0,middle,3.5736
+10359,6024,304,0.5424,"VšĮ ""Ruduo-pavasaris""",0.0,0.0,middle,3.5178
+10359,7414,1229,0.0424,"Vilniaus ""Saulėtekio"" mokykla-daugiafunkcis centras",717.0,1082.0,near,3.2102
+10359,9738,1023,0.7639,"Vilniaus ""Saulėtekio"" mokykla-daugiafunkcis centras",0.0,0.0,middle,3.7548
+10360,5289,2440,0.0713,Vilniaus kunigaikščio Gedimino progimnazija,1490.0,2226.0,near,2.0491
+10360,5534,1595,0.0713,Vilniaus kunigaikščio Gedimino progimnazija,1490.0,1490.0,near,1.8104
+1039,986,5734,0.1927,Vilniaus Šeškinės pradinė mokykla,870.0,1871.0,near,4.0459
+1042,6940,3333,0.0486,Vilniaus Žygimanto Augusto progimnazija,870.0,1714.0,near,3.9107
+10530,9607,3747,1.6748,"Vaikų meninė studija ""Diemedis""",0.0,0.0,far,6.2974
+10531,9604,3424,1.832,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,far,6.644
+10532,9681,1186,2.5576,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,6.5702
+10537,10541,1678,3.1065,"Vaikų meninė studija ""Diemedis""",0.0,0.0,far,6.8759
+10538,8250,1787,3.2228,Vilniaus Šilo ugdymo centras,0.0,0.0,far,7.2029
+10539,10538,1710,3.1238,"Vaikų meninė studija ""Diemedis""",0.0,0.0,far,6.897
+10541,10543,1719,3.0981,"Vaikų meninė studija ""Diemedis""",0.0,0.0,far,6.6652
+10543,10609,1678,2.6058,Vilniaus Šilo ugdymo centras,0.0,0.0,far,6.2676
+10544,10539,1670,3.058,Vilniaus Šilo ugdymo centras,0.0,0.0,far,6.6627
+10545,9613,1754,2.0828,Vilniaus Gedimino technikos universiteto inžinerijos licėjus,0.0,0.0,far,5.192
+10548,10611,1748,2.54,Vilniaus Gedimino technikos universiteto inžinerijos licėjus,0.0,0.0,far,5.6846
+10551,18426,3829,2.4903,Vilniaus Balsių progimnazija,0.0,0.0,far,13.3346
+10552,8008,3478,2.619,Vilniaus Balsių progimnazija,0.0,0.0,far,13.1885
+10554,6860,2376,1.1069,Vilniaus Balsių progimnazija,0.0,0.0,far,11.0135
+10554,9046,2962,0.904,Vilniaus Balsių progimnazija,0.0,0.0,far,10.9136
+10556,6857,5449,1.2559,Vilniaus Balsių progimnazija,0.0,0.0,far,10.7546
+10577,6457,1129,2.9896,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.8313
+10609,10545,1747,2.5352,Vilniaus Gedimino technikos universiteto inžinerijos licėjus,0.0,0.0,far,5.7111
+10611,10544,1660,2.6037,Vilniaus Šilo ugdymo centras,0.0,0.0,far,6.2109
+10612,9605,3720,1.5421,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,far,6.9285
+10614,16978,1227,0.4147,"VšĮ ""Ruduo-pavasaris""",0.0,118.0,middle,3.9956
+10614,5998,1028,0.3979,"VšĮ ""Ruduo-pavasaris""",0.0,118.0,middle,4.0129
+1064,6811,955,2.1098,Vilniaus Balsių progimnazija,0.0,0.0,far,9.3334
+1064,6816,1155,2.0574,Vilniaus Balsių progimnazija,0.0,0.0,far,9.249
+1069,905,6928,0.076,Vilniaus Ozo gimnazija,2341.0,2341.0,near,3.8511
+1071,1004,17287,0.1236,Vilniaus Karoliniškių gimnazija,815.0,3945.0,near,4.9141
+1071,6649,4602,0.1033,Vilniaus Karoliniškių gimnazija,815.0,4053.0,near,4.8416
+11046,5096,272,0.5474,Vilniaus Žirmūnų gimnazija,0.0,0.0,middle,3.3663
+11046,6720,4578,0.5493,Vilniaus Žirmūnų gimnazija,0.0,0.0,middle,3.4382
+11047,4520,3530,0.7689,Vilniaus tarptautinis prancūzų licėjus,0.0,0.0,middle,3.6102
+1115,7047,5,1.2965,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,8.0803
+1116,632,1006,0.2879,Vilniaus suaugusiųjų mokymo centras,391.0,917.0,near,2.1933
+1123,356,3355,0.6213,Viešoji įstaiga Tarptautinė Amerikos mokykla Vilniuje,0.0,0.0,middle,1.7389
+1129,5408,1098,0.689,Vilniaus Juzefo Ignacijaus Kraševskio gimnazija,0.0,0.0,middle,9.5301
+1129,6052,1,0.9577,"Vilniaus ""Žaros"" gimnazija",0.0,0.0,far,9.735
+1158,6913,786,0.3205,Vilniaus Abraomo Kulviečio klasikinė gimnazija,0.0,1152.0,middle,6.3467
+1167,4521,1,0.9039,Vilniaus Volungės darželis-mokykla,0.0,0.0,far,3.887
+14663,17253,2091,1.0801,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,far,7.3496
+14663,548,1522,1.3643,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,far,7.0569
+15113,9047,3094,0.3375,Vilniaus Balsių progimnazija,0.0,1423.0,middle,11.1243
+15114,9081,3287,0.0341,Vilniaus Balsių progimnazija,1423.0,1423.0,near,11.3516
+15182,4591,686,5.8987,Vilniaus Balsių progimnazija,0.0,0.0,far,13.4323
+15202,15558,1078,2.6597,Vilniaus Abraomo Kulviečio klasikinė gimnazija,0.0,0.0,far,9.5575
+15548,9971,2529,2.1329,Vilniaus Abraomo Kulviečio klasikinė gimnazija,0.0,0.0,far,8.4469
+15550,15548,995,2.1711,Vilniaus Abraomo Kulviečio klasikinė gimnazija,0.0,0.0,far,8.6759
+15551,15561,151,2.3363,Vilniaus Abraomo Kulviečio klasikinė gimnazija,0.0,0.0,far,9.0657
+15558,15550,993,2.3166,Vilniaus Abraomo Kulviečio klasikinė gimnazija,0.0,0.0,far,9.0269
+15581,6834,4422,0.1124,"UAB ""Taškius""",1043.0,4005.0,near,1.2635
+15581,9313,457,0.1124,"UAB ""Taškius""",1043.0,4005.0,near,1.2688
+15634,16323,2345,0.7073,Vilniaus Gabijos progimnazija,0.0,0.0,middle,7.3892
+15634,7077,6085,0.7375,Vilniaus Gabijos progimnazija,0.0,0.0,middle,7.4247
+15639,15636,293,0.7508,Vilniaus Gabijos progimnazija,0.0,0.0,middle,7.421
+15829,15833,1200,1.4607,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,12.314
+15831,9626,1213,2.1045,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.7809
+15833,15837,1427,1.0068,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,12.5663
+15835,15831,1218,1.4218,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,12.3591
+15837,15835,1188,1.0068,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,12.6089
+15964,16236,3546,0.2013,Vilniaus savivaldybės Grigiškių gimnazija,550.0,550.0,near,12.8264
+16145,16149,794,0.6652,Vilniaus Emilijos Pliaterytės progimnazija,0.0,0.0,middle,5.4954
+16147,16148,786,0.4426,Vilniaus Emilijos Pliaterytės progimnazija,0.0,1141.0,middle,5.1374
+16148,16145,795,0.3871,Vilniaus Emilijos Pliaterytės progimnazija,0.0,1141.0,middle,5.214
+16149,16150,784,1.0272,Šv. Juozapo mokykla,0.0,0.0,far,5.9978
+16150,16152,796,1.0272,Šv. Juozapo mokykla,0.0,0.0,far,6.3716
+16152,16153,786,1.4117,Vilniaus Šilo ugdymo centras,0.0,0.0,far,6.4224
+16153,6095,94,1.4117,Vilniaus Šilo ugdymo centras,0.0,0.0,far,6.6831
+16155,16147,816,0.5054,Vilniaus Šilo ugdymo centras,0.0,0.0,middle,5.3253
+16156,16160,1085,0.2768,"Vilniaus ""Žaros"" gimnazija",821.0,968.0,near,9.1276
+16158,5400,1258,0.4452,Vilniaus Žaliakalnio darželis-mokykla,0.0,616.0,middle,7.9578
+16160,16164,1084,0.0856,"Vilniaus ""Laisvės"" gimnazija",2279.0,2279.0,near,8.7158
+16162,6049,1005,0.2537,"Vilniaus ""Žaros"" gimnazija",821.0,968.0,near,9.1472
+16164,16158,1079,0.0856,"Vilniaus ""Laisvės"" gimnazija",1311.0,1594.0,near,8.24
+16165,16162,1058,0.0719,"Vilniaus ""Laisvės"" gimnazija",2279.0,2279.0,near,8.6915
+16167,16165,1007,0.0784,"Vilniaus ""Laisvės"" gimnazija",1311.0,1594.0,near,8.2387
+16169,16230,856,0.6626,UAB Karalienės Mortos mokykla,0.0,0.0,middle,6.0168
+16171,16174,819,1.25,UAB Karalienės Mortos mokykla,0.0,0.0,far,7.0241
+16173,16169,881,1.1386,UAB Karalienės Mortos mokykla,0.0,0.0,far,6.9204
+16174,4965,791,2.4018,UAB Karalienės Mortos mokykla,0.0,0.0,far,8.0397
+16175,16173,826,2.3403,UAB Karalienės Mortos mokykla,0.0,0.0,far,8.0166
+16176,4965,1078,2.5033,Vilniaus Žaliakalnio darželis-mokykla,0.0,0.0,far,8.5905
+16179,16175,901,2.6133,Vilniaus Žaliakalnio darželis-mokykla,0.0,0.0,far,8.5359
+16179,16182,998,2.6133,Vilniaus Žaliakalnio darželis-mokykla,0.0,0.0,far,8.5722
+16180,16183,1043,3.1923,UAB Karalienės Mortos mokykla,0.0,0.0,far,8.8002
+16182,16180,996,3.227,UAB Karalienės Mortos mokykla,0.0,0.0,far,8.6677
+16183,6130,1033,3.2526,UAB Karalienės Mortos mokykla,0.0,0.0,far,9.3091
+16184,16176,1113,3.2133,UAB Karalienės Mortos mokykla,0.0,0.0,far,8.8012
+16230,7715,3046,0.629,UAB Karalienės Mortos mokykla,0.0,0.0,middle,5.5408
+16231,16171,805,0.6961,UAB Karalienės Mortos mokykla,0.0,0.0,middle,6.1456
+16236,8945,3755,0.1364,Vilniaus savivaldybės Grigiškių gimnazija,550.0,550.0,near,12.702
+16263,16267,804,1.4428,Vilniaus savivaldybės Grigiškių gimnazija,0.0,0.0,far,13.8172
+16267,9614,927,0.5571,Vilniaus savivaldybės Grigiškių gimnazija,0.0,0.0,middle,13.4734
+16291,8326,2076,0.7894,Vilniaus Jeruzalės progimnazija,0.0,0.0,middle,7.784
+16295,7092,2614,1.4374,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,8.5241
+16305,6189,1318,2.3811,"UAB ""The British School of Vilnius""",0.0,0.0,far,9.4327
+16306,6184,3921,2.4055,"UAB ""The British School of Vilnius""",0.0,0.0,far,8.8355
+16307,6895,2646,1.9185,"UAB ""The British School of Vilnius""",0.0,0.0,far,9.4479
+16323,7809,2260,0.2545,Vilniaus Gabijos progimnazija,1216.0,2368.0,near,7.0855
+16422,6898,671,0.4574,"UAB ""The British School of Vilnius""",0.0,140.0,middle,10.6605
+16422,6901,2,0.4574,"UAB ""The British School of Vilnius""",0.0,140.0,middle,10.9334
+16424,16422,1378,0.3634,"UAB ""The British School of Vilnius""",0.0,140.0,middle,11.1051
+16425,17952,1291,0.1427,"UAB ""The British School of Vilnius""",140.0,140.0,near,11.2288
+16453,17009,1,0.6174,"Vilniaus ""Žaros"" gimnazija",0.0,0.0,middle,8.7897
+16553,16773,1165,0.1131,"VšĮ Vaikų kūrybinės iniciatyvos fondo licėjus ""Forumas""",901.0,3308.0,near,1.8405
+16558,16561,2354,2.395,Vilniaus Gabijos progimnazija,0.0,0.0,far,9.373
+16561,16563,2293,3.0833,Vilniaus Gabijos progimnazija,0.0,0.0,far,9.6969
+16563,16565,2265,3.0811,Vilniaus Aleksandro Puškino gimnazija,0.0,0.0,far,9.6381
+16565,19294,2324,3.0811,Vilniaus Aleksandro Puškino gimnazija,0.0,0.0,far,9.6691
+16581,7914,2,0.1448,"Vilniaus ""Varpo"" suaugusiųjų gimnazija",283.0,1741.0,near,1.6204
+16622,3560,3,0.9104,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,0.0,far,6.4684
+16627,6797,7404,0.8602,Šv. Juozapo mokykla,0.0,0.0,far,7.3319
+16628,6503,4713,0.4673,Vilniaus Jeruzalės progimnazija,0.0,681.0,middle,7.1098
+16628,6525,2132,0.674,Vilniaus Jeruzalės progimnazija,0.0,0.0,middle,7.2236
+16654,16657,998,4.9952,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,13.2633
+16655,16751,979,4.5142,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,13.32
+16656,16655,1188,4.9078,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,13.2682
+16657,16753,71,5.7523,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,13.3163
+16658,16752,1019,3.4062,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,13.4061
+16691,5613,2864,0.1284,Vilniaus Jono Ivaškevičiaus jaunimo mokykla,328.0,1668.0,near,4.0206
+16692,1069,2851,0.1439,Vilniaus Ozo gimnazija,2341.0,2669.0,near,3.9714
+16703,5672,5619,0.1733,"Vilniaus ""Minties"" gimnazija",540.0,1218.0,near,5.4026
+16713,16724,2628,0.1401,VšĮ Charkivo mokykla Gravitacija,1256.0,1256.0,near,5.4826
+16715,9599,2473,0.2875,VšĮ Charkivo mokykla Gravitacija,182.0,182.0,near,5.2232
+16724,7714,74,0.2052,VšĮ Charkivo mokykla Gravitacija,1256.0,1256.0,near,5.4499
+16724,7818,1047,0.2052,VšĮ Charkivo mokykla Gravitacija,1256.0,1256.0,near,5.3205
+16725,16715,2506,0.15,VšĮ Charkivo mokykla Gravitacija,1256.0,1256.0,near,5.4684
+16749,5756,410,3.7502,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.7195
+16751,3572,1084,3.4059,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,13.3856
+16752,16654,836,4.5532,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,13.3099
+16754,16656,1241,5.6436,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,13.2886
+16754,9732,6,5.4058,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,12.8131
+16770,16772,1091,0.1118,"VšĮ Vaikų kūrybinės iniciatyvos fondo licėjus ""Forumas""",2003.0,4030.0,near,2.1547
+16770,474,32,0.0046,"VšĮ Vaikų kūrybinės iniciatyvos fondo licėjus ""Forumas""",2003.0,5129.0,near,2.0341
+16772,9007,2250,0.0913,"VšĮ Vaikų kūrybinės iniciatyvos fondo licėjus ""Forumas""",901.0,3308.0,near,1.8229
+16773,5778,1301,0.1589,"VšĮ Vaikų kūrybinės iniciatyvos fondo licėjus ""Forumas""",913.0,4030.0,near,2.3041
+16773,6410,1116,0.0376,Vilniaus Jono Basanavičiaus progimnazija,1245.0,4573.0,near,2.1361
+16832,9081,3645,0.0536,Vilniaus Balsių progimnazija,1423.0,1423.0,near,11.5217
+16861,16863,550,1.6239,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,15.2677
+16863,4516,602,0.4038,Vilniaus Trakų Vokės gimnazija,0.0,677.0,middle,13.9096
+16864,18526,348,1.6721,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,15.1832
+16870,9053,1970,0.4839,Vilniaus Balsių progimnazija,0.0,1423.0,middle,11.7098
+16879,9483,1372,2.8009,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,14.61
+16880,9628,1405,2.2936,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,13.7691
+16896,7392,2866,1.8935,"MB ""Katino Dienelės"" mokykla",0.0,0.0,far,8.3592
+16898,17232,151,1.2842,"MB ""Katino Dienelės"" mokykla",0.0,0.0,far,8.2564
+16898,18927,2389,1.6002,"MB ""Katino Dienelės"" mokykla",0.0,0.0,far,8.2534
+16903,9618,1419,3.6443,Vilniaus savivaldybės Grigiškių gimnazija,0.0,0.0,far,15.7978
+16903,9685,1440,3.3802,Vilniaus savivaldybės Grigiškių gimnazija,0.0,0.0,far,15.9335
+16920,9593,1826,1.4516,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,4.49
+16971,10280,1312,0.7181,"Vilniaus ""Vyturio"" pradinė mokykla",0.0,0.0,middle,5.8307
+16973,8934,1369,0.8046,"Vilniaus ""Ryto"" progimnazija",0.0,0.0,far,5.6184
+16977,616,4517,0.4776,"VšĮ ""Ruduo-pavasaris""",0.0,118.0,middle,4.144
+16978,10359,699,0.4156,"VšĮ ""Ruduo-pavasaris""",0.0,118.0,middle,3.5468
+16978,5304,120,0.4156,"VšĮ ""Ruduo-pavasaris""",0.0,118.0,middle,3.7545
+16978,7414,65,0.0379,"Vilniaus ""Juventos"" gimnazija",717.0,1200.0,near,3.0458
+16978,9738,310,0.4156,"VšĮ ""Ruduo-pavasaris""",0.0,118.0,middle,3.6507
+17003,6024,421,0.5424,"VšĮ ""Ruduo-pavasaris""",0.0,0.0,middle,3.4833
+17007,16454,1,0.6169,"Vilniaus ""Žaros"" gimnazija",0.0,0.0,middle,8.7855
+17009,6073,2765,0.2563,"Vilniaus ""Žaros"" gimnazija",821.0,968.0,near,9.0377
+17033,6798,1164,1.4236,Šv. Juozapo mokykla,0.0,0.0,far,8.4356
+17034,17036,1298,3.3588,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,9.7251
+17036,17038,1236,3.6111,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,10.5542
+17037,17033,1202,3.2598,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,9.6421
+17038,17040,1176,4.0471,Vilniaus Balsių progimnazija,0.0,0.0,far,11.6867
+17039,17037,1221,3.5672,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,10.5119
+17040,17150,15,4.555,Vilniaus Balsių progimnazija,0.0,0.0,far,12.2933
+17041,17039,1248,4.0498,Vilniaus Balsių progimnazija,0.0,0.0,far,11.6644
+17118,17179,1450,0.2575,Vilniaus Vydūno progimnazija,1214.0,1214.0,near,6.8345
+17120,6619,1297,0.4706,Vilniaus Martyno Mažvydo progimnazija,0.0,1150.0,middle,6.7535
+17121,17186,1318,0.4739,Vilniaus krikščionių gimnazija,0.0,232.0,middle,7.4195
+17123,17181,1341,0.2876,Vilniaus Vydūno progimnazija,1214.0,1214.0,near,7.0892
+17124,17123,1276,0.4746,Vilniaus krikščionių gimnazija,0.0,232.0,middle,7.4032
+17131,17792,1071,0.7002,Vilniaus Balsių progimnazija,0.0,0.0,middle,12.2088
+17133,19105,1099,0.4079,Vilniaus Balsių progimnazija,0.0,1423.0,middle,11.7179
+17152,17041,1284,4.5662,Vilniaus Balsių progimnazija,0.0,0.0,far,12.2753
+17179,17121,1321,0.2757,Vilniaus Vydūno progimnazija,1214.0,1214.0,near,7.1129
+17181,17120,1257,0.2602,Vilniaus Vydūno progimnazija,1214.0,1214.0,near,6.821
+17186,17190,1319,0.4851,Vilniaus krikščionių gimnazija,0.0,232.0,middle,7.7178
+17190,17194,1339,0.5481,Vilniaus krikščionių gimnazija,0.0,0.0,middle,8.1032
+17191,17124,1301,0.4889,Vilniaus krikščionių gimnazija,0.0,232.0,middle,7.7503
+17194,17203,1328,0.8198,Vilniaus krikščionių gimnazija,0.0,0.0,far,8.7817
+17196,17191,1338,0.5768,Vilniaus krikščionių gimnazija,0.0,0.0,middle,8.0921
+17203,17208,1376,1.6126,Vilniaus krikščionių gimnazija,0.0,0.0,far,9.4178
+17205,17196,1288,0.7709,Vilniaus krikščionių gimnazija,0.0,0.0,middle,8.7296
+17208,7625,402,2.0207,Vilniaus krikščionių gimnazija,0.0,0.0,far,10.139
+17221,17225,1560,1.0543,"MB ""Katino Dienelės"" mokykla",0.0,0.0,far,8.4643
+17222,5971,1001,3.448,Vilniaus Salininkų gimnazija,0.0,0.0,far,9.5092
+17223,8371,1560,1.0399,Vilniaus krikščionių gimnazija,0.0,0.0,far,8.5898
+17225,17230,1496,1.0211,"MB ""Katino Dienelės"" mokykla",0.0,0.0,far,8.2048
+17228,17223,1532,1.1383,"MB ""Katino Dienelės"" mokykla",0.0,0.0,far,8.5162
+17230,16896,153,1.289,"MB ""Katino Dienelės"" mokykla",0.0,0.0,far,8.242
+17230,18926,1334,1.2867,"MB ""Katino Dienelės"" mokykla",0.0,0.0,far,8.0362
+17232,17228,1449,1.0675,"MB ""Katino Dienelės"" mokykla",0.0,0.0,far,8.2469
+17239,17241,2504,0.0212,Vilniaus tarptautinis prancūzų licėjus,1291.0,3077.0,near,2.6829
+17241,17246,2287,0.0216,Vilniaus tarptautinis prancūzų licėjus,1291.0,2299.0,near,2.8779
+17242,5091,2460,0.035,Vilniaus tarptautinis prancūzų licėjus,800.0,2299.0,near,2.6828
+17246,6880,128,0.3317,Vilniaus Volungės darželis-mokykla,0.0,800.0,middle,3.3379
+17246,6883,2086,0.3317,Vilniaus Volungės darželis-mokykla,0.0,800.0,middle,3.6013
+17248,17242,2290,0.0317,Vilniaus tarptautinis prancūzų licėjus,800.0,2299.0,near,2.8878
+17252,10612,2221,1.1021,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,far,7.3812
+17253,17256,2126,1.0023,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,far,7.8284
+17256,17263,2192,1.0023,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,far,8.3661
+17258,17252,2109,1.0142,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,far,7.8147
+17263,18566,946,1.3188,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,far,8.8927
+17265,17258,2101,1.0142,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,far,8.3517
+17270,18565,2096,1.5412,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,far,9.1776
+17313,17318,1678,0.4342,Vilniaus Vladislavo Sirokomlės gimnazija,0.0,736.0,middle,2.0674
+17315,17323,1664,0.21,"VšĮ ""Vilniaus humanistinė mokykla""",241.0,977.0,near,1.7995
+17317,17313,1669,0.2239,"VšĮ ""Vilniaus humanistinė mokykla""",241.0,977.0,near,1.8263
+17318,6844,1855,0.2199,Vilniaus šv. Kristoforo progimnazija,884.0,884.0,near,2.1053
+17318,7691,4043,0.3157,Vilniaus šv. Kristoforo progimnazija,0.0,884.0,middle,2.0969
+17320,16903,1589,3.6935,Vilniaus savivaldybės Grigiškių gimnazija,0.0,0.0,far,15.84
+17323,7382,1637,0.21,"VšĮ ""Vilniaus humanistinė mokykla""",241.0,977.0,near,1.7266
+17333,4479,2819,0.8828,Vilniaus Aleksandro Puškino gimnazija,0.0,0.0,far,7.643
+17352,5355,603,0.0698,"UAB ""Taškius""",2675.0,4005.0,near,1.0921
+17352,5430,42,0.1838,"UAB ""Taškius""",2547.0,3373.0,near,1.0935
+17495,17317,1683,0.1918,Vilniaus Vladislavo Sirokomlės gimnazija,977.0,977.0,near,1.814
+17507,6850,1117,3.0692,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,0.0,far,7.0715
+17589,5976,1031,5.387,Vilniaus Salininkų gimnazija,0.0,0.0,far,10.9634
+17594,5981,1083,5.9781,Vilniaus Salininkų gimnazija,0.0,0.0,far,11.1113
+17638,5244,11727,0.2418,"VšĮ ""Vilniaus humanistinė mokykla""",241.0,2648.0,near,1.0642
+17638,5667,10289,0.2418,"VšĮ ""Vilniaus humanistinė mokykla""",1249.0,1987.0,near,1.1269
+17638,6843,1601,0.2349,"VšĮ ""Vilniaus humanistinė mokykla""",241.0,992.0,near,1.4182
+17769,6619,6828,0.4413,"MB ""Katino Dienelės"" mokykla",0.0,1334.0,middle,6.8355
+17792,17130,171,0.8792,Vilniaus Balsių progimnazija,0.0,0.0,far,12.4009
+17854,9680,1268,2.0685,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,6.9011
+17862,17871,747,0.9401,Vilniaus Abraomo Kulviečio klasikinė gimnazija,0.0,0.0,far,6.4122
+17863,17866,773,0.9576,Vilniaus Abraomo Kulviečio klasikinė gimnazija,0.0,0.0,far,6.7705
+17865,17862,739,0.9401,Vilniaus Abraomo Kulviečio klasikinė gimnazija,0.0,0.0,far,6.8177
+17866,17869,782,1.1847,Vilniaus Abraomo Kulviečio klasikinė gimnazija,0.0,0.0,far,7.2048
+17867,17865,787,1.2145,Vilniaus Abraomo Kulviečio klasikinė gimnazija,0.0,0.0,far,7.2027
+17869,9693,718,1.2438,Vilniaus Abraomo Kulviečio klasikinė gimnazija,0.0,0.0,far,7.7176
+17871,5814,753,0.765,"Vilniaus ""Ateities"" mokykla",0.0,0.0,middle,6.0424
+17871,5828,1308,0.9008,Vilniaus Baltupių progimnazija,0.0,0.0,far,6.0571
+17872,17863,766,0.9576,Vilniaus Abraomo Kulviečio klasikinė gimnazija,0.0,0.0,far,6.3759
+17872,5813,1523,0.4425,"Vilniaus ""Ateities"" mokykla",0.0,689.0,middle,5.9508
+17889,17248,2020,0.3655,Vilniaus Volungės darželis-mokykla,0.0,250.0,middle,3.6287
+17889,6880,520,1.1459,"Vaikų meninė studija ""Diemedis""",0.0,0.0,far,4.0459
+17944,5960,2896,3.1397,VšĮ Tarptautinė Ukrainos mokykla,0.0,0.0,far,6.5913
+17945,5995,3279,2.4628,"VšĮ ""Ruduo-pavasaris""",0.0,0.0,far,5.9671
+17952,16424,1364,0.1427,"UAB ""The British School of Vilnius""",140.0,140.0,near,11.2218
+18018,9693,1765,1.1334,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,7.8688
+18073,6297,998,3.2847,"Vilniaus savivaldybės Grigiškių ""Šviesos"" gimnazija",0.0,0.0,far,9.0507
+18073,6301,621,2.964,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,0.0,far,8.8698
+18075,10310,89,5.406,Vilniaus Balsių progimnazija,0.0,0.0,far,17.8558
+18326,5667,63,0.2903,"Vilniaus ""Santaros"" gimnazija",1008.0,1937.0,near,0.9692
+18370,6861,2371,1.0205,Vilniaus Balsių progimnazija,0.0,0.0,far,11.4031
+18375,7817,976,1.0447,VšĮ Tarptautinė Ukrainos mokykla,0.0,0.0,far,4.8072
+18375,9750,1109,0.9406,"Vilniaus ""Saulėtekio"" mokykla-daugiafunkcis centras",0.0,0.0,far,4.2248
+18426,8021,3554,1.7953,Vilniaus Balsių progimnazija,0.0,0.0,far,13.1316
+18427,8021,829,1.7953,Vilniaus Balsių progimnazija,0.0,0.0,far,13.134
+18505,18695,409,0.0163,Vilniaus kunigaikščio Gedimino progimnazija,1490.0,4019.0,near,1.6254
+18517,5087,12148,0.1472,Vilniaus Prano Mašioto pradinė mokykla,1170.0,1170.0,near,3.7274
+18526,16861,539,2.9059,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,15.7987
+18532,9566,863,0.3269,UAB Stembridge LT,0.0,122.0,middle,2.9373
+18564,6164,1054,3.1173,Vilniaus Balsių progimnazija,0.0,0.0,far,14.6464
+18565,17265,303,1.3176,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,far,8.8635
+18566,17272,3,1.5735,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,far,9.2229
+18693,18871,419,0.2705,UAB Royal Russell School Vilnius,929.0,2407.0,near,0.5218
+18695,18505,1,0.0163,Vilniaus kunigaikščio Gedimino progimnazija,1490.0,4019.0,near,1.6254
+18695,18871,414,0.2037,Viešoji įstaiga Šiuolaikinės mokyklos centras (302850897),661.0,3400.0,near,1.1112
+18768,6106,845,1.0136,Šv. Juozapo mokykla,0.0,0.0,far,5.9541
+18780,7326,2477,0.2403,Vilniaus šv. Kristoforo gimnazija,751.0,1817.0,near,1.802
+18787,19201,1867,0.4176,Vilniaus Pavilnio progimnazija,0.0,555.0,middle,5.44
+18787,19203,1023,0.3981,Vilniaus Pavilnio progimnazija,0.0,555.0,middle,5.4113
+18824,7077,4420,0.8156,Vilniaus Gabijos progimnazija,0.0,0.0,far,8.0742
+18831,15639,1950,0.8324,Vilniaus Gabijos progimnazija,0.0,0.0,far,7.5183
+18847,5498,3748,0.2496,Vilniaus šv. Kristoforo progimnazija,884.0,884.0,near,2.02
+18847,6844,1415,0.2191,Vilniaus šv. Kristoforo progimnazija,884.0,884.0,near,2.0339
+18852,5881,7974,0.0359,Vilniaus Simono Daukanto gimnazija,1818.0,1818.0,near,1.8419
+18871,18693,417,0.2705,UAB Royal Russell School Vilnius,929.0,2407.0,near,0.5218
+18871,18695,420,0.2037,Viešoji įstaiga Šiuolaikinės mokyklos centras (302850897),661.0,3400.0,near,1.1112
+18878,18879,1140,1.5605,Vilniaus Balsių progimnazija,0.0,0.0,far,12.1325
+18879,3610,31,1.5724,Vilniaus Balsių progimnazija,0.0,0.0,far,13.1437
+18879,6160,252,1.5724,Vilniaus Balsių progimnazija,0.0,0.0,far,12.5594
+18889,18892,1111,1.5322,Vilniaus Balsių progimnazija,0.0,0.0,far,12.0016
+18892,6154,2085,1.6268,Vilniaus Balsių progimnazija,0.0,0.0,far,11.5716
+18904,8044,2325,1.9635,Vilniaus Gabijos progimnazija,0.0,0.0,far,8.7083
+18905,8048,2250,2.2777,Vilniaus Gabijos progimnazija,0.0,0.0,far,8.952
+18926,18928,2485,1.3524,"MB ""Katino Dienelės"" mokykla",0.0,0.0,far,8.0694
+18927,17232,1284,1.2842,"MB ""Katino Dienelės"" mokykla",0.0,0.0,far,8.1961
+18927,19106,1229,1.1475,"MB ""Katino Dienelės"" mokykla",0.0,0.0,far,7.9219
+18928,16896,2514,1.7371,"MB ""Katino Dienelės"" mokykla",0.0,0.0,far,8.2819
+18938,19202,2021,0.5639,Vilniaus Pavilnio progimnazija,0.0,0.0,middle,6.0247
+18938,19203,1104,0.586,Vilniaus Pavilnio progimnazija,0.0,0.0,middle,6.0425
+18939,7077,65,0.8156,Vilniaus Gabijos progimnazija,0.0,0.0,far,8.6002
+18983,19209,1061,0.5137,Vilniaus Pavilnio progimnazija,0.0,0.0,middle,5.6945
+18996,18526,2,2.9204,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,15.7058
+19016,18693,417,0.0961,"UAB ""Ateities laboratorija""",2065.0,5755.0,near,1.4549
+19026,9637,6,0.6122,UAB Stembridge LT,0.0,0.0,middle,3.1757
+19051,7700,808,1.7578,Vilniaus krikščionių gimnazija,0.0,0.0,far,9.9273
+19105,17131,1094,0.6555,Vilniaus Balsių progimnazija,0.0,0.0,middle,11.9382
+19106,8001,1388,0.9436,"MB ""Katino Dienelės"" mokykla",0.0,0.0,far,7.3843
+19193,1116,962,0.0132,Vilniaus Simono Daukanto gimnazija,1292.0,3308.0,near,1.7985
+19193,16773,269,0.0343,"VšĮ Vaikų kūrybinės iniciatyvos fondo licėjus ""Forumas""",901.0,1818.0,near,1.671
+19193,6438,8165,0.0193,Vilniaus Simono Daukanto gimnazija,1818.0,1818.0,near,1.7955
+19201,19206,2913,0.6464,Vilniaus Pavilnio progimnazija,0.0,0.0,middle,6.0801
+19202,6695,3229,0.39,Vilniaus Pavilnio progimnazija,0.0,555.0,middle,5.3882
+19203,18983,1152,0.5051,Vilniaus Pavilnio progimnazija,0.0,0.0,middle,5.7285
+19203,19208,1018,0.4999,Vilniaus Pavilnio progimnazija,0.0,402.0,middle,5.7454
+19204,19201,1029,0.5359,Vilniaus Pavilnio progimnazija,0.0,0.0,middle,5.7555
+19206,19325,1609,1.0695,Vilniaus Pavilnio progimnazija,0.0,0.0,far,6.5056
+19208,19204,1356,0.5353,Vilniaus Pavilnio progimnazija,0.0,0.0,middle,5.695
+19209,19202,1070,0.4816,Vilniaus Pavilnio progimnazija,0.0,402.0,middle,5.7284
+19220,19223,735,0.2226,Vilniaus šv. Jono Pauliaus II gimnazija,476.0,476.0,near,5.5902
+19221,351,706,0.3358,Vilniaus šv. Jono Pauliaus II gimnazija,0.0,1519.0,middle,5.2384
+19222,19221,740,0.2358,Vilniaus šv. Jono Pauliaus II gimnazija,476.0,476.0,near,5.5916
+19223,9961,732,0.4348,Vilniaus šv. Jono Pauliaus II gimnazija,0.0,476.0,middle,6.1053
+19251,6643,3849,0.135,"Vilniaus ""Vilties"" specialioji mokykla-daugiafunkcinis centras",282.0,1921.0,near,4.4302
+19294,8447,244,3.1946,Vilniaus Aleksandro Puškino gimnazija,0.0,0.0,far,9.824
+19299,19323,1664,1.3635,Vilniaus Žaliakalnio darželis-mokykla,0.0,0.0,far,6.8774
+19323,19324,2142,1.5657,Vilniaus Pavilnio progimnazija,0.0,0.0,far,6.6432
+19324,18938,1644,1.0483,Vilniaus Pavilnio progimnazija,0.0,0.0,far,6.4901
+19325,19326,1719,1.5746,Vilniaus Pavilnio progimnazija,0.0,0.0,far,6.6729
+19326,6707,1654,1.3549,Vilniaus Žaliakalnio darželis-mokykla,0.0,0.0,far,6.9181
+329,4395,4404,0.1697,"Vilniaus ""Minties"" gimnazija",540.0,1218.0,near,5.3595
+342,6068,1,0.7425,Vilniaus Juzefo Ignacijaus Kraševskio gimnazija,0.0,0.0,middle,9.4387
+348,5833,8373,0.2782,Vilniaus Baltupių progimnazija,857.0,857.0,near,5.3618
+351,1004,707,0.1236,Vilniaus Karoliniškių gimnazija,815.0,3057.0,near,4.9381
+351,6400,5829,0.314,"Vilniaus ""Spindulio"" progimnazija",0.0,3394.0,middle,5.0694
+3512,6934,5283,0.3018,Vilniaus Šeškinės pradinė mokykla,0.0,1714.0,middle,3.6392
+3551,16553,1393,0.0918,Vilniaus kunigaikščio Gedimino progimnazija,1960.0,3443.0,near,1.5863
+356,6572,5786,0.2246,Vilniaus Filaretų pradinė mokykla,469.0,469.0,near,1.6669
+356,931,1939,0.4095,Vilniaus Filaretų pradinė mokykla,0.0,333.0,middle,1.7745
+3560,756,3126,0.5933,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,0.0,middle,6.1558
+3566,6081,2147,0.3396,Vilniaus Šilo ugdymo centras,0.0,163.0,middle,5.4584
+3566,6083,853,0.0287,Vilniaus Šilo ugdymo centras,163.0,163.0,near,5.4275
+357,4410,3924,4.024,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,9.3383
+3572,7724,1039,3.0014,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,13.4296
+3575,4531,1,3.7813,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.9409
+3575,5757,1439,5.035,Vilniaus Salininkų gimnazija,0.0,0.0,far,11.7643
+3589,6317,5221,0.2259,Vilniaus Lazdynų mokykla,1054.0,2272.0,near,5.0475
+3590,6650,868,0.0223,"Vilniaus ""Varpo"" suaugusiųjų gimnazija",698.0,2427.0,near,1.5925
+3610,6163,534,2.665,Vilniaus Balsių progimnazija,0.0,0.0,far,14.153
+364,7896,3138,0.2406,Vilniaus Fabijoniškių gimnazija,1316.0,3339.0,near,5.8604
+370,7052,1,1.1256,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,7.9834
+387,5372,4277,0.4795,Vilniaus Filaretų pradinė mokykla,0.0,333.0,middle,2.2579
+393,5067,2967,0.0474,Vilniaus Maironio progimnazija,964.0,1899.0,near,4.7508
+393,5137,9862,0.0542,Vilniaus Maironio progimnazija,964.0,3329.0,near,4.7799
+393,6477,36,0.0575,Vilniaus Maironio progimnazija,760.0,1530.0,near,4.7334
+394,1069,4025,0.1439,Vilniaus Ozo gimnazija,3101.0,3101.0,near,4.1782
+394,5208,1491,0.1244,Vilniaus Maironio progimnazija,760.0,1761.0,near,4.4104
+394,7003,2176,0.142,Vilniaus Maironio progimnazija,760.0,2391.0,near,4.3221
+394,905,4001,0.034,"Vilniaus ""Sostinės"" gimnazija",3101.0,3101.0,near,4.0985
+410,5181,8908,0.9205,VšĮ Tarptautinė Ukrainos mokykla,0.0,0.0,far,4.1389
+4267,5355,930,0.1467,"UAB ""Taškius""",1326.0,4005.0,near,1.4475
+429,6180,2573,2.9492,Vilniaus Šilo ugdymo centras,0.0,0.0,far,7.335
+437,5691,4382,0.1013,"Vilniaus ""Ąžuolyno"" progimnazija",1308.0,2561.0,near,5.5449
+437,783,5130,0.1761,"Vilniaus ""Minties"" gimnazija",540.0,1848.0,near,5.6042
+4388,7897,4669,0.1608,"Vilniaus ""Šviesos"" pradinė mokykla",1661.0,2781.0,near,5.2871
+4388,823,7690,0.1592,"Vilniaus ""Šviesos"" pradinė mokykla",345.0,345.0,near,5.0217
+4395,1071,1838,0.2583,Palaimintojo Teofiliaus Matulionio gimnazija,678.0,1218.0,near,5.1612
+4395,5703,2516,0.0265,Palaimintojo Teofiliaus Matulionio gimnazija,1364.0,2058.0,near,4.9822
+4410,5731,404,4.0541,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,8.9783
+4426,6100,851,1.3057,Vilniaus Šilo ugdymo centras,0.0,0.0,far,6.4217
+4454,4455,18,0.4139,"Vilniaus savivaldybės Grigiškių ""Šviesos"" gimnazija",0.0,1120.0,middle,10.994
+4454,6295,2839,0.4139,"Vilniaus savivaldybės Grigiškių ""Šviesos"" gimnazija",0.0,1120.0,middle,10.6452
+4454,6850,15,0.4139,"Vilniaus savivaldybės Grigiškių ""Šviesos"" gimnazija",0.0,1120.0,middle,9.1037
+4455,6295,57,2.7391,"Vilniaus savivaldybės Grigiškių ""Šviesos"" gimnazija",0.0,0.0,far,9.7693
+4455,9109,771,0.8888,"Vilniaus savivaldybės Grigiškių ""Šviesos"" gimnazija",0.0,0.0,far,10.7494
+4456,7062,2046,0.2481,Vilniaus Trakų Vokės gimnazija,677.0,677.0,near,13.3995
+446,481,2285,0.1808,Vilniaus Fabijoniškių gimnazija,1316.0,5707.0,near,6.2292
+4479,7844,2801,1.4431,Vilniaus Aleksandro Puškino gimnazija,0.0,0.0,far,8.1478
+449,5092,106,0.0212,Vilniaus Antakalnio progimnazija,1922.0,5567.0,near,1.785
+449,5768,4342,0.0987,"""Šaltinėlio"" privati mokykla",944.0,2618.0,near,1.2336
+449,603,7710,0.0987,"""Šaltinėlio"" privati mokykla",136.0,2618.0,near,1.2466
+449,6566,288,0.0987,"""Šaltinėlio"" privati mokykla",944.0,2618.0,near,1.2656
+4506,7805,999,0.7024,Vilniaus Trakų Vokės gimnazija,0.0,0.0,middle,13.3341
+4507,7059,1128,0.4509,Vilniaus Trakų Vokės gimnazija,0.0,677.0,middle,13.3079
+4516,7055,1631,0.3913,Vilniaus Trakų Vokės gimnazija,0.0,677.0,middle,12.4712
+4520,9756,3283,0.9474,Vilniaus Volungės darželis-mokykla,0.0,0.0,far,4.1951
+4521,11046,4212,0.7689,Vilniaus Gedimino technikos universiteto inžinerijos licėjus,0.0,0.0,middle,3.5745
+4526,6611,9106,0.1833,Vilniaus krikščionių gimnazija,1342.0,3706.0,near,7.5634
+4526,8067,2621,0.1833,Vilniaus krikščionių gimnazija,232.0,3706.0,near,7.5974
+4531,6458,1143,3.2278,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.8633
+456,6193,1373,2.1524,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,far,8.9713
+4564,4613,1033,4.0812,Vilniaus Salininkų gimnazija,0.0,0.0,far,12.3034
+4590,15180,8,5.9384,Vilniaus Balsių progimnazija,0.0,0.0,far,13.441
+4591,7106,679,6.3249,Vilniaus Balsių progimnazija,0.0,0.0,far,13.4071
+4612,4563,27,4.1725,Vilniaus Salininkų gimnazija,0.0,0.0,far,12.4358
+4613,6979,999,3.8858,Vilniaus Salininkų gimnazija,0.0,0.0,far,11.6279
+4705,6974,1416,1.9134,Vilniaus Salininkų gimnazija,0.0,0.0,far,9.2365
+4705,9468,410,1.9134,Vilniaus Salininkų gimnazija,0.0,0.0,far,10.0748
+4706,6972,1730,1.0642,Vilniaus Salininkų gimnazija,0.0,0.0,far,9.0632
+474,5080,294,0.0258,Vilniaus Senvagės gimnazija,4838.0,5079.0,near,2.0217
+474,5534,1859,0.0852,Vilniaus Simono Daukanto gimnazija,2391.0,2391.0,near,1.7601
+481,9152,8501,0.1558,Vilniaus Gabijos progimnazija,1216.0,3271.0,near,6.7668
+4898,5872,1,0.1265,Vilniaus Žvėryno gimnazija,977.0,977.0,near,2.674
+4898,7415,2864,0.1191,Vilniaus Žvėryno gimnazija,977.0,1801.0,near,3.5335
+491,5307,1356,0.3037,VšĮ Tarptautinė Ukrainos mokykla,0.0,2273.0,middle,4.9328
+493,588,696,1.0611,VšĮ Tarptautinė Ukrainos mokykla,0.0,0.0,far,5.767
+4965,6030,1857,1.8881,Vilniaus Žaliakalnio darželis-mokykla,0.0,0.0,far,8.3801
+4988,16971,1381,0.6198,"Vilniaus ""Ryto"" progimnazija",0.0,0.0,middle,5.3875
+4988,8060,10462,0.6198,"Vilniaus ""Ryto"" progimnazija",0.0,0.0,middle,5.4232
+4989,4990,1594,0.4831,Vilniaus Levo Karsavino mokykla,0.0,1794.0,middle,4.7471
+4989,5643,1313,0.4293,"Vilniaus ""Vilties"" specialioji mokykla-daugiafunkcinis centras",0.0,1106.0,middle,4.7818
+4989,7342,9015,0.4729,"Vilniaus ""Vilties"" specialioji mokykla-daugiafunkcinis centras",0.0,282.0,middle,4.7992
+4990,5722,10102,0.3556,Vilniaus Levo Karsavino mokykla,0.0,1794.0,middle,4.4579
+4990,6472,4462,0.3294,Vilniaus Levo Karsavino mokykla,0.0,1794.0,middle,4.5262
+4990,6597,9593,0.2556,Vilniaus Levo Karsavino mokykla,970.0,1794.0,near,4.5022
+4991,4988,11562,0.5276,Vilniaus Levo Karsavino mokykla,0.0,0.0,middle,4.8342
+5022,5127,2748,0.4013,Vilniaus Verkių mokykla-daugiafunkcis centras,0.0,167.0,middle,3.7197
+5060,6580,9886,0.1034,Vilniaus Jono Pauliaus II progimnazija,864.0,1637.0,near,5.5924
+5060,7001,7906,0.0812,Vilniaus Jono Pauliaus II progimnazija,864.0,2407.0,near,5.5725
+5063,5140,14216,0.1672,Vilniaus Jono Pauliaus II progimnazija,864.0,2652.0,near,5.6325
+5063,7005,3108,0.1672,Vilniaus Jono Pauliaus II progimnazija,864.0,2448.0,near,5.6483
+5067,6479,11036,0.1553,"Vilniaus darželis-mokykla ""Vilija""",1139.0,2672.0,near,5.0698
+5067,6481,4298,0.138,"Vilniaus darželis-mokykla ""Vilija""",1139.0,2672.0,near,5.2012
+5074,393,3871,0.0613,Vilniaus Maironio progimnazija,3101.0,3101.0,near,4.2629
+5080,5481,4109,0.1055,Vilniaus licėjus,1711.0,1711.0,near,3.1359
+5080,5861,769,0.1055,Vilniaus licėjus,1711.0,1711.0,near,3.2336
+5080,6846,7829,0.1055,Vilniaus licėjus,1711.0,1711.0,near,3.1624
+5086,5087,6303,0.1472,Vilniaus Prano Mašioto pradinė mokykla,1170.0,1170.0,near,3.675
+5087,5013,1234,0.1466,Vilniaus Prano Mašioto pradinė mokykla,1170.0,1292.0,near,3.2946
+5087,5088,14022,0.1447,Vilniaus Prano Mašioto pradinė mokykla,1170.0,1292.0,near,3.2731
+5088,17239,2600,0.3199,Vilniaus Antakalnio progimnazija,0.0,3922.0,middle,2.7834
+5088,5092,888,0.3836,Vilniaus Antakalnio progimnazija,0.0,2653.0,middle,2.8131
+5088,5658,15890,0.3151,UAB Stembridge LT,0.0,3633.0,middle,2.626
+5091,5013,1161,0.3519,Vilniaus Antakalnio progimnazija,0.0,2531.0,middle,2.8044
+5091,5606,1965,0.3173,Vilniaus Žirmūnų gimnazija,0.0,2850.0,middle,2.8426
+5091,5658,4992,0.3235,Vilniaus Antakalnio progimnazija,0.0,3988.0,middle,2.429
+5091,7042,1668,0.053,Vilniaus Joachimo Lelevelio inžinerijos gimnazija,529.0,3332.0,near,2.4142
+5092,5095,21541,0.3836,Vilniaus Antakalnio progimnazija,0.0,1680.0,middle,2.9984
+5095,1035,13942,0.1048,Vilniaus Gedimino technikos universiteto inžinerijos licėjus,1420.0,2271.0,near,3.6002
+5095,741,4680,0.1033,Vilniaus Gedimino technikos universiteto inžinerijos licėjus,1420.0,2271.0,near,3.9759
+5096,5091,7552,0.3519,Vilniaus Antakalnio progimnazija,0.0,1558.0,middle,2.931
+5096,5818,11470,0.2717,Vilniaus Antakalnio progimnazija,1008.0,2949.0,near,2.9003
+5103,5117,11794,0.4669,Vilniaus Šilo ugdymo centras,0.0,163.0,middle,4.9142
+5103,5118,4741,0.2978,Vilniaus Gedimino technikos universiteto inžinerijos licėjus,1420.0,1583.0,near,4.6625
+5103,5485,4286,0.4669,Vilniaus Šilo ugdymo centras,0.0,163.0,middle,4.8453
+5104,5105,18191,0.4997,Vilniaus Šilo ugdymo centras,0.0,163.0,middle,5.179
+5105,5107,2995,0.8059,Vilniaus Šilo ugdymo centras,0.0,0.0,far,5.2108
+5107,900,2555,1.0168,Vilniaus Šilo ugdymo centras,0.0,0.0,far,5.3596
+5116,6715,20734,0.75,Vilniaus Šilo ugdymo centras,0.0,0.0,middle,5.2066
+5117,5118,8976,0.2978,Vilniaus Gedimino technikos universiteto inžinerijos licėjus,1420.0,1420.0,near,4.4758
+5117,5483,28,0.6178,Vilniaus Gedimino technikos universiteto inžinerijos licėjus,0.0,0.0,middle,4.6346
+5117,5485,2435,0.6672,Vilniaus Gedimino technikos universiteto inžinerijos licėjus,0.0,0.0,middle,4.6591
+5118,5096,5014,0.0394,Vilniaus Gedimino technikos universiteto inžinerijos licėjus,1420.0,2271.0,near,3.7374
+5118,5119,17661,0.0707,Vilniaus Gedimino technikos universiteto inžinerijos licėjus,1420.0,1420.0,near,4.1103
+5119,5096,13664,0.0404,Vilniaus Gedimino technikos universiteto inžinerijos licėjus,1420.0,2271.0,near,3.6253
+5119,6723,4668,0.0508,Vilniaus Gedimino technikos universiteto inžinerijos licėjus,1420.0,1420.0,near,3.6992
+5125,5127,6089,0.5979,Vilniaus Prano Mašioto pradinė mokykla,0.0,0.0,middle,3.6905
+5125,5131,4241,0.5347,Vilniaus licėjus,0.0,0.0,middle,3.556
+5127,5128,6466,0.762,Vilniaus licėjus,0.0,0.0,middle,3.4026
+5127,5131,4222,0.5347,Vilniaus licėjus,0.0,0.0,middle,3.3692
+5127,5481,2255,0.5467,Vilniaus licėjus,0.0,0.0,middle,3.3372
+5127,5861,102,0.6792,Vilniaus licėjus,0.0,0.0,middle,3.4365
+5128,5347,5850,0.4562,Vilniaus licėjus,0.0,1711.0,middle,3.1053
+5131,8463,12323,0.1592,Vilniaus licėjus,1711.0,1711.0,near,3.1848
+5137,5063,7330,0.1601,Vilniaus Jono Pauliaus II progimnazija,1068.0,2407.0,near,5.2793
+5137,6580,1406,0.0527,Vilniaus Jono Pauliaus II progimnazija,1068.0,1634.0,near,5.2723
+5140,5141,9131,0.1948,Vilniaus Medeinos pradinė mokykla,264.0,2007.0,near,6.0441
+5140,6925,568,0.1213,Vilniaus Medeinos pradinė mokykla,1554.0,3138.0,near,6.1722
+5141,6925,409,0.222,Vilniaus Aleksandro Puškino gimnazija,1554.0,2365.0,near,6.451
+5147,5149,2918,0.3309,Vilniaus Verkių mokykla-daugiafunkcis centras,0.0,167.0,middle,4.1024
+5147,6671,12,0.3052,Vilniaus Verkių mokykla-daugiafunkcis centras,0.0,1308.0,middle,4.2824
+5149,18517,12421,0.5396,Vilniaus Prano Mašioto pradinė mokykla,0.0,0.0,middle,4.0115
+5149,5086,4515,0.3933,Vilniaus Prano Mašioto pradinė mokykla,0.0,319.0,middle,3.9562
+5149,5087,55,0.1472,Vilniaus Prano Mašioto pradinė mokykla,1170.0,1170.0,near,3.8233
+5149,5125,3727,0.5684,Vilniaus Verkių mokykla-daugiafunkcis centras,0.0,0.0,middle,4.0096
+5149,6873,540,0.5684,Vilniaus Verkių mokykla-daugiafunkcis centras,0.0,0.0,middle,4.0602
+5154,5022,2793,0.4013,Vilniaus Verkių mokykla-daugiafunkcis centras,0.0,167.0,middle,4.0512
+5154,5848,56,0.1805,Vilniaus Verkių mokykla-daugiafunkcis centras,167.0,167.0,near,4.0886
+5154,6671,867,0.3908,Vilniaus Verkių mokykla-daugiafunkcis centras,0.0,1308.0,middle,4.31
+5156,6834,1,0.1861,"Vilniaus ""Varpo"" suaugusiųjų gimnazija",1326.0,3373.0,near,1.4955
+5160,4267,880,0.0058,"Vilniaus ""Varpo"" suaugusiųjų gimnazija",698.0,1524.0,near,1.5779
+5160,7573,34,0.0137,"Vilniaus ""Varpo"" suaugusiųjų gimnazija",698.0,1524.0,near,1.584
+5166,5160,1561,0.1805,"Vilniaus ""Varpo"" suaugusiųjų gimnazija",698.0,2070.0,near,1.7186
+5167,5549,860,0.2002,Vilniaus Gabrielės Petkevičaitės-Bitės suaugusiųjų mokymo centras,469.0,829.0,near,2.2296
+5167,6362,10105,0.0101,Vilniaus Gabrielės Petkevičaitės-Bitės suaugusiųjų mokymo centras,829.0,1372.0,near,2.1842
+5168,6853,15303,0.0276,Vilniaus Naujamiesčio mokykla,852.0,2674.0,near,1.6718
+5173,5175,6962,0.1844,"Vilniaus ""Juventos"" gimnazija",717.0,1082.0,near,2.6899
+5175,10359,1006,0.1025,"Vilniaus ""Saulėtekio"" mokykla-daugiafunkcis centras",717.0,1082.0,near,3.2723
+5175,5180,5923,0.2037,"Vilniaus ""Juventos"" gimnazija",717.0,1082.0,near,3.4357
+5175,5304,4181,0.2037,"Vilniaus ""Juventos"" gimnazija",1082.0,1082.0,near,3.5813
+5175,6024,1074,0.0657,"Vilniaus ""Saulėtekio"" mokykla-daugiafunkcis centras",717.0,1082.0,near,3.0865
+5175,8347,4,0.1019,VšĮ Tarptautinė Ukrainos mokykla,3355.0,3355.0,near,4.4793
+5180,5182,1576,0.895,VšĮ Tarptautinė Ukrainos mokykla,0.0,0.0,far,4.1697
+5181,6024,19,0.5424,"VšĮ ""Ruduo-pavasaris""",0.0,0.0,middle,3.6084
+5181,7414,8565,0.1491,"Vilniaus ""Juventos"" gimnazija",717.0,1082.0,near,3.3626
+5181,790,3,0.4765,Vilniaus Juozo Tallat-Kelpšos konservatorija,0.0,293.0,middle,3.5805
+5181,7941,304,0.3308,Vilniaus Gerosios Vilties progimnazija,0.0,982.0,middle,3.3715
+5182,8240,1180,0.8049,VšĮ Tarptautinė Ukrainos mokykla,0.0,0.0,far,4.5103
+5184,410,2475,0.8043,VšĮ Tarptautinė Ukrainos mokykla,0.0,0.0,far,4.5562
+5193,5194,14,1.0216,VšĮ Tarptautinė Ukrainos mokykla,0.0,0.0,far,5.6668
+5200,5175,1,0.1449,"Vilniaus ""Juventos"" gimnazija",717.0,1082.0,near,2.8046
+5200,6854,9,0.1647,"Vilniaus ""Juventos"" gimnazija",301.0,1082.0,near,2.5842
+5206,1039,1,0.1931,Vilniaus Šeškinės pradinė mokykla,240.0,1871.0,near,4.1347
+5208,6940,1342,0.1342,Vilniaus Žygimanto Augusto progimnazija,630.0,1714.0,near,4.1944
+5209,393,2103,0.0597,Vilniaus Maironio progimnazija,760.0,2631.0,near,4.3431
+5209,5208,78,0.406,Vilniaus Žygimanto Augusto progimnazija,0.0,870.0,middle,4.3072
+5212,5214,104,0.239,Vilniaus Šeškinės pradinė mokykla,240.0,1871.0,near,3.6701
+5214,5220,12595,0.3968,Vilniaus Šeškinės pradinė mokykla,0.0,1114.0,middle,2.9368
+5214,6635,5470,0.3392,Vilniaus Vladislavo Sirokomlės gimnazija,0.0,1114.0,middle,2.7403
+5220,5533,5318,0.3975,Vilniaus Vladislavo Sirokomlės gimnazija,0.0,736.0,middle,2.1813
+5220,5539,45,0.2072,Vilniaus kunigaikščio Gedimino progimnazija,1490.0,2226.0,near,1.9789
+5220,5774,2249,0.0971,Vilniaus Simono Daukanto gimnazija,2391.0,3127.0,near,1.9223
+5220,6404,1803,0.3984,Vilniaus Vladislavo Sirokomlės gimnazija,0.0,736.0,middle,2.2806
+5220,6635,5535,0.3297,Vilniaus Vladislavo Sirokomlės gimnazija,0.0,736.0,middle,2.1504
+5220,7769,1636,0.1442,Vilniaus Vladislavo Sirokomlės gimnazija,736.0,736.0,near,2.1597
+5244,5249,3704,0.1744,Viešoji įstaiga Šiuolaikinės mokyklos centras (302850897),661.0,2407.0,near,0.9208
+5244,5264,6295,0.1217,Viešoji įstaiga Šiuolaikinės mokyklos centras (302850897),661.0,3308.0,near,1.0149
+5244,5409,20681,0.2387,UAB Royal Russell School Vilnius,191.0,2407.0,near,0.7289
+5245,18326,45,0.3301,"Vilniaus ""Santaros"" gimnazija",0.0,2407.0,middle,0.8954
+5245,5667,1991,0.2861,"Vilniaus ""Santaros"" gimnazija",1008.0,2407.0,near,0.9406
+5245,6843,19053,0.3439,"Vilniaus ""Santaros"" gimnazija",0.0,3399.0,middle,1.2347
+5245,6846,33,0.0024,Vilniaus šv. Kristoforo progimnazija,884.0,4283.0,near,2.0125
+5245,753,8320,0.2068,"VšĮ ""Vilniaus humanistinė mokykla""",241.0,2648.0,near,1.0773
+5248,5245,5966,0.1563,UAB Royal Russell School Vilnius,661.0,2407.0,near,0.8608
+5248,7278,7907,0.1563,UAB Royal Russell School Vilnius,661.0,2407.0,near,0.5113
+5249,3551,1165,0.0834,Viešoji įstaiga Šiuolaikinės mokyklos centras (302850897),661.0,2151.0,near,1.1589
+5249,5257,11992,0.0287,Viešoji įstaiga Šiuolaikinės mokyklos centras (302850897),661.0,2151.0,near,1.1222
+5257,5264,11821,0.1475,Viešoji įstaiga Šiuolaikinės mokyklos centras (302850897),470.0,3052.0,near,1.2638
+5258,5248,14189,0.0176,Viešoji įstaiga Šiuolaikinės mokyklos centras (302850897),661.0,2151.0,near,1.0585
+5258,6356,254,0.1292,Viešoji įstaiga Šiuolaikinės mokyklos centras (302850897),470.0,2151.0,near,1.2394
+5259,10360,1415,0.0353,Vilniaus kunigaikščio Gedimino progimnazija,1960.0,2151.0,near,1.4874
+5264,5266,14590,0.2966,Vilniaus Simono Daukanto gimnazija,758.0,2576.0,near,1.3469
+5264,5936,1140,0.2205,Vilniaus Simono Daukanto gimnazija,758.0,1371.0,near,1.3324
+5264,683,4979,0.2916,Vilniaus Simono Daukanto gimnazija,758.0,2174.0,near,1.3683
+5266,5272,14753,0.001,Vilniaus Naujamiesčio mokykla,852.0,2558.0,near,1.5548
+5267,5332,6,0.3685,"UAB ""Pažinimo medis""",0.0,1724.0,middle,1.3097
+5267,5936,90,0.2205,Vilniaus Simono Daukanto gimnazija,758.0,1254.0,near,1.3959
+5267,6736,18674,0.3094,Viešoji įstaiga Šiuolaikinės mokyklos centras (302850897),0.0,3405.0,middle,1.3088
+5272,5166,1193,0.0815,Vilniaus Naujamiesčio mokykla,852.0,2674.0,near,1.7389
+5272,5645,1193,0.0815,Vilniaus Naujamiesčio mokykla,852.0,2674.0,near,1.7028
+5272,7851,13242,0.0815,Vilniaus Naujamiesčio mokykla,852.0,2674.0,near,1.786
+5289,5290,3998,0.3787,Vilniaus Šeškinės pradinė mokykla,0.0,1114.0,middle,2.9975
+5290,1039,3615,0.1928,Vilniaus Šeškinės pradinė mokykla,240.0,1871.0,near,3.6791
+5290,1042,3221,0.0517,Vilniaus Šeškinės pradinė mokykla,870.0,870.0,near,3.6758
+5290,5294,2135,0.263,Vilniaus Šeškinės pradinė mokykla,240.0,1871.0,near,3.6798
+5290,904,2973,0.0814,"Vilniaus ""Sostinės"" gimnazija",2341.0,2581.0,near,3.6864
+5290,986,6588,0.17,Vilniaus Šeškinės pradinė mokykla,870.0,1871.0,near,3.881
+5294,5209,2259,0.2686,Vilniaus Šeškinės pradinė mokykla,240.0,1871.0,near,4.0217
+5294,5214,3340,0.2677,Vilniaus Šeškinės pradinė mokykla,240.0,1871.0,near,3.6861
+5300,6834,328,0.1898,"UAB ""Taškius""",1326.0,3373.0,near,1.4642
+5304,5310,1365,0.4129,VšĮ Tarptautinė Ukrainos mokykla,0.0,2273.0,middle,4.4642
+5304,8339,3207,0.4104,VšĮ Tarptautinė Ukrainos mokykla,0.0,2273.0,middle,4.4574
+5305,5200,6,0.1394,"Vilniaus ""Juventos"" gimnazija",717.0,1082.0,near,3.3943
+5305,6024,136,0.5424,"VšĮ ""Ruduo-pavasaris""",0.0,0.0,middle,3.6729
+5305,720,165,0.6594,Vilniaus Juozo Tallat-Kelpšos konservatorija,0.0,0.0,middle,3.7479
+5305,7414,5415,0.1494,"Vilniaus ""Juventos"" gimnazija",1082.0,1082.0,near,3.4429
+5305,7941,85,0.3308,Vilniaus Gerosios Vilties progimnazija,0.0,982.0,middle,3.4626
+5307,5305,5129,0.4832,VšĮ Tarptautinė Ukrainos mokykla,0.0,2273.0,middle,4.3472
+5310,5313,852,0.2929,VšĮ Tarptautinė Ukrainos mokykla,2273.0,2273.0,near,5.0366
+5313,5315,830,0.5603,VšĮ Tarptautinė Ukrainos mokykla,0.0,0.0,middle,5.6085
+5315,5317,820,0.9175,VšĮ Tarptautinė Ukrainos mokykla,0.0,0.0,far,6.0511
+5316,5319,794,1.0186,VšĮ Tarptautinė Ukrainos mokykla,0.0,0.0,far,6.2217
+5317,5316,828,1.3202,VšĮ Tarptautinė Ukrainos mokykla,0.0,0.0,far,6.3196
+5319,8347,804,0.9908,VšĮ Tarptautinė Ukrainos mokykla,0.0,0.0,far,6.064
+5320,5193,2,0.6208,VšĮ Tarptautinė Ukrainos mokykla,0.0,0.0,middle,5.5579
+5332,5338,7707,0.2333,"Licėjus ""SOKRATUS"", VšĮ",567.0,2733.0,near,0.9274
+5332,5459,1648,0.389,"Licėjus ""SOKRATUS"", VšĮ",0.0,2733.0,middle,0.8913
+5334,5524,2717,0.0626,"UAB ""Pažinimo medis""",353.0,1467.0,near,1.0136
+5334,5936,9335,0.2205,Vilniaus Simono Daukanto gimnazija,758.0,1659.0,near,1.038
+5338,5339,3863,0.0718,"Licėjus ""SOKRATUS"", VšĮ",961.0,1764.0,near,0.7627
+5338,5345,22433,0.0573,"Licėjus ""SOKRATUS"", VšĮ",961.0,2667.0,near,0.7974
+5339,5345,203,0.0943,"Licėjus ""SOKRATUS"", VšĮ",961.0,2667.0,near,0.88
+5339,5524,3686,0.0943,"Licėjus ""SOKRATUS"", VšĮ",1314.0,2616.0,near,1.059
+5345,5349,21400,0.2521,Vilniaus Adomo Mickevičiaus licėjus,629.0,2946.0,near,1.0046
+5346,5432,22207,0.0688,"Licėjus ""SOKRATUS"", VšĮ",961.0,3082.0,near,0.8657
+5346,5492,5942,0.038,"Licėjus ""SOKRATUS"", VšĮ",961.0,3273.0,near,0.605
+5346,5524,4,0.1854,"UAB ""Pažinimo medis""",1017.0,3934.0,near,1.0822
+5347,5351,17992,0.1417,Vilniaus šv. Kristoforo progimnazija,884.0,2595.0,near,2.6514
+5349,5355,4511,0.144,"UAB ""Taškius""",1458.0,4908.0,near,1.1761
+5349,5430,770,0.2202,Vilniaus Adomo Mickevičiaus licėjus,915.0,2644.0,near,1.1909
+5351,5467,15172,0.0376,Vilniaus šv. Kristoforo progimnazija,884.0,884.0,near,2.1803
+5351,5498,2045,0.054,Vilniaus šv. Kristoforo progimnazija,884.0,884.0,near,2.2273
+5351,6542,1424,0.0558,Vilniaus šv. Kristoforo progimnazija,884.0,1817.0,near,2.1627
+5351,7044,1854,0.1057,Vilniaus šv. Kristoforo progimnazija,884.0,2536.0,near,2.2182
+5355,5358,9837,0.0413,Vilniaus Vytės Nemunėlio pradinė mokykla,1675.0,4298.0,near,1.2631
+5355,6714,916,0.0809,Vilniaus Antano Vienuolio progimnazija,1675.0,4005.0,near,1.3147
+5358,5360,7315,0.0424,Vilniaus Vytės Nemunėlio pradinė mokykla,1082.0,3926.0,near,1.2147
+5358,6673,2369,0.0424,Vilniaus Vytės Nemunėlio pradinė mokykla,925.0,3926.0,near,1.2974
+5360,5362,6414,0.0012,Viešoji įstaiga Tarptautinė Amerikos mokykla Vilniuje,450.0,2007.0,near,1.2901
+5360,7124,968,0.2008,Viešoji įstaiga Tarptautinė Amerikos mokykla Vilniuje,2545.0,3346.0,near,0.955
+5362,1123,3318,0.2048,Viešoji įstaiga Tarptautinė Amerikos mokykla Vilniuje,326.0,619.0,near,1.582
+5362,5854,3182,0.2048,Viešoji įstaiga Tarptautinė Amerikos mokykla Vilniuje,326.0,619.0,near,1.6047
+5372,5373,4215,0.7674,Vilniaus Filaretų pradinė mokykla,0.0,0.0,middle,2.6539
+5372,6727,4306,0.5967,"Vaikų meninė studija ""Diemedis""",0.0,0.0,middle,4.8294
+5373,7587,4245,1.2425,"Vaikų meninė studija ""Diemedis""",0.0,0.0,far,3.285
+5378,5244,23248,0.3701,"Vilniaus ""Santaros"" gimnazija",0.0,3399.0,middle,1.1974
+5378,753,1606,0.2066,"VšĮ ""Vilniaus humanistinė mokykla""",241.0,992.0,near,1.3984
+5381,5384,1279,0.1156,"Vaikų meninė studija ""Diemedis""",213.0,213.0,near,4.546
+5382,5421,1336,0.8783,"Vaikų meninė studija ""Diemedis""",0.0,0.0,far,3.8539
+5383,5382,1333,0.1148,"Vaikų meninė studija ""Diemedis""",213.0,213.0,near,4.5229
+5384,5385,1334,0.1917,"Vaikų meninė studija ""Diemedis""",213.0,213.0,near,5.2046
+5385,5389,1343,0.4658,"Vaikų meninė studija ""Diemedis""",0.0,213.0,middle,5.7382
+5387,5383,1370,0.1286,"Vaikų meninė studija ""Diemedis""",213.0,213.0,near,5.184
+5388,5387,1254,0.5129,"Vaikų meninė studija ""Diemedis""",0.0,0.0,middle,5.7583
+5389,5391,1296,1.2286,"Vaikų meninė studija ""Diemedis""",0.0,0.0,far,6.3795
+5390,5387,100,0.5129,"Vaikų meninė studija ""Diemedis""",0.0,0.0,middle,5.9578
+5390,5388,1343,1.2303,"Vaikų meninė studija ""Diemedis""",0.0,0.0,far,6.3302
+5391,7586,1267,1.3146,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,far,6.8153
+5394,5396,3839,1.0345,Vilniaus Žaliakalnio darželis-mokykla,0.0,0.0,far,7.2224
+5396,6225,4346,0.6073,"Vilniaus ""Laisvės"" gimnazija",0.0,0.0,middle,7.6527
+5399,5403,1185,0.4834,"Vilniaus ""Laisvės"" gimnazija",0.0,480.0,middle,8.2212
+5400,5415,4007,0.6696,"Vilniaus ""Laisvės"" gimnazija",0.0,0.0,middle,7.596
+5400,6729,6262,0.6696,"Vilniaus ""Laisvės"" gimnazija",0.0,0.0,middle,7.5995
+5403,5406,1192,0.4942,"Vilniaus ""Laisvės"" gimnazija",0.0,480.0,middle,8.7889
+5406,8373,1069,0.6598,Vilniaus Juzefo Ignacijaus Kraševskio gimnazija,0.0,0.0,middle,9.4642
+5408,5411,1163,0.5061,"Vilniaus ""Laisvės"" gimnazija",0.0,0.0,middle,8.8312
+5409,5334,4594,0.2533,UAB Royal Russell School Vilnius,191.0,758.0,near,0.6231
+5409,5338,24235,0.2333,"Licėjus ""SOKRATUS"", VšĮ",405.0,1505.0,near,0.5931
+5411,5400,101,0.4876,"Vilniaus ""Laisvės"" gimnazija",0.0,480.0,middle,8.1882
+5411,6225,1141,0.4742,"Vilniaus ""Laisvės"" gimnazija",0.0,480.0,middle,8.2126
+5415,6054,1057,1.0405,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,far,7.3454
+5415,6230,2930,1.0732,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,far,7.2566
+5417,5390,1383,1.2895,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,far,6.7794
+542,5060,10110,0.3255,"Vilniaus ""Sietuvos"" progimnazija",0.0,1848.0,middle,5.7859
+5421,5423,3395,1.1907,Vilniaus Filaretų pradinė mokykla,0.0,0.0,far,3.2174
+5423,5424,4454,0.6676,Vilniaus Filaretų pradinė mokykla,0.0,0.0,middle,2.5481
+5424,5425,4083,0.4296,Vilniaus Filaretų pradinė mokykla,0.0,333.0,middle,2.1803
+5424,5925,74,0.418,Vilniaus Filaretų pradinė mokykla,0.0,333.0,middle,1.9332
+5424,6572,4254,0.1945,Vilniaus Filaretų pradinė mokykla,469.0,469.0,near,1.9717
+5425,5925,2180,0.4031,Vilniaus Filaretų pradinė mokykla,0.0,333.0,middle,1.8322
+5425,6572,2145,0.2181,Vilniaus Filaretų pradinė mokykla,469.0,469.0,near,1.8494
+5428,15581,3524,0.1169,Vilniaus Vytės Nemunėlio pradinė mokykla,2881.0,3926.0,near,1.1851
+5428,6673,4580,0.0837,Vilniaus mokymo centras,1251.0,2883.0,near,1.2515
+5428,6714,2062,0.0625,Vilniaus Vytės Nemunėlio pradinė mokykla,2125.0,3926.0,near,1.2235
+5430,6650,501,0.146,Vilniaus Adomo Mickevičiaus licėjus,915.0,2644.0,near,1.4269
+5430,8262,203,0.1406,"Vilniaus ""Varpo"" suaugusiųjų gimnazija",915.0,1741.0,near,1.498
+5432,5334,7722,0.0658,"Licėjus ""SOKRATUS"", VšĮ",961.0,1764.0,near,0.7397
+5432,5459,20526,0.0575,"Licėjus ""SOKRATUS"", VšĮ",961.0,1955.0,near,0.6806
+5443,7896,7511,0.1945,Vilniaus Fabijoniškių gimnazija,1316.0,5707.0,near,6.0802
+5450,5451,8512,0.1861,"Vilniaus ""Šviesos"" pradinė mokykla",345.0,345.0,near,5.0341
+5451,5452,12417,0.2224,"Vilniaus ""Šviesos"" pradinė mokykla",345.0,2150.0,near,4.5585
+5452,5209,1870,0.3593,Vilniaus Žygimanto Augusto progimnazija,0.0,870.0,middle,4.2035
+5452,5212,104,0.2319,Vilniaus Šeškinės pradinė mokykla,240.0,1871.0,near,4.0097
+5452,5214,9971,0.2115,Vilniaus Šeškinės pradinė mokykla,240.0,1871.0,near,3.8665
+5459,5245,56,0.2171,UAB Royal Russell School Vilnius,191.0,3721.0,near,0.6334
+5459,5492,22273,0.3266,UAB Royal Russell School Vilnius,0.0,1505.0,middle,0.5579
+5462,17318,3452,0.427,Vilniaus Vladislavo Sirokomlės gimnazija,0.0,736.0,middle,2.2351
+5467,5378,20202,0.3477,Vilniaus šv. Kristoforo progimnazija,0.0,1635.0,middle,1.7481
+5469,5131,4011,0.4612,Vilniaus licėjus,0.0,573.0,middle,3.0661
+5469,5861,10562,0.4783,Vilniaus licėjus,0.0,573.0,middle,3.1307
+5469,6846,7340,0.4814,Vilniaus licėjus,0.0,573.0,middle,3.0625
+5476,5118,1973,0.2978,Vilniaus Gedimino technikos universiteto inžinerijos licėjus,1420.0,1420.0,near,4.5864
+5476,741,6583,0.6831,Vilniaus Šilo ugdymo centras,0.0,0.0,middle,4.7845
+548,6218,1546,1.2198,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,far,7.0789
+5481,5347,15651,0.4561,Vilniaus licėjus,0.0,1711.0,middle,3.0461
+5481,5467,5629,0.0488,Vilniaus šv. Kristoforo progimnazija,884.0,2595.0,near,2.5716
+5483,5118,13,0.2978,Vilniaus Gedimino technikos universiteto inžinerijos licėjus,1420.0,1420.0,near,4.3825
+5485,5490,7269,0.6481,Vilniaus Šilo ugdymo centras,0.0,0.0,middle,4.7759
+5490,5125,4417,0.5488,Vilniaus Emilijos Pliaterytės progimnazija,0.0,0.0,middle,4.4261
+5490,5491,4425,0.6333,Vilniaus Emilijos Pliaterytės progimnazija,0.0,0.0,middle,4.9794
+5491,5494,4352,0.4586,Vilniaus Emilijos Pliaterytės progimnazija,0.0,1141.0,middle,4.6911
+5492,5245,19787,0.252,UAB Royal Russell School Vilnius,191.0,2407.0,near,0.6729
+5492,7278,8631,0.3266,UAB Royal Russell School Vilnius,0.0,929.0,middle,0.3175
+5494,5086,1456,0.3933,Vilniaus Prano Mašioto pradinė mokykla,0.0,319.0,middle,4.1002
+5494,5125,2345,0.5101,Vilniaus Emilijos Pliaterytės progimnazija,0.0,0.0,middle,4.1495
+5494,5154,58,0.5029,Vilniaus Verkių mokykla-daugiafunkcis centras,0.0,0.0,middle,4.269
+5498,17315,1630,0.2763,Vilniaus šv. Kristoforo progimnazija,884.0,1861.0,near,1.959
+5498,5499,3652,0.2763,Vilniaus šv. Kristoforo progimnazija,884.0,1620.0,near,2.1989
+5499,5220,1917,0.2719,Vilniaus Vladislavo Sirokomlės gimnazija,736.0,736.0,near,2.3643
+5499,5289,1684,0.3355,Vilniaus Vladislavo Sirokomlės gimnazija,0.0,736.0,middle,2.4326
+5508,5149,27,0.3616,Vilniaus Verkių mokykla-daugiafunkcis centras,0.0,167.0,middle,4.3444
+5511,5515,51,0.0427,Vilniaus Abraomo Kulviečio klasikinė gimnazija,1152.0,2368.0,near,6.5895
+5515,5518,5125,0.1073,Vilniaus Abraomo Kulviečio klasikinė gimnazija,2468.0,4587.0,near,6.3379
+5516,1158,779,0.0541,Vilniaus Abraomo Kulviečio klasikinė gimnazija,1152.0,1152.0,near,6.5801
+5518,364,3617,0.2141,Vilniaus Fabijoniškių gimnazija,1316.0,4491.0,near,6.065
+5518,5803,1976,0.0834,Vilniaus Fabijoniškių gimnazija,1316.0,3371.0,near,5.994
+5518,6911,2340,0.1548,Vilniaus Fabijoniškių gimnazija,1316.0,3371.0,near,6.057
+5518,7896,1937,0.1547,Vilniaus Fabijoniškių gimnazija,1316.0,4491.0,near,5.9789
+5519,5516,901,0.0541,Vilniaus Abraomo Kulviečio klasikinė gimnazija,1152.0,4587.0,near,6.4283
+5519,7810,2194,0.256,Vilniaus Gabijos progimnazija,2368.0,4587.0,near,6.5902
+5519,795,2495,0.0138,Vilniaus Gabijos progimnazija,1216.0,4587.0,near,6.5167
+5524,5267,5,0.2622,"UAB ""Pažinimo medis""",353.0,1253.0,near,1.4032
+5524,5579,6773,0.2622,"UAB ""Pažinimo medis""",1455.0,2355.0,near,1.6125
+5532,5543,9072,0.2853,Vilniaus Juozo Tallat-Kelpšos konservatorija,139.0,479.0,near,3.7644
+5532,6338,9055,0.2853,Vilniaus Juozo Tallat-Kelpšos konservatorija,139.0,479.0,near,3.584
+5532,6648,140,0.2403,"Vilniaus darželis-mokykla ""Svaja""",971.0,2024.0,near,4.0337
+5532,790,4617,0.2853,Vilniaus Juozo Tallat-Kelpšos konservatorija,139.0,633.0,near,3.8208
+5533,5539,5899,0.2072,Vilniaus kunigaikščio Gedimino progimnazija,1490.0,1490.0,near,1.8261
+5534,5290,3256,0.3787,Vilniaus Šeškinės pradinė mokykla,0.0,2604.0,middle,2.736
+5534,6404,98,0.4949,Vilniaus kunigaikščio Gedimino progimnazija,0.0,1490.0,middle,2.0976
+5534,6635,484,0.3727,Vilniaus Vladislavo Sirokomlės gimnazija,0.0,2226.0,middle,1.9618
+5535,7853,22940,0.2028,"Viešoji įstaiga ""Vilniaus Valdorfo mokykla""",1249.0,1866.0,near,3.1167
+5539,5248,1652,0.108,Viešoji įstaiga Šiuolaikinės mokyklos centras (302850897),2151.0,2392.0,near,1.2484
+5539,5257,1620,0.1475,Viešoji įstaiga Šiuolaikinės mokyklos centras (302850897),1960.0,2151.0,near,1.4462
+5542,5535,10051,0.2928,Vilniaus Juozo Tallat-Kelpšos konservatorija,139.0,479.0,near,3.7066
+5542,6338,3187,0.661,Vilniaus Juozo Tallat-Kelpšos konservatorija,0.0,0.0,middle,3.8974
+5542,7359,3131,0.5155,Vilniaus Juozo Tallat-Kelpšos konservatorija,0.0,0.0,middle,3.8494
+5543,5573,15716,0.9837,Vilniaus Juozo Tallat-Kelpšos konservatorija,0.0,0.0,far,4.4027
+5546,9384,16078,2.1583,Vilniaus Juozo Tallat-Kelpšos konservatorija,0.0,0.0,far,5.6126
+5549,5552,855,0.3115,Vilniaus Gabrielės Petkevičaitės-Bitės suaugusiųjų mokymo centras,0.0,829.0,middle,2.5892
+5550,640,759,0.2667,Vilniaus Gabrielės Petkevičaitės-Bitės suaugusiųjų mokymo centras,469.0,829.0,near,2.3287
+5552,7941,150,0.3308,Vilniaus Gerosios Vilties progimnazija,0.0,1446.0,middle,2.8802
+5553,5550,824,0.3111,Vilniaus Gabrielės Petkevičaitės-Bitės suaugusiųjų mokymo centras,0.0,829.0,middle,2.5984
+5554,5567,4622,2.8874,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,0.0,far,6.7817
+5557,5594,1089,3.1138,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,0.0,far,7.1749
+5557,7553,2899,3.0513,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,0.0,far,7.3134
+5564,5594,3321,3.1452,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,0.0,far,7.248
+5567,5557,4618,3.0151,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,0.0,far,7.0233
+5567,5728,32,3.0151,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,0.0,far,7.5886
+5570,7554,3274,2.9684,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,0.0,far,7.5112
+5573,5587,15764,1.4885,Vilniaus Juozo Tallat-Kelpšos konservatorija,0.0,0.0,far,5.0146
+5579,6343,13188,0.1567,Vilniaus Jono Basanavičiaus progimnazija,1102.0,1645.0,near,2.122
+5580,5266,1131,0.2531,Vilniaus Jono Basanavičiaus progimnazija,1102.0,2307.0,near,1.7336
+5580,5267,5519,0.2531,Vilniaus Jono Basanavičiaus progimnazija,1102.0,1905.0,near,1.7175
+5580,6840,6174,0.2531,Vilniaus Jono Basanavičiaus progimnazija,1102.0,1905.0,near,1.6937
+5587,5588,15551,2.2424,Vilniaus Juozo Tallat-Kelpšos konservatorija,0.0,0.0,far,5.7389
+5588,5554,10776,2.5435,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,0.0,far,6.3819
+5594,17504,144,3.2673,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,0.0,far,7.2188
+5594,6850,14012,3.0692,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,0.0,far,7.0644
+5605,5432,6559,0.0688,"Licėjus ""SOKRATUS"", VšĮ",1411.0,3069.0,near,0.8829
+5606,6667,17934,0.1248,Vilniaus Prano Mašioto pradinė mokykla,1170.0,1170.0,near,3.3708
+5613,5620,3093,0.1284,Vilniaus Jono Ivaškevičiaus jaunimo mokykla,328.0,1298.0,near,4.3267
+5614,16692,2928,0.0669,Vilniaus Jono Ivaškevičiaus jaunimo mokykla,328.0,2669.0,near,3.9905
+5619,5614,2820,0.0669,Vilniaus Jono Ivaškevičiaus jaunimo mokykla,328.0,1298.0,near,4.2599
+5620,6597,215,0.2556,Vilniaus Levo Karsavino mokykla,970.0,970.0,near,4.5789
+5620,928,14941,0.3049,Vilniaus Levo Karsavino mokykla,0.0,970.0,middle,4.5465
+5643,5646,24027,0.2509,"Vilniaus ""Vilties"" specialioji mokykla-daugiafunkcinis centras",108.0,1106.0,near,4.5023
+5643,5651,4646,0.1869,Vilniaus Karoliniškių gimnazija,923.0,2644.0,near,4.5566
+5645,5649,1110,0.1148,VšĮ GRAVITAS SCHOLA,829.0,2224.0,near,2.0168
+5646,5651,18824,0.1869,Vilniaus Karoliniškių gimnazija,923.0,1820.0,near,4.57
+5646,5915,6685,0.2509,"Vilniaus ""Vilties"" specialioji mokykla-daugiafunkcinis centras",1646.0,2157.0,near,4.6421
+5649,9701,1178,0.0777,VšĮ GRAVITAS SCHOLA,829.0,1989.0,near,2.409
+5651,5656,18402,0.1429,Vilniaus Karoliniškių gimnazija,815.0,3026.0,near,4.7414
+5651,5668,4527,0.1266,Vilniaus Karoliniškių gimnazija,815.0,4053.0,near,4.8924
+5655,6852,1163,0.0957,VšĮ GRAVITAS SCHOLA,829.0,1822.0,near,2.2038
+5656,5668,17266,0.283,Vilniaus Karoliniškių gimnazija,815.0,3222.0,near,5.0052
+5656,5920,722,0.283,Vilniaus Karoliniškių gimnazija,815.0,2334.0,near,5.0257
+5658,5661,20214,0.3203,Vilniaus Tuskulėnų gimnazija,0.0,3805.0,middle,1.905
+5661,5662,4468,0.2842,"UAB ""Ateities laboratorija""",204.0,1694.0,near,1.3932
+5661,5768,7628,0.1528,Nacionalinė Mikalojaus Konstantino Čiurlionio menų mokykla,808.0,2298.0,near,1.4006
+5661,6547,1735,0.2225,"Vilniaus ""Žiburio"" pradinė mokykla",367.0,1876.0,near,1.5011
+5661,6565,2086,0.1403,Nacionalinė Mikalojaus Konstantino Čiurlionio menų mokykla,808.0,2298.0,near,1.3648
+5661,677,5430,0.1947,"Vilniaus ""Žiburio"" pradinė mokykla",1579.0,4373.0,near,1.1888
+5662,5664,9768,0.142,"UAB ""Ateities laboratorija""",204.0,3250.0,near,1.1213
+5664,5244,2632,0.137,"Vilniaus ""Santaros"" gimnazija",1950.0,3729.0,near,0.9028
+5664,677,7697,0.2312,"Vilniaus ""Santaros"" gimnazija",1212.0,3068.0,near,1.0102
+5665,6660,8260,0.1213,"UAB ""Ateities laboratorija""",204.0,3250.0,near,1.1125
+5667,5665,7310,0.221,"Vilniaus ""Santaros"" gimnazija",1212.0,3068.0,near,0.9968
+5667,6660,4759,0.1364,"UAB ""Ateities laboratorija""",1212.0,3250.0,near,1.0461
+5667,6665,4679,0.1588,"Vilniaus ""Žiburio"" pradinė mokykla",1579.0,4373.0,near,1.2186
+5667,7323,502,0.038,"Vilniaus ""Santaros"" gimnazija",1746.0,1950.0,near,0.8287
+5668,16703,4320,0.2889,Palaimintojo Teofiliaus Matulionio gimnazija,678.0,1218.0,near,5.1991
+5668,5703,5825,0.1225,Palaimintojo Teofiliaus Matulionio gimnazija,1364.0,1518.0,near,4.9746
+5668,6460,6689,0.1923,Palaimintojo Teofiliaus Matulionio gimnazija,678.0,678.0,near,5.136
+5668,6461,4407,0.0711,Palaimintojo Teofiliaus Matulionio gimnazija,678.0,2231.0,near,5.0006
+5672,5691,302,0.0409,"Vilniaus ""Minties"" gimnazija",1848.0,2561.0,near,5.469
+5672,7341,2772,0.1417,"Vilniaus ""Minties"" gimnazija",540.0,1507.0,near,5.6621
+5691,5693,4288,0.1046,"Vilniaus ""Ąžuolyno"" progimnazija",2021.0,2561.0,near,5.133
+5692,7341,2490,0.1219,"Vilniaus ""Ąžuolyno"" progimnazija",1308.0,1848.0,near,5.5882
+5693,5697,2564,0.1756,Vilniaus Lazdynų mokykla,713.0,1208.0,near,4.7973
+5694,5692,2365,0.1214,"Vilniaus ""Ąžuolyno"" progimnazija",2021.0,2561.0,near,5.1979
+5697,5701,4500,0.1429,"Vilniaus darželis-mokykla ""Svaja""",867.0,2231.0,near,4.6211
+5697,6318,2156,0.2144,Vilniaus Lazdynų mokykla,713.0,1886.0,near,4.8117
+5698,5694,2442,0.1437,Vilniaus Lazdynų mokykla,713.0,2175.0,near,4.8609
+5701,5704,10361,0.1429,"Vilniaus darželis-mokykla ""Svaja""",1518.0,1518.0,near,4.6686
+5702,5698,1669,0.1881,"Vilniaus darželis-mokykla ""Svaja""",867.0,1886.0,near,4.6703
+5702,6318,4287,0.1881,"Vilniaus darželis-mokykla ""Svaja""",867.0,1886.0,near,4.7547
+5702,6333,1178,0.1717,"Vilniaus darželis-mokykla ""Svaja""",154.0,1545.0,near,4.4743
+5703,5702,7312,0.1563,Palaimintojo Teofiliaus Matulionio gimnazija,1518.0,1518.0,near,4.6762
+5704,1071,8519,0.1585,Palaimintojo Teofiliaus Matulionio gimnazija,1364.0,1364.0,near,4.9679
+5704,16703,1088,0.0245,Palaimintojo Teofiliaus Matulionio gimnazija,1364.0,1904.0,near,5.0106
+5704,6460,127,0.0257,Palaimintojo Teofiliaus Matulionio gimnazija,1364.0,1364.0,near,4.9465
+5722,5619,3304,0.3639,Vilniaus Levo Karsavino mokykla,0.0,970.0,middle,4.515
+5722,6472,8730,0.3639,Vilniaus Levo Karsavino mokykla,0.0,970.0,middle,4.5704
+5728,5732,5551,3.6539,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,0.0,far,8.5722
+5732,5738,1205,3.9557,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,9.0677
+5732,9967,4292,3.9886,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,9.0715
+5738,5742,6183,2.5734,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,9.9397
+5742,6270,1971,1.8957,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,10.8822
+5742,6450,2144,1.8231,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.1
+5742,7056,1577,1.2215,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.2581
+5747,5750,941,2.5257,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.02
+5750,9727,982,3.0349,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.0981
+5751,7910,932,2.2689,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.0928
+5756,9732,31,5.1036,Vilniaus Salininkų gimnazija,0.0,0.0,far,11.935
+5757,9201,2438,4.2355,Vilniaus Salininkų gimnazija,0.0,0.0,far,11.2432
+5768,5771,18255,0.0663,Nacionalinė Mikalojaus Konstantino Čiurlionio menų mokykla,808.0,1012.0,near,0.945
+5768,848,404,0.0893,Nacionalinė Mikalojaus Konstantino Čiurlionio menų mokykla,808.0,2758.0,near,0.751
+5770,5826,8548,0.1288,Nacionalinė Mikalojaus Konstantino Čiurlionio menų mokykla,808.0,1586.0,near,1.558
+5770,6565,2895,0.1183,Nacionalinė Mikalojaus Konstantino Čiurlionio menų mokykla,808.0,808.0,near,1.2635
+5770,6665,6851,0.1288,Nacionalinė Mikalojaus Konstantino Čiurlionio menų mokykla,808.0,1931.0,near,1.4384
+5771,7322,2760,0.2177,"UAB ""Mokykla Šiaurės licėjus""",738.0,1950.0,near,0.5147
+5771,848,17111,0.3524,"UAB ""Mokykla Šiaurės licėjus""",0.0,1746.0,middle,0.4237
+5774,5778,2006,0.0419,"VšĮ Vaikų kūrybinės iniciatyvos fondo licėjus ""Forumas""",1671.0,4030.0,near,2.1861
+5774,6410,84,0.0038,Vilniaus Jono Basanavičiaus progimnazija,2003.0,4182.0,near,2.0109
+5774,7852,67,0.016,"VšĮ Vaikų kūrybinės iniciatyvos fondo licėjus ""Forumas""",3113.0,4395.0,near,2.184
+5778,5779,3329,0.0702,Vilniaus Jono Basanavičiaus gimnazija,1110.0,1110.0,near,3.134
+5779,7358,3207,0.3541,"Viešoji įstaiga ""Vilniaus Valdorfo mokykla""",0.0,1249.0,middle,3.5526
+5780,16772,1156,0.0568,Vilniaus Jono Basanavičiaus gimnazija,2011.0,4030.0,near,2.4388
+5780,474,2290,0.0268,"VšĮ Vaikų kūrybinės iniciatyvos fondo licėjus ""Forumas""",3113.0,5129.0,near,2.3151
+5803,8269,1870,0.2743,Vilniaus Fabijoniškių gimnazija,1316.0,2005.0,near,5.7592
+5804,5808,4341,0.3049,"Vilniaus ""Ateities"" mokykla",0.0,2005.0,middle,5.6674
+5804,5810,4937,0.319,"Vilniaus ""Ateities"" mokykla",0.0,2005.0,middle,5.7031
+5807,8269,1856,0.2967,Vilniaus Fabijoniškių gimnazija,1316.0,2005.0,near,5.7024
+5807,8270,140,0.3013,Vilniaus Fabijoniškių gimnazija,0.0,2005.0,middle,5.7436
+5808,5810,4374,0.3049,"Vilniaus ""Ateities"" mokykla",0.0,689.0,middle,5.7125
+5810,5815,12687,0.5194,"Vilniaus ""Ateities"" mokykla",0.0,0.0,middle,5.776
+5811,17871,1315,0.528,"Vilniaus ""Ateities"" mokykla",0.0,0.0,middle,6.0343
+5811,6914,2951,0.528,"Vilniaus ""Ateities"" mokykla",0.0,0.0,middle,5.9437
+5811,6915,847,0.528,"Vilniaus ""Ateities"" mokykla",0.0,0.0,middle,5.9755
+5812,481,699,0.2867,Vilniaus Fabijoniškių gimnazija,1316.0,5276.0,near,6.0799
+5812,5807,2099,0.3433,"Vilniaus ""Ateities"" mokykla",0.0,2005.0,middle,5.7271
+5812,8269,4341,0.2967,Vilniaus Fabijoniškių gimnazija,1316.0,2005.0,near,5.7292
+5813,6917,8795,0.185,"Vilniaus ""Ateities"" mokykla",689.0,689.0,near,5.5145
+5814,5811,2989,0.528,"Vilniaus ""Ateities"" mokykla",0.0,0.0,middle,5.8138
+5814,5812,9062,0.4418,"Vilniaus ""Ateities"" mokykla",0.0,689.0,middle,5.7885
+5814,5813,33,0.4425,"Vilniaus ""Ateities"" mokykla",0.0,689.0,middle,5.7619
+5815,17872,777,0.8444,"Vilniaus ""Ateities"" mokykla",0.0,0.0,far,6.0008
+5815,348,2502,0.8237,Vilniaus Baltupių progimnazija,0.0,0.0,far,5.7779
+5815,5828,3734,0.8444,"Vilniaus ""Ateities"" mokykla",0.0,0.0,far,5.8288
+5815,6633,4632,0.7097,VšĮ Vilniaus inžinerijos ir technologijų licėjus (302562877),0.0,0.0,middle,5.8581
+5815,6773,719,0.8444,"Vilniaus ""Ateities"" mokykla",0.0,0.0,far,5.8594
+5818,5819,12397,0.0541,Vilniaus Antakalnio progimnazija,1786.0,2949.0,near,2.3979
+5818,6565,170,0.0626,Vilniaus Antakalnio progimnazija,2594.0,3757.0,near,1.8623
+5819,5820,12294,0.0548,Vilniaus Antakalnio gimnazija,1786.0,2277.0,near,2.0027
+5820,5662,2692,0.2842,"UAB ""Ateities laboratorija""",204.0,2157.0,near,1.476
+5820,5768,8867,0.1528,Nacionalinė Mikalojaus Konstantino Čiurlionio menų mokykla,808.0,1586.0,near,1.527
+5820,6565,319,0.1825,Nacionalinė Mikalojaus Konstantino Čiurlionio menų mokykla,808.0,1586.0,near,1.5072
+5820,6665,28,0.4377,Vilniaus Tuskulėnų gimnazija,0.0,1901.0,middle,1.6916
+5822,17872,1351,0.9294,Vilniaus Baltupių progimnazija,0.0,0.0,far,6.0296
+5822,5814,6561,0.765,"Vilniaus ""Ateities"" mokykla",0.0,0.0,middle,5.8381
+5826,6702,11296,0.0234,Vilniaus Antakalnio gimnazija,1786.0,2949.0,near,2.1226
+5827,5828,2,0.8315,Vilniaus Baltupių progimnazija,0.0,0.0,far,5.8274
+5828,6494,168,0.6122,Šv. Juozapo mokykla,0.0,0.0,middle,5.8825
+5828,6633,10415,0.7097,VšĮ Vilniaus inžinerijos ir technologijų licėjus (302562877),0.0,0.0,middle,5.9026
+5833,5836,7657,0.1795,Vilniaus Baltupių progimnazija,857.0,857.0,near,4.7721
+5834,5822,2693,0.1362,Vilniaus Baltupių progimnazija,857.0,857.0,near,5.4012
+5834,5828,3367,0.1322,Vilniaus Baltupių progimnazija,857.0,857.0,near,5.4035
+5834,6773,2007,0.1337,Vilniaus Baltupių progimnazija,857.0,857.0,near,5.433
+5835,5834,7722,0.1202,Vilniaus Baltupių progimnazija,857.0,857.0,near,4.8119
+5836,5839,10944,0.5472,Vilniaus Baltupių progimnazija,0.0,0.0,middle,4.4339
+5836,5846,5493,0.5472,Vilniaus Baltupių progimnazija,0.0,0.0,middle,4.2898
+5839,5147,65,0.1521,Vilniaus Verkių mokykla-daugiafunkcis centras,167.0,167.0,near,4.1505
+5839,5846,10967,0.567,Vilniaus Verkių mokykla-daugiafunkcis centras,0.0,0.0,middle,4.1195
+5840,5835,7443,0.4268,Vilniaus Baltupių progimnazija,0.0,857.0,middle,4.5227
+5840,6487,4986,0.4742,Vilniaus Baltupių progimnazija,0.0,857.0,middle,4.5562
+5846,5131,813,0.5347,Vilniaus licėjus,0.0,0.0,middle,3.6241
+5846,5481,17581,0.5467,Vilniaus licėjus,0.0,0.0,middle,3.5897
+5848,5840,10667,0.5955,Vilniaus Verkių mokykla-daugiafunkcis centras,0.0,0.0,middle,4.2207
+5848,6487,6256,0.4742,Vilniaus Baltupių progimnazija,0.0,857.0,middle,4.4234
+5854,5857,1016,0.6422,Viešoji įstaiga Tarptautinė Amerikos mokykla Vilniuje,0.0,0.0,middle,2.095
+5855,7689,2271,0.375,VšĮ Gedimino miesto mokykla,0.0,169.0,middle,1.8035
+5855,7841,31,0.0295,VšĮ Gedimino miesto mokykla,619.0,1251.0,near,1.5582
+5855,946,5539,0.1395,Viešoji įstaiga Tarptautinė Amerikos mokykla Vilniuje,326.0,619.0,near,1.532
+5857,684,930,1.2241,VšĮ Gedimino miesto mokykla,0.0,0.0,far,2.4879
+5858,5855,3222,0.5754,Viešoji įstaiga Tarptautinė Amerikos mokykla Vilniuje,0.0,0.0,middle,2.0316
+5861,5848,18194,0.5955,Vilniaus Verkių mokykla-daugiafunkcis centras,0.0,0.0,middle,3.7429
+5872,5875,870,0.3236,Vilniaus suaugusiųjų mokymo centras,0.0,917.0,middle,2.2195
+5875,5880,923,0.2073,Vilniaus Šolomo Aleichemo ORT gimnazija,917.0,1818.0,near,2.0603
+588,5184,2282,0.8028,VšĮ Tarptautinė Ukrainos mokykla,0.0,0.0,far,5.1334
+588,7817,120,1.0138,VšĮ Tarptautinė Ukrainos mokykla,0.0,0.0,far,5.2206
+588,8347,32,0.7782,VšĮ Tarptautinė Ukrainos mokykla,0.0,0.0,middle,5.7389
+588,9750,41,0.9406,"Vilniaus ""Saulėtekio"" mokykla-daugiafunkcis centras",0.0,0.0,far,4.6362
+5880,5881,1537,0.0356,Vilniaus Simono Daukanto gimnazija,1818.0,1818.0,near,1.7954
+5881,5266,95,0.0361,Vilniaus Simono Daukanto gimnazija,901.0,2106.0,near,1.4985
+5881,5332,8997,0.0361,Vilniaus Simono Daukanto gimnazija,901.0,1371.0,near,1.3869
+5881,6736,7,0.0323,Vilniaus Simono Daukanto gimnazija,901.0,3052.0,near,1.4161
+5900,5901,927,0.2238,Vilniaus Užupio gimnazija,1090.0,3762.0,near,0.829
+5901,5902,32,0.2025,Vilniaus Petro Vileišio progimnazija,1341.0,1667.0,near,1.1068
+5906,7415,9978,0.2581,Vilniaus Žvėryno gimnazija,977.0,2129.0,near,3.645
+5915,5919,5677,0.2768,Vilniaus Karoliniškių gimnazija,2581.0,2918.0,near,4.923
+5919,5920,107,0.2863,"Vilniaus ""Spindulio"" progimnazija",1043.0,1856.0,near,5.1386
+5920,19220,745,0.3367,Vilniaus šv. Jono Pauliaus II gimnazija,0.0,476.0,middle,5.2558
+5925,7689,334,0.3697,VšĮ Gedimino miesto mokykla,0.0,169.0,middle,1.7585
+5925,7841,631,0.0592,VšĮ Gedimino miesto mokykla,619.0,1251.0,near,1.5089
+5925,946,6337,0.1395,Viešoji įstaiga Tarptautinė Amerikos mokykla Vilniuje,326.0,619.0,near,1.4991
+5936,16773,933,0.0607,"VšĮ Vaikų kūrybinės iniciatyvos fondo licėjus ""Forumas""",901.0,1818.0,near,1.6027
+5936,19193,9498,0.0835,Vilniaus Simono Daukanto gimnazija,901.0,901.0,near,1.4401
+5936,5937,20,0.0222,Vilniaus Simono Daukanto gimnazija,901.0,901.0,near,1.4728
+5936,6438,39,0.0252,Vilniaus Simono Daukanto gimnazija,1818.0,1818.0,near,1.7267
+5937,6438,20,0.0157,Vilniaus Simono Daukanto gimnazija,1818.0,1818.0,near,1.8282
+5941,5944,7149,0.0655,Vilniaus Liepkalnio mokykla,1082.0,1714.0,near,1.87
+5942,15581,880,0.0293,Vilniaus Antano Vienuolio progimnazija,1675.0,3307.0,near,1.4434
+5942,8264,2170,0.1866,Vilniaus Antano Vienuolio progimnazija,1109.0,1958.0,near,1.6045
+5944,5946,8073,0.0659,Vilniaus Liepkalnio mokykla,256.0,256.0,near,2.3837
+5945,5942,2996,0.102,Vilniaus Liepkalnio mokykla,1082.0,1714.0,near,1.8009
+5946,16977,2918,0.1164,"VšĮ ""Ruduo-pavasaris""",118.0,118.0,near,3.1725
+5946,16978,1922,0.185,"VšĮ ""Ruduo-pavasaris""",118.0,118.0,near,3.1123
+5946,5953,3423,0.1686,"VšĮ ""Ruduo-pavasaris""",118.0,118.0,near,3.2073
+5947,5945,6977,0.0627,Vilniaus Liepkalnio mokykla,256.0,256.0,near,2.3242
+5948,16977,1090,0.1468,"VšĮ ""Ruduo-pavasaris""",118.0,118.0,near,3.1634
+5953,5955,3124,0.5796,"VšĮ ""Ruduo-pavasaris""",0.0,0.0,middle,3.9656
+5955,5956,3254,1.0112,"VšĮ ""Ruduo-pavasaris""",0.0,0.0,far,4.4576
+5956,5958,3182,1.587,"VšĮ ""Ruduo-pavasaris""",0.0,0.0,far,5.1385
+5957,5996,3161,0.864,"VšĮ ""Ruduo-pavasaris""",0.0,0.0,far,4.3438
+5958,17944,3128,2.3942,"VšĮ ""Ruduo-pavasaris""",0.0,0.0,far,5.9488
+596,19251,3665,0.1983,"Vilniaus ""Vilties"" specialioji mokykla-daugiafunkcinis centras",108.0,2157.0,near,4.5682
+596,6643,2397,0.2707,"Vilniaus ""Vilties"" specialioji mokykla-daugiafunkcinis centras",108.0,2981.0,near,4.5895
+5960,5964,998,3.1931,Vilniaus Salininkų gimnazija,0.0,0.0,far,7.2746
+5960,8329,2114,2.5351,Vilniaus Salininkų gimnazija,0.0,0.0,far,6.9857
+5964,5967,1007,3.1931,Vilniaus Salininkų gimnazija,0.0,0.0,far,8.1102
+5965,646,1098,3.2153,Vilniaus Salininkų gimnazija,0.0,0.0,far,7.19
+5966,5965,1070,3.2084,Vilniaus Salininkų gimnazija,0.0,0.0,far,7.9447
+5967,17222,1007,3.2831,Vilniaus Salininkų gimnazija,0.0,0.0,far,8.7595
+5969,5966,1099,3.2536,Vilniaus Salininkų gimnazija,0.0,0.0,far,8.6595
+5971,5973,1006,3.9109,Vilniaus Salininkų gimnazija,0.0,0.0,far,10.2287
+5972,5969,1137,3.4546,Vilniaus Salininkų gimnazija,0.0,0.0,far,9.4804
+5973,5975,1078,4.8144,Vilniaus Salininkų gimnazija,0.0,0.0,far,10.6711
+5974,5972,1082,3.8644,Vilniaus Salininkų gimnazija,0.0,0.0,far,10.1985
+5975,17594,1149,5.4918,Vilniaus Salininkų gimnazija,0.0,0.0,far,10.9996
+5976,5974,1095,4.7847,Vilniaus Salininkų gimnazija,0.0,0.0,far,10.624
+5981,5986,1043,5.5071,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,10.9109
+5982,17589,1045,6.0911,Vilniaus Salininkų gimnazija,0.0,0.0,far,11.1111
+5986,6134,2391,4.8838,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,10.5273
+5988,6137,35,5.251,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,10.6825
+5995,5957,3188,1.4911,"VšĮ ""Ruduo-pavasaris""",0.0,0.0,far,5.1276
+5996,5998,3789,0.3979,"VšĮ ""Ruduo-pavasaris""",0.0,118.0,middle,3.8144
+5998,5947,7575,0.1315,"VšĮ ""Ruduo-pavasaris""",118.0,118.0,near,3.1202
+5998,7688,183,0.0286,"VšĮ ""Ruduo-pavasaris""",118.0,543.0,near,2.6904
+5998,8365,949,0.1468,"VšĮ ""Ruduo-pavasaris""",118.0,118.0,near,3.1265
+6005,6008,1688,0.2377,Vilniaus Antano Vienuolio progimnazija,826.0,1741.0,near,1.8152
+6006,7840,672,0.0816,VšĮ Gedimino miesto mokykla,1751.0,2294.0,near,1.542
+6008,5173,842,0.4403,"Vilniaus ""Juventos"" gimnazija",0.0,584.0,middle,2.2102
+6008,6012,838,0.399,"Vilniaus ""Juventos"" gimnazija",0.0,1139.0,middle,2.1775
+6009,6006,791,0.2333,Vilniaus Antano Vienuolio progimnazija,826.0,1741.0,near,1.7989
+6012,6014,809,0.3747,"Vilniaus ""Juventos"" gimnazija",0.0,856.0,middle,2.4007
+6013,6009,804,0.4577,"Vilniaus ""Juventos"" gimnazija",0.0,1139.0,middle,2.1331
+6014,6017,926,0.059,Vilniaus lietuvių namai,555.0,856.0,near,2.401
+6015,6013,904,0.4011,"Vilniaus ""Juventos"" gimnazija",0.0,856.0,middle,2.3615
+6017,6019,825,0.081,Vilniaus lietuvių namai,555.0,811.0,near,2.3977
+6018,6015,882,0.0622,Vilniaus lietuvių namai,555.0,856.0,near,2.3849
+6019,5948,833,0.4786,Vilniaus lietuvių namai,0.0,811.0,middle,2.5264
+6020,6018,935,0.0622,Vilniaus lietuvių namai,555.0,555.0,near,2.3681
+6024,16977,1192,0.4551,"VšĮ ""Ruduo-pavasaris""",0.0,118.0,middle,3.5675
+6024,5998,953,0.3979,"VšĮ ""Ruduo-pavasaris""",0.0,118.0,middle,3.5202
+6029,16179,1904,1.8716,Vilniaus Žaliakalnio darželis-mokykla,0.0,0.0,far,8.3712
+603,6566,9258,0.2048,Nacionalinė Mikalojaus Konstantino Čiurlionio menų mokykla,808.0,944.0,near,1.2106
+6030,7357,1234,1.2989,Vilniaus Žaliakalnio darželis-mokykla,0.0,0.0,far,8.2155
+6032,7356,1037,0.6465,Vilniaus Žaliakalnio darželis-mokykla,0.0,0.0,middle,8.1482
+6034,19299,1653,0.5814,Vilniaus Žaliakalnio darželis-mokykla,0.0,0.0,middle,7.5885
+6035,6040,4345,0.006,Vilniaus Žaliakalnio darželis-mokykla,136.0,1447.0,near,8.057
+6040,6042,14339,0.1202,Vilniaus Žaliakalnio darželis-mokykla,967.0,1594.0,near,8.2728
+6041,5399,1000,0.1702,Vilniaus Žaliakalnio darželis-mokykla,136.0,1447.0,near,8.0144
+6041,5400,10426,0.1702,Vilniaus Žaliakalnio darželis-mokykla,136.0,1447.0,near,7.9623
+6041,6032,1084,0.0238,Vilniaus Žaliakalnio darželis-mokykla,136.0,1447.0,near,8.0488
+6041,6034,3273,0.0362,Vilniaus Žaliakalnio darželis-mokykla,136.0,1447.0,near,8.0195
+6042,6044,6575,0.2747,"Vilniaus ""Atžalyno"" mokykla-darželis",968.0,2415.0,near,8.6853
+6043,6041,16380,0.1232,Vilniaus Žaliakalnio darželis-mokykla,967.0,1594.0,near,8.2303
+6044,6047,3093,0.2392,"Vilniaus ""Žaros"" gimnazija",821.0,968.0,near,9.0269
+6044,7444,2616,0.2686,"Vilniaus ""Žaros"" gimnazija",821.0,968.0,near,8.9925
+6045,6043,14841,0.2637,"Vilniaus ""Atžalyno"" mokykla-darželis",978.0,2415.0,near,8.6126
+6047,16156,1051,0.1895,"Vilniaus ""Žaros"" gimnazija",821.0,968.0,near,9.2138
+6047,6048,1908,0.2212,"Vilniaus ""Žaros"" gimnazija",821.0,968.0,near,9.2766
+6048,6051,1917,0.4783,"Vilniaus ""Žaros"" gimnazija",0.0,821.0,middle,9.5008
+6049,6073,3033,0.1608,"Vilniaus ""Žaros"" gimnazija",821.0,968.0,near,9.1832
+6051,8373,26,0.9708,"Vilniaus ""Žaros"" gimnazija",0.0,0.0,far,9.6962
+6052,6049,1882,0.3705,"Vilniaus ""Žaros"" gimnazija",0.0,821.0,middle,9.4609
+6054,6056,2395,0.7981,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,middle,7.6091
+6055,5394,1061,1.0432,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,far,7.2326
+6055,5417,1374,1.0432,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,far,7.2034
+6056,6059,2341,0.6152,Vilniaus Juzefo Ignacijaus Kraševskio gimnazija,0.0,0.0,middle,8.0292
+6057,6055,2370,0.8391,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,far,7.5563
+6059,6062,2427,0.357,Vilniaus Juzefo Ignacijaus Kraševskio gimnazija,0.0,458.0,middle,8.471
+6060,6057,2406,0.6248,Vilniaus Juzefo Ignacijaus Kraševskio gimnazija,0.0,0.0,middle,7.9742
+6062,6065,2325,0.3554,Vilniaus Juzefo Ignacijaus Kraševskio gimnazija,0.0,458.0,middle,8.9238
+6064,6060,2372,0.3727,Vilniaus Juzefo Ignacijaus Kraševskio gimnazija,0.0,458.0,middle,8.4086
+6065,6069,371,0.5389,Vilniaus Juzefo Ignacijaus Kraševskio gimnazija,0.0,0.0,middle,9.2969
+6066,6064,2340,0.3455,Vilniaus Juzefo Ignacijaus Kraševskio gimnazija,0.0,458.0,middle,8.9151
+6068,6066,2448,0.6022,Vilniaus Juzefo Ignacijaus Kraševskio gimnazija,0.0,0.0,middle,9.3384
+6073,6045,5705,0.255,"Vilniaus ""Žaros"" gimnazija",968.0,1799.0,near,8.9157
+6079,5103,3243,0.3198,Vilniaus Šilo ugdymo centras,0.0,163.0,middle,5.289
+6079,5104,48,0.3231,Vilniaus Šilo ugdymo centras,0.0,163.0,middle,5.3319
+6081,950,2151,0.4184,Vilniaus Šilo ugdymo centras,0.0,163.0,middle,5.9969
+6082,6079,859,0.0559,Vilniaus Šilo ugdymo centras,163.0,163.0,near,5.5339
+6083,16155,795,0.1014,Vilniaus Šilo ugdymo centras,163.0,163.0,near,5.5787
+6083,6095,4,0.1014,Vilniaus Šilo ugdymo centras,163.0,163.0,near,6.2883
+6084,6082,871,0.1141,Vilniaus Šilo ugdymo centras,163.0,163.0,near,5.6004
+6096,4426,863,1.3057,Vilniaus Šilo ugdymo centras,0.0,0.0,far,6.6998
+6100,18768,861,1.0136,Šv. Juozapo mokykla,0.0,0.0,far,6.3972
+6106,6107,851,0.798,Vilniaus Emilijos Pliaterytės progimnazija,0.0,0.0,middle,5.4574
+6107,6109,843,0.3932,Vilniaus Emilijos Pliaterytės progimnazija,0.0,1141.0,middle,5.2315
+6109,6110,846,0.4234,Vilniaus Emilijos Pliaterytės progimnazija,0.0,1141.0,middle,5.1295
+6110,6084,853,0.5011,Vilniaus Šilo ugdymo centras,0.0,0.0,middle,5.3392
+6120,6122,2546,1.2554,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,5.8891
+6121,617,4282,1.3838,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,5.0457
+6122,6124,1613,1.2555,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,6.4434
+6122,9677,1204,1.2555,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,6.4616
+6123,6121,1219,1.2249,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,5.7889
+6124,6126,1402,1.4485,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,7.1237
+6125,6123,1218,1.2223,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,6.3639
+6126,6128,1369,1.9751,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,8.471
+6127,6125,1398,1.3883,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,7.0171
+6128,6130,1407,3.865,UAB Karalienės Mortos mokykla,0.0,0.0,far,9.6219
+6129,6127,1248,1.842,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,8.3478
+6130,6133,2383,4.2877,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,10.0545
+6131,16184,1079,3.2505,UAB Karalienės Mortos mokykla,0.0,0.0,far,9.2816
+6131,6129,1338,3.7598,UAB Karalienės Mortos mokykla,0.0,0.0,far,9.5592
+6133,5985,314,4.901,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,10.5643
+6133,5988,34,4.901,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,10.4467
+6133,6137,1163,4.901,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,10.5452
+6134,6131,2335,4.2556,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,10.0367
+6137,5982,1244,5.5593,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,10.9214
+6140,6143,2265,1.5573,Vilniaus Šilo ugdymo centras,0.0,0.0,far,7.1534
+6141,5491,58,0.0183,Vilniaus Šilo ugdymo centras,163.0,163.0,near,5.5788
+6141,6079,2182,0.3231,Vilniaus Šilo ugdymo centras,0.0,163.0,middle,5.8435
+6142,6141,2152,0.8587,Vilniaus Šilo ugdymo centras,0.0,0.0,far,6.4996
+6143,6147,2186,2.0254,Vilniaus Šilo ugdymo centras,0.0,0.0,far,7.858
+6144,6142,2196,1.4142,Vilniaus Šilo ugdymo centras,0.0,0.0,far,7.0738
+6146,6144,2157,1.9856,Vilniaus Šilo ugdymo centras,0.0,0.0,far,7.8199
+6147,6148,2320,2.8492,Vilniaus Balsių progimnazija,0.0,0.0,far,8.7506
+6148,6153,2240,2.1866,Vilniaus Balsių progimnazija,0.0,0.0,far,9.6692
+6149,6146,2179,2.8795,Vilniaus Balsių progimnazija,0.0,0.0,far,8.6952
+6152,6149,2297,2.227,Vilniaus Balsių progimnazija,0.0,0.0,far,9.5774
+6153,6155,2414,1.7169,Vilniaus Balsių progimnazija,0.0,0.0,far,10.7222
+6154,6152,2252,1.6768,Vilniaus Balsių progimnazija,0.0,0.0,far,10.7183
+6155,18878,1123,1.6194,Vilniaus Balsių progimnazija,0.0,0.0,far,11.5742
+6155,7319,1065,1.7041,Vilniaus Balsių progimnazija,0.0,0.0,far,11.5381
+6159,18889,1123,1.533,Vilniaus Balsių progimnazija,0.0,0.0,far,12.4327
+616,6120,2548,1.3679,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,5.1358
+616,6121,2032,1.3838,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,5.0811
+6160,3610,1084,1.6665,Vilniaus Balsių progimnazija,0.0,0.0,far,13.3054
+6162,7936,1115,1.8343,Vilniaus Balsių progimnazija,0.0,0.0,far,13.4464
+6164,6162,1120,2.5851,Vilniaus Balsių progimnazija,0.0,0.0,far,14.0862
+617,16920,1090,1.4628,"VšĮ ""Ruduo-pavasaris""",0.0,0.0,far,4.5534
+617,5998,3298,0.3979,"VšĮ ""Ruduo-pavasaris""",0.0,118.0,middle,4.0606
+6170,6174,2358,1.5124,Vilniaus Šilo ugdymo centras,0.0,0.0,far,6.3783
+6171,6239,2331,1.1984,Vilniaus Šilo ugdymo centras,0.0,0.0,far,5.7164
+6173,6171,2399,1.4514,Vilniaus Šilo ugdymo centras,0.0,0.0,far,6.3228
+6174,6176,2307,2.0541,Vilniaus Šilo ugdymo centras,0.0,0.0,far,7.1022
+6176,6179,2275,2.9811,Vilniaus Šilo ugdymo centras,0.0,0.0,far,7.4721
+6176,6183,26,2.9811,Vilniaus Šilo ugdymo centras,0.0,0.0,far,7.9854
+6177,6173,2302,2.0001,Vilniaus Šilo ugdymo centras,0.0,0.0,far,7.0569
+6179,10537,1796,3.2153,Vilniaus Šilo ugdymo centras,0.0,0.0,far,7.2123
+6179,429,2415,2.9492,Vilniaus Šilo ugdymo centras,0.0,0.0,far,7.3266
+6179,6181,2531,2.9366,Vilniaus Šilo ugdymo centras,0.0,0.0,far,7.3272
+6180,6177,2287,2.9162,Vilniaus Šilo ugdymo centras,0.0,0.0,far,7.4555
+6181,8250,2577,2.9366,Vilniaus Šilo ugdymo centras,0.0,0.0,far,7.3254
+6183,16305,1314,2.3811,"UAB ""The British School of Vilnius""",0.0,0.0,far,8.9032
+6183,16307,2639,2.3406,"UAB ""The British School of Vilnius""",0.0,0.0,far,8.8949
+6184,6177,17,2.9162,Vilniaus Šilo ugdymo centras,0.0,0.0,far,7.9304
+6184,6179,3981,3.1198,"UAB ""The British School of Vilnius""",0.0,0.0,far,7.903
+6188,16306,1393,2.4055,"UAB ""The British School of Vilnius""",0.0,0.0,far,9.4003
+6189,6191,1432,2.64,"UAB ""The British School of Vilnius""",0.0,0.0,far,9.408
+6190,6188,1372,2.5646,"UAB ""The British School of Vilnius""",0.0,0.0,far,9.4542
+6191,6192,1497,2.6586,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,far,9.2051
+6192,6195,1567,2.0452,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,far,8.949
+6193,6190,1362,2.6573,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,far,9.2487
+6195,6199,1529,1.4029,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,far,8.6948
+6198,456,1382,1.5082,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,far,8.738
+6199,6204,1399,0.8908,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,far,8.6497
+6203,6198,1418,0.9552,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,far,8.6748
+6204,6207,1312,0.2052,"Vilniaus ""Šiaurės"" progimnazija",196.0,196.0,near,8.5246
+6207,6211,1316,0.1398,"Vilniaus ""Šiaurės"" progimnazija",196.0,196.0,near,8.1504
+6208,6203,1377,0.0946,"Vilniaus ""Šiaurės"" progimnazija",196.0,196.0,near,8.4791
+6211,6217,1367,0.2965,"Vilniaus ""Šiaurės"" progimnazija",196.0,196.0,near,7.7019
+6212,6208,1370,0.0869,"Vilniaus ""Šiaurės"" progimnazija",196.0,196.0,near,8.1577
+6215,6212,1384,0.1981,"Vilniaus ""Šiaurės"" progimnazija",196.0,196.0,near,7.7788
+6216,6219,1591,0.7679,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,middle,7.2858
+6217,5394,2924,0.7909,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,middle,7.2659
+6218,6217,1522,0.7909,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,middle,7.2597
+6219,6221,1611,1.1866,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,far,7.1047
+6221,10612,1621,1.3525,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,far,7.1087
+6225,16167,1002,0.4155,"Vilniaus ""Laisvės"" gimnazija",0.0,1447.0,middle,7.9967
+6225,6040,10542,0.1359,Vilniaus Žaliakalnio darželis-mokykla,136.0,1447.0,near,8.0086
+6230,6215,1373,0.7352,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,middle,7.3627
+6230,6216,1601,0.7679,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,middle,7.346
+6239,5116,2291,0.9443,Vilniaus Šilo ugdymo centras,0.0,0.0,far,5.3226
+6240,6243,2087,0.9742,Vilniaus Salininkų gimnazija,0.0,0.0,far,7.8865
+6241,8330,2095,1.8014,Vilniaus Salininkų gimnazija,0.0,0.0,far,7.3211
+6243,6246,2240,0.9494,Vilniaus Salininkų gimnazija,0.0,0.0,far,8.3842
+6244,6241,2094,1.0243,Vilniaus Salininkų gimnazija,0.0,0.0,far,7.828
+6246,6248,1735,0.825,Vilniaus Salininkų gimnazija,0.0,0.0,far,8.7456
+6246,9757,4,0.9506,Vilniaus Salininkų gimnazija,0.0,0.0,far,8.9998
+6247,6244,2173,0.9612,Vilniaus Salininkų gimnazija,0.0,0.0,far,8.3523
+6248,6254,1768,0.5904,Vilniaus Salininkų gimnazija,0.0,0.0,middle,9.052
+6249,6247,1766,0.856,Vilniaus Salininkų gimnazija,0.0,0.0,far,8.7298
+6253,6249,1648,0.6085,Vilniaus Salininkų gimnazija,0.0,0.0,middle,9.0179
+6254,6256,1335,0.6058,Vilniaus Salininkų gimnazija,0.0,0.0,middle,9.1661
+6254,9003,401,0.6058,Vilniaus Salininkų gimnazija,0.0,0.0,middle,9.1686
+6256,6260,1186,0.5372,Vilniaus Salininkų gimnazija,0.0,0.0,middle,8.9792
+6257,6253,1678,0.6065,Vilniaus Salininkų gimnazija,0.0,0.0,middle,9.1626
+6260,6263,1941,0.523,Vilniaus Salininkų gimnazija,0.0,0.0,middle,8.5187
+6261,6257,1288,0.5519,Vilniaus Salininkų gimnazija,0.0,0.0,middle,8.9842
+6261,9003,874,0.5519,Vilniaus Salininkų gimnazija,0.0,0.0,middle,8.9847
+6263,6966,1936,0.6459,Vilniaus Salininkų gimnazija,0.0,0.0,middle,7.946
+6264,6261,1811,0.5368,Vilniaus Salininkų gimnazija,0.0,0.0,middle,8.5295
+6270,6274,1936,1.8682,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.1549
+6271,9776,2066,1.9192,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,10.8785
+6273,6271,1938,1.8591,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.1602
+6274,6277,1960,1.896,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.067
+6276,6273,1914,1.8655,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.0932
+6277,6279,1992,2.0938,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,10.9057
+6278,6276,1900,2.0541,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,10.9319
+6279,6282,1961,2.4151,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,10.9607
+6282,6286,4269,2.3867,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.2754
+6282,9626,1373,2.3924,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.279
+6283,6278,1900,2.3974,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,10.9699
+6283,6291,3455,2.4114,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,10.679
+6286,15829,1182,2.1256,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.7746
+6286,6283,1304,2.3854,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.2714
+6286,9683,1403,2.2324,"Vilniaus savivaldybės Grigiškių ""Šviesos"" gimnazija",0.0,0.0,far,11.8331
+6290,6282,3318,2.4165,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,10.726
+6291,6295,3442,2.8614,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,9.8554
+6291,6609,12,2.8614,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,9.4577
+6294,4455,868,2.7391,"Vilniaus savivaldybės Grigiškių ""Šviesos"" gimnazija",0.0,0.0,far,9.7508
+6294,6290,3380,2.8049,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,9.8768
+6295,6296,667,3.2235,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,0.0,far,9.0521
+6295,6609,5778,3.2597,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,0.0,far,9.0664
+6295,9109,68,0.8888,"Vilniaus savivaldybės Grigiškių ""Šviesos"" gimnazija",0.0,0.0,far,10.4023
+6296,18073,686,3.2235,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,0.0,far,8.9871
+6297,6294,3415,3.36,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,0.0,far,9.0981
+6297,9109,2694,0.8888,"Vilniaus savivaldybės Grigiškių ""Šviesos"" gimnazija",0.0,0.0,far,10.0804
+6300,18073,834,2.9942,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,0.0,far,8.885
+6301,7731,632,2.8434,"Vilniaus ""Minties"" gimnazija",0.0,0.0,far,8.3515
+6309,6297,6117,2.2538,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,0.0,far,8.236
+6310,437,2947,0.3772,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,1507.0,middle,6.6842
+6310,6350,1390,0.2225,"Vilniaus ""Ąžuolyno"" progimnazija",967.0,1308.0,near,6.4945
+6310,7350,1550,0.3163,"Vilniaus ""Minties"" gimnazija",0.0,1507.0,middle,6.6821
+6317,5698,712,0.1716,Vilniaus Lazdynų mokykla,713.0,1886.0,near,4.8286
+6317,5701,4106,0.1429,"Vilniaus darželis-mokykla ""Svaja""",867.0,2572.0,near,4.7223
+6318,6319,6318,0.2114,"Vilniaus ""Minties"" gimnazija",1594.0,3239.0,near,5.1014
+6319,6320,10677,0.1475,"Vilniaus ""Minties"" gimnazija",881.0,2561.0,near,5.4421
+632,6432,55,0.2452,Vilniaus Žvėryno gimnazija,977.0,977.0,near,2.5952
+6320,6309,3977,0.2382,"Vilniaus ""Minties"" gimnazija",540.0,1848.0,near,6.644
+6320,6350,2617,0.0161,"Vilniaus ""Ąžuolyno"" progimnazija",1507.0,1848.0,near,5.4583
+6320,6401,1790,0.2382,"Vilniaus ""Minties"" gimnazija",540.0,1848.0,near,5.78
+6320,7341,466,0.2382,"Vilniaus ""Minties"" gimnazija",540.0,1848.0,near,5.6754
+6320,7350,130,0.2382,"Vilniaus ""Minties"" gimnazija",540.0,1848.0,near,5.6585
+6320,7730,743,0.2382,"Vilniaus ""Minties"" gimnazija",540.0,1848.0,near,6.9599
+6333,5535,4342,0.2928,Vilniaus Juozo Tallat-Kelpšos konservatorija,139.0,633.0,near,3.8559
+6333,721,8668,0.4612,"Vilniaus darželis-mokykla ""Svaja""",0.0,154.0,middle,4.3045
+6337,5180,600,0.499,Vilniaus Juozo Tallat-Kelpšos konservatorija,0.0,139.0,middle,3.5842
+6337,5535,9054,0.2928,Vilniaus Juozo Tallat-Kelpšos konservatorija,139.0,479.0,near,3.6214
+6337,5543,3095,0.6817,Vilniaus Juozo Tallat-Kelpšos konservatorija,0.0,0.0,middle,3.9938
+6337,5780,74,0.1518,"Viešoji įstaiga ""Vilniaus Valdorfo mokykla""",1110.0,1249.0,near,3.5147
+6338,6353,4518,0.4961,Vilniaus Lazdynų mokykla,0.0,713.0,middle,4.3806
+6338,720,7749,0.6627,Vilniaus Juozo Tallat-Kelpšos konservatorija,0.0,0.0,middle,3.9947
+6343,7852,13486,0.1971,"Viešoji įstaiga ""Vilniaus Valdorfo mokykla""",2212.0,3511.0,near,2.6397
+6350,6352,4254,0.2569,"Vilniaus ""Ąžuolyno"" progimnazija",967.0,1308.0,near,5.1427
+6351,437,2688,0.0577,"Vilniaus ""Ąžuolyno"" progimnazija",967.0,1848.0,near,5.5456
+6351,6309,1521,0.1882,"Vilniaus ""Ąžuolyno"" progimnazija",967.0,1308.0,near,6.5403
+6351,6401,163,0.1733,"Vilniaus ""Ąžuolyno"" progimnazija",967.0,1308.0,near,5.6755
+6351,7350,2,0.0391,"Vilniaus ""Ąžuolyno"" progimnazija",967.0,1848.0,near,5.5434
+6352,6337,4681,0.5234,Vilniaus Lazdynų mokykla,0.0,0.0,middle,4.3769
+6353,6351,4493,0.202,"Vilniaus ""Ąžuolyno"" progimnazija",967.0,2021.0,near,5.1877
+6356,5258,12,0.1292,Viešoji įstaiga Šiuolaikinės mokyklos centras (302850897),470.0,2151.0,near,1.2394
+6356,5264,8,0.1543,Viešoji įstaiga Šiuolaikinės mokyklos centras (302850897),470.0,3052.0,near,1.2514
+6362,6365,9276,0.1056,VšĮ GRAVITAS SCHOLA,1372.0,1989.0,near,2.4453
+6362,7852,140,0.1367,VšĮ GRAVITAS SCHOLA,2482.0,3238.0,near,2.643
+6363,5166,4350,0.0317,Vilniaus Gabrielės Petkevičaitės-Bitės suaugusiųjų mokymo centras,829.0,1372.0,near,2.1107
+6363,7851,654,0.042,Vilniaus Gabrielės Petkevičaitės-Bitės suaugusiųjų mokymo centras,829.0,1372.0,near,2.1586
+6365,16770,1370,0.1384,Vilniaus Simono Konarskio gimnazija,543.0,3732.0,near,2.5517
+6365,7852,11057,0.1391,Vilniaus Simono Konarskio gimnazija,1653.0,2769.0,near,2.7221
+6366,6363,8476,0.0745,Vilniaus Gabrielės Petkevičaitės-Bitės suaugusiųjų mokymo centras,1372.0,1989.0,near,2.4196
+6366,9701,2417,0.2129,VšĮ GRAVITAS SCHOLA,903.0,1989.0,near,2.5461
+6379,9102,2551,0.2756,"Vilniaus ""Ąžuolyno"" progimnazija",967.0,967.0,near,5.2072
+6379,9966,82,0.2756,"Vilniaus ""Ąžuolyno"" progimnazija",967.0,967.0,near,5.1795
+6381,6350,179,0.2349,"Vilniaus ""Ąžuolyno"" progimnazija",967.0,1308.0,near,5.3883
+6381,756,4141,0.2209,"Vilniaus ""Ąžuolyno"" progimnazija",967.0,967.0,near,5.7402
+6387,6381,4201,0.235,"Vilniaus ""Ąžuolyno"" progimnazija",967.0,967.0,near,5.2905
+6388,8328,2532,0.8174,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,0.0,far,5.1563
+6389,7722,1204,0.911,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,0.0,far,5.5704
+6390,7723,1735,1.4374,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,0.0,far,6.0631
+6396,6397,10518,0.5996,Vilniaus Vladislavo Sirokomlės gimnazija,0.0,0.0,middle,2.3508
+6397,17495,1683,0.1918,Vilniaus Vladislavo Sirokomlės gimnazija,736.0,977.0,near,2.0631
+6397,5533,66,0.5189,Vilniaus kunigaikščio Gedimino progimnazija,0.0,0.0,middle,2.1134
+6397,6635,12090,0.3727,Vilniaus Vladislavo Sirokomlės gimnazija,0.0,736.0,middle,2.0748
+6397,7769,1754,0.1515,Vilniaus Vladislavo Sirokomlės gimnazija,736.0,736.0,near,2.0754
+6398,6396,10064,0.2104,Vilniaus Žvėryno gimnazija,977.0,977.0,near,2.8134
+640,5166,833,0.275,Vilniaus Gabrielės Petkevičaitės-Bitės suaugusiųjų mokymo centras,469.0,829.0,near,2.0568
+6400,596,6572,0.263,Vilniaus Karoliniškių gimnazija,1538.0,2918.0,near,4.846
+6401,6379,4208,0.2311,"Vilniaus ""Ąžuolyno"" progimnazija",967.0,967.0,near,5.6752
+6404,6432,44,0.2452,Vilniaus Žvėryno gimnazija,977.0,977.0,near,2.5361
+6404,7415,4715,0.2194,Vilniaus Žvėryno gimnazija,977.0,2129.0,near,3.1077
+6404,814,10477,0.5703,Vilniaus Vladislavo Sirokomlės gimnazija,0.0,0.0,middle,2.345
+6410,6366,6609,0.1589,Vilniaus Simono Konarskio gimnazija,903.0,3099.0,near,2.5386
+6430,6433,7967,0.1352,Vilniaus Žvėryno gimnazija,977.0,977.0,near,2.9103
+6432,7415,7903,0.1373,Vilniaus Žvėryno gimnazija,977.0,2129.0,near,3.4602
+6433,6434,7705,0.2926,Vilniaus Žvėryno gimnazija,977.0,977.0,near,2.6436
+6434,6437,7884,0.0743,Vilniaus suaugusiųjų mokymo centras,917.0,917.0,near,2.4252
+6435,6432,7935,0.2425,Vilniaus Žvėryno gimnazija,977.0,977.0,near,2.7087
+6436,6435,9054,0.2158,Vilniaus suaugusiųjų mokymo centras,391.0,1894.0,near,2.4705
+6437,18852,6374,0.0193,Vilniaus suaugusiųjų mokymo centras,917.0,1060.0,near,2.2155
+6437,5880,415,0.0125,Vilniaus suaugusiųjų mokymo centras,917.0,1818.0,near,2.1691
+6438,6436,8021,0.0822,Vilniaus suaugusiųjų mokymo centras,917.0,1818.0,near,2.237
+6449,5747,66,1.8927,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.305
+6449,9115,679,1.7752,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.601
+6450,5747,896,1.8231,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.3025
+6450,6454,208,1.8231,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.6852
+6450,7180,1084,1.8231,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.958
+6454,6455,1255,2.3429,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.7775
+6455,10577,1250,2.7576,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.8042
+6456,6469,1260,2.3028,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.7548
+6457,16749,1057,3.2251,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.8849
+6457,4531,85,3.2251,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.8721
+6458,9298,1264,2.9929,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.8168
+646,17945,2523,3.1288,VšĮ Tarptautinė Ukrainos mokykla,0.0,0.0,far,6.568
+6460,6461,7214,0.1825,Palaimintojo Teofiliaus Matulionio gimnazija,678.0,1545.0,near,4.9629
+6461,5535,111,0.277,"Vilniaus darželis-mokykla ""Svaja""",293.0,2024.0,near,4.0569
+6461,6333,11552,0.3043,"Vilniaus darželis-mokykla ""Svaja""",0.0,1545.0,middle,4.5956
+6462,1071,6931,0.1586,Palaimintojo Teofiliaus Matulionio gimnazija,678.0,1364.0,near,5.0972
+6469,6449,67,1.8927,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.6782
+6469,7180,1284,2.0841,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,12.0255
+6472,5067,4757,0.1849,Vilniaus Viršuliškių mokykla,770.0,2465.0,near,4.8088
+6472,6651,8566,0.1482,Vilniaus Viršuliškių mokykla,566.0,566.0,near,4.7435
+6475,5620,8658,0.4587,Vilniaus Viršuliškių mokykla,0.0,1536.0,middle,4.6615
+6476,6475,8363,0.1608,Vilniaus Viršuliškių mokykla,566.0,566.0,near,4.7988
+6477,5620,4409,0.168,Vilniaus Viršuliškių mokykla,566.0,2500.0,near,4.7565
+6477,6476,8509,0.0941,Vilniaus Viršuliškių mokykla,566.0,2394.0,near,4.9119
+6478,6477,8551,0.1162,"Vilniaus darželis-mokykla ""Vilija""",204.0,3238.0,near,5.051
+6478,855,2830,0.119,"Vilniaus darželis-mokykla ""Vilija""",204.0,3238.0,near,5.0127
+6479,6481,11051,0.1843,"Vilniaus darželis-mokykla ""Vilija""",1139.0,1912.0,near,5.2785
+6481,6653,10318,0.2484,Vilniaus Žemynos progimnazija,1120.0,1893.0,near,5.5641
+6482,6477,4423,0.0978,"Vilniaus darželis-mokykla ""Vilija""",204.0,3238.0,near,5.1713
+6482,6478,11098,0.119,"Vilniaus darželis-mokykla ""Vilija""",204.0,1912.0,near,5.2671
+6484,6523,4509,0.1448,Vilniaus Žemynos progimnazija,1120.0,1120.0,near,5.732
+6487,6488,4782,0.4135,Vilniaus Baltupių progimnazija,0.0,857.0,middle,5.0995
+6487,6497,6153,0.4016,Vilniaus Baltupių progimnazija,0.0,1729.0,middle,5.4169
+6487,6500,261,0.0839,Šv. Juozapo mokykla,1553.0,2410.0,near,5.6444
+6487,6634,752,0.2686,Vilniaus Baltupių progimnazija,857.0,857.0,near,5.3406
+6487,6640,181,0.3801,Vilniaus Baltupių progimnazija,0.0,857.0,middle,5.3867
+6488,6491,4746,0.61,Vilniaus Baltupių progimnazija,0.0,0.0,middle,5.5902
+6489,5836,4577,0.3905,Vilniaus Baltupių progimnazija,0.0,857.0,middle,4.9631
+6491,6497,4370,0.4618,Šv. Juozapo mokykla,0.0,872.0,middle,5.9077
+6491,6640,671,0.5365,VšĮ Vilniaus inžinerijos ir technologijų licėjus (302562877),0.0,0.0,middle,5.8777
+6492,6489,4545,0.5129,Vilniaus Baltupių progimnazija,0.0,0.0,middle,5.4609
+6494,5836,5528,0.3724,Vilniaus Baltupių progimnazija,0.0,857.0,middle,5.2606
+6494,6492,4624,0.6122,Šv. Juozapo mokykla,0.0,0.0,middle,5.7584
+6497,6500,22008,0.0904,Šv. Juozapo mokykla,1553.0,1553.0,near,6.3019
+6500,16627,4871,0.0901,Šv. Juozapo mokykla,1553.0,1553.0,near,6.8842
+6500,6525,3195,0.092,Šv. Juozapo mokykla,1553.0,1553.0,near,6.8824
+6500,6532,6418,0.092,Šv. Juozapo mokykla,1553.0,1553.0,near,7.0053
+6500,6783,5994,0.092,Šv. Juozapo mokykla,1553.0,1553.0,near,6.8716
+6501,6494,10125,0.1809,Šv. Juozapo mokykla,872.0,1553.0,near,6.1596
+6501,6634,3931,0.1809,Šv. Juozapo mokykla,872.0,1553.0,near,6.1625
+6501,6640,11435,0.1809,Šv. Juozapo mokykla,872.0,1553.0,near,6.2089
+6503,6501,14900,0.1224,Šv. Juozapo mokykla,1553.0,1553.0,near,6.7059
+6523,6482,15025,0.3308,Vilniaus Žemynos progimnazija,0.0,3032.0,middle,5.5256
+6525,6532,3694,0.674,Vilniaus Jeruzalės progimnazija,0.0,0.0,middle,7.3596
+6526,16627,2260,0.805,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,7.3169
+6526,6501,10288,0.128,Šv. Juozapo mokykla,1553.0,1553.0,near,6.8951
+6526,6503,3538,0.4673,Vilniaus Jeruzalės progimnazija,0.0,681.0,middle,7.1998
+6526,6783,745,0.5728,Vilniaus Jeruzalės progimnazija,0.0,0.0,middle,7.3012
+6532,6533,275,0.9053,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,7.6735
+6532,8716,3578,0.9053,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,7.6633
+6533,7046,8,1.2448,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,7.9388
+6542,6544,2946,0.1354,"Vilniaus darželis - mokykla ""Vaivorykštė""",1300.0,3307.0,near,1.772
+6544,6546,5234,0.1133,"Vilniaus ""Žiburio"" pradinė mokykla",1300.0,2627.0,near,1.5061
+6546,6565,3413,0.1035,Nacionalinė Mikalojaus Konstantino Čiurlionio menų mokykla,1175.0,2684.0,near,1.2705
+6546,6665,1663,0.2703,"Vilniaus ""Žiburio"" pradinė mokykla",367.0,1876.0,near,1.5207
+6547,1032,3006,0.1404,"Vilniaus ""Žiburio"" pradinė mokykla",1300.0,2627.0,near,1.5711
+6565,6568,7803,0.1825,Nacionalinė Mikalojaus Konstantino Čiurlionio menų mokykla,808.0,1658.0,near,1.198
+6565,6571,4578,0.0674,"""Šaltinėlio"" privati mokykla",1277.0,1991.0,near,1.2696
+6566,5662,1736,0.0785,Nacionalinė Mikalojaus Konstantino Čiurlionio menų mokykla,1012.0,1379.0,near,1.1994
+6566,5768,2896,0.132,Nacionalinė Mikalojaus Konstantino Čiurlionio menų mokykla,808.0,808.0,near,1.2771
+6566,5826,155,0.2048,Nacionalinė Mikalojaus Konstantino Čiurlionio menų mokykla,808.0,1586.0,near,1.5516
+6566,6547,1330,0.1176,Nacionalinė Mikalojaus Konstantino Čiurlionio menų mokykla,1175.0,2684.0,near,1.2946
+6566,6665,2114,0.1668,Nacionalinė Mikalojaus Konstantino Čiurlionio menų mokykla,808.0,1931.0,near,1.4171
+6568,6571,8061,0.0706,"""Šaltinėlio"" privati mokykla",469.0,1810.0,near,1.2729
+6571,6574,12724,0.0702,"""Šaltinėlio"" privati mokykla",469.0,1183.0,near,1.5149
+6572,449,13124,0.0435,"""Šaltinėlio"" privati mokykla",469.0,1810.0,near,1.4925
+6573,5770,22922,0.042,Nacionalinė Mikalojaus Konstantino Čiurlionio menų mokykla,808.0,808.0,near,0.9784
+6574,5175,102,0.0025,Vilniaus mokymo centras,3127.0,4897.0,near,1.5865
+6574,5372,4733,0.2408,Vilniaus Filaretų pradinė mokykla,333.0,469.0,near,2.0132
+6574,5925,4493,0.2935,Vilniaus Filaretų pradinė mokykla,333.0,469.0,near,1.6455
+6574,7841,583,0.0489,Vilniaus mokymo centras,952.0,2434.0,near,1.4028
+6574,931,2312,0.2935,Vilniaus Filaretų pradinė mokykla,333.0,469.0,near,1.7454
+6580,6581,10952,0.1024,Vilniaus Jono Pauliaus II progimnazija,864.0,2680.0,near,5.4097
+6581,6588,9542,0.2869,Vilniaus Levo Karsavino mokykla,970.0,1244.0,near,5.226
+6582,5063,9829,0.0738,Vilniaus Jono Pauliaus II progimnazija,864.0,2680.0,near,5.4089
+6582,7001,1370,0.0465,Vilniaus Jono Pauliaus II progimnazija,864.0,2680.0,near,5.3848
+6587,6582,9178,0.3575,Vilniaus Levo Karsavino mokykla,0.0,2220.0,middle,5.248
+6588,6591,9197,0.0861,Vilniaus Levo Karsavino mokykla,970.0,970.0,near,4.9661
+6591,928,9709,0.0956,Vilniaus Levo Karsavino mokykla,970.0,970.0,near,4.6652
+6597,6587,9542,0.0558,Vilniaus Levo Karsavino mokykla,970.0,970.0,near,4.873
+6603,9082,1174,0.0785,Vilniaus savivaldybės Grigiškių gimnazija,550.0,550.0,near,12.7319
+6604,4454,3787,0.2679,"Vilniaus savivaldybės Grigiškių ""Šviesos"" gimnazija",1120.0,1670.0,near,12.2013
+6609,6310,5370,2.2137,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,0.0,far,8.1643
+6611,6615,9224,0.0549,Vilniaus Pilaitės gimnazija,2260.0,3474.0,near,7.4436
+6612,7695,212,0.2319,Vilniaus krikščionių gimnazija,1342.0,3706.0,near,7.5739
+6614,6612,9265,0.0363,Vilniaus Pilaitės gimnazija,2260.0,3474.0,near,7.4185
+6615,6618,2891,0.0394,Vilniaus Martyno Mažvydo progimnazija,2260.0,3474.0,near,7.0844
+6615,7948,1636,0.0003,Vilniaus Pilaitės gimnazija,2260.0,3658.0,near,7.3399
+6615,9561,4916,0.0474,Vilniaus Martyno Mažvydo progimnazija,2260.0,3474.0,near,7.085
+6618,17118,1317,0.4192,Vilniaus Martyno Mažvydo progimnazija,0.0,3474.0,middle,6.7817
+6618,6621,1397,0.4192,Vilniaus Martyno Mažvydo progimnazija,0.0,2260.0,middle,6.5264
+6619,6614,7687,0.0636,Vilniaus Martyno Mažvydo progimnazija,2260.0,3474.0,near,7.0293
+6621,8934,1443,0.8046,"Vilniaus ""Ryto"" progimnazija",0.0,0.0,far,5.8719
+6633,5836,144,0.2373,Vilniaus Baltupių progimnazija,857.0,857.0,near,5.2685
+6633,6494,789,0.6122,Šv. Juozapo mokykla,0.0,0.0,middle,5.9246
+6633,6497,10681,0.4618,Šv. Juozapo mokykla,0.0,872.0,middle,6.0036
+6633,6500,4488,0.092,Šv. Juozapo mokykla,1553.0,1553.0,near,6.2285
+6634,348,3178,0.7582,VšĮ Vilniaus inžinerijos ir technologijų licėjus (302562877),0.0,0.0,middle,5.8477
+6634,5814,4773,0.7582,VšĮ Vilniaus inžinerijos ir technologijų licėjus (302562877),0.0,0.0,middle,5.8652
+6634,5822,4658,0.7582,VšĮ Vilniaus inžinerijos ir technologijų licėjus (302562877),0.0,0.0,middle,5.8981
+6635,17638,10552,0.0895,"VšĮ ""Vilniaus humanistinė mokykla""",241.0,977.0,near,1.5895
+6635,7381,10074,0.1216,"VšĮ ""Vilniaus humanistinė mokykla""",241.0,977.0,near,1.7433
+6640,5822,165,0.5365,VšĮ Vilniaus inžinerijos ir technologijų licėjus (302562877),0.0,0.0,middle,5.9299
+6640,6634,7819,0.5365,VšĮ Vilniaus inžinerijos ir technologijų licėjus (302562877),0.0,0.0,middle,5.9716
+6643,4990,16200,0.3161,"Vilniaus ""Vilties"" specialioji mokykla-daugiafunkcinis centras",0.0,1106.0,middle,4.4466
+6643,4991,1367,0.3161,"Vilniaus ""Vilties"" specialioji mokykla-daugiafunkcinis centras",0.0,1106.0,middle,4.503
+6643,7416,9203,0.2537,"Vilniaus ""Veiksmo"" gimnazija",824.0,1106.0,near,4.2351
+6648,1071,4776,0.0228,Palaimintojo Teofiliaus Matulionio gimnazija,678.0,2231.0,near,4.9727
+6648,6462,6832,0.1505,Palaimintojo Teofiliaus Matulionio gimnazija,678.0,1545.0,near,4.9475
+6649,4991,597,0.2264,Vilniaus Karoliniškių gimnazija,923.0,1820.0,near,4.5472
+6649,6643,22749,0.2199,"Vilniaus ""Vilties"" specialioji mokykla-daugiafunkcinis centras",923.0,2644.0,near,4.5157
+6650,5167,5283,0.2277,Vilniaus Adomo Mickevičiaus licėjus,698.0,2070.0,near,1.762
+6650,5168,1745,0.2277,Vilniaus Adomo Mickevičiaus licėjus,698.0,2070.0,near,1.7089
+6650,7851,6247,0.2277,Vilniaus Adomo Mickevičiaus licėjus,698.0,2070.0,near,1.7765
+6651,5067,8895,0.1436,Vilniaus Viršuliškių mokykla,770.0,2465.0,near,4.9109
+6653,5804,4504,0.2479,Vilniaus Žemynos progimnazija,2436.0,3125.0,near,5.6693
+6653,7898,2099,0.1418,Vilniaus Žemynos progimnazija,1120.0,3339.0,near,5.865
+6653,8268,2414,0.2173,Vilniaus Žemynos progimnazija,2436.0,2436.0,near,5.7716
+6660,5826,2499,0.3141,"UAB ""Ateities laboratorija""",0.0,2157.0,middle,1.528
+6660,6565,4481,0.0786,Nacionalinė Mikalojaus Konstantino Čiurlionio menų mokykla,808.0,1379.0,near,1.2074
+6660,6665,4742,0.3141,"UAB ""Ateities laboratorija""",0.0,1694.0,middle,1.4473
+6665,6666,21636,0.3417,Vilniaus Tuskulėnų gimnazija,0.0,3438.0,middle,1.9856
+6666,5013,280,0.2967,UAB Stembridge LT,122.0,2510.0,near,2.6784
+6666,5092,4854,0.3447,Vilniaus Antakalnio progimnazija,0.0,2987.0,middle,2.4891
+6666,5606,11325,0.3173,Vilniaus Žirmūnų gimnazija,0.0,2829.0,middle,2.7155
+6666,6668,3,0.226,Vilniaus Prano Mašioto pradinė mokykla,1170.0,2829.0,near,3.0848
+6667,6668,11768,0.1648,Vilniaus Prano Mašioto pradinė mokykla,319.0,1170.0,near,3.7525
+6667,6873,2012,0.1648,Vilniaus Prano Mašioto pradinė mokykla,319.0,1170.0,near,3.8171
+6668,5154,10581,0.4766,Vilniaus Prano Mašioto pradinė mokykla,0.0,319.0,middle,4.0131
+6673,7840,5656,0.0217,Vilniaus mokymo centras,925.0,1251.0,near,1.4259
+6673,8821,1844,0.0594,Vilniaus mokymo centras,925.0,1507.0,near,1.5158
+6674,6714,233,0.0812,Vilniaus Antano Vienuolio progimnazija,1968.0,3926.0,near,1.4184
+6675,6678,2068,0.3131,Vilniaus Liepkalnio mokykla,0.0,425.0,middle,2.2132
+6676,6674,3230,0.1324,VšĮ Gedimino miesto mokykla,293.0,1507.0,near,1.7269
+6678,6681,4104,0.62,Vilniaus Liepkalnio mokykla,0.0,0.0,middle,2.5677
+6679,6676,1892,0.3392,Vilniaus Liepkalnio mokykla,0.0,549.0,middle,2.1777
+6679,7688,2263,0.3586,VšĮ Gedimino miesto mokykla,0.0,169.0,middle,2.1588
+6680,6679,5831,0.5976,Vilniaus Liepkalnio mokykla,0.0,0.0,middle,2.541
+6681,6683,4112,1.007,Vilniaus Liepkalnio mokykla,0.0,0.0,far,2.9466
+6682,6680,4242,0.9626,Vilniaus Liepkalnio mokykla,0.0,0.0,far,2.9063
+6683,6687,1993,1.1073,Vilniaus Pavilnio pagrindinė mokykla,0.0,0.0,far,3.7615
+6683,7710,839,1.1505,Vilniaus Pavilnio pagrindinė mokykla,0.0,0.0,far,3.8053
+6683,9661,1438,1.3664,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,3.7488
+6687,6691,2953,0.7618,Vilniaus Pavilnio pagrindinė mokykla,0.0,0.0,middle,4.3565
+6688,6682,2738,1.2274,Vilniaus Pavilnio pagrindinė mokykla,0.0,0.0,far,3.7068
+6688,9661,873,1.2274,Vilniaus Pavilnio pagrindinė mokykla,0.0,0.0,far,4.2342
+6690,6688,1978,0.8069,Vilniaus Pavilnio pagrindinė mokykla,0.0,0.0,far,4.3008
+6690,7710,1208,0.8069,Vilniaus Pavilnio pagrindinė mokykla,0.0,0.0,far,4.3761
+6691,6694,2936,0.3632,Vilniaus Pavilnio pagrindinė mokykla,0.0,153.0,middle,4.6275
+6693,6690,2998,0.365,Vilniaus Pavilnio pagrindinė mokykla,0.0,153.0,middle,4.5526
+6694,18787,2974,0.3599,Vilniaus Pavilnio pagrindinė mokykla,0.0,153.0,middle,4.9327
+6695,6693,3079,0.3284,Vilniaus Pavilnio pagrindinė mokykla,0.0,153.0,middle,4.8725
+6702,5092,10975,0.1233,Vilniaus Antakalnio progimnazija,1786.0,2949.0,near,2.5374
+6707,6035,1736,0.5326,Vilniaus Žaliakalnio darželis-mokykla,0.0,0.0,middle,7.6163
+6711,5485,1493,0.4715,Vilniaus Gedimino technikos universiteto inžinerijos licėjus,0.0,1420.0,middle,4.4935
+6711,741,9510,0.4715,Vilniaus Gedimino technikos universiteto inžinerijos licėjus,0.0,1420.0,middle,4.5087
+6714,3590,878,0.0433,Vilniaus Antano Vienuolio progimnazija,1958.0,3590.0,near,1.4833
+6714,5941,876,0.0521,Vilniaus Antano Vienuolio progimnazija,1675.0,3307.0,near,1.4919
+6715,5103,21408,0.4669,Vilniaus Šilo ugdymo centras,0.0,163.0,middle,5.1393
+6719,6721,2211,0.2122,"Vaikų meninė studija ""Diemedis""",213.0,213.0,near,4.932
+6720,1035,4237,0.1048,Vilniaus Gedimino technikos universiteto inžinerijos licėjus,1420.0,1420.0,near,3.6316
+6721,6724,2315,0.3788,"Vaikų meninė studija ""Diemedis""",0.0,213.0,middle,5.5441
+6722,6732,2049,0.1803,"Vaikų meninė studija ""Diemedis""",213.0,213.0,near,4.8898
+6723,11047,4256,0.6179,Vilniaus Žirmūnų gimnazija,0.0,0.0,middle,3.4491
+6724,6727,2228,0.8777,Vilniaus Žaliakalnio darželis-mokykla,0.0,0.0,far,6.5852
+6725,6722,2011,0.3116,"Vaikų meninė studija ""Diemedis""",0.0,213.0,middle,5.4885
+6727,5399,222,0.5953,"Vilniaus ""Laisvės"" gimnazija",0.0,0.0,middle,7.624
+6727,6225,6969,0.6073,"Vilniaus ""Laisvės"" gimnazija",0.0,0.0,middle,7.5968
+6729,5424,4325,0.6037,"Vaikų meninė studija ""Diemedis""",0.0,0.0,middle,4.8084
+6729,6725,2262,0.8379,Vilniaus Žaliakalnio darželis-mokykla,0.0,0.0,far,6.5832
+6732,5421,2051,0.2638,"Vaikų meninė studija ""Diemedis""",213.0,213.0,near,4.1589
+6736,5245,5708,0.0778,Viešoji įstaiga Šiuolaikinės mokyklos centras (302850897),661.0,4655.0,near,1.0075
+6736,5258,11134,0.1297,Viešoji įstaiga Šiuolaikinės mokyklos centras (302850897),470.0,2909.0,near,1.2472
+6736,5259,1293,0.2061,Viešoji įstaiga Šiuolaikinės mokyklos centras (302850897),1960.0,2909.0,near,1.2817
+6743,10281,1306,0.7295,"Vilniaus ""Vyturio"" pradinė mokykla",0.0,0.0,middle,6.0846
+6746,6749,1467,0.7475,"Vilniaus ""Vyturio"" pradinė mokykla",0.0,0.0,middle,6.5278
+6748,6743,1326,0.7407,"MB ""Katino Dienelės"" mokykla",0.0,0.0,middle,6.5146
+6749,8002,1384,0.8035,"MB ""Katino Dienelės"" mokykla",0.0,0.0,far,7.0317
+6751,18926,1140,1.1786,"MB ""Katino Dienelės"" mokykla",0.0,0.0,far,7.7919
+6763,446,200,0.0046,Vilniaus Fabijoniškių gimnazija,1316.0,3339.0,near,5.9476
+6763,5519,4448,0.0829,Vilniaus Fabijoniškių gimnazija,1316.0,4587.0,near,6.1008
+6763,6766,757,0.0727,Vilniaus Fabijoniškių gimnazija,2436.0,3339.0,near,5.8688
+6766,6484,4377,0.1426,Vilniaus Žemynos progimnazija,1120.0,3339.0,near,5.8424
+677,6843,124,0.2561,"Vilniaus ""Santaros"" gimnazija",1008.0,2497.0,near,1.3261
+677,753,10976,0.2068,"VšĮ ""Vilniaus humanistinė mokykla""",1249.0,1987.0,near,1.1373
+6773,6775,2476,0.7332,VšĮ Vilniaus inžinerijos ir technologijų licėjus (302562877),0.0,0.0,middle,6.1321
+6774,348,1808,0.7571,VšĮ Vilniaus inžinerijos ir technologijų licėjus (302562877),0.0,0.0,middle,6.0268
+6774,5822,759,0.7571,VšĮ Vilniaus inžinerijos ir technologijų licėjus (302562877),0.0,0.0,middle,6.0776
+6775,6777,2464,0.6501,Vilniaus Jeruzalės progimnazija,0.0,0.0,middle,6.6231
+6776,6774,2510,0.6791,Vilniaus Jeruzalės progimnazija,0.0,0.0,middle,6.5518
+6777,7968,2140,0.6431,Vilniaus Jeruzalės progimnazija,0.0,0.0,middle,7.2726
+6777,8326,793,0.5642,Vilniaus Jeruzalės progimnazija,0.0,0.0,middle,7.2004
+6778,6776,2640,0.5758,Vilniaus Jeruzalės progimnazija,0.0,0.0,middle,7.1606
+6783,6778,784,0.5728,Vilniaus Jeruzalės progimnazija,0.0,0.0,middle,7.3644
+6783,7968,3132,0.5728,Vilniaus Jeruzalės progimnazija,0.0,0.0,middle,7.423
+6783,7980,3507,0.5728,Vilniaus Jeruzalės progimnazija,0.0,0.0,middle,7.4372
+6788,6845,1,0.0149,Vilniaus šv. Kristoforo progimnazija,884.0,884.0,near,2.2861
+6797,6800,7052,1.4548,Šv. Juozapo mokykla,0.0,0.0,far,7.9609
+6798,16628,7060,0.7897,Šv. Juozapo mokykla,0.0,0.0,middle,7.3049
+6800,17034,1199,2.6209,Šv. Juozapo mokykla,0.0,0.0,far,9.0288
+6800,6803,5764,2.3473,Vilniaus Balsių progimnazija,0.0,0.0,far,9.1082
+6801,6798,5951,1.4236,Šv. Juozapo mokykla,0.0,0.0,far,8.0344
+6803,6808,1001,2.1178,Vilniaus Balsių progimnazija,0.0,0.0,far,9.7682
+6803,6856,4726,1.4271,Vilniaus Balsių progimnazija,0.0,0.0,far,10.2244
+6804,6801,6026,2.4168,Vilniaus Balsių progimnazija,0.0,0.0,far,9.1763
+6808,6810,1618,2.1096,Vilniaus Balsių progimnazija,0.0,0.0,far,9.6693
+6809,6804,1122,2.0804,Vilniaus Balsių progimnazija,0.0,0.0,far,9.7533
+6809,6856,603,1.4271,Vilniaus Balsių progimnazija,0.0,0.0,far,10.2532
+6810,6814,1155,2.1209,Vilniaus Balsių progimnazija,0.0,0.0,far,9.3505
+6810,6816,454,2.0452,Vilniaus Balsių progimnazija,0.0,0.0,far,9.4803
+6811,6809,1580,2.0804,Vilniaus Balsių progimnazija,0.0,0.0,far,9.6922
+6814,738,2182,2.4393,Vilniaus Balsių progimnazija,0.0,0.0,far,8.9367
+6816,6818,1635,1.8487,Vilniaus Balsių progimnazija,0.0,0.0,far,9.5387
+6817,6811,615,2.0364,Vilniaus Balsių progimnazija,0.0,0.0,far,9.4969
+6817,6814,951,2.0497,Vilniaus Balsių progimnazija,0.0,0.0,far,9.2829
+6818,6820,119,1.4406,Vilniaus Balsių progimnazija,0.0,0.0,far,9.9437
+6819,6817,1566,1.9247,Vilniaus Balsių progimnazija,0.0,0.0,far,9.5008
+6821,6819,1568,1.4499,Vilniaus Balsių progimnazija,0.0,0.0,far,9.875
+683,5579,4911,0.2752,Vilniaus Jono Basanavičiaus progimnazija,1102.0,1905.0,near,1.7252
+6834,5346,29048,0.1898,"UAB ""Taškius""",632.0,5687.0,near,1.0611
+6834,5524,1,0.1063,Vilniaus karaliaus Mindaugo mokykla,2740.0,6892.0,near,1.0904
+6834,6853,2,0.0178,Vilniaus Simono Daukanto progimnazija,2837.0,5578.0,near,1.2537
+684,8344,851,0.9841,Vilniaus Pavilnio pagrindinė mokykla,0.0,0.0,far,3.1484
+6840,5605,6135,0.2008,Vilniaus karaliaus Mindaugo mokykla,1017.0,3519.0,near,1.1815
+6842,5580,12968,0.1765,Vilniaus Jono Basanavičiaus progimnazija,1102.0,1645.0,near,2.0976
+6843,6844,22292,0.2199,Vilniaus šv. Kristoforo progimnazija,884.0,1635.0,near,1.8523
+6844,5861,5932,0.0391,Vilniaus šv. Kristoforo progimnazija,884.0,2595.0,near,2.7305
+6844,6845,19866,0.0224,Vilniaus šv. Kristoforo progimnazija,884.0,884.0,near,2.2774
+6844,6846,330,0.0216,Vilniaus šv. Kristoforo progimnazija,884.0,1457.0,near,2.661
+6845,5469,19874,0.2205,Vilniaus šv. Kristoforo progimnazija,884.0,1457.0,near,2.6751
+6845,9638,1278,0.2205,Vilniaus šv. Kristoforo progimnazija,884.0,884.0,near,2.5319
+6846,6847,6343,0.6471,Vilniaus Verkių mokykla-daugiafunkcis centras,0.0,0.0,middle,3.462
+6846,6871,2802,0.6652,Vilniaus licėjus,0.0,0.0,middle,3.4007
+6846,6873,4456,0.6098,Vilniaus Prano Mašioto pradinė mokykla,0.0,0.0,middle,3.6105
+6847,5147,7325,0.3309,Vilniaus Verkių mokykla-daugiafunkcis centras,0.0,167.0,middle,3.8857
+6850,6851,15808,2.7793,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,0.0,far,6.7043
+6851,5546,16067,2.4927,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,0.0,far,6.1937
+6852,6853,1244,0.0098,Vilniaus Naujamiesčio mokykla,852.0,2131.0,near,1.7228
+6853,5267,15460,0.1169,Vilniaus Naujamiesčio mokykla,852.0,1655.0,near,1.4971
+6853,5579,1602,0.1169,Vilniaus Naujamiesčio mokykla,1954.0,2404.0,near,1.7112
+6854,5166,5902,0.4143,"Vilniaus ""Juventos"" gimnazija",0.0,770.0,middle,2.1709
+6854,5167,365,0.3366,Vilniaus Gabrielės Petkevičaitės-Bitės suaugusiųjų mokymo centras,0.0,770.0,middle,2.2032
+6854,5168,7293,0.4143,"Vilniaus ""Juventos"" gimnazija",0.0,770.0,middle,2.1501
+6854,5300,227,0.2689,"Vilniaus ""Varpo"" suaugusiųjų gimnazija",283.0,1410.0,near,2.0567
+6854,6009,697,0.4142,"Vilniaus ""Juventos"" gimnazija",0.0,1139.0,middle,2.1959
+6856,10554,5509,1.2385,Vilniaus Balsių progimnazija,0.0,0.0,far,10.7901
+6857,6804,4956,1.5082,Vilniaus Balsių progimnazija,0.0,0.0,far,10.1658
+6857,6808,672,1.5082,Vilniaus Balsių progimnazija,0.0,0.0,far,10.2087
+6860,8315,2445,1.0023,Vilniaus Balsių progimnazija,0.0,0.0,far,11.4856
+6861,10556,2263,1.1425,Vilniaus Balsių progimnazija,0.0,0.0,far,10.9799
+6861,9046,87,0.904,Vilniaus Balsių progimnazija,0.0,0.0,far,11.0147
+687,5060,4571,0.1868,Vilniaus Medeinos pradinė mokykla,1234.0,3138.0,near,6.118
+687,949,9151,0.2255,Vilniaus Medeinos pradinė mokykla,423.0,2365.0,near,6.3945
+6871,6873,2917,0.6024,Vilniaus Prano Mašioto pradinė mokykla,0.0,0.0,middle,3.7765
+6873,5476,4080,0.5296,Vilniaus Emilijos Pliaterytės progimnazija,0.0,0.0,middle,4.4771
+6873,6874,4839,0.4913,Vilniaus Emilijos Pliaterytės progimnazija,0.0,1141.0,middle,4.2411
+6874,5476,4347,0.4877,Vilniaus Emilijos Pliaterytės progimnazija,0.0,1141.0,middle,4.715
+6874,6079,34,0.2668,Vilniaus Šilo ugdymo centras,163.0,1304.0,near,4.9512
+6874,6081,32,0.215,Vilniaus Šilo ugdymo centras,163.0,1304.0,near,5.0411
+6874,950,62,0.0583,Vilniaus Šilo ugdymo centras,163.0,1304.0,near,5.3674
+6880,7588,689,1.2421,"Vaikų meninė studija ""Diemedis""",0.0,0.0,far,3.6925
+6881,17248,144,0.3655,Vilniaus Volungės darželis-mokykla,0.0,250.0,middle,3.3879
+6881,6883,395,1.1355,"Vaikų meninė studija ""Diemedis""",0.0,0.0,far,4.0691
+6883,6887,2059,1.137,"Vaikų meninė studija ""Diemedis""",0.0,0.0,far,4.4599
+6886,17889,2610,1.1518,"Vaikų meninė studija ""Diemedis""",0.0,0.0,far,4.4901
+6887,6888,2079,1.1274,"Vaikų meninė studija ""Diemedis""",0.0,0.0,far,4.983
+6888,10319,3345,1.2011,"Vaikų meninė studija ""Diemedis""",0.0,0.0,far,5.5667
+6888,6886,2070,1.1495,"Vaikų meninė studija ""Diemedis""",0.0,0.0,far,4.9992
+6888,9608,1527,1.2011,"Vaikų meninė studija ""Diemedis""",0.0,0.0,far,5.2415
+6895,6899,1299,1.2506,"UAB ""The British School of Vilnius""",0.0,0.0,far,9.8983
+6896,16306,2557,1.8888,"UAB ""The British School of Vilnius""",0.0,0.0,far,9.4302
+6898,6896,2566,1.265,"UAB ""The British School of Vilnius""",0.0,0.0,far,9.9041
+6899,16425,614,0.3828,"UAB ""The British School of Vilnius""",0.0,140.0,middle,10.6776
+6899,6901,3,0.9848,"UAB ""The British School of Vilnius""",0.0,0.0,far,10.4925
+6902,16425,662,0.3828,"UAB ""The British School of Vilnius""",0.0,140.0,middle,10.9404
+6902,6898,210,0.9789,"UAB ""The British School of Vilnius""",0.0,0.0,far,10.4847
+6905,7471,365,2.9033,Vilniaus Balsių progimnazija,0.0,0.0,far,14.1129
+6906,18892,978,1.6268,Vilniaus Balsių progimnazija,0.0,0.0,far,12.4376
+6907,6906,990,2.806,Vilniaus Balsių progimnazija,0.0,0.0,far,14.0628
+6911,6913,2970,0.3293,Vilniaus Fabijoniškių gimnazija,0.0,1316.0,middle,5.998
+6913,5810,3304,0.5194,"Vilniaus ""Ateities"" mokykla",0.0,0.0,middle,5.9077
+6913,5813,7629,0.4425,"Vilniaus ""Ateities"" mokykla",0.0,689.0,middle,5.8824
+6914,6763,3113,0.1425,Vilniaus Fabijoniškių gimnazija,1316.0,1316.0,near,5.9748
+6915,5511,752,0.29,Vilniaus Abraomo Kulviečio klasikinė gimnazija,1152.0,1152.0,near,6.4171
+6917,6921,8476,0.1788,"Vilniaus ""Ateities"" mokykla",1554.0,1554.0,near,5.1111
+6918,5810,174,0.2398,"Vilniaus ""Ateities"" mokykla",689.0,689.0,near,5.5783
+6918,5811,8562,0.2398,"Vilniaus ""Ateities"" mokykla",689.0,689.0,near,5.6041
+6921,6924,8643,0.1768,Vilniaus Simono Stanevičiaus progimnazija,865.0,1554.0,near,4.7818
+6922,6918,8592,0.1947,"Vilniaus ""Ateities"" mokykla",1554.0,1554.0,near,5.1874
+6924,6928,8681,0.1994,Vilniaus Radvilų gimnazija,1709.0,2339.0,near,4.3509
+6926,6922,8674,0.1728,Vilniaus Simono Stanevičiaus progimnazija,865.0,1554.0,near,4.8698
+6928,6933,7267,0.1994,Vilniaus Radvilų gimnazija,1474.0,1714.0,near,3.8984
+6928,6941,1387,0.1375,Vilniaus Žygimanto Augusto progimnazija,1474.0,1714.0,near,4.0337
+6929,6926,8661,0.1672,Vilniaus Simono Stanevičiaus progimnazija,1709.0,2339.0,near,4.4361
+6933,6937,4315,0.2621,Vilniaus Šeškinės pradinė mokykla,870.0,1714.0,near,3.6017
+6933,7017,4557,0.2707,Vilniaus Žygimanto Augusto progimnazija,630.0,1714.0,near,3.5781
+6934,6929,4283,0.1914,Vilniaus Radvilų gimnazija,844.0,1714.0,near,3.9533
+6934,6941,83,0.1374,Vilniaus Žygimanto Augusto progimnazija,630.0,1714.0,near,3.9142
+6937,5294,3298,0.1852,Vilniaus Šeškinės pradinė mokykla,240.0,1871.0,near,3.6434
+6937,904,7899,0.0814,"Vilniaus ""Sostinės"" gimnazija",2581.0,3211.0,near,3.6426
+6940,6929,4558,0.184,Vilniaus Žygimanto Augusto progimnazija,1474.0,1714.0,near,4.0482
+6940,6933,896,0.1817,Vilniaus Žygimanto Augusto progimnazija,630.0,1714.0,near,3.8745
+6941,733,1414,0.1296,Vilniaus Žygimanto Augusto progimnazija,630.0,1630.0,near,4.2318
+6947,5307,3845,0.1335,VšĮ Tarptautinė Ukrainos mokykla,2273.0,2273.0,near,4.7765
+6948,6949,3146,0.0475,VšĮ Tarptautinė Ukrainos mokykla,2273.0,2273.0,near,5.2655
+6949,8347,3166,0.4498,VšĮ Tarptautinė Ukrainos mokykla,0.0,2273.0,middle,5.7796
+6950,6947,3763,0.0526,VšĮ Tarptautinė Ukrainos mokykla,2273.0,2273.0,near,5.2103
+6956,6961,943,1.0568,VšĮ Tarptautinė Ukrainos mokykla,0.0,0.0,far,6.1898
+6961,5320,6,0.6699,VšĮ Tarptautinė Ukrainos mokykla,0.0,0.0,middle,5.9231
+6961,6950,3083,0.4011,VšĮ Tarptautinė Ukrainos mokykla,0.0,2273.0,middle,5.7887
+6961,9728,763,1.0489,VšĮ Tarptautinė Ukrainos mokykla,0.0,0.0,far,6.1131
+6963,6967,1850,1.4567,Vilniaus Salininkų gimnazija,0.0,0.0,far,7.3573
+6963,6968,1133,1.6522,Vilniaus Salininkų gimnazija,0.0,0.0,far,7.3046
+6964,6961,2952,1.0568,VšĮ Tarptautinė Ukrainos mokykla,0.0,0.0,far,6.5809
+6966,6964,2997,1.6196,Vilniaus Salininkų gimnazija,0.0,0.0,far,7.3425
+6967,6264,1820,0.6429,Vilniaus Salininkų gimnazija,0.0,0.0,middle,8.0333
+6968,7728,1111,1.6522,Vilniaus Salininkų gimnazija,0.0,0.0,far,8.1398
+6972,6257,389,0.7879,Vilniaus Salininkų gimnazija,0.0,0.0,middle,9.1457
+6972,9740,927,0.7789,Vilniaus Salininkų gimnazija,0.0,0.0,middle,9.122
+6973,4705,1778,1.0664,Vilniaus Salininkų gimnazija,0.0,0.0,far,9.048
+6974,7187,522,2.7196,Vilniaus Salininkų gimnazija,0.0,0.0,far,9.8574
+6974,9200,2012,2.7196,Vilniaus Salininkų gimnazija,0.0,0.0,far,10.1793
+6975,4706,1378,1.8556,Vilniaus Salininkų gimnazija,0.0,0.0,far,9.2162
+6975,7729,1047,2.0824,Vilniaus Salininkų gimnazija,0.0,0.0,far,8.9466
+6978,4612,990,3.898,Vilniaus Salininkų gimnazija,0.0,0.0,far,11.7086
+6979,9201,1060,3.8858,Vilniaus Salininkų gimnazija,0.0,0.0,far,11.1164
+6993,6996,2935,0.1464,Vilniaus Taikos progimnazija,1302.0,3251.0,near,5.8656
+6995,6992,185,0.1197,Vilniaus Taikos progimnazija,976.0,2440.0,near,5.8224
+6996,6998,2964,0.2575,"Vilniaus ""Pelėdos"" pradinė mokykla",1137.0,2113.0,near,5.9826
+6998,5060,2961,0.263,Vilniaus Mykolo Biržiškos gimnazija,811.0,1910.0,near,5.828
+6999,6995,2694,0.2087,Vilniaus Mykolo Biržiškos gimnazija,1137.0,2113.0,near,5.9877
+7001,855,9326,0.0769,Vilniaus Jono Pauliaus II progimnazija,864.0,3329.0,near,5.1656
+7003,5214,2111,0.2722,Vilniaus Šeškinės pradinė mokykla,240.0,1871.0,near,3.88
+7005,6999,2987,0.2087,Vilniaus Mykolo Biržiškos gimnazija,811.0,1910.0,near,5.9144
+7017,5080,11219,0.1055,Vilniaus licėjus,1711.0,1951.0,near,3.1768
+7023,7027,2350,0.1103,Vilniaus Gabijos gimnazija (305607530),2034.0,4529.0,near,6.3269
+7027,364,28,0.1369,Vilniaus Gabijos gimnazija (305607530),3339.0,4555.0,near,6.086
+7027,6766,2067,0.1369,Vilniaus Gabijos gimnazija (305607530),2023.0,4555.0,near,6.0509
+7027,8268,276,0.1369,Vilniaus Gabijos gimnazija (305607530),3339.0,4555.0,near,6.0317
+7028,7022,70,0.0507,Vilniaus Gabijos gimnazija (305607530),2034.0,4529.0,near,6.4086
+7042,7045,1700,0.0615,Vilniaus Joachimo Lelevelio inžinerijos gimnazija,529.0,2658.0,near,2.145
+7043,5092,1856,0.0658,Vilniaus Joachimo Lelevelio inžinerijos gimnazija,529.0,3454.0,near,2.4548
+7044,7043,1863,0.0626,Vilniaus Joachimo Lelevelio inžinerijos gimnazija,529.0,1774.0,near,2.1617
+7045,7331,1740,0.3236,Vilniaus šv. Kristoforo progimnazija,0.0,2007.0,middle,2.073
+7047,7831,1449,1.1738,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,7.8876
+7047,7968,857,0.9522,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,7.8266
+7047,8326,1336,0.7894,Vilniaus Jeruzalės progimnazija,0.0,0.0,middle,7.7592
+7052,6778,1839,0.8102,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,7.6229
+7052,7980,795,0.9556,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,7.6958
+7052,8326,2779,0.7894,Vilniaus Jeruzalės progimnazija,0.0,0.0,middle,7.6141
+7055,9776,1735,1.3974,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.1768
+7056,7059,1763,0.3666,Vilniaus Trakų Vokės gimnazija,0.0,677.0,middle,12.6355
+7059,16864,599,0.4509,Vilniaus Trakų Vokės gimnazija,0.0,677.0,middle,14.0132
+7059,4456,2093,0.4207,Vilniaus Trakų Vokės gimnazija,0.0,677.0,middle,13.4775
+7062,4506,1008,0.1773,Vilniaus Trakų Vokės gimnazija,677.0,677.0,near,13.228
+7062,4516,1197,0.1551,Vilniaus Trakų Vokės gimnazija,677.0,677.0,near,13.1744
+7068,7804,1032,1.1524,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,13.412
+7069,7726,993,1.8422,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,13.4143
+7076,18904,2369,0.7877,Vilniaus Gabijos progimnazija,0.0,0.0,middle,8.051
+7076,8828,2264,0.7877,Vilniaus Gabijos progimnazija,0.0,0.0,middle,8.5218
+7077,9153,10051,0.4504,Vilniaus Gabijos progimnazija,0.0,1216.0,middle,7.3053
+7080,10099,1994,3.6509,Vilniaus Gabijos progimnazija,0.0,0.0,far,10.7413
+7081,18824,2260,1.979,Vilniaus Gabijos progimnazija,0.0,0.0,far,9.1145
+7082,18939,64,3.0312,Vilniaus Gabijos progimnazija,0.0,0.0,far,10.0227
+7082,7081,1884,2.8951,Vilniaus Gabijos progimnazija,0.0,0.0,far,9.9545
+7092,7374,2559,2.1825,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,9.0848
+7093,16291,2102,1.3448,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,8.4437
+7093,7831,684,1.1812,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,8.2976
+7094,7343,2713,2.5158,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,9.5383
+7095,8472,2846,3.3145,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,10.3476
+7097,8472,2801,3.976,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,10.7269
+7098,7100,2537,4.1903,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,11.1189
+7099,7097,2603,4.072,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,11.0182
+7100,7102,2592,4.6311,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,11.6863
+7101,7099,2608,4.5488,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,11.5924
+7102,7104,2552,5.3146,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,12.3321
+7103,7101,2602,5.2096,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,12.2679
+7104,8324,2551,5.9173,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,12.8338
+7106,8325,2689,6.2342,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,13.2409
+7107,4590,736,6.4881,Vilniaus Balsių progimnazija,0.0,0.0,far,13.4614
+7107,7344,1861,6.9047,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,13.7189
+7108,7106,1966,6.8157,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,13.6545
+7109,7108,2009,7.0812,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,13.9214
+7110,10122,1907,7.4952,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,14.1898
+7124,5900,1031,0.2553,"Viešoji įstaiga ""Vilniaus tarptautinė mokykla""",2095.0,2095.0,near,0.7202
+7180,6449,1234,1.8921,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.9614
+7180,6454,1058,2.0841,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,12.0367
+7187,7189,1085,4.2002,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,9.8809
+7188,6975,492,2.6873,Vilniaus Salininkų gimnazija,0.0,0.0,far,9.8525
+7188,9200,488,4.3518,Vilniaus Salininkų gimnazija,0.0,0.0,far,10.6617
+7189,7188,1088,4.2002,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,9.8898
+7189,9312,979,4.2002,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,9.4617
+720,790,7733,0.491,"Vilniaus darželis-mokykla ""Svaja""",0.0,154.0,middle,4.2577
+721,5304,129,0.7465,Vilniaus Juozo Tallat-Kelpšos konservatorija,0.0,0.0,middle,3.8574
+721,6337,8850,0.6817,Vilniaus Juozo Tallat-Kelpšos konservatorija,0.0,0.0,middle,4.0406
+7278,6573,18181,0.4127,"UAB ""Mokykla Šiaurės licėjus""",0.0,1546.0,middle,0.4741
+7319,6905,1081,1.7319,Vilniaus Balsių progimnazija,0.0,0.0,far,12.4992
+7322,677,644,0.0036,"Vilniaus ""Santaros"" gimnazija",1746.0,1950.0,near,0.7393
+7322,7324,2421,0.0928,"UAB ""Mokykla Šiaurės licėjus""",1950.0,3068.0,near,0.7652
+7323,7278,2933,0.126,"UAB ""Mokykla Šiaurės licėjus""",1746.0,1950.0,near,0.4828
+7324,7325,2258,0.1177,Vilniaus šv. Kristoforo gimnazija,933.0,3250.0,near,1.3778
+7325,7331,2227,0.2588,Vilniaus šv. Kristoforo gimnazija,751.0,1817.0,near,1.9073
+7326,7337,3269,0.1453,Vilniaus šv. Kristoforo gimnazija,933.0,3250.0,near,1.3536
+733,393,1381,0.0487,Vilniaus Maironio progimnazija,760.0,1695.0,near,4.4655
+7331,5469,1742,0.2329,Vilniaus šv. Kristoforo progimnazija,884.0,1457.0,near,2.4821
+7331,9638,3841,0.3094,Vilniaus šv. Kristoforo progimnazija,0.0,884.0,middle,2.3468
+7337,7323,2405,0.1223,"UAB ""Mokykla Šiaurės licėjus""",1950.0,3068.0,near,0.8564
+7341,6309,74,0.4038,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,1507.0,middle,6.7218
+7341,6350,40,0.0553,"Vilniaus ""Ąžuolyno"" progimnazija",967.0,1848.0,near,5.5364
+7341,6401,2243,0.3988,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,1507.0,middle,5.8576
+7341,7560,2614,0.4022,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,1507.0,middle,5.8906
+7341,9635,709,0.4038,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,1507.0,middle,5.9695
+7342,5643,457,0.4293,"Vilniaus ""Vilties"" specialioji mokykla-daugiafunkcinis centras",0.0,1106.0,middle,4.5172
+7342,7416,6011,0.3189,"Vilniaus ""Veiksmo"" gimnazija",0.0,1106.0,middle,4.2733
+7343,7093,2736,2.1116,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,9.0274
+7344,7110,2006,7.1279,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,13.9664
+7350,329,4395,0.1067,"Vilniaus ""Minties"" gimnazija",540.0,1507.0,near,5.615
+7356,6029,1920,1.2543,Vilniaus Žaliakalnio darželis-mokykla,0.0,0.0,far,8.2053
+7357,6035,1107,0.5326,Vilniaus Žaliakalnio darželis-mokykla,0.0,0.0,middle,8.1329
+7358,5543,3164,0.5317,Vilniaus Juozo Tallat-Kelpšos konservatorija,0.0,0.0,middle,3.931
+7359,5780,3427,0.1518,"Viešoji įstaiga ""Vilniaus Valdorfo mokykla""",1110.0,1249.0,near,3.4442
+7374,7095,2590,2.5624,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,9.6458
+738,1064,2220,2.4939,Vilniaus Balsių progimnazija,0.0,0.0,far,8.9075
+7381,17638,11125,0.0719,"VšĮ ""Vilniaus humanistinė mokykla""",241.0,241.0,near,1.3895
+7382,988,14547,0.3305,Vilniaus Vladislavo Sirokomlės gimnazija,0.0,977.0,middle,1.8671
+7392,7845,2814,1.8924,Vilniaus Aleksandro Puškino gimnazija,0.0,0.0,far,8.305
+7393,16898,2693,1.8237,"MB ""Katino Dienelės"" mokykla",0.0,0.0,far,8.3528
+7395,9768,184,0.7081,Vilniaus Aleksandro Puškino gimnazija,0.0,0.0,middle,7.5315
+741,3566,3084,0.3825,Vilniaus Šilo ugdymo centras,0.0,163.0,middle,4.9368
+741,5104,22289,0.4997,Vilniaus Šilo ugdymo centras,0.0,163.0,middle,4.9024
+7414,5167,386,0.1494,"Vilniaus ""Juventos"" gimnazija",301.0,1551.0,near,2.3486
+7414,5168,5674,0.1494,"Vilniaus ""Juventos"" gimnazija",301.0,1551.0,near,2.2956
+7414,5200,2,0.1475,"Vilniaus ""Juventos"" gimnazija",301.0,1082.0,near,2.7426
+7414,6572,35,0.0208,Viešoji įstaiga Tarptautinė Amerikos mokykla Vilniuje,2847.0,6024.0,near,1.5002
+7414,6854,8612,0.1494,"Vilniaus ""Juventos"" gimnazija",301.0,1082.0,near,2.6329
+7415,4990,8622,0.3861,"Vilniaus ""Veiksmo"" gimnazija",0.0,824.0,middle,4.2458
+7415,4991,8464,0.365,"Vilniaus ""Veiksmo"" gimnazija",0.0,998.0,middle,4.2989
+7415,5643,11199,0.3218,"Vilniaus ""Veiksmo"" gimnazija",0.0,1106.0,middle,4.2746
+7416,6397,5044,0.1856,Vilniaus Žvėryno gimnazija,977.0,2129.0,near,3.0803
+7416,6398,10364,0.2125,Vilniaus Žvėryno gimnazija,977.0,2129.0,near,3.571
+7416,6430,7766,0.1411,Vilniaus Žvėryno gimnazija,977.0,1801.0,near,3.536
+7444,17007,310,0.2814,"Vilniaus ""Žaros"" gimnazija",821.0,968.0,near,9.0555
+7470,6907,2,4.1471,"UAB ""The British School of Vilnius""",0.0,0.0,far,15.2013
+753,7382,11904,0.0444,"VšĮ ""Vilniaus humanistinė mokykla""",241.0,977.0,near,1.5213
+753,988,12009,0.057,"VšĮ ""Vilniaus humanistinė mokykla""",241.0,977.0,near,1.6164
+7553,5571,315,2.924,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,0.0,far,7.5159
+7554,5564,3440,3.0765,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,0.0,far,7.3858
+756,437,4267,0.3772,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,1507.0,middle,5.8759
+756,7350,2746,0.3163,"Vilniaus ""Minties"" gimnazija",0.0,1507.0,middle,5.8743
+7560,7171,29,0.5994,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,0.0,middle,6.15
+7586,6054,1280,1.0405,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,far,7.1982
+7587,5381,1340,0.8903,"Vaikų meninė studija ""Diemedis""",0.0,0.0,far,3.8471
+7587,6719,2219,0.2609,"Vaikų meninė studija ""Diemedis""",213.0,213.0,near,4.1857
+7587,6881,712,1.1815,"Vaikų meninė studija ""Diemedis""",0.0,0.0,far,3.7584
+7588,5423,686,1.1907,Vilniaus Filaretų pradinė mokykla,0.0,0.0,far,3.1906
+7589,5088,1,0.3289,UAB Stembridge LT,0.0,973.0,middle,2.9702
+7589,5606,65,0.3173,Vilniaus Žirmūnų gimnazija,0.0,1292.0,middle,3.0267
+7589,9565,1,0.3155,UAB Stembridge LT,0.0,122.0,middle,2.9391
+7653,7655,1125,2.1326,"Vilniaus ""Žaros"" gimnazija",0.0,0.0,far,11.7727
+7654,8343,1053,1.3142,"Vilniaus ""Žaros"" gimnazija",0.0,0.0,far,10.6048
+7655,7657,5,3.4537,"Vilniaus ""Žaros"" gimnazija",0.0,0.0,far,12.9101
+7656,7654,1097,2.0993,"Vilniaus ""Žaros"" gimnazija",0.0,0.0,far,11.6557
+7658,7656,1095,3.2553,"Vilniaus ""Žaros"" gimnazija",0.0,0.0,far,12.7667
+7688,356,220,0.3572,VšĮ Gedimino miesto mokykla,0.0,169.0,middle,1.75
+7688,5855,2226,0.3571,VšĮ Gedimino miesto mokykla,0.0,169.0,middle,1.78
+7689,16977,74,0.0135,"VšĮ ""Ruduo-pavasaris""",118.0,543.0,near,2.7776
+7689,16978,151,0.0968,"VšĮ ""Ruduo-pavasaris""",118.0,543.0,near,2.7123
+7689,5953,72,0.0437,"VšĮ ""Ruduo-pavasaris""",118.0,543.0,near,2.8071
+7689,6678,2262,0.4005,VšĮ Gedimino miesto mokykla,0.0,169.0,middle,2.2034
+7691,6542,1728,0.288,Vilniaus šv. Kristoforo progimnazija,884.0,1817.0,near,1.9687
+7691,7331,1733,0.214,Vilniaus šv. Kristoforo progimnazija,884.0,884.0,near,2.0592
+7694,4526,8,0.0516,Vilniaus krikščionių gimnazija,232.0,1446.0,near,7.5865
+7699,8371,877,1.0399,Vilniaus krikščionių gimnazija,0.0,0.0,far,8.8719
+7700,7702,13,2.9872,Vilniaus krikščionių gimnazija,0.0,0.0,far,11.1666
+7701,7699,1035,1.7389,Vilniaus krikščionių gimnazija,0.0,0.0,far,9.9878
+7703,7701,780,3.1217,Vilniaus krikščionių gimnazija,0.0,0.0,far,11.2686
+7710,7711,2689,0.9008,UAB Karalienės Mortos mokykla,0.0,0.0,far,4.6042
+7711,7819,2530,0.6649,UAB Karalienės Mortos mokykla,0.0,0.0,middle,5.0216
+7712,6687,1102,0.918,UAB Karalienės Mortos mokykla,0.0,0.0,far,4.5522
+7712,6688,2117,0.918,UAB Karalienės Mortos mokykla,0.0,0.0,far,4.5196
+7714,16231,839,0.6256,UAB Karalienės Mortos mokykla,0.0,0.0,middle,5.6265
+7715,16725,1406,0.1854,VšĮ Charkivo mokykla Gravitacija,1256.0,1256.0,near,5.4283
+7715,7818,1701,0.6313,UAB Karalienės Mortos mokykla,0.0,0.0,middle,5.3011
+7716,16230,1,0.6626,UAB Karalienės Mortos mokykla,0.0,0.0,middle,5.7173
+7722,6391,77,1.4265,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,0.0,far,6.094
+7723,6388,2491,0.9642,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,0.0,far,5.6107
+7724,7727,1015,2.3736,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,13.3621
+7725,16658,1008,3.098,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,13.4648
+7726,7725,992,2.4182,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,13.3865
+7727,7068,1038,1.8239,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,13.3974
+7728,6974,1126,2.1616,Vilniaus Salininkų gimnazija,0.0,0.0,far,9.0161
+7729,6966,1084,1.6196,Vilniaus Salininkų gimnazija,0.0,0.0,far,8.0635
+7730,6300,737,2.8719,"Vilniaus ""Minties"" gimnazija",0.0,0.0,far,8.379
+7731,437,665,0.3772,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,1507.0,middle,7.0066
+7769,5462,3567,0.049,Vilniaus Vladislavo Sirokomlės gimnazija,736.0,736.0,near,2.1323
+7804,4507,1014,0.6295,Vilniaus Trakų Vokės gimnazija,0.0,0.0,middle,13.3112
+7805,7069,986,1.2218,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,13.4362
+7809,5516,757,0.027,Vilniaus Abraomo Kulviečio klasikinė gimnazija,2368.0,2368.0,near,6.6352
+7809,5518,4151,0.2433,Vilniaus Gabijos progimnazija,3684.0,4587.0,near,6.464
+7810,7811,2430,0.3128,Vilniaus Gabijos progimnazija,0.0,2368.0,middle,7.0357
+7811,18831,2188,0.6104,Vilniaus Gabijos progimnazija,0.0,0.0,middle,7.3754
+7817,4290,62,1.0447,VšĮ Tarptautinė Ukrainos mokykla,0.0,0.0,far,5.269
+7818,7712,2722,0.6752,UAB Karalienės Mortos mokykla,0.0,0.0,middle,5.0033
+7819,16725,1133,0.1854,VšĮ Charkivo mokykla Gravitacija,1256.0,1256.0,near,5.3266
+7819,7714,804,0.626,UAB Karalienės Mortos mokykla,0.0,0.0,middle,5.329
+7820,18375,1084,1.0461,VšĮ Tarptautinė Ukrainos mokykla,0.0,0.0,far,4.7731
+7827,7831,1476,1.1812,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,7.9312
+783,3589,4963,0.1639,"Vilniaus ""Minties"" gimnazija",881.0,2561.0,near,5.3408
+7831,6526,10130,0.805,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,7.5828
+7840,356,4540,0.0282,VšĮ Gedimino miesto mokykla,619.0,1251.0,near,1.5484
+7840,5854,97,0.0084,VšĮ Gedimino miesto mokykla,619.0,1251.0,near,1.6192
+7840,5855,2246,0.0148,VšĮ Gedimino miesto mokykla,619.0,1251.0,near,1.5835
+7841,15581,517,0.0482,Vilniaus Vytės Nemunėlio pradinė mokykla,1968.0,3926.0,near,1.3534
+7841,6005,672,0.1131,Vilniaus mokymo centras,1751.0,2294.0,near,1.5413
+7844,7393,2861,2.1164,"MB ""Katino Dienelės"" mokykla",0.0,0.0,far,8.4086
+7845,7395,2885,1.3768,Vilniaus Aleksandro Puškino gimnazija,0.0,0.0,far,8.0057
+7851,5173,6313,0.3928,Vilniaus Gabrielės Petkevičaitės-Bitės suaugusiųjų mokymo centras,0.0,770.0,middle,2.2174
+7851,5175,6412,0.1953,"Vilniaus ""Juventos"" gimnazija",717.0,1551.0,near,2.4288
+7852,5532,23508,0.1862,"Viešoji įstaiga ""Vilniaus Valdorfo mokykla""",1249.0,1866.0,near,3.1575
+7853,6363,111,0.0745,Vilniaus Gabrielės Petkevičaitės-Bitės suaugusiųjų mokymo centras,2482.0,3099.0,near,2.5426
+7853,6366,4522,0.2135,VšĮ GRAVITAS SCHOLA,2013.0,3099.0,near,2.6546
+7853,6410,5281,0.2762,"Viešoji įstaiga ""Vilniaus Valdorfo mokykla""",1110.0,1653.0,near,2.7056
+7853,6842,13483,0.2267,Vilniaus Jono Basanavičiaus progimnazija,2212.0,2755.0,near,2.5358
+7896,5450,7470,0.23,"Vilniaus ""Šviesos"" pradinė mokykla",1661.0,2781.0,near,5.4647
+7896,5451,6862,0.1926,"Vilniaus ""Šviesos"" pradinė mokykla",1661.0,2781.0,near,5.3421
+7896,5804,380,0.2133,Vilniaus Fabijoniškių gimnazija,1316.0,3125.0,near,5.7138
+7897,446,2023,0.166,Vilniaus Fabijoniškių gimnazija,1316.0,3339.0,near,5.873
+7897,481,4666,0.1712,Vilniaus Fabijoniškių gimnazija,1316.0,5707.0,near,6.0774
+7897,5519,5406,0.1431,Vilniaus Fabijoniškių gimnazija,1316.0,5707.0,near,6.0253
+7897,7898,58,0.2649,Vilniaus Fabijoniškių gimnazija,2436.0,3339.0,near,5.8716
+7898,7028,2378,0.0507,Vilniaus Gabijos gimnazija (305607530),2023.0,4555.0,near,6.1703
+790,5701,1155,0.1072,"Vilniaus darželis-mokykla ""Svaja""",154.0,1518.0,near,4.4291
+790,6648,11648,0.2834,"Vilniaus darželis-mokykla ""Svaja""",832.0,1545.0,near,4.574
+7910,9115,935,1.7752,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.3668
+7914,6650,28,0.0506,"Vilniaus ""Varpo"" suaugusiųjų gimnazija",698.0,2427.0,near,1.6146
+7936,6159,1186,1.6025,Vilniaus Balsių progimnazija,0.0,0.0,far,12.8442
+7941,5543,392,0.3304,Vilniaus Gerosios Vilties progimnazija,0.0,756.0,middle,3.6171
+7947,7948,3603,0.3109,Vilniaus Pilaitės gimnazija,0.0,2444.0,middle,7.1629
+7948,7950,2371,0.3073,Vilniaus Pilaitės gimnazija,0.0,2444.0,middle,7.5862
+7948,7959,3042,0.2902,Vilniaus Pilaitės gimnazija,1110.0,2444.0,near,7.547
+7949,8069,3733,0.303,Vilniaus Pilaitės gimnazija,0.0,2444.0,middle,7.0705
+795,7027,2,0.0398,Vilniaus Gabijos gimnazija (305607530),2119.0,3239.0,near,6.4665
+795,7809,2564,0.0328,Vilniaus Gabijos progimnazija,1216.0,3271.0,near,6.7237
+795,9152,2310,0.0475,Vilniaus Gabijos progimnazija,1216.0,2119.0,near,6.9029
+7950,17221,1623,0.5064,Vilniaus Pilaitės gimnazija,0.0,0.0,middle,8.2464
+7950,8370,869,0.5064,Vilniaus Pilaitės gimnazija,0.0,0.0,middle,8.2174
+7951,6614,1522,0.0144,Vilniaus Pilaitės gimnazija,2260.0,3474.0,near,7.4593
+7951,7949,3645,0.2598,Vilniaus Pilaitės gimnazija,1110.0,2444.0,near,7.4577
+7959,7695,67,0.2319,Vilniaus krikščionių gimnazija,232.0,3706.0,near,7.6398
+7968,18018,2026,0.9522,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,7.6891
+7968,8094,124,0.9522,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,7.7642
+7980,16295,2006,0.9556,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,7.909
+7980,7046,184,0.9556,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,7.848
+8001,6748,1296,0.7474,"MB ""Katino Dienelės"" mokykla",0.0,0.0,middle,6.9595
+8002,6751,1240,1.0158,"MB ""Katino Dienelės"" mokykla",0.0,0.0,far,7.4805
+8004,8005,4385,1.4546,Vilniaus Balsių progimnazija,0.0,0.0,far,12.7114
+8005,8006,3687,1.8729,Vilniaus Balsių progimnazija,0.0,0.0,far,13.1884
+8005,8090,962,1.8729,Vilniaus Balsių progimnazija,0.0,0.0,far,13.2079
+8006,10552,3449,2.5147,Vilniaus Balsių progimnazija,0.0,0.0,far,13.3684
+8008,8009,3472,2.7144,Vilniaus Balsių progimnazija,0.0,0.0,far,13.2301
+8009,8363,1978,3.2238,Vilniaus Balsių progimnazija,0.0,0.0,far,13.4897
+8009,8368,1459,3.2238,Vilniaus Balsių progimnazija,0.0,0.0,far,13.502
+8010,4777,15,4.5547,Vilniaus Balsių progimnazija,0.0,0.0,far,14.8629
+8011,8016,1,3.8302,Vilniaus Balsių progimnazija,0.0,0.0,far,13.5915
+8016,8367,1977,3.5506,Vilniaus Balsių progimnazija,0.0,0.0,far,13.5539
+8017,8018,3458,2.7261,Vilniaus Balsių progimnazija,0.0,0.0,far,13.1976
+8018,10551,3443,2.6207,Vilniaus Balsių progimnazija,0.0,0.0,far,13.1588
+8021,8022,4451,1.3929,Vilniaus Balsių progimnazija,0.0,0.0,far,12.645
+8022,18370,2427,1.0296,Vilniaus Balsių progimnazija,0.0,0.0,far,12.0962
+8022,9798,2164,1.0182,Vilniaus Balsių progimnazija,0.0,0.0,far,12.1385
+8024,8364,1441,4.5557,Vilniaus Balsių progimnazija,0.0,0.0,far,14.849
+8043,18824,3327,1.979,Vilniaus Gabijos progimnazija,0.0,0.0,far,8.6926
+8044,16558,2375,2.1311,Vilniaus Gabijos progimnazija,0.0,0.0,far,8.8877
+8046,18905,2235,2.4797,Vilniaus Aleksandro Puškino gimnazija,0.0,0.0,far,9.1705
+8048,8043,2279,2.0711,Vilniaus Gabijos progimnazija,0.0,0.0,far,8.8032
+8060,17769,6392,0.4413,"MB ""Katino Dienelės"" mokykla",0.0,184.0,middle,6.291
+8060,7947,3664,0.4729,"MB ""Katino Dienelės"" mokykla",0.0,1294.0,middle,6.3357
+8067,7951,2740,0.3293,Vilniaus Pilaitės gimnazija,0.0,2260.0,middle,7.6551
+8069,8934,3887,0.4914,Vilniaus Martyno Mažvydo progimnazija,0.0,1150.0,middle,6.217
+8085,10310,96,3.301,Vilniaus Balsių progimnazija,0.0,0.0,far,15.5091
+8086,18426,90,2.4903,Vilniaus Balsių progimnazija,0.0,0.0,far,13.7824
+8086,18427,908,2.4897,Vilniaus Balsių progimnazija,0.0,0.0,far,13.7848
+8090,8085,360,2.5214,Vilniaus Balsių progimnazija,0.0,0.0,far,13.9497
+814,5906,10138,0.2176,Vilniaus Žvėryno gimnazija,977.0,977.0,near,2.8454
+823,7897,7885,0.2425,"Vilniaus ""Šviesos"" pradinė mokykla",1661.0,2781.0,near,5.4545
+8240,5193,676,0.7879,VšĮ Tarptautinė Ukrainos mokykla,0.0,0.0,middle,5.0314
+8250,6183,3912,3.069,"UAB ""The British School of Vilnius""",0.0,0.0,far,7.9321
+8262,6005,196,0.2003,"Vilniaus ""Varpo"" suaugusiųjų gimnazija",1109.0,1958.0,near,1.6644
+8268,5804,1937,0.1895,Vilniaus Fabijoniškių gimnazija,1316.0,3125.0,near,5.7438
+8268,8270,2957,0.1349,Vilniaus Fabijoniškių gimnazija,1316.0,2436.0,near,5.8082
+8269,6523,4433,0.2541,Vilniaus Fabijoniškių gimnazija,1316.0,3125.0,near,5.6643
+8269,6766,1526,0.1798,Vilniaus Fabijoniškių gimnazija,2436.0,4028.0,near,5.7855
+8269,7898,272,0.1127,Vilniaus Fabijoniškių gimnazija,2436.0,4028.0,near,5.8606
+8270,6763,2403,0.1425,Vilniaus Fabijoniškių gimnazija,1316.0,1316.0,near,5.832
+8270,6911,703,0.3002,Vilniaus Fabijoniškių gimnazija,0.0,1316.0,middle,5.8643
+8309,5553,763,0.3489,Vilniaus Gerosios Vilties progimnazija,0.0,617.0,middle,2.9082
+8309,9642,3436,0.3298,Vilniaus Gerosios Vilties progimnazija,0.0,617.0,middle,2.9465
+8311,8309,1,0.3429,Vilniaus Gerosios Vilties progimnazija,0.0,756.0,middle,3.2793
+8315,8004,4445,1.026,Vilniaus Balsių progimnazija,0.0,0.0,far,12.1759
+8324,7107,2689,6.3165,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,13.3267
+8325,7103,2782,5.894,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,12.781
+8326,8327,6730,0.5334,Vilniaus Jeruzalės progimnazija,0.0,0.0,middle,7.3257
+8327,6503,6059,0.4673,Vilniaus Jeruzalės progimnazija,0.0,681.0,middle,7.0792
+8327,6525,636,0.5334,Vilniaus Jeruzalės progimnazija,0.0,0.0,middle,7.1922
+8328,6387,2469,0.5367,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,0.0,middle,5.0847
+8329,6240,2146,1.7246,Vilniaus Salininkų gimnazija,0.0,0.0,far,7.3398
+8330,646,2208,2.6071,Vilniaus Salininkų gimnazija,0.0,0.0,far,6.9744
+8332,8335,848,0.7159,Vilniaus Pavilnio pagrindinė mokykla,0.0,0.0,middle,4.299
+8333,8331,39,0.7058,Vilniaus Pavilnio pagrindinė mokykla,0.0,0.0,middle,4.3302
+8335,8345,850,0.7159,Vilniaus Pavilnio pagrindinė mokykla,0.0,0.0,middle,3.9251
+8336,5858,859,1.1817,VšĮ Gedimino miesto mokykla,0.0,0.0,far,2.4434
+8339,6948,3221,0.0756,VšĮ Tarptautinė Ukrainos mokykla,2273.0,2273.0,near,4.842
+8342,7653,1226,1.3102,"Vilniaus ""Žaros"" gimnazija",0.0,0.0,far,10.6246
+8343,1129,1053,1.152,"Vilniaus ""Žaros"" gimnazija",0.0,0.0,far,10.0103
+8344,8333,824,0.7058,Vilniaus Pavilnio pagrindinė mokykla,0.0,0.0,middle,3.9789
+8345,8336,883,1.0537,Vilniaus Pavilnio pagrindinė mokykla,0.0,0.0,far,3.086
+8347,6957,59,0.9908,VšĮ Tarptautinė Ukrainos mokykla,0.0,0.0,far,6.1507
+8347,6963,3052,0.9908,VšĮ Tarptautinė Ukrainos mokykla,0.0,0.0,far,6.4871
+8363,8012,504,3.5968,Vilniaus Balsių progimnazija,0.0,0.0,far,13.5707
+8364,9002,1441,4.1409,Vilniaus Balsių progimnazija,0.0,0.0,far,14.3155
+8365,6020,879,0.3978,Vilniaus lietuvių namai,0.0,811.0,middle,2.5038
+8367,8017,3474,3.1875,Vilniaus Balsių progimnazija,0.0,0.0,far,13.4645
+8368,9001,1495,3.594,Vilniaus Balsių progimnazija,0.0,0.0,far,13.9057
+8370,19051,1077,1.1631,Vilniaus krikščionių gimnazija,0.0,0.0,far,8.9672
+8371,7951,2466,0.3857,Vilniaus Pilaitės gimnazija,0.0,2260.0,middle,8.0639
+8373,8342,1063,1.0951,"Vilniaus ""Žaros"" gimnazija",0.0,0.0,far,9.9678
+8445,8046,2237,2.7991,Vilniaus Aleksandro Puškino gimnazija,0.0,0.0,far,9.3954
+8463,3512,5047,0.1857,Vilniaus licėjus,1711.0,2581.0,near,3.2474
+8463,5220,337,0.1742,Vilniaus Senvagės gimnazija,1711.0,2447.0,near,2.6461
+8463,6937,8062,0.1857,Vilniaus licėjus,1711.0,1951.0,near,3.2214
+8472,7094,2753,3.1396,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,10.2624
+8472,7098,2330,3.976,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,10.7863
+848,5249,7103,0.1614,UAB Royal Russell School Vilnius,661.0,2407.0,near,0.6072
+848,5409,8648,0.2545,UAB Royal Russell School Vilnius,191.0,1937.0,near,0.4158
+855,394,12154,0.0957,Vilniaus Maironio progimnazija,760.0,3466.0,near,4.656
+857,5180,151,0.8378,Vilniaus Naujininkų progimnazija,0.0,0.0,far,4.0412
+857,5304,76,0.8323,VšĮ Tarptautinė Ukrainos mokykla,0.0,0.0,far,4.2059
+857,5542,15722,0.8087,Vilniaus Juozo Tallat-Kelpšos konservatorija,0.0,0.0,far,4.2619
+8716,16295,886,1.2527,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,7.994
+8716,7046,30,1.2287,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,7.9292
+8716,7826,5,1.2527,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,8.0136
+8784,5738,4440,3.9557,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,9.3972
+8821,6675,1890,0.2452,VšĮ Gedimino miesto mokykla,293.0,1181.0,near,1.8194
+8828,7080,2120,2.9052,Vilniaus Gabijos progimnazija,0.0,0.0,far,9.9546
+8934,4989,11662,0.5746,"Vilniaus ""Ryto"" progimnazija",0.0,0.0,middle,5.3062
+8944,6603,3515,0.2039,Vilniaus savivaldybės Grigiškių gimnazija,550.0,1670.0,near,12.519
+8945,6604,3996,0.2197,Vilniaus savivaldybės Grigiškių gimnazija,550.0,1670.0,near,12.5351
+900,6170,2306,1.2468,Vilniaus Šilo ugdymo centras,0.0,0.0,far,5.778
+9001,8010,1460,4.1671,Vilniaus Balsių progimnazija,0.0,0.0,far,14.3324
+9002,8367,1477,3.5506,Vilniaus Balsių progimnazija,0.0,0.0,far,13.8718
+9003,6973,1803,0.8463,Vilniaus Salininkų gimnazija,0.0,0.0,far,9.1286
+9007,5539,1496,0.0841,Vilniaus kunigaikščio Gedimino progimnazija,1490.0,2391.0,near,1.7215
+904,16691,2908,0.0814,"Vilniaus ""Sostinės"" gimnazija",2341.0,2669.0,near,3.9172
+904,393,4096,0.0332,"Vilniaus ""Sostinės"" gimnazija",3101.0,3101.0,near,4.1839
+904,5074,3837,0.0797,"Vilniaus ""Sostinės"" gimnazija",2341.0,2341.0,near,3.946
+9045,10556,3175,0.9406,Vilniaus Balsių progimnazija,0.0,0.0,far,10.909
+9046,9048,3024,0.5158,Vilniaus Balsių progimnazija,0.0,0.0,middle,11.0163
+9047,9045,3067,0.5618,Vilniaus Balsių progimnazija,0.0,0.0,middle,11.0084
+9048,15114,2687,0.3223,Vilniaus Balsių progimnazija,0.0,1423.0,middle,11.1311
+905,3512,845,0.1783,"Vilniaus ""Sostinės"" gimnazija",2581.0,3211.0,near,3.6147
+905,5220,3393,0.1783,"Vilniaus ""Sostinės"" gimnazija",2341.0,3215.0,near,3.0595
+905,7017,7705,0.1783,"Vilniaus ""Sostinės"" gimnazija",2581.0,3211.0,near,3.5697
+9053,8315,2160,0.7643,Vilniaus Balsių progimnazija,0.0,0.0,middle,11.7985
+9054,16832,3094,0.3542,Vilniaus Balsių progimnazija,0.0,1423.0,middle,11.6377
+9081,15113,2965,0.0368,Vilniaus Balsių progimnazija,1423.0,1423.0,near,11.3493
+9081,16870,2012,0.0536,Vilniaus Balsių progimnazija,1423.0,1423.0,near,11.5848
+9081,17133,994,0.0527,Vilniaus Balsių progimnazija,1423.0,1423.0,near,11.5771
+9082,9614,905,0.1075,Vilniaus savivaldybės Grigiškių gimnazija,550.0,550.0,near,13.0457
+9102,6389,2494,0.8007,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,0.0,far,5.1334
+9109,6290,6,0.8888,"Vilniaus savivaldybės Grigiškių ""Šviesos"" gimnazija",0.0,0.0,far,10.8006
+9109,9834,3619,0.2262,"Vilniaus savivaldybės Grigiškių ""Šviesos"" gimnazija",1120.0,1120.0,near,11.8159
+9115,9776,2243,1.7752,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.0863
+9152,15639,4748,0.4388,Vilniaus Gabijos progimnazija,0.0,1216.0,middle,7.3046
+9152,7076,4682,0.4388,Vilniaus Gabijos progimnazija,0.0,1216.0,middle,7.2808
+9153,5443,7313,0.1246,Vilniaus Gabijos progimnazija,1216.0,4587.0,near,6.7526
+9153,795,2689,0.0475,Vilniaus Gabijos progimnazija,1216.0,2119.0,near,6.9125
+9200,6978,992,3.898,Vilniaus Salininkų gimnazija,0.0,0.0,far,11.1235
+9200,9773,1455,4.3518,Vilniaus Salininkų gimnazija,0.0,0.0,far,10.9713
+9201,6975,1883,2.6873,Vilniaus Salininkų gimnazija,0.0,0.0,far,10.1852
+9201,7187,492,4.2355,Vilniaus Salininkų gimnazija,0.0,0.0,far,10.6642
+9201,9726,916,3.475,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,10.975
+9226,9276,1,1.2453,VšĮ Tarptautinė Ukrainos mokykla,0.0,0.0,far,5.7619
+9276,7820,984,1.0458,VšĮ Tarptautinė Ukrainos mokykla,0.0,0.0,far,5.2252
+928,4991,1794,0.3244,Vilniaus Levo Karsavino mokykla,0.0,970.0,middle,4.5257
+928,5643,16819,0.3244,Vilniaus Levo Karsavino mokykla,0.0,2076.0,middle,4.5006
+928,7416,7924,0.3244,Vilniaus Levo Karsavino mokykla,0.0,1794.0,middle,4.2658
+9298,6456,1268,2.7009,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.7865
+9308,9311,1035,4.3837,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,9.4098
+931,387,4186,0.3926,Vilniaus Filaretų pradinė mokykla,0.0,333.0,middle,1.9756
+9311,7189,1007,4.2002,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,9.4733
+9312,9310,5,4.4862,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,9.4089
+9313,17352,996,0.0985,"UAB ""Taškius""",2675.0,4005.0,near,1.0748
+9384,857,16133,1.3744,Vilniaus Juozo Tallat-Kelpšos konservatorija,0.0,0.0,far,4.9122
+946,5428,12016,0.0252,Viešoji įstaiga Tarptautinė Amerikos mokykla Vilniuje,450.0,2883.0,near,1.2401
+946,5459,48,0.0857,"Viešoji įstaiga ""Vilniaus tarptautinė mokykla""",1536.0,4219.0,near,0.526
+946,7124,26,0.0998,Viešoji įstaiga Tarptautinė Amerikos mokykla Vilniuje,2421.0,2714.0,near,1.0197
+9466,19222,759,0.4498,Vilniaus šv. Jono Pauliaus II gimnazija,0.0,476.0,middle,6.099
+9468,9570,422,2.8205,Vilniaus Salininkų gimnazija,0.0,0.0,far,11.1216
+9471,9568,378,2.8175,Vilniaus Salininkų gimnazija,0.0,0.0,far,11.3261
+9479,9626,1458,2.2299,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.7874
+9481,9479,1423,2.1953,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,12.4871
+9482,9627,1383,2.2261,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,13.1902
+9483,17320,1371,3.268,"Vilniaus savivaldybės Grigiškių ""Šviesos"" gimnazija",0.0,0.0,far,15.3495
+9485,9484,8,0.6398,Vilniaus savivaldybės Grigiškių gimnazija,0.0,0.0,middle,13.501
+949,542,9161,0.2214,Vilniaus Medeinos pradinė mokykla,1075.0,2007.0,near,6.0591
+9496,9815,2640,2.0192,Vilniaus Abraomo Kulviečio klasikinė gimnazija,0.0,0.0,far,8.5154
+950,6140,2261,0.9821,Vilniaus Šilo ugdymo centras,0.0,0.0,far,6.6245
+9561,8934,5542,0.4519,Vilniaus Martyno Mažvydo progimnazija,0.0,2260.0,middle,6.2013
+9565,9637,5670,0.3797,UAB Stembridge LT,0.0,122.0,middle,2.9283
+9567,4706,366,1.8556,Vilniaus Salininkų gimnazija,0.0,0.0,far,10.0161
+9568,9567,377,2.8272,Vilniaus Salininkų gimnazija,0.0,0.0,far,11.0919
+9570,9472,14,2.8098,Vilniaus Salininkų gimnazija,0.0,0.0,far,11.305
+9585,6121,1140,1.3838,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,5.5168
+9593,9600,1080,0.8561,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,4.7168
+9593,9660,797,1.3333,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,4.3549
+9599,9659,1042,0.8443,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,4.713
+9599,9660,1551,0.8443,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,4.6176
+9600,16713,2436,0.3281,VšĮ Charkivo mokykla Gravitacija,0.0,182.0,middle,5.2366
+9604,14663,3555,1.6214,"Vilniaus ""Šiaurės"" progimnazija",0.0,0.0,far,6.9284
+9605,10530,3695,1.8937,"Vaikų meninė studija ""Diemedis""",0.0,0.0,far,6.5919
+9606,10531,3373,1.627,"Vaikų meninė studija ""Diemedis""",0.0,0.0,far,6.2775
+9607,10317,3677,1.4918,"Vaikų meninė studija ""Diemedis""",0.0,0.0,far,5.9895
+9608,9969,1582,1.6147,"Vaikų meninė studija ""Diemedis""",0.0,0.0,far,5.2062
+9609,6888,1551,1.2011,"Vaikų meninė studija ""Diemedis""",0.0,0.0,far,5.2394
+9612,10548,1796,2.1208,Vilniaus Gedimino technikos universiteto inžinerijos licėjus,0.0,0.0,far,5.2139
+9612,9675,1509,2.1208,Vilniaus Gedimino technikos universiteto inžinerijos licėjus,0.0,0.0,far,5.0563
+9613,9755,3382,1.8449,Vilniaus Volungės darželis-mokykla,0.0,0.0,far,4.7567
+9614,15964,803,0.4015,Vilniaus savivaldybės Grigiškių gimnazija,0.0,550.0,middle,13.0688
+9614,16268,796,0.5571,Vilniaus savivaldybės Grigiškių gimnazija,0.0,0.0,middle,13.4638
+9615,9616,1351,0.66,Vilniaus savivaldybės Grigiškių gimnazija,0.0,0.0,middle,13.5374
+9616,9688,1460,0.8497,Vilniaus savivaldybės Grigiškių gimnazija,0.0,0.0,far,14.3239
+9618,9692,1402,3.3035,"Vilniaus savivaldybės Grigiškių ""Šviesos"" gimnazija",0.0,0.0,far,15.3292
+9626,6283,3908,2.3904,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.275
+9627,16879,1389,2.2972,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,13.8427
+9628,9481,1398,2.2218,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,13.1409
+9635,9466,736,0.711,"Vilniaus ""Minties"" gimnazija",0.0,0.0,middle,6.249
+9636,437,756,0.3772,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,1507.0,middle,5.9461
+9637,9640,5468,0.5149,Vilniaus šv. Kristoforo progimnazija,0.0,0.0,middle,2.7723
+9638,18532,5630,0.5019,Vilniaus šv. Kristoforo progimnazija,0.0,0.0,middle,2.7696
+9640,18780,2340,0.2532,Vilniaus šv. Kristoforo progimnazija,884.0,1817.0,near,2.2783
+9640,18847,1950,0.2331,Vilniaus šv. Kristoforo progimnazija,884.0,884.0,near,2.312
+9640,5351,1295,0.1417,Vilniaus šv. Kristoforo progimnazija,884.0,884.0,near,2.5105
+9642,5655,1196,0.168,VšĮ GRAVITAS SCHOLA,829.0,1989.0,near,2.6472
+9642,6365,2495,0.1391,Vilniaus Simono Konarskio gimnazija,543.0,1989.0,near,2.6625
+9659,10614,2014,1.4754,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,4.4758
+9660,6682,1503,1.3461,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,3.7344
+9660,7710,817,1.1505,Vilniaus Pavilnio pagrindinė mokykla,0.0,0.0,far,4.3174
+9661,9600,1416,0.8561,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,4.6046
+9661,9659,884,1.3509,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,4.3379
+9675,9968,1512,1.9197,"Vaikų meninė studija ""Diemedis""",0.0,0.0,far,5.1954
+9676,9613,1511,2.0828,Vilniaus Gedimino technikos universiteto inžinerijos licėjus,0.0,0.0,far,5.0409
+9677,9678,1214,1.5484,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,6.9503
+9678,17854,1275,2.0413,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,7.0497
+9680,10532,1158,2.2421,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,6.7313
+9681,9790,1064,2.6516,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,6.3281
+9683,9482,1388,2.2094,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,12.5713
+9685,9686,1461,2.4103,Vilniaus savivaldybės Grigiškių gimnazija,0.0,0.0,far,15.4375
+9686,9485,1250,0.8096,Vilniaus savivaldybės Grigiškių gimnazija,0.0,0.0,far,14.2939
+9688,9689,1366,2.4256,Vilniaus savivaldybės Grigiškių gimnazija,0.0,0.0,far,15.3255
+9689,9690,1408,2.9993,Vilniaus savivaldybės Grigiškių gimnazija,0.0,0.0,far,15.7869
+9690,16903,1447,3.3285,Vilniaus savivaldybės Grigiškių gimnazija,0.0,0.0,far,15.9369
+9692,16880,1402,2.6851,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,14.5722
+9693,9970,2543,1.8414,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,8.1813
+9694,17867,751,1.2145,Vilniaus Abraomo Kulviečio klasikinė gimnazija,0.0,0.0,far,7.6839
+9694,7052,1811,1.1256,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,7.8734
+9701,7941,193,0.2684,VšĮ GRAVITAS SCHOLA,360.0,1989.0,near,2.8257
+9726,5751,950,2.9747,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.0798
+9727,9773,940,3.5336,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,11.0084
+9728,9729,765,1.0504,VšĮ Tarptautinė Ukrainos mokykla,0.0,0.0,far,6.2445
+9729,9731,746,1.3279,VšĮ Tarptautinė Ukrainos mokykla,0.0,0.0,far,6.3242
+9730,491,751,0.4602,VšĮ Tarptautinė Ukrainos mokykla,0.0,2273.0,middle,5.5428
+9731,9730,738,0.9188,VšĮ Tarptautinė Ukrainos mokykla,0.0,0.0,far,6.0466
+9732,16657,31,5.4058,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,12.7855
+9732,3575,6,5.2463,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,12.1641
+9738,18375,1049,0.9883,"Vilniaus ""Saulėtekio"" mokykla-daugiafunkcis centras",0.0,0.0,far,4.2597
+9740,6260,923,0.5372,Vilniaus Salininkų gimnazija,0.0,0.0,middle,8.9589
+9750,10359,2018,0.7639,"Vilniaus ""Saulėtekio"" mokykla-daugiafunkcis centras",0.0,0.0,middle,3.7198
+9750,16977,74,0.4776,"VšĮ ""Ruduo-pavasaris""",0.0,118.0,middle,3.6671
+9750,5998,1020,0.3979,"VšĮ ""Ruduo-pavasaris""",0.0,118.0,middle,3.6228
+9755,4521,3299,0.9039,Vilniaus Volungės darželis-mokykla,0.0,0.0,far,4.1526
+9756,9612,3314,1.891,Vilniaus Volungės darželis-mokykla,0.0,0.0,far,4.7998
+9759,6247,414,0.9617,Vilniaus Salininkų gimnazija,0.0,0.0,far,9.007
+9766,17333,2845,0.7331,Vilniaus Aleksandro Puškino gimnazija,0.0,0.0,middle,7.3519
+9773,5756,427,4.4797,Vilniaus Salininkų gimnazija,0.0,0.0,far,11.2766
+9776,4410,1080,2.5769,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,9.8947
+9776,9967,4330,2.5769,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,9.9467
+9790,9682,80,2.4167,VšĮ Charkivo mokykla Gravitacija,0.0,0.0,far,6.0546
+9798,9054,2055,0.7181,Vilniaus Balsių progimnazija,0.0,0.0,middle,11.7825
+9815,15548,1485,2.0192,Vilniaus Abraomo Kulviečio klasikinė gimnazija,0.0,0.0,far,8.5115
+9815,15551,1099,2.0192,Vilniaus Abraomo Kulviečio klasikinė gimnazija,0.0,0.0,far,8.6728
+9834,8944,3646,0.2159,"Vilniaus savivaldybės Grigiškių ""Šviesos"" gimnazija",1120.0,1670.0,near,12.2856
+986,4388,13056,0.2278,"Vilniaus ""Šviesos"" pradinė mokykla",345.0,1215.0,near,4.5514
+988,5290,12255,0.3095,Vilniaus Vladislavo Sirokomlės gimnazija,0.0,1114.0,middle,2.7409
+988,5533,20,0.3392,Vilniaus Vladislavo Sirokomlės gimnazija,0.0,736.0,middle,1.9939
+988,6404,13106,0.3392,Vilniaus Vladislavo Sirokomlės gimnazija,0.0,736.0,middle,2.093
+9961,9636,722,0.697,"Vilniaus ""Minties"" gimnazija",0.0,0.0,middle,6.2467
+9965,6387,1,0.5367,"Vilniaus ""Ąžuolyno"" progimnazija",0.0,0.0,middle,4.9298
+9967,357,4688,3.9886,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,9.3923
+9967,8784,4654,3.9885,Vilniaus Trakų Vokės gimnazija,0.0,0.0,far,9.4022
+9968,9609,1514,1.6238,"Vaikų meninė studija ""Diemedis""",0.0,0.0,far,5.1931
+9969,9676,1547,1.8639,"Vaikų meninė studija ""Diemedis""",0.0,0.0,far,5.2087
+9970,9496,2594,2.1368,Vilniaus Abraomo Kulviečio klasikinė gimnazija,0.0,0.0,far,8.439
+9971,9694,2514,1.8723,Vilniaus Jeruzalės progimnazija,0.0,0.0,far,8.2011
