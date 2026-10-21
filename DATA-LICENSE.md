@@ -9,7 +9,7 @@ Quote and republish it freely. Please credit
 
 **Data. All rights reserved.** The derived tables in `analysis/`, `segments/` and
 `summaries/`, and the collection they are built from, are
-© 2026 kristupasbukota-cpu, all rights reserved, from 21 October 2026. This covers
+© 2026 Kristupas Bukota, all rights reserved, from 21 October 2026. This covers
 copyright and the database right in the collection. They are published so that the
 findings can be checked: you may download them and rerun the scripts in `code/` to
 verify a published result. Any other use, including copying them into another
