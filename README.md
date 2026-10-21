@@ -73,8 +73,9 @@ python3 code/weather_effect.py         # for example: the rain result
 - School locations: Lithuanian Ministry of Education open data.
 - Bus lanes: Vilniaus planas map service.
 
-Code is under the [MIT licence](LICENSE). Findings and derived tables are under
-CC BY 4.0, except as noted in [DATA-LICENSE.md](DATA-LICENSE.md).
+Code is under the [MIT licence](LICENSE). The findings in `docs/` are under CC BY 4.0.
+The data tables are **all rights reserved**: you may use them to check the findings,
+but any other use needs permission. Details in [DATA-LICENSE.md](DATA-LICENSE.md).
 
 The project's first days, when it ran on a laptop, are in
 [the lab notebook](docs/lab-notebook-2026-08.md).

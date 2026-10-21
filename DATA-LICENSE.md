@@ -2,11 +2,24 @@
 
 The [MIT licence](LICENSE) covers the code in `code/` and `.github/`.
 
-Everything else this project wrote, the documents in `docs/`, `STATE-OF-PLAY.md`
-and the derived tables in `analysis/`, `segments/`, `summaries/` and `report/`, is
-licensed under the
+**Documents.** The writing in `docs/` and `STATE-OF-PLAY.md` is licensed under the
 [Creative Commons Attribution 4.0 International licence (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
-Please credit "vilnius-fleet, github.com/kristupasbukota-cpu/vilnius-fleet".
+Quote and republish it freely. Please credit
+"vilnius-fleet, github.com/kristupasbukota-cpu/vilnius-fleet".
+
+**Data. All rights reserved.** The derived tables in `analysis/`, `segments/`,
+`summaries/` and `report/`, and the collection they are built from, are
+© 2026 kristupasbukota-cpu, all rights reserved, from 21 October 2026. This covers
+copyright and the database right in the collection. They are published so that the
+findings can be checked: you may download them and rerun the scripts in `code/` to
+verify a published result. Any other use, including copying them into another
+dataset, publishing them, or using them commercially, needs written permission.
+To ask, open an issue on this repository.
+
+Copies of these tables taken between 21 October 2026 11:31 UTC and the time of this
+change were offered under CC BY 4.0, and those copies keep that licence.
+
+The raw snapshot archive is not published.
 
 Files that come from other people keep their own terms:
 
