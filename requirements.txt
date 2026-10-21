@@ -1,0 +1,5 @@
+# For the analysis scripts in code/. Python 3.9 or later (zoneinfo).
+# pandas 2.2 or later is needed for groupby(...).apply(..., include_groups=False).
+pandas>=2.2
+numpy>=1.24
+# Optional: code/basemap.py also needs shapely.

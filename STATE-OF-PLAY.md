@@ -5,8 +5,9 @@ from the city's own live GPS feed. No survey, no press release, no operator
 dashboard. Every number here comes from the same file the JUDU journey planner
 reads, polled every 10 seconds since 15 August 2026 and kept.
 
-*Current as of 4 October 2026. The long account of how the instrument was built
-and why is `docs/state-of-play-2026-08-18.md`; this page is the front door.*
+*Current as of 20 October 2026. The long account of how the instrument was built
+and why is `docs/state-of-play-2026-08-18.md`; every finding, dated, is listed in
+`docs/README.md`.*
 
 ---
 
@@ -14,12 +15,13 @@ and why is `docs/state-of-play-2026-08-18.md`; this page is the front door.*
 
 | | |
 |---|---|
-| snapshots | 353,100 |
-| span | 15 August to 26 September 2026, 43 days |
-| raw archive | about 5.9 GB compressed, on the box |
-| complete days exported | 39, through 25 September, no gaps |
-| uptime | 5 weeks, 4 days |
-| collector faults since 25 August | none |
+| snapshots | 559,872 at 19:29 UTC on 20 October; about 8,520 a day, 98.6% of the 8,640 a 10-second poll allows |
+| span | 15 August to 20 October 2026, 67 days |
+| raw archive | on the box, which is 21% full (83 GB disk) |
+| complete days exported | 63, 18 August to 19 October, no gaps |
+| uptime | 9 weeks, no restarts |
+| timetable versions held | 55, matched to 97.4% of live vehicles |
+| warnings | none since 4 October |
 | nightly chain | failed 24 to 26 September, fixed and caught up on 26 September. See `docs/nightly-outage-2026-09-26.md` |
 | timetable refresher | killed at its timeout every night 27 September to 3 October after installing each new timetable, so no version was lost; fixed 4 October. See `docs/timetable-refresher-2026-10-04.md` |
 
@@ -115,16 +117,32 @@ carry 18% of hops on 5% of the length, but 15 of the 20 links that lose the most
 have no lane alongside, including the worst in the evening, Čiurlionio st. to
 Tumo-Vaižganto st. ([bus lanes](docs/bus-lanes-2026-10-02.md)).
 
+**Lanes probably help, and clearly help in the rain.** Compared with roads at the same
+hour, the same distance from the centre and the same number of buses, inbound morning
+hops on a link with a lane lose **7.2 s less**, but with only 59 such links the 95% range
+runs from 20 s better to 5 s worse, so it is not settled (H1, inconclusive). In a wet hour
+lane links lose **+1.3 s** per hop against **+2.4 s** on comparable links without a lane,
+a difference of −1.1 s [−1.8, −0.4] (H9, supported)
+([bus lanes, matched](docs/bus-lanes-matched-2026-10-18.md)).
+
+**The timetables are short, not padded.** Daytime trips need about **209 vehicle-hours
+a weekday** more than the timetable gives them; trips that run consistently early add up
+to about 10. There is no reserve hidden at quiet times of day. What there is, is time in
+the wrong places: on 30 lines about 44 vehicle-hours a weekday sit on links that do not
+need them while the neighbouring links run short, which could be moved with no extra
+buses (H7) ([spare time](docs/spare-time-2026-10-06.md)).
+
 ---
 
 ## What is open
 
 - Whether first trips out of the depot really leave early (6.3% read as early), or only join their route mid-way: needs vehicle positions
-- Ten hypotheses for improving the network, written before testing ([hypotheses](docs/hypotheses-2026-10-04.md)); H5 partly supported, H6 supported; eight to go
+- Ten hypotheses for improving the network, written before testing ([hypotheses](docs/hypotheses-2026-10-04.md)). Five tested: H6 and H9 supported, H5 partly, H1 inconclusive, H7 refuted as stated but supported in a narrower form. Next: H3 and H4 (too many buses at once). H2 needs raw positions; H10 needs data that is not collected
 - Whether network-wide link rankings include neighbouring links whose timetable errors offset each other, as on bus 32 between Buivydiškės and Sodų st. ([lines 118 and 32](docs/lines-118-32-2026-10-04.md))
 - Check 26 October, the first full winter-time day, came through the summer-time fix cleanly
-- Whether the morning falls back during the pupils' autumn holiday, 2 to 8 November
-- Repository growth: option B in place from 3 October, 1 GB pushed to about mid-June 2027; the history rewrite (C) is not chosen ([plan](docs/repo-growth-plan-2026-10-02.md))
+- H8, whether the morning falls back during the pupils' autumn holiday: tested on Tuesday 3 to Friday 6 November against three ordinary weeks. The test is fixed in advance in [the H8 plan](docs/h8-groundwork-2026-10-18.md)
+- Bus 63 runs 2 to 5 minutes over its timetable at every hour, one link 7 minutes slow and the next 3 minutes early; it looks like an unlisted diversion
+- Repository growth: option B in place from 3 October; at about 2.9 MiB a day the repository (437 MiB on 20 October) reaches 1 GB around May 2027. The history rewrite (C) is not chosen ([plan](docs/repo-growth-plan-2026-10-02.md))
 
 ---
 
@@ -137,7 +155,8 @@ Tumo-Vaižganto st. ([bus lanes](docs/bus-lanes-2026-10-02.md)).
 | `segments/` | per-day stop-to-stop segment files |
 | `summaries/` | the rolling summaries the visualization is built from |
 | `gtfs/` | every timetable version the city has published since 14 August; from 3 October most as patches, rebuilt with `code/gtfs_rebuild.py` |
-| `code/` | everything that runs on the box |
+| `code/` | everything that runs on the box, and the script behind each recent finding ([which is which](docs/REPRODUCE.md)) |
+| `weather/` | hourly LHMT observations, CC BY-SA 4.0 |
 | `report/` | the generated segment report and its data |
 | `status.json` | collector health, rewritten every night |
 
@@ -151,7 +170,7 @@ policy `vilnius-weekly`: incremental, Sundays 10:00 UTC, kept 20 days, set on
 retention keeps at most three from the policy plus the manual one from
 29 August, leaving one slot free. The first ran on 27 September and was checked
 on 29 September: available, 7 GB incremental, expiring 17 October, 2 of 5 slots
-in use.
+in use. The rotation after that first copy expired has not been checked since.
 
 ## How findings get here
 
