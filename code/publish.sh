@@ -48,8 +48,17 @@ PY
 for f in arc.json baseline.json delaygrid.json framelist.txt; do
   [ -f "$SRC/$f" ] && cp -f "$SRC/$f" "$PUB/summaries/$f"
 done
-for f in collect.py summarize.py blocks.py build_map.py build_network.py template.html \
-         cloud_setup.sh status.sh segments.py validate_seg.py runseg.sh watchdog.py gapstat.py dedupe2.py cmpjson.py wire_watchdog.sh publish.sh findrpm.py harden.sh dedupe.py refresh_gtfs.py export.py build_report.py report_template.html nightly_segments.sh wire_gtfs.sh wire_report.sh wire_export.sh departure.py weather.py weather_effect.py weather_audit.py gtfs_patch.py gtfs_pub.py gtfs_rebuild.py; do
+# Every script this project publishes. Each one is kept in $SRC; pub/code/ is only the
+# copy that goes to GitHub. Analysis scripts added 21 October 2026.
+CODE_FILES="collect.py summarize.py blocks.py build_map.py build_network.py template.html \
+  cloud_setup.sh status.sh segments.py validate_seg.py runseg.sh watchdog.py gapstat.py \
+  dedupe2.py cmpjson.py wire_watchdog.sh publish.sh harden.sh dedupe.py refresh_gtfs.py \
+  export.py build_report.py report_template.html nightly_segments.sh wire_gtfs.sh \
+  wire_report.sh wire_export.sh departure.py weather.py weather_effect.py weather_audit.py \
+  gtfs_patch.py gtfs_pub.py gtfs_rebuild.py \
+  spare_time.py bus_lanes_test.py bus_lanes_checks.py terminal_stand.py even_spacing_ends.py \
+  even_spacing_points.py lines_118_32.py spacing.py basemap.py school_links.py vmap.js"
+for f in $CODE_FILES; do
   [ -f "$SRC/$f" ] && cp -f "$SRC/$f" "$PUB/code/$f"
 done
 [ -f "$SRC/README.md" ] && cp -f "$SRC/README.md" "$PUB/README.md"
@@ -101,16 +110,46 @@ git config pack.deltaCacheSize 16m
 git config core.compression 1
 git config core.bigFileThreshold 512k
 
-# If somebody has edited the repository on GitHub, adopt their version of the prose
-# before overwriting it. Generated files stay ours; README.md and STATE-OF-PLAY.md
-# are theirs the moment they touch them.
+# If somebody has edited the repository on GitHub, adopt their version before
+# overwriting it. Generated files stay ours. README.md, STATE-OF-PLAY.md, and any file
+# under docs/ or code/ that was changed on GitHub since our last push are theirs: the
+# GitHub version is written back into $SRC, so it is not undone by the copies below or
+# on the next night. The $SRC version it replaces is kept in $SRC/adopted/<time>/.
+# A file deleted on GitHub is moved there too, not deleted.
 git fetch -q origin main 2>/dev/null
 if [ -n "$(git log --oneline HEAD..origin/main 2>/dev/null)" ]; then
-  echo "remote has moved, adopting its prose"
-  for f in README.md STATE-OF-PLAY.md; do
-    if git cat-file -e "origin/main:$f" 2>/dev/null; then
-      git show "origin/main:$f" > "$SRC/$f" && cp -f "$SRC/$f" "$PUB/$f"
+  echo "remote has moved, adopting its prose and its edits to docs/ and code/"
+  KEEP="$SRC/adopted/$(date -u +%Y%m%d-%H%M%S)"
+  BASE=$(git merge-base HEAD origin/main 2>/dev/null || echo "")
+  if [ -n "$BASE" ]; then
+    CHANGED=$(git diff --name-only "$BASE" origin/main -- README.md STATE-OF-PLAY.md docs code)
+  else
+    CHANGED="README.md STATE-OF-PLAY.md"
+  fi
+  for p in $CHANGED; do
+    case "$p" in
+      README.md|STATE-OF-PLAY.md) dst="$SRC/$p" ;;
+      docs/*.md) dst="$SRC/$p" ;;
+      code/publish.sh) continue ;;                 # the server's own copy always wins
+      code/*) dst="$SRC/${p#code/}"; [ -f "$dst" ] || continue ;;   # only scripts we keep
+      *) continue ;;
+    esac
+    if git cat-file -e "origin/main:$p" 2>/dev/null; then
+      tmp="$dst.from-github"
+      git show "origin/main:$p" > "$tmp" || { rm -f "$tmp"; continue; }
+      if [ -f "$dst" ] && ! cmp -s "$tmp" "$dst"; then
+        mkdir -p "$KEEP/$(dirname "$p")" && cp -p "$dst" "$KEEP/$p"
+      fi
+      [ -f "$dst" ] && chmod --reference="$dst" "$tmp" 2>/dev/null
+      mv -f "$tmp" "$dst"
+      echo "adopted from GitHub: $p"
+    elif [ -f "$dst" ]; then
+      mkdir -p "$KEEP/$(dirname "$p")" && mv -f "$dst" "$KEEP/$p"
+      echo "deleted on GitHub, moved aside: $p"
     fi
+  done
+  for f in README.md STATE-OF-PLAY.md; do
+    [ -f "$SRC/$f" ] && cp -f "$SRC/$f" "$PUB/$f"
   done
   git reset -q --hard origin/main
   # the reset threw away this run's generated files; put them back
@@ -120,6 +159,9 @@ if [ -n "$(git log --oneline HEAD..origin/main 2>/dev/null)" ]; then
   cp -f "$SRC/README.md" "$PUB/README.md" 2>/dev/null
   cp -f "$SRC/STATE-OF-PLAY.md" "$PUB/STATE-OF-PLAY.md" 2>/dev/null
   mkdir -p "$PUB/docs" && cp -f "$SRC"/docs/*.md "$PUB/docs/" 2>/dev/null
+  for f in $CODE_FILES; do
+    [ -f "$SRC/$f" ] && cp -f "$SRC/$f" "$PUB/code/$f"
+  done
 fi
 
 git add -A
