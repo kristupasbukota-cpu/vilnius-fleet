@@ -6,6 +6,7 @@ overturned. Newest first.
 | date | document | what it says |
 |---|---|---|
 | 18 Oct 2026 | [`bus-lanes-matched-2026-10-18.md`](bus-lanes-matched-2026-10-18.md) | H1 and H9. Matched on hour, centre distance and volume, lane links lose 7.2 s less per inbound morning hop, but the interval spans zero. In rain, lanes about halve the extra delay. |
+| 18 Oct 2026 | [`h8-groundwork-2026-10-18.md`](h8-groundwork-2026-10-18.md) | H8 test plan, fixed before the pupils' autumn holiday: test days 3 to 6 November, links classed by distance to a school. Published 20 Oct. |
 | 6 Oct 2026 | [`spare-time-2026-10-06.md`](spare-time-2026-10-06.md) | Spare time in the timetables: there is very little of it. |
 | 4 Oct 2026 | [`lines-118-32-2026-10-04.md`](lines-118-32-2026-10-04.md) | Bus lines 118 and 32 up close. A sharp 07:00 hour in both directions since autumn; 32's timetable puts 5 minutes on one link and too little on its neighbours, which makes its "worst link" an artefact. |
 | 4 Oct 2026 | [`terminal-stand-2026-10-04.md`](terminal-stand-2026-10-04.md) | H6. After a stand of a minute or less, buses that arrive early leave early 13 to 17% of the time. A 2-minute minimum would cost about 20 vehicle-hours a weekday. |
@@ -36,6 +37,7 @@ overturned. Newest first.
 | 24 Aug 2026 | [`verification-2026-08-24-of-the-20-august-findings.md`](verification-2026-08-24-of-the-20-august-findings.md) | Independent re-run. Compounding confirmed and strengthened. The departure claim does not survive. |
 | 20 Aug 2026 | [`findings-2026-08-20-compounding-and-early-running.md`](findings-2026-08-20-compounding-and-early-running.md) | The first two real results. One held, one did not. |
 | 18 Aug 2026 | [`state-of-play-2026-08-18.md`](state-of-play-2026-08-18.md) | How the instrument was built and why. Still the best account of the design. |
+| 15-20 Aug 2026 | [`lab-notebook-2026-08.md`](lab-notebook-2026-08.md) | The lab notebook of the first week, the repository's front page until 20 October. Kept unchanged; partly out of date. |
 
 ## Reading order
 
