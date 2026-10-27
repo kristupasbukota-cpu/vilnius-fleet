@@ -141,7 +141,7 @@ buses (H7) ([spare time](docs/spare-time-2026-10-06.md)).
 - Whether network-wide link rankings include neighbouring links whose timetable errors offset each other, as on bus 32 between Buivydiškės and Sodų st. ([lines 118 and 32](docs/lines-118-32-2026-10-04.md))
 - H8, whether the morning falls back during the pupils' autumn holiday: tested on Tuesday 3 to Friday 6 November against three ordinary weeks. The test is fixed in advance in [the H8 plan](docs/h8-groundwork-2026-10-18.md)
 - Bus 63 runs 2 to 5 minutes over its timetable at every hour, one link 7 minutes slow and the next 3 minutes early; it looks like an unlisted diversion
-- Repository growth: option B in place from 3 October; at about 2.9 MiB a day the repository (437 MiB on 20 October) reaches 1 GB around May 2027. The history rewrite (C) is not chosen ([plan](docs/repo-growth-plan-2026-10-02.md))
+- Repository growth: option B in place from 3 October. Measured on 27 October: 451.6 MiB, growing about 2.5 MiB a day, so 1 GB around mid-June 2027, as predicted. The history rewrite (C) is not chosen ([plan](docs/repo-growth-plan-2026-10-02.md))
 
 ---
 

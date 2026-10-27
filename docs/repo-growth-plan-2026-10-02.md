@@ -122,3 +122,55 @@ back into one zip per version in `gtfs-full/`. Read hop tables with
 **Expected effect.** Growth falls from about 5.7 to about 2.5 MiB a day, and 1 GB moves
 from about 22 January to about mid-June 2027. A check on 27 October will measure the
 real rate after three weeks.
+
+## 27 October: the real rate after option B
+
+**Result: 2.5 MiB a day, as predicted. 1 GB arrives around mid-June 2027.**
+
+Measured on a fresh bare clone: **451.6 MiB** (`git count-objects -vH`, size-pack), at
+commit `c5cb5de`, 27 October 07:06 UTC. The same history packed up to `fdb6912`, where
+option B went in on 3 October, comes to 390.9 MiB. Measured by the same method
+(`git pack-objects --revs`) at weekly points:
+
+| date | packed history | added | per day |
+|---|---|---|---|
+| 2 October (the plan) | 385.3 MiB | | 5.7 before option B |
+| 3 October, option B in | 390.9 MiB | | |
+| 10 October | 411.2 MiB | 20.3 MiB | 2.9 |
+| 17 October | 428.0 MiB | 16.8 MiB | 2.4 |
+| 20 October | 434.1 MiB | 6.1 MiB | 2.0 |
+| 27 October | 451.5 MiB | 17.4 MiB | 2.5 |
+| **3 to 27 October** | | **60.7 MiB in 23.8 days** | **2.55** |
+
+The first week is high because of one-off additions on 4 October: the departure and
+spacing tables behind the H5 and H6 tests, 3.7 MiB. Without them and the two basemaps
+(0.4 MiB), the steady rate is **2.4 MiB a day**.
+
+Where the 60.7 MiB went:
+
+| | MiB | per day |
+|---|---|---|
+| hop tables, `analysis/trav-*.csv.xz` | 36.7 | 1.54 |
+| `summaries/`, `report/`, `status.json` | 8.7 | 0.37 |
+| `analysis/blocks-*.json.xz` | 5.6 | 0.24 |
+| `segments/` | 4.5 | 0.19 |
+| one-offs (departure and spacing tables, basemaps) | 4.0 | |
+| timetable patches, 19 versions | 0.8 | 0.03 |
+| docs, code, weather, commits | 0.3 | |
+
+The timetables, which were the biggest item before option B, now cost almost nothing:
+19 new versions in 0.8 MiB, against about 65 MiB had they been stored whole. No whole
+version was due in the window. The first of November's will add about 3.5 MiB once a
+month, roughly 0.12 MiB a day on average.
+
+**Projection.** At 2.4 MiB a day for the daily files plus 0.12 for the monthly
+timetable, about 2.5 MiB a day, the remaining 572 MiB to 1 GB take about 229 days:
+**around 13 June 2027**. At the measured 2.55 it is 8 June. The plan's estimate of
+mid-June stands. The figure of 2.9 MiB a day and May 2027 given on 20 October was
+measured from the 2 October size, so it included the last day before option B and the
+4 October one-offs. This measurement replaces it.
+
+**What would move it.** Winter timetables carry the same service, so the daily rate
+should hold. The next largest item after the hop tables is `summaries/` and `report/`
+at 0.37 MiB a day. If a further cut is ever needed, that is where to look, before the
+history rewrite (option C).
