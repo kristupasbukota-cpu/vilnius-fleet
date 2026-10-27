@@ -5,6 +5,7 @@ overturned. Newest first.
 
 | date | document | what it says |
 |---|---|---|
+| 27 Oct 2026 | [`winter-time-check-2026-10-27.md`](winter-time-check-2026-10-27.md) | Operations. The first winter-time days, 25 and 26 October, came through the summer-time fix cleanly. The 21 October weather file, short by 23 hours, was refetched. |
 | 18 Oct 2026 | [`bus-lanes-matched-2026-10-18.md`](bus-lanes-matched-2026-10-18.md) | H1 and H9. Matched on hour, centre distance and volume, lane links lose 7.2 s less per inbound morning hop, but the interval spans zero. In rain, lanes about halve the extra delay. |
 | 18 Oct 2026 | [`h8-groundwork-2026-10-18.md`](h8-groundwork-2026-10-18.md) | H8 test plan, fixed before the pupils' autumn holiday: test days 3 to 6 November, links classed by distance to a school. Published 20 Oct. |
 | 6 Oct 2026 | [`spare-time-2026-10-06.md`](spare-time-2026-10-06.md) | Spare time in the timetables: there is very little of it. |
