@@ -5,7 +5,7 @@ from the city's own live GPS feed. No survey, no press release, no operator
 dashboard. Every number here comes from the same file the JUDU journey planner
 reads, polled every 10 seconds since 15 August 2026 and kept.
 
-*Current as of 20 October 2026. The long account of how the instrument was built
+*Current as of 29 October 2026. The long account of how the instrument was built
 and why is `docs/state-of-play-2026-08-18.md`; every finding, dated, is listed in
 `docs/README.md`.*
 
@@ -15,13 +15,15 @@ and why is `docs/state-of-play-2026-08-18.md`; every finding, dated, is listed i
 
 | | |
 |---|---|
-| snapshots | 559,872 at 19:29 UTC on 20 October; about 8,520 a day, 98.6% of the 8,640 a 10-second poll allows |
-| span | 15 August to 20 October 2026, 67 days |
-| raw archive | on the box, which is 21% full (83 GB disk) |
-| complete days exported | 63, 18 August to 19 October, no gaps |
-| uptime | 9 weeks, no restarts |
-| timetable versions held | 55, matched to 97.4% of live vehicles |
-| warnings | none since 4 October |
+| snapshots | 629,883 at the nightly publish on 29 October (00:34 UTC); about 8,520 a day, 98.6% of the 8,640 a 10-second poll allows |
+| span | 15 August to 29 October 2026, 76 days |
+| raw archive | on the box, which is 23% full (83 GB disk) |
+| complete days exported | 72, 18 August to 28 October, no gaps |
+| uptime | 10 weeks, no restarts |
+| timetable versions held | 63, matched to 96.7% of live vehicles |
+| warnings | one since 4 October: a 9-minute gap in the city's feed on 26 October at 02:06 UTC; the collector kept running |
+| clock change | 25 and 26 October, the first winter-time days, came through cleanly. See `docs/winter-time-check-2026-10-27.md` |
+| reproducibility | on 29 October every script in `docs/REPRODUCE.md` was rerun from a fresh clone and matched the published numbers |
 | nightly chain | failed 24 to 26 September, fixed and caught up on 26 September. See `docs/nightly-outage-2026-09-26.md` |
 | timetable refresher | killed at its timeout every night 27 September to 3 October after installing each new timetable, so no version was lost; fixed 4 October. See `docs/timetable-refresher-2026-10-04.md` |
 
@@ -122,7 +124,7 @@ hour, the same distance from the centre and the same number of buses, inbound mo
 hops on a link with a lane lose **7.2 s less**, but with only 59 such links the 95% range
 runs from 20 s better to 5 s worse, so it is not settled (H1, inconclusive). In a wet hour
 lane links lose **+1.3 s** per hop against **+2.4 s** on comparable links without a lane,
-a difference of −1.1 s [−1.8, −0.4] (H9, supported)
+a difference of −1.1 s [−1.8, −0.4] (H9, supported in a modest form)
 ([bus lanes, matched](docs/bus-lanes-matched-2026-10-18.md)).
 
 **The timetables are short, not padded.** Daytime trips need about **209 vehicle-hours
@@ -137,9 +139,9 @@ buses (H7) ([spare time](docs/spare-time-2026-10-06.md)).
 ## What is open
 
 - Whether first trips out of the depot really leave early (6.3% read as early), or only join their route mid-way: needs vehicle positions
-- Ten hypotheses for improving the network, written before testing ([hypotheses](docs/hypotheses-2026-10-04.md)). Five tested: H6 and H9 supported, H5 partly, H1 inconclusive, H7 refuted as stated but supported in a narrower form. Next: H3 and H4 (too many buses at once). H2 needs raw positions; H10 needs data that is not collected
+- Ten hypotheses for improving the network, written before testing ([hypotheses](docs/hypotheses-2026-10-04.md)). Five tested: H6 supported, H9 supported in a modest form, H5 partly, H1 inconclusive, H7 refuted as stated but supported in a narrower form. Next: H3 and H4 (too many buses at once). H2 needs raw positions; H10 needs data that is not collected
 - Whether network-wide link rankings include neighbouring links whose timetable errors offset each other, as on bus 32 between Buivydiškės and Sodų st. ([lines 118 and 32](docs/lines-118-32-2026-10-04.md))
-- H8, whether the morning falls back during the pupils' autumn holiday: tested on Tuesday 3 to Friday 6 November against three ordinary weeks. The test is fixed in advance in [the H8 plan](docs/h8-groundwork-2026-10-18.md)
+- H8, whether the morning falls back during the pupils' autumn holiday: tested on Tuesday 3 to Friday 6 November against the same weekdays of 20 to 23 October, 27 to 30 October and 10 to 13 November, and run on 14 November once the last of those weeks is in. The test is fixed in advance in [the H8 plan](docs/h8-groundwork-2026-10-18.md)
 - Bus 63 runs 2 to 5 minutes over its timetable at every hour, one link 7 minutes slow and the next 3 minutes early; it looks like an unlisted diversion
 - Repository growth: option B in place from 3 October. Measured on 27 October: 451.6 MiB, growing about 2.5 MiB a day, so 1 GB around mid-June 2027, as predicted. The history rewrite (C) is not chosen ([plan](docs/repo-growth-plan-2026-10-02.md))
 
@@ -169,7 +171,9 @@ policy `vilnius-weekly`: incremental, Sundays 10:00 UTC, kept 20 days, set on
 retention keeps at most three from the policy plus the manual one from
 29 August, leaving one slot free. The first ran on 27 September and was checked
 on 29 September: available, 7 GB incremental, expiring 17 October, 2 of 5 slots
-in use. The rotation after that first copy expired has not been checked since.
+in use. Checked again on 21 October: four copies, the manual one from 29 August and
+the weekly copies of 4, 11 and 18 October, so the rotation is running. Whether every
+new copy carries the 20-day expiry is still being confirmed.
 
 ## How findings get here
 

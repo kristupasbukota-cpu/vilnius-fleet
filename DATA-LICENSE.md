@@ -29,7 +29,8 @@ share-alike licences: `report/` (it includes daily rain totals from LHMT) is und
 © OpenStreetMap contributors. The third-party files listed below also keep their own
 terms.
 
-The raw snapshot archive is not published.
+The raw snapshot archive is not published. The one exception is `samples/`, which holds a
+single raw snapshot as an example of the feed's format (listed below).
 
 Files that come from other people keep their own terms:
 
@@ -37,6 +38,7 @@ Files that come from other people keep their own terms:
 |---|---|---|
 | `weather/` | Lietuvos hidrometeorologijos tarnyba (LHMT), api.meteo.lt, station Vilniaus AMS | CC BY-SA 4.0 |
 | `gtfs/` | Vilnius city timetable, stops.lt | the city's open-data terms |
+| `samples/` | one snapshot of the city's live vehicle feed (stops.lt), 20 August 2026 16:10 UTC | the city's open-data terms |
 | `analysis/h8/schools-vilnius-2026-10-18.csv` | Lithuanian Ministry of Education open data | the Ministry's open-data terms |
 | `analysis/basemap-*.json` | OpenStreetMap contributors | ODbL |
 | `analysis/h1/bus-lanes-2026-10-18.json` | Vilniaus planas, layer "Viešojo transporto A juostos (Esamos)" | Vilniaus planas terms |
