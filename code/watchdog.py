@@ -202,13 +202,33 @@ elif arc_age > NIGHTLY_MAX_H * 3600:
         f"the summariser last produced output {arc_age/3600:.1f}h ago")
 
 # Unpushed work. ls-remote is one round trip and needs no fetch.
+# A difference alone is not a fault: when someone merges on GitHub, GitHub is ahead
+# until the next publish adopts it (since 29 October 2026 that is only noted, not
+# warned about). Only commits here that GitHub lacks are unpushed work.
 unpushed = False
+github_ahead = False
 if os.path.isdir(os.path.join(PUB, ".git")):
     local = sh(f"git -C {PUB} rev-parse HEAD")
     remote = sh(f"git -C {PUB} ls-remote origin main").split()
     if local and remote and local != remote[0]:
-        unpushed = True
-        add("warn", "unpushed", "the publish repository is ahead of GitHub")
+        r = remote[0]
+        known = subprocess.run(["git", "-C", PUB, "cat-file", "-e", r + "^{commit}"],
+                               capture_output=True).returncode == 0
+        if not known:
+            # GitHub has a commit this box has never fetched: someone edited there.
+            # Any commits of ours GitHub lacks show up here as "unpushed" once the
+            # next publish has fetched.
+            github_ahead = True
+            add("ok", "github_ahead", "GitHub has commits the next publish will adopt")
+        else:
+            ahead = sh(f"git -C {PUB} rev-list --count {r}..HEAD")
+            if ahead.isdigit() and int(ahead) > 0:
+                unpushed = True
+                add("warn", "unpushed",
+                    f"the publish repository has {ahead} commit(s) GitHub lacks")
+            else:
+                github_ahead = True
+                add("ok", "github_ahead", "GitHub has commits the next publish will adopt")
 
 # The whole chain, not only its first step. arc.json is written by summarize.py,
 # the first of four steps, so it stays fresh while every later step fails.
@@ -329,6 +349,7 @@ hb = {
     # every timetable on disk, not just the ones this refresher installed
     "gtfs_versions": len(glob.glob(os.path.join(HERE, "gtfs*.zip"))) or None,
     "unpushed": unpushed,
+    "github_ahead": github_ahead,
     "uptime": sh("uptime -p"),
     "action": restarted,
 }
