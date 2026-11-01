@@ -5,6 +5,9 @@ overturned. Newest first.
 
 | date | document | what it says |
 |---|---|---|
+| 30 Oct 2026 | [`bus-count-h3-h4-2026-10-30.md`](bus-count-h3-h4-2026-10-30.md) | H3 and H4 refuted. At Oslo st. and in the evening core, hours with as many buses as the peak lose nothing; delay follows the time of day, not the number of buses. |
+| 30 Oct 2026 | [`bus-63-2026-10-30.md`](bus-63-2026-10-30.md) | Bus 63, a first look. Its lost minutes sit in two hops at the Pilaitė end, every day since August; most likely an unlisted turn-round or stand, not a diversion. Needs vehicle positions to settle. |
+| 30 Oct 2026 | [`collection-gap-2026-10-29.md`](collection-gap-2026-10-29.md) | Operations. A server update froze the box on 29 October: 76 minutes lost, 20:50 to 22:06 Vilnius time, about 6% of that day's hops. Nothing pre-registered affected. |
 | 27 Oct 2026 | [`winter-time-check-2026-10-27.md`](winter-time-check-2026-10-27.md) | Operations. The first winter-time days, 25 and 26 October, came through the summer-time fix cleanly. The 21 October weather file, short by 23 hours, was refetched. |
 | 18 Oct 2026 | [`bus-lanes-matched-2026-10-18.md`](bus-lanes-matched-2026-10-18.md) | H1 and H9. Matched on hour, centre distance and volume, lane links lose 7.2 s less per inbound morning hop, but the interval spans zero. In rain, lanes about halve the extra delay. |
 | 18 Oct 2026 | [`h8-groundwork-2026-10-18.md`](h8-groundwork-2026-10-18.md) | H8 test plan, fixed before the pupils' autumn holiday: test days 3 to 6 November, links classed by distance to a school. Published 20 Oct. |

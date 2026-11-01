@@ -137,7 +137,7 @@ buses (H7) ([spare time](docs/spare-time-2026-10-06.md)).
 ## What is open
 
 - Whether first trips out of the depot really leave early (6.3% read as early), or only join their route mid-way: needs vehicle positions
-- Ten hypotheses for improving the network, written before testing ([hypotheses](docs/hypotheses-2026-10-04.md)). Five tested: H6 and H9 supported, H5 partly, H1 inconclusive, H7 refuted as stated but supported in a narrower form. Next: H3 and H4 (too many buses at once). H2 needs raw positions; H10 needs data that is not collected
+- Ten hypotheses for improving the network, written before testing ([hypotheses](docs/hypotheses-2026-10-04.md)). Seven tested: H6 and H9 supported, H5 partly, H1 inconclusive, H7 refuted as stated but supported in a narrower form, H3 and H4 refuted (30 Oct: delay follows the time of day, not the number of buses; [too many buses?](docs/bus-count-h3-h4-2026-10-30.md)). Next: the H8 holiday test, run 14 November. H2 needs raw positions; H10 needs data that is not collected
 - Whether network-wide link rankings include neighbouring links whose timetable errors offset each other, as on bus 32 between Buivydiškės and Sodų st. ([lines 118 and 32](docs/lines-118-32-2026-10-04.md))
 - H8, whether the morning falls back during the pupils' autumn holiday: tested on Tuesday 3 to Friday 6 November against three ordinary weeks. The test is fixed in advance in [the H8 plan](docs/h8-groundwork-2026-10-18.md)
 - Bus 63 runs 2 to 5 minutes over its timetable at every hour, one link 7 minutes slow and the next 3 minutes early; it looks like an unlisted diversion

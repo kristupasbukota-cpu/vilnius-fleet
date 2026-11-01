@@ -187,3 +187,14 @@ Added as each test is done. The hypotheses above are unchanged.
   links with a lane and +2.4 s on links without one in the same parts of the city: a
   difference of −1.1 s (95% interval −1.8 to −0.4). Clearest off-peak; in the peaks
   there are too few wet hours to settle it. Same document.
+- **H3, 30 October: refuted.** On the three exit links from Oslo st., 06:00 and 18:00
+  carry as many buses as 07:00 to 08:59 (21 to 23 an hour) and lose nothing; 07:00 to
+  08:59 loses 48 s per hop more (95% interval +41 to +55). With the hour held fixed,
+  one more bus an hour changes nothing (−0.18 s). The delay is traffic at that hour,
+  not buses queuing, and 17:00 is as bad as the morning. See
+  [too many buses?](bus-count-h3-h4-2026-10-30.md).
+- **H4, 30 October: refuted.** Within 2 km of the centre, at a fixed evening hour,
+  links with 20 to 45 buses an hour lose less than quiet ones, and within a link more
+  buses an hour adds nothing (−0.18 s per bus). Kalvarijų turgus to Žaliasis tiltas
+  carries 50 buses at 06:00 and loses nothing, 47 at 17:00 and loses two minutes. Same
+  document.
