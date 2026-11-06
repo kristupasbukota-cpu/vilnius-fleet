@@ -1,0 +1,2 @@
+observationTimeUtc,airTemperature,feelsLikeTemperature,windSpeed,windGust,windDirection,cloudCover,seaLevelPressure,relativeHumidity,precipitation,snowDepth,conditionCode
+2026-11-06 00:00:00,4.4,1.2,3.8,7.6,304,25,1020.8,82,0,0,partly-cloudy
