@@ -5,6 +5,7 @@ overturned. Newest first.
 
 | date | document | what it says |
 |---|---|---|
+| 8 Nov 2026 | [`collection-gap-2026-11-04.md`](collection-gap-2026-11-04.md) | Operations. The city's live feed went stale, lost most trip IDs and then went empty on 4 November, 21:15 to 22:45 Vilnius time: about 7% of that day's hops lost. The collector was fine. Nothing pre-registered affected. |
 | 30 Oct 2026 | [`bus-count-h3-h4-2026-10-30.md`](bus-count-h3-h4-2026-10-30.md) | H3 and H4 refuted. At Oslo st. and in the evening core, hours with as many buses as the peak lose nothing; delay follows the time of day, not the number of buses. |
 | 30 Oct 2026 | [`bus-63-2026-10-30.md`](bus-63-2026-10-30.md) | Bus 63, a first look. Its lost minutes sit in two hops at the Pilaitė end, every day since August; most likely an unlisted turn-round or stand, not a diversion. Needs vehicle positions to settle. |
 | 30 Oct 2026 | [`collection-gap-2026-10-29.md`](collection-gap-2026-10-29.md) | Operations. A server update froze the box on 29 October: 76 minutes lost, 20:50 to 22:06 Vilnius time, about 6% of that day's hops. Nothing pre-registered affected. |
