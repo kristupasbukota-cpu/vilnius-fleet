@@ -13,6 +13,10 @@ other versions (`even_spacing_ends.py`, `terminal_stand.py`) read them from `gtf
 
 | finding | script and command | reads | notes |
 |---|---|---|---|
+| [Lateness belongs to roads](roads-not-vehicles-2026-10-02.md) | `python3 code/roads_not_vehicles.py` | `analysis/trav-*` | rebuilt 8 Nov 2026; matches except the route row, 2.0 s [1.7, 2.2] on 208 route-directions against the published 2.1 [1.8, 2.3] on 210, and the link x hour x day share, 45% against 44% |
+| [The morning has settled](morning-settled-2026-09-30.md), 3 October update | `python3 code/morning_settled.py` | `analysis/trav-*`, `weather/` | rebuilt 8 Nov 2026; matches, intervals within 0.03 s; airport readings come from `weather_audit.py` |
+| [The autumn morning runs one way](one-direction-2026-10-02.md) | `python3 code/one_direction.py` | `analysis/trav-*`, `gtfs/` | rebuilt 8 Nov 2026; matches within 0.1 s, intervals within 0.1 s |
+| [Route 61's early departures](route-61-early-2026-10-02.md) | `python3 code/route_61_early.py` | `analysis/dep-*` | rebuilt 8 Nov 2026; departure tables match; the section 3 turnaround figures are not rebuilt |
 | [Rain and delay](weather-2026-09-30.md) | `python3 code/weather_effect.py` | `analysis/trav-*`, `weather/` | a few minutes, mostly the bootstraps |
 | [Weather audit](weather-audit-2026-10-01.md) | `python3 code/weather_audit.py` | `analysis/trav-*`, `weather/` | also downloads Vilnius airport METAR reports from mesonet.agron.iastate.edu |
 | [H5, even spacing](even-spacing-2026-10-04.md), sections 1 and 3 | `python3 code/even_spacing_ends.py` | `analysis/dep-*`, `analysis/blocks-*`, `gtfs/` | |
@@ -39,4 +43,6 @@ the repository. Their outputs are what the scripts above read.
 | `weather/` | `code/weather.py` |
 
 Older findings, from before October, were computed with scripts that are not all in
-`code/` in the form used at the time. Their documents describe the method in full.
+`code/` in the form used at the time. Their documents describe the method in full. The
+scripts for four headline findings were lost and rebuilt from those methods on
+8 November 2026; the table above says how closely each one matches.
