@@ -829,26 +829,32 @@
    "stops": 1548,
    "bytes": 3443340,
    "replaced": "gtfs-20261111.zip"
+  },
+  {
+   "file": "gtfs.zip",
+   "fingerprint": "e8e0bdfe7025b403",
+   "downloaded": "2026-11-13T23:45:03+00:00",
+   "url": "https://www.stops.lt/vilnius/vilnius/gtfs.zip",
+   "trips": 20295,
+   "stop_times": 407698,
+   "stops": 1544,
+   "bytes": 3372550,
+   "replaced": "gtfs-20261112.zip"
   }
  ],
- "last_check": "2026-11-12T23:42:43+00:00",
- "last_change": "2026-11-12T23:42:43+00:00",
- "checks": 83,
+ "last_check": "2026-11-13T23:45:03+00:00",
+ "last_change": "2026-11-13T23:45:03+00:00",
+ "checks": 84,
  "failures": 0,
  "match": {
-  "snapshot": "20261112T215528Z.csv.gz",
-  "vehicles_with_trip": 155,
-  "matched": 151,
-  "rate": 97.4,
+  "snapshot": "20261113T215814Z.csv.gz",
+  "vehicles_with_trip": 158,
+  "matched": 154,
+  "rate": 97.5,
   "known_trips": 89008,
-  "measured_minutes_back": 109
+  "measured_minutes_back": 108
  },
  "match_history": [
-  {
-   "utc": "2026-09-08T23:42:55+00:00",
-   "rate": 97.6,
-   "vehicles": 164
-  },
   {
    "utc": "2026-09-09T23:43:33+00:00",
    "rate": 98.1,
@@ -1143,6 +1149,11 @@
    "utc": "2026-11-12T23:46:23+00:00",
    "rate": 97.4,
    "vehicles": 155
+  },
+  {
+   "utc": "2026-11-13T23:48:53+00:00",
+   "rate": 97.5,
+   "vehicles": 158
   }
  ],
  "notes": [
