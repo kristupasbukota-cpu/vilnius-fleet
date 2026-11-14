@@ -25,7 +25,8 @@ other versions (`even_spacing_ends.py`, `terminal_stand.py`) read them from `gtf
 | [Lines 118 and 32](lines-118-32-2026-10-04.md) | `python3 code/lines_118_32.py` | `analysis/trav-*`, `analysis/blocks-*`, `analysis/spacing-*` | |
 | [H7, spare time](spare-time-2026-10-06.md) | `python3 code/spare_time.py` | `analysis/trav-*`, `gtfs/gtfs-20261001.zip` | prints every table in the document |
 | [H1 and H9, bus lanes](bus-lanes-matched-2026-10-18.md) | `python3 code/bus_lanes_test.py analysis/h1/bus-lanes-2026-10-18.json OUT` then `python3 code/bus_lanes_checks.py OUT/lane-links.csv` | `analysis/trav-*`, `gtfs/gtfs-20261001.zip`, `weather/`, the lane map | `OUT` is any empty folder |
-| [H8, school run plan](h8-groundwork-2026-10-18.md) | `python3 code/school_links.py analysis/h8/schools-vilnius-2026-10-18.csv OUT` | `analysis/trav-*`, `gtfs/gtfs-20261001.zip`, the school list | baseline only; the test runs after the holiday |
+| [H8, school run plan](h8-groundwork-2026-10-18.md) | `python3 code/school_links.py analysis/h8/schools-vilnius-2026-10-18.csv OUT` | `analysis/trav-*`, `gtfs/gtfs-20261001.zip`, the school list | baseline only |
+| [H8, school holiday test](h8-school-holiday-2026-11-14.md) | `python3 code/h8_holiday_test.py` | `analysis/trav-*`, `weather/`, `analysis/h8/`, `gtfs/gtfs-20261101.zip` | about 10 s; prints every table in the document |
 
 ## Tables built on the server
 

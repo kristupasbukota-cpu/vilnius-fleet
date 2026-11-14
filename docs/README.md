@@ -5,6 +5,7 @@ overturned. Newest first.
 
 | date | document | what it says |
 |---|---|---|
+| 14 Nov 2026 | [`h8-school-holiday-2026-11-14.md`](h8-school-holiday-2026-11-14.md) | H8 supported. In the pupils' autumn holiday the 07:00 to 08:59 delay fell by 7.7 s per hop, to below the summer level; midday did not move, and the fall was larger near schools and on inbound hops. |
 | 8 Nov 2026 | [`collection-gap-2026-11-04.md`](collection-gap-2026-11-04.md) | Operations. The city's live feed went stale, lost most trip IDs and then went empty on 4 November, 21:15 to 22:45 Vilnius time: about 7% of that day's hops lost. The collector was fine. Nothing pre-registered affected. |
 | 30 Oct 2026 | [`bus-count-h3-h4-2026-10-30.md`](bus-count-h3-h4-2026-10-30.md) | H3 and H4 refuted. At Oslo st. and in the evening core, hours with as many buses as the peak lose nothing; delay follows the time of day, not the number of buses. |
 | 30 Oct 2026 | [`bus-63-2026-10-30.md`](bus-63-2026-10-30.md) | Bus 63, a first look. Its lost minutes sit in two hops at the Pilaitė end, every day since August; most likely an unlisted turn-round or stand, not a diversion. Needs vehicle positions to settle. |

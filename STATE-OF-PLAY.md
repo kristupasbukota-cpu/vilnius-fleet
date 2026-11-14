@@ -5,7 +5,7 @@ from the city's own live GPS feed. No survey, no press release, no operator
 dashboard. Every number here comes from the same file the JUDU journey planner
 reads, polled every 10 seconds since 15 August 2026 and kept.
 
-*Current as of 2 November 2026. The long account of how the instrument was built
+*Current as of 2 November 2026 (H8 result added 14 November). The long account of how the instrument was built
 and why is `docs/state-of-play-2026-08-18.md`; every finding, dated, is listed in
 `docs/README.md`.*
 
@@ -147,9 +147,9 @@ refuted) ([too many buses?](docs/bus-count-h3-h4-2026-10-30.md)).
 ## What is open
 
 - Whether first trips out of the depot really leave early (6.3% read as early), or only join their route mid-way: needs vehicle positions
-- Ten hypotheses for improving the network, written before testing ([hypotheses](docs/hypotheses-2026-10-04.md)). Seven tested: H6 supported, H9 supported in a modest form, H5 partly, H1 inconclusive, H7 refuted as stated but supported in a narrower form, H3 and H4 refuted ([too many buses?](docs/bus-count-h3-h4-2026-10-30.md)). Next: the H8 holiday test, run 14 November. H2 needs raw positions; H10 needs data that is not collected
+- Ten hypotheses for improving the network, written before testing ([hypotheses](docs/hypotheses-2026-10-04.md)). Eight tested: H6 and H8 supported, H9 supported in a modest form, H5 partly, H1 inconclusive, H7 refuted as stated but supported in a narrower form, H3 and H4 refuted ([too many buses?](docs/bus-count-h3-h4-2026-10-30.md)). H2 needs raw positions; H10 needs data that is not collected
 - Whether network-wide link rankings include neighbouring links whose timetable errors offset each other, as on bus 32 between Buivydiškės and Sodų st. ([lines 118 and 32](docs/lines-118-32-2026-10-04.md))
-- H8, whether the morning falls back during the pupils' autumn holiday: tested on Tuesday 3 to Friday 6 November against the same weekdays of 20 to 23 October, 27 to 30 October and 10 to 13 November, and run on 14 November once the last of those weeks is in. The test is fixed in advance in [the H8 plan](docs/h8-groundwork-2026-10-18.md)
+- H8 is settled: the morning step is the school run. In the pupils' autumn holiday, 3 to 6 November, the 07:00 to 08:59 delay fell by 7.7 s per hop (95% interval 5.9 to 9.6) to below the summer level, midday did not move, and the fall was larger near schools and on inbound hops. The evening fell too, so this is the holiday week as a whole, parents' trips included ([school holiday](docs/h8-school-holiday-2026-11-14.md)). The pupils' winter holiday would be a free replication
 - Bus 63 runs 2 to 5 minutes over its timetable at every hour. Almost all of it sits in two hops at the Pilaitė end, every day since 18 August, and outbound buses are almost never recorded after Papiškės: most likely an unlisted turn-round or stand rather than a diversion. Settling it needs vehicle positions ([bus 63](docs/bus-63-2026-10-30.md))
 - Repository growth: option B in place from 3 October. Measured on 27 October: 451.6 MiB, growing about 2.5 MiB a day, so 1 GB around mid-June 2027, as predicted. The history rewrite (C) is not chosen ([plan](docs/repo-growth-plan-2026-10-02.md))
 

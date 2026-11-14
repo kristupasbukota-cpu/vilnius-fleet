@@ -198,3 +198,13 @@ Added as each test is done. The hypotheses above are unchanged.
   buses an hour adds nothing (−0.18 s per bus). Kalvarijų turgus to Žaliasis tiltas
   carries 50 buses at 06:00 and loses nothing, 47 at 17:00 and loses two minutes. Same
   document.
+- **H8, 14 November: supported.** In the pupils' autumn holiday, Tuesday 3 to Friday 6
+  November, the 07:00 to 08:59 delay fell by 7.7 s per hop against the same weekdays of
+  three ordinary weeks (95% interval +5.9 to +9.6), to −0.4 s, below the summer level.
+  Midday barely moved (0.3 s), and the fall was larger on links near schools (8.3 s)
+  than far from them (5.0 s): all three conditions fixed on 18 October are met, with
+  any version of the rain adjustment. Inbound hops carry it (13.6 s against 1.8 s
+  outbound). The evening also fell, by 4.8 s, so this is the holiday week as a whole,
+  parents' trips included, not pupils alone. No holiday timetable ran. The test week
+  in the hypothesis above said 2 to 8 November; the plan fixed it as 3 to 6 November,
+  since 2 November is a public holiday. See [school holiday](h8-school-holiday-2026-11-14.md).
