@@ -41,8 +41,13 @@ city has gone to bed.
     python3 watchdog.py            # check, act, push the heartbeat
     python3 watchdog.py --dry      # check and print, touch nothing
 """
-import glob, json, os, re, subprocess, sys, time
-from datetime import datetime, timezone
+import glob, gzip, json, os, re, subprocess, sys, time
+from datetime import datetime, timedelta, timezone
+try:
+    from zoneinfo import ZoneInfo
+    VILNIUS = ZoneInfo("Europe/Vilnius")
+except Exception:            # no tz database: fall back to UTC+2, winter time
+    VILNIUS = timezone(timedelta(hours=2))
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SNAPS = os.path.join(HERE, "snapshots")
@@ -71,6 +76,26 @@ GTFS_MATCH_ALARM = 70.0
 # anything. Below this many vehicles the reading is reported but not judged.
 GTFS_MATCH_MIN_SAMPLE = 150
 RESTART_COOLDOWN = 3600  # never restart the collector more than once an hour
+
+# Added 18 November 2026, after the evening of 4 November. The city's feed went stale,
+# then kept answering with vehicles but most of them without a trip ID (about 30% left),
+# then went empty from 22:19 to 22:40 local. Every check above called that healthy:
+# snapshots kept arriving, the GTFS match rate only judges vehicles that do carry a
+# trip, and 21 empty minutes is within EMPTY_OK_MIN.
+#
+# 1. The share of vehicles in the newest snapshot that carry a trip ID. A vehicle with
+#    no trip cannot be matched to the timetable, so its hops are lost to every analysis.
+TRIP_SHARE_WARN = 60.0
+TRIP_SHARE_MIN_ROWS = 150   # as for the match rate: a fraction off a few night buses is noise
+# 2. An empty feed is only the city asleep in the small hours. The real gap is about
+#    03:57 to 04:15 local; outside 02:00 to 05:59 local, 10 empty minutes is a fault.
+EMPTY_OK_DAY_MIN = 10
+NIGHT_LOCAL_HOURS = range(2, 6)
+# 3. Weather files. The nightly fetch rewrites only yesterday and today (UTC), so a day
+#    that came back short is never repaired (weather-2026-11-11.csv had 18 of 24 hours).
+#    Days that will not be fetched again must hold 24 hours.
+WEATHER_DIR = os.path.join(HERE, "pub", "weather")
+WEATHER_DAYS = range(2, 6)  # 2 to 5 days back
 
 DRY = "--dry" in sys.argv
 NOW = time.time()
@@ -184,15 +209,65 @@ else:
 if collector != "active":
     add("alarm", "collector_down", f"systemd reports the collector {collector}")
 
+local_hour = datetime.now(VILNIUS).hour
+empty_limit = EMPTY_OK_MIN if local_hour in NIGHT_LOCAL_HOURS else EMPTY_OK_DAY_MIN
 if rows_last == 0:
-    if empty_min > EMPTY_OK_MIN:
+    if empty_min > empty_limit:
         add("alarm", "feed_empty",
             f"the feed has carried no vehicles for {empty_min} minutes, far longer "
-            f"than the pre-dawn gap in service, so this is not the city being quiet")
+            f"than the {empty_limit} allowed at {local_hour:02d}h local, so this is not "
+            f"the city being quiet")
     else:
         add("ok", "service_stopped",
             f"no vehicles in the feed for {empty_min} minute(s); before dawn this is "
             f"the city having stopped rather than anything being wrong")
+
+# Trip IDs in the newest snapshot. Read by column name, so a renamed column reads as
+# "unknown" rather than as an alarm.
+trip_share = None
+trip_rows = 0
+if newest and rows_last:
+    try:
+        with gzip.open(newest, "rt", encoding="utf-8-sig", errors="replace") as f:
+            head = f.readline().strip().split(",")
+            names = [h.strip().lower() for h in head]
+            col = next((names.index(n) for n in ("reisoidgtfs", "reisoid", "trip_id")
+                        if n in names), None)
+            if col is not None:
+                have = 0
+                for l in f:
+                    v = l.rstrip("\n").split(",")
+                    if len(v) <= col:
+                        continue
+                    trip_rows += 1
+                    if v[col].strip() not in ("", "0", "-"):
+                        have += 1
+                if trip_rows:
+                    trip_share = round(100 * have / trip_rows, 1)
+    except Exception:
+        pass
+if trip_share is not None and trip_rows >= TRIP_SHARE_MIN_ROWS and trip_share < TRIP_SHARE_WARN:
+    add("warn", "trip_ids_missing",
+        f"only {trip_share}% of {trip_rows} vehicles in the feed carry a trip ID; "
+        f"the rest cannot be matched to the timetable")
+
+# Weather days that will not be fetched again and are short.
+weather_short = []
+if os.path.isdir(WEATHER_DIR):
+    today = datetime.now(timezone.utc).date()
+    for k in WEATHER_DAYS:
+        d = (today - timedelta(days=k)).isoformat()
+        path = os.path.join(WEATHER_DIR, f"weather-{d}.csv")
+        try:
+            n = sum(1 for _ in open(path, encoding="utf-8")) - 1
+        except OSError:
+            n = 0
+        if n < 24:
+            weather_short.append(f"{d}:{n}")
+if weather_short:
+    add("warn", "weather_short",
+        "weather files short of 24 hours: " + ", ".join(weather_short) +
+        "; refetch with weather.py --from DAY --to DAY")
 
 arc_age = age_of(os.path.join(HERE, "arc.json"))
 if arc_age is None:
@@ -340,6 +415,8 @@ hb = {
     "rows_last": rows_last,
     "empty_minutes": empty_min,
     "feed_static": static,
+    "trip_share_pct": trip_share,
+    "weather_short": weather_short or None,
     "collector": collector,
     "mem_available_mb": mem_avail,
     "disk_used_pct": disk_pct,
