@@ -1,17 +1,17 @@
 {
- "generated_utc": "2026-11-22T00:34:49+00:00",
- "uptime": "up 2 weeks, 6 days, 10 hours, 38 minutes",
+ "generated_utc": "2026-11-23T00:35:07+00:00",
+ "uptime": "up 3 weeks, 10 hours, 38 minutes",
  "collector": "active",
  "timer": "active",
- "snapshots": 833388,
+ "snapshots": 841915,
  "first": "20260815T000354Z.csv.gz",
- "newest": "20261122T003437Z.csv.gz",
- "disk": "/dev/mapper/ocivolume-root   83G   26G   57G  32% /",
- "memory_mb": "946 total, 321 available",
- "collector_failures": 65,
+ "newest": "20261123T003456Z.csv.gz",
+ "disk": "/dev/mapper/ocivolume-root   83G   27G   57G  33% /",
+ "memory_mb": "946 total, 305 available",
+ "collector_failures": 68,
  "log_tail": [
-  "2026-11-22T00:32:47+00:00 ok kept=6 skipped_dupes=0 rows~105 bytes=10845",
-  "2026-11-22T00:33:47+00:00 ok kept=6 skipped_dupes=0 rows~105 bytes=10845",
-  "2026-11-22T00:34:47+00:00 ok kept=6 skipped_dupes=0 rows~105 bytes=10845"
+  "2026-11-23T00:32:26+00:00 ok kept=6 skipped_dupes=0 rows~92 bytes=9238",
+  "2026-11-23T00:33:26+00:00 ok kept=6 skipped_dupes=0 rows~92 bytes=9237",
+  "2026-11-23T00:34:26+00:00 ok kept=6 skipped_dupes=0 rows~92 bytes=9219"
  ]
 }

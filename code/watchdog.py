@@ -87,6 +87,10 @@ RESTART_COOLDOWN = 3600  # never restart the collector more than once an hour
 #    no trip cannot be matched to the timetable, so its hops are lost to every analysis.
 TRIP_SHARE_WARN = 60.0
 TRIP_SHARE_MIN_ROWS = 150   # as for the match rate: a fraction off a few night buses is noise
+# Only 05:00 to 21:59 local. From about 23:40 to 03:00 local buses going back to the depot
+#    stay in the feed without a trip ID and the share falls below 60% every night
+#    (issues #19 to #23); that is normal. The 4 Nov fault began at 21:15 local.
+TRIP_SHARE_LOCAL_HOURS = range(5, 22)
 # 2. An empty feed is only the city asleep in the small hours. The real gap is about
 #    03:57 to 04:15 local; outside 02:00 to 05:59 local, 10 empty minutes is a fault.
 EMPTY_OK_DAY_MIN = 10
@@ -246,7 +250,8 @@ if newest and rows_last:
                     trip_share = round(100 * have / trip_rows, 1)
     except Exception:
         pass
-if trip_share is not None and trip_rows >= TRIP_SHARE_MIN_ROWS and trip_share < TRIP_SHARE_WARN:
+if (trip_share is not None and local_hour in TRIP_SHARE_LOCAL_HOURS
+        and trip_rows >= TRIP_SHARE_MIN_ROWS and trip_share < TRIP_SHARE_WARN):
     add("warn", "trip_ids_missing",
         f"only {trip_share}% of {trip_rows} vehicles in the feed carry a trip ID; "
         f"the rest cannot be matched to the timetable")

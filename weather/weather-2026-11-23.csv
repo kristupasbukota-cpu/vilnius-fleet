@@ -1,0 +1,2 @@
+observationTimeUtc,airTemperature,feelsLikeTemperature,windSpeed,windGust,windDirection,cloudCover,seaLevelPressure,relativeHumidity,precipitation,snowDepth,conditionCode
+2026-11-23 00:00:00,0.1,-2.1,1.8,3.5,243,100,1001.3,97,0.1,0,light-snow
